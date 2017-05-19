@@ -12,9 +12,9 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{14}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{14}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{14}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after the algorithm has converged. Walls A and B are only present in the grid-world simulator, whereas all four walls are present in the Gazebo simulator.}}{15}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }}{16}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Ratio of samples gathered in the second simulator to the total samples gathered increases with inaccuracy in the first simulator. The reference line depicts the average number of samples gathered over $10$ runs when only Gazebo simulator was present.}}{16}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ratio of samples gathered in second simulator vs. total samples gathered as we change the threshold or confidence parameters of the two simulators.}}{17}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}}{18}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after the algorithm has converged. Walls A and B are only present in the grid-world simulator, whereas all four walls are present in the Gazebo simulator.}}{14}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }}{15}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Ratio of samples gathered in the second simulator to the total samples gathered increases with inaccuracy in the first simulator. The reference line depicts the average number of samples gathered over $10$ runs when only Gazebo simulator was present.}}{15}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ratio of samples gathered in second simulator vs. total samples gathered as we change the threshold or confidence parameters of the two simulators.}}{16}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}}{17}
 \addvspace {10\p@ }

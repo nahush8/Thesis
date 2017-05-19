@@ -16,6 +16,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{framed}
 \usepackage{graphicx}
+\usepackage{color}
 \graphicspath{ {images/} }
 \usepackage{float}
 \usepackage{epsfig}
@@ -25,6 +26,7 @@
 \usepackage{color}
 \usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
 
+\newtheorem{mydef}{Definition}
 \newcommand{\pcomment}[1]{{\color{red}{#1}}}
 \newcommand{\eg}{\textit{e.g.}}
 \newcommand{\ie}{\textit{i.e.}}
@@ -40,7 +42,7 @@
 \setlength{\parskip}{0.1in}
 
 % Uncomment for double-spaced document.
-% \renewcommand{\baselinestretch}{2}
+%\renewcommand{\baselinestretch}{2}
 \newacronym{uav}{UAV}{Unmanned Aerial Vehicle}
 \newacronym{gps}{GPS}{Global Positioning System}
 
@@ -55,7 +57,7 @@
 
 % TITLE
 {\Large 
-Multi-Fidelity Reinforcement Learning with Gaussian Processes
+Reinforcement Learning with Gaussian Processes for Unmanned Aerial Vehicle Navigation
 }
 
 \vfill
@@ -98,7 +100,7 @@ Copyright 2017, Nahush Gondhalekar
 \thispagestyle{empty}
 \begin{center}
 
-{\large Multi-Fidelity Reinforcement Learning with Gaussian Processes}
+{\large Reinforcement Learning with Gaussian Processes for Unmanned Aerial Vehicle Navigation}
 
 \vfill
 
@@ -220,25 +222,114 @@ Though in this thesis we are mainly interested in the algorithms which deal with
 \end{itemize}
 
 \subsection{Online Vs Off-line Learning}
-Let's again take an example of an \gls{uav} which needs to fly close to a surface of a bridge and take pictures. It is difficult to control it manually with an erratic \gls{gps} signal and wind disturbances near the bridge surface. What if the UAV is equipped with a knowledge of maintaining a certain distance from the bridge surface and fly near the bridge autonomously? This demands for a situation where the UAV needs to be trained to perform the task of flying close to a surface without hitting the obstacle. Learning the controller directly on the real task \textit{Online} is often difficult since learning a task needs a lot of data which sometimes is too time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad-rotor colliding several times with the bridge causing financial and other setbacks. It is often desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{Off-line} learning uses a simulator of the environment as a \textit{cheap} way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world.
+Let's again take an example of an \gls{uav} which needs to fly close to a surface of a bridge and take pictures. It is difficult to control it manually with an erratic \gls{gps} signal and wind disturbances near the bridge surface. What if the UAV is equipped with a knowledge of maintaining a certain distance from the bridge surface and fly near the bridge autonomously? \par This demands for a situation where the UAV needs to be trained to perform the task of flying close to a surface without hitting the obstacle. Learning the controller directly on the real task \textit{Online} is often difficult since learning a task needs a lot of data which sometimes is too time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad-rotor colliding several times with the bridge causing financial and other setbacks. It is often desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{Off-line} learning uses a simulator of the environment as a \textit{cheap} way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world.
 
 \subsection{Rewards, and how to assign them ?}
-The important aspect of Sequential Decision Making is the fact that, if the action is going to result in \textit{good} or \textit{bad} outcomes cannot be decided right away. Sometimes the first action may have a large influence in reaching the goal even though the actions between the first one and the reward obtained may be \textit{bad}.
+The important aspect of Sequential Decision Making is the fact that, if the action is going to result in \textit{good} or \textit{bad} outcomes, cannot be decided right away. Sometimes the first action may have a large influence in reaching the goal even though the actions between the first one and the reward obtained at the end, may be \textit{bad}. A formal model to represent such problems would be extremely useful in analyzing and solving sequential decision making problems. In section \ref{mdp} we would take a look at the most popular way to represent sequential decision making in an uncertain environment.
 
 \section{Markov Decision Processes}
 \label{mdp}
-Markov Decision Processes are used to model sequential decision making when the outcomes of the actions are uncertain.\cite{puterman2014markov} When an action is taken in a particular state, a reward is generated and a next state is attained through a particular transition probability. 
+Markov Decision Processes are popularly used to model sequential decision making when the outcomes of the actions are uncertain.\cite{puterman2014markov}. In fact MDPs have become the \textit{de facto} standard formalism for learning sequential decision making. When an action is taken in a particular state, a reward is generated and a next state is attained through a particular transition probability.
 
-\section{Reinforcement Learning}
+\begin{mydef}
+\label{mdp_def}
+A Markov decision process is a tuple $(S, A, T, R)$ in which $S$ is a finite set of states, $A$ a finite set of actions, $T$ a transition function defined as $T : S \times A \times S \rightarrow [0, 1] $and $R$ a reward function defined
+as $R : S \times A \times S \rightarrow R$.
+\end{mydef}
+
+As seen in Definition \ref{mdp_def}, MDPs consist of states, actions, transitions between states and a reward function.
+\begin{itemize}
+\item States: The set of states $S$ is defined as the finite set $\{s^1,...,s^N\}$ where the size of the state space is $N$, \ie $|S| = N$. For example, for a robot moving in a $2D$ grid-world like environment, each position $(x,y)$ may be represented as a unique state.
+
+\item Actions: The set of actions $A$ is defined as the finite set $\{a^1,...,a^M\}$ where the size of the action space is $M$, \ie $|A| = M$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$,
+where $A(s) \subseteq A$. For examples, moving the robot forward, backward or sideways can be recognized as actions.
+
+\item The Transition Function: 
+\label{transition_function}
+When an action $a \in A$ is applied in a state $s \in S$, then the agent makes transition to a state $s' \in S$. This transition is based on a probability distribution over all the states. The probability of ending in state $s'$ when an action $a$ is taken in $s$, is denoted by $T(s,a,s') \leq 1$ .
+
+\item The Reward Function:
+\label{reward_function}
+The reward functions determines the reward obtained by the agent for being in a state or performing some action in a state, $R(s,a,s')$ defines the reward obtained by the agent for performing action $a$ in state $s$ and it lands in state $s'$.
+\end{itemize}
+
+\subsection{Policies}
+\label{policies}
+A policy for an MDP is a function which gives an action $a \in A$ as an output for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to try to optimize its behavior in the environment modeled as an MDP. \textit{Optimality} is dependent on what exactly is being optimized? What is the goal of the agent? {\color{red} Add Bellman equation and briefly describe value function etc.} 
+
+\subsection{Solving MDPs}
+As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based {\color{red} Add reference to RL section} algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation. {\color{red} Add Bellman equation and its reference}\par 
+In Model-Free {\color{red} Add reference to RL section} algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
+To directly compute the value functions for the state-action pairs when the model of the environment is not available or to determine the model by interacting with the environment in order to maximize the performance, the agent needs to posses artificial intelligence. We will discuss this branch of machine learning the next section (section \ref{rl}).
+
+\section{Reinforcement Learning (RL)}
 \label{rl}
+Reinforcement Learning is a class of problems where the agent needs to learn the \textit{behavior} with trial and error by interacting with a dynamic environment. The two main methods to approach Reinforcement Learning Problems are:
+\begin{itemize}
+\item To search the entire behavior space in order to find the optimal one for the given environment. Examples of these kind of algorithms are genetic programming algorithms.
+\item Use of statistical methods and dynamic programming to estimate the effect of actions in the states of the given environment. \cite{kaelbling1996reinforcement}
+\end{itemize}
 
-\subsection{The need of learning Q values}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar 
+\subsection{Model of Reinforcement Learning}
+A simplified Reinforcement Learning Model can be represented as shown in figure \ref{fig:rl_model}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{rl_model.pdf}
+	\caption {A Simplified Reinforcement Learning Model}
+   \label{fig:rl_model}
+\end{figure}
+Formally, the model consists of a set of environment states, $S$
+a set of agent actions, $A$; and a set of scalar reinforcement signals which are typically known as rewards. The agent's job is to find a policy $\pi$, mapping states to actions ( $\pi: S \rightarrow A$) to maximize some long term measure known as \textit{reward}. The environment is typically assumed to be stochastic \ie the same action in the same state at two different occasions may result in two different next states and/or two different rewards. The main difference between Reinforcement Learning and Supervised Learning is that, in RL, the agent needs to gather experience by interacting with the environment to find out the system states, transitions, actions and rewards whereas in Supervised Learning, some information about prior input/output pairs is used to approximate the mapping function.
+
+\subsection{Exploration Vs. Exploitation}
+An RL agent needs to explicitly explore the environment. One of the classic problems in the literature known as the \textit{k-armed bandit problem} \cite{berry1985bandit} may best illustrate the concept of exploration Vs. exploitation. The agent is in a room with a collection of
+$k$ gambling machines. The agent is permitted a fixed number of pulls, $z$. Any arm may be pulled on each turn. The machines do not require a deposit to play; the only cost is in wasting a pull playing a suboptimal machine. When arm $i$ is pulled, machine $i$ pays $1$ or $0$, according to some underlying
+probability parameter $p_i$, where the pays are independent events and the $p_i$s are unknown.
+What should the agent's strategy be to maximize the payoffs?\par 
+The agent may believe that some arm may have a higher payoff probability. The question now is, whether to choose the same arm all the time or to explore the other arm that has less information but seems to be better? Depending on how long the game is going to last, if the game is going to last longer, then the agent should not converge to a sub-optimal arm too early and instead explore more. In short, 
+exploitation means to use the knowledge that the agent has found for the current state $s$ by doing one of the actions $a$ that maximizes the value function of the state whereas exploration means, in order to build a better estimate of the optimal value function it should select a different action from the one that it currently thinks is best.\par 
+We will see one of the ways to trade of exploration-exploitation using $\epsilon$-greedy strategy used in Q-learning which is a form of model-free learning. The section \ref{types} describes the two fundamental types of Reinforcement Learning.
+
+
+\subsection{Classification/Types}
+\label{types}
+As we have seen previously, Reinforcement Learning agent needs to know the model of the environment; The transition function $T(s,a,s')$ and the reward function $R(s,a)$ in order to find an optimal policy. How to find an algorithm to find an optimal policy when such a model is not known in advance? There may be two approaches we can take \cite{kaelbling1996reinforcement}.
+\begin{itemize}
+\item Model-free: Learn a controller without learning the model.
+\item Model-based: Learn the model of the environment in order to derive the controller.
+\end{itemize}
+
+\subsubsection{Model-free}
+Model-free algorithms are the algorithms which do not have an explicit knowledge of the environment. The evaluation of \textit{how good the actions are} is done through trial and error. The space complexity of such algorithms may be considered to be asymptotically less than the space required to store an MDP \cite{strehl2006pac}. Model free algorithms tend to keep track of the value functions only unlike the model-based algorithms which tend to store the environment model information.\par The limitation of model-free algorithms may be stated as; these algorithms need \textbf{extensive experience} to find an optimal policy. A few examples of model-free algorithms are; \textit{Q-Learning} (section: \ref{q_learning}) and SARSA (State Action Reward State Action).
+
+\subsubsection{Model-based}
+The on-line algorithms such as Q-Learning guarantee convergence if the approximations are accurate. It is expensive to run these algorithms in the real world. In model-based algorithms, an agent tries to learn the model of the environment while obtaining on-line experience and then this model can be used to facilitate learning. \par 
+Given a state $s$ and an action $a$, the probability of going to the next state $s'$ is given by the transition function $T(s,a,a')$. The reward obtained by taking an action $a$ in state $s$ is given by the reward function $R(s,a)$. $T(s,a,s')$ and $R(s,a)$ can be learned and be used during the further runs in order to improve the convergence. It is expected that, during the subsequent runs of the algorithm, the model should already be sufficiently learned to speed up convergence. Extensive amount of computation is required in model-based algorithms. A few examples of model-based reinforcement learning algorithms are;  $R$-$MAX$ \cite{brafman2002r} and $E^3$ \cite{kearns2002near}.
+
+\subsection{Q-Learning}
+\label{q_learning}
+\subsubsection{What is Q-Learning?} 
+The basic concept behind Q-learning is that we have a representation of the environmental states $s \in S$ and actions $a \in A$, and an agent is trying to learn the value of each of these actions in each of these states. The agent maintains a table $Q[s,a]$ and at each state $s$ tries to choose the action $a$ which maximizes the function $Q(s,a)$. The formal definition of the $Q$ function is given as follows:
+\begin{equation} \label{q_function}
+Q(s,a) = r(s,a) + \gamma \max_{a'}(Q(s',a'))
+\end{equation}
+where,\\
+$r(s,a)$ is the immediate reward,\\
+$\gamma$ is the relative value of the delayed Vs. immediate reward, also known as \textit{discount factor} $ \gamma \in [0,1]$,\\
+$s'$ is the new state after action $a$ is taken in state $s$,\\
+$a,a'$ are the actions in state $s$ and $s'$ respectively.\\
+The selected action $\pi(s) = \argmax_a Q(s,a)$.
+
+
+\subsubsection{The need of learning Q values.}
+\subsubsection{Examples}
+
 
 \section{Introduction to GPs} % Main chapter title
 \label{introToGPs} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+\subsection{Gaussian Processes for Machine Learning}
 \subsection{Use of GPs in Q learning}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -304,13 +395,13 @@ A Markov Decision Processes (MDP)~\cite{puterman2014markov} is defined by a tupl
 
 Generally the agent does not know the reward it will receive after making a transition nor does it know the next state it will land in. The agent learns these parameters through interactions with the environment which is subsequently used to plan an optimal policy to earn the maximum expected reward, \ie, $\pi^{*}:S \rightarrow A$.
 
-RL algorithms are broadly classified into \emph{model-free} learning and \emph{model-based} learning. Approaches that explicitly learn transition dynamics and/or reward dynamics of an environment are known as model-based learning \cite{brafman2002r,kearns2002near}. The learned transition and reward dynamics can then be used to find the optimal policy using, for example, policy iteration or value iteration~\cite{sutton1998reinforcement} which are often referred to as \emph{planners}. In contrast, Strehl et al.~\cite{strehl2006pac} presented a model-free algorithm wherein the agent directly learns the value function and obtains the optimal policy. In this paper, we focus on model-based approaches and use GP regression to learn the transition dynamics. 
+RL algorithms are broadly classified into \emph{model-free} learning and \emph{model-based} learning as seen in section \ref{rl}. Approaches that explicitly learn transition dynamics and/or reward dynamics of an environment are known as model-based learning \cite{brafman2002r,kearns2002near}. The learned transition and reward dynamics can then be used to find the optimal policy using, for example, policy iteration or value iteration~\cite{sutton1998reinforcement} which are often referred to as \emph{planners}. In contrast, Strehl et al.~\cite{strehl2006pac} presented a model-free algorithm wherein the agent directly learns the value function and obtains the optimal policy. In this paper, we focus on model-based approaches and use GP regression to learn the transition dynamics. 
 
 Rasmussen and Kuss~\cite{rasmussen2003gaussian} showed how to use GPs for carrying out model-based RL. They assumed that the reward dynamics are known and the transition and value function was modeled as a GP. We use the same assumption for ease of exposition. However, assuming reward dynamics to be known is not a critical requirement. In fact, reward dynamics can also be easily be modeled as GPs.
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=1\columnwidth]{gp-mfrl.eps}
+	\includegraphics[width=8cm]{gp-mfrl.eps}
 	\caption {Overview of the GP-MFRL algorithm }
    \label{fig:gp_mfrl_system}
 \end{figure}

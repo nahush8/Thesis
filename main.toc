@@ -9,6 +9,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Approaches to solve sequential decision making}{2}
 \contentsline {subsection}{\numberline {2.1.2}Why Learning?}{3}
 \contentsline {subsection}{\numberline {2.1.3}Online Vs Off-line Learning}{3}
+\contentsline {subsection}{\numberline {2.1.4}Rewards, and how to assign them ?}{4}
 \contentsline {section}{\numberline {2.2}Markov Decision Processes}{4}
 \contentsline {section}{\numberline {2.3}Reinforcement Learning}{4}
 \contentsline {subsection}{\numberline {2.3.1}The need of learning Q values}{4}
@@ -26,6 +27,7 @@
 \contentsline {section}{\numberline {4.4}Simulation Results}{11}
 \contentsline {subsection}{\numberline {4.4.1}Representative simulations}{13}
 \contentsline {subsection}{\numberline {4.4.2}Effect of fidelity on the number of samples.}{14}
-\contentsline {subsection}{\numberline {4.4.3}Effect of the confidence parameters.}{14}
-\contentsline {subsection}{\numberline {4.4.4}Comparison with R-max MFRL}{17}
-\contentsline {chapter}{\numberline {5}Bridge Inspection}{19}
+\contentsline {subsection}{\numberline {4.4.3}Effect of the confidence parameters.}{16}
+\contentsline {subsection}{\numberline {4.4.4}Comparison with R-max MFRL}{16}
+\contentsline {section}{\numberline {4.5}Conclusion}{16}
+\contentsline {chapter}{\numberline {5}Bridge Inspection}{18}
