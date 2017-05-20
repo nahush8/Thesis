@@ -258,6 +258,7 @@ The reward functions determines the reward obtained by the agent for being in a 
 A policy for an MDP is a function which gives an action $a \in A$ as an output for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to try to optimize its behavior in the environment modeled as an MDP. \textit{Optimality} is dependent on what exactly is being optimized? What is the goal of the agent? {\color{red} Add Bellman equation and briefly describe value function etc.} 
 
 \subsection{Solving MDPs}
+\label{bellman}
 As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based {\color{red} Add reference to RL section} algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation. {\color{red} Add Bellman equation and its reference}\par 
 In Model-Free {\color{red} Add reference to RL section} algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
 To directly compute the value functions for the state-action pairs when the model of the environment is not available or to determine the model by interacting with the environment in order to maximize the performance, the agent needs to posses artificial intelligence. We will discuss this branch of machine learning the next section (section \ref{rl}).
@@ -307,7 +308,6 @@ The on-line algorithms such as Q-Learning guarantee convergence if the approxima
 Given a state $s$ and an action $a$, the probability of going to the next state $s'$ is given by the transition function $T(s,a,a')$. The reward obtained by taking an action $a$ in state $s$ is given by the reward function $R(s,a)$. $T(s,a,s')$ and $R(s,a)$ can be learned and be used during the further runs in order to improve the convergence. It is expected that, during the subsequent runs of the algorithm, the model should already be sufficiently learned to speed up convergence. Extensive amount of computation is required in model-based algorithms. A few examples of model-based reinforcement learning algorithms are;  $R$-$MAX$ \cite{brafman2002r} and $E^3$ \cite{kearns2002near}.
 
 \subsection{Q-Learning}
-\label{q_learning}
 \subsubsection{What is Q-Learning?} 
 The basic concept behind Q-learning is that we have a representation of the environmental states $s \in S$ and actions $a \in A$, and an agent is trying to learn the value of each of these actions in each of these states. The agent maintains a table $Q[s,a]$ and at each state $s$ tries to choose the action $a$ which maximizes the function $Q(s,a)$. The formal definition of the $Q$ function is given as follows:
 \begin{equation} \label{q_function}
@@ -318,12 +318,44 @@ $r(s,a)$ is the immediate reward,\\
 $\gamma$ is the relative value of the delayed Vs. immediate reward, also known as \textit{discount factor} $ \gamma \in [0,1]$,\\
 $s'$ is the new state after action $a$ is taken in state $s$,\\
 $a,a'$ are the actions in state $s$ and $s'$ respectively.\\
-The selected action $\pi(s) = \argmax_a Q(s,a)$.
-
+The selected action $\pi(s) = \arg\max_a Q(s,a)$.\\
+\pagebreak
+\subsection{Q-Learning Algorithm}
+\begin{algorithm}
+\SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
+\Input{$S$ is a set of states\\$A$ is a set of action\\$\gamma$ is the discount factor\\ $\alpha$ is the learning rate or step size ($\alpha \in (0,1)$)}
+\local{Store the whole $Q$ matrix $Q[S,A]$,\\previous state $s$\\previous action $a$,\\next state $s'$}
+\Init{Initialize $Q[S,A]$ arbitrarily/Zero}
+\While{Termination condition not reached}
+{Choose an action $a$ in the current state $s$ based on the current $Q$-value estimates.\\
+Perform the action $a$ in the state $s$ and observe the current reward $r$ and the next state $s'$.\\
+Update $Q(s,a) := Q(s,a) + \alpha [r(s,a) + \gamma \max_{a'}Q(s',a') - Q(s,a)]$:
+}
+\caption{Q-Learning Algorithm}\label{q_learning}
+\end{algorithm}
+The update equation given in algorithm \ref{q_learning} updates the $Q$-value of the last state-action pair (s,a) with respect to the observed next state $s'$ and the reward $r$ with a learning rate parameter $\alpha \in (0,1)$. Recalling Bellman update equation from section \ref{bellman}, we can see that updated $Q$-value is the expected sum of the reward and discounted value of the next state. Unlike a general Bellman update equation, we are not marginalizing over all possible next states, since we have only observed one state here along with the reward for a particular state-action pair.\par 
+However, we can control the parameter $\alpha$, which is the learning rate so as to allow the Q-value to change slightly from its old estimate to a new estimate in the direction of the observed state and reward.
 
 \subsubsection{The need of learning Q values.}
-\subsubsection{Examples}
+Consider an agent that has to navigate through a grid given in the figure \ref{fig:gridworld_ex}. The walls in the grid block the agent's path. The actions taken by the agent are noisy $\ie$  $80\%$ of the time, the action North takes the agent North if there's no wall, $10\%$ of the time action North takes the agent West, and $10\%$ of the times to East. Each step taken by the agent has a small negative reward say $-0.25$. A reward of $+1$ or $-1$ is given at the states shown in figure \ref{fig:gridworld_ex}. The goal of the agent is to maximize the sum of the rewards. \par 
+This problem can be solved using value iteration where the Bellman equations {\color{red} Reference the equation here} characterize the optimal values. The agent has to store the Q values for each state-action pair ($Q(s,a)$). The space required to store the $Q$-table is $S \times A$. In this example, the number of states are $11$ and number of possible actions are $4$. The efficiency of recursive Bellman update is $O(S^2)$. Imagine when the state space becomes larger and the time complexity increases with the square of number of states. A naive Q-Learning approach wouldn't be able to scale up to give faster solutions as the problem space grows. We will see that in the following scenario.
 
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{gridworld.pdf}
+	\caption{An example gridlworld with stochastic actions}
+   \label{fig:gridworld_ex}
+\end{figure}
+
+\subsubsection{Learning Laser data and space complexity!}
+Consider the following example. A robot (represented in green) with $6$ laser sensors is trying to navigate in an environment without colliding with obstacles of different sizes which are moving with different speeds. (The white obstacles are moving at slower speeds whereas the orange obstacle moves faster).
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{gp_laser.pdf}
+	\caption{Navigation with perception in the loop}
+   \label{fig:gp_laser}
+\end{figure}
+The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. In terms of space and time complexity to learn the $Q[S,A]$ and eventually an optimal policy, this state space is too large for a naive Q-Learning algorithm to achieve faster convergence. As we have seen in section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. What could be done to approximate and better estimate all the $Q[S,A]$ values based on the observed set of $Q$ values?
 
 \section{Introduction to GPs} % Main chapter title
 \label{introToGPs} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}

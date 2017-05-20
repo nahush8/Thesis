@@ -1,20 +1,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A Simplified Reinforcement Learning Model}}{6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An example gridlworld with stochastic actions}}{10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Navigation with perception in the loop}}{10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces MFRL framework: First simulator captures only gridworld movements of a point robot while second simulator has more fidelity using a physics simulator. Control can switch back and forth between simulators and real environment which is essentially the third simulator in the multi-fidelity simulator chain.}}{7}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Overview of the GP-MFRL algorithm }}{8}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The environment setup for a multi-fidelity simulator chain. The simple gridworld environment has two wall obstacles whereas the gazebo environment has four wall obstacles as shown.}}{11}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The figure represents the samples collected in each level of simulator for a $21 \times 21$ grid in a simple grid-world and Gazebo environments. $\Psi $ and $\psi $ were kept 0.4 and $0.1$}}{13}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{13}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{13}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{14}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{14}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{14}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after the algorithm has converged. Walls A and B are only present in the grid-world simulator, whereas all four walls are present in the Gazebo simulator.}}{14}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }}{15}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Ratio of samples gathered in the second simulator to the total samples gathered increases with inaccuracy in the first simulator. The reference line depicts the average number of samples gathered over $10$ runs when only Gazebo simulator was present.}}{15}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ratio of samples gathered in second simulator vs. total samples gathered as we change the threshold or confidence parameters of the two simulators.}}{16}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}}{17}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MFRL framework: First simulator captures only gridworld movements of a point robot while second simulator has more fidelity using a physics simulator. Control can switch back and forth between simulators and real environment which is essentially the third simulator in the multi-fidelity simulator chain.}}{14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Overview of the GP-MFRL algorithm }}{15}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The environment setup for a multi-fidelity simulator chain. The simple gridworld environment has two wall obstacles whereas the gazebo environment has four wall obstacles as shown.}}{18}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The figure represents the samples collected in each level of simulator for a $21 \times 21$ grid in a simple grid-world and Gazebo environments. $\Psi $ and $\psi $ were kept 0.4 and $0.1$}}{20}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{20}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{21}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{21}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after the algorithm has converged. Walls A and B are only present in the grid-world simulator, whereas all four walls are present in the Gazebo simulator.}}{21}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }}{22}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Ratio of samples gathered in the second simulator to the total samples gathered increases with inaccuracy in the first simulator. The reference line depicts the average number of samples gathered over $10$ runs when only Gazebo simulator was present.}}{22}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ratio of samples gathered in second simulator vs. total samples gathered as we change the threshold or confidence parameters of the two simulators.}}{23}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}}{24}
 \addvspace {10\p@ }

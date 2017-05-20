@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.28)  16 MAY 2017 08:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.28)  19 MAY 2017 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -137,6 +137,14 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen116
 \Gin@req@width=\dimen117
 )
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count101
@@ -177,19 +185,11 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
-Excluding comment 'comment')
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-(./algorithm2e.sty
+Excluding comment 'comment') (./algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count106
- (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip53
@@ -241,7 +241,9 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count109
 \algocf@algoframe=\box36
 \algocf@algobox=\box37
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+)
+\c@mydef=\count110
+ (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2014/01/20 v4.03 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
@@ -250,7 +252,7 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
-\XKV@depth=\count110
+\XKV@depth=\count111
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/mfirstuc.sty
@@ -261,9 +263,9 @@ Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count111
+\et@xins=\count112
 )
-\etb@tempcnta=\count112
+\etb@tempcnta=\count113
 )
 \@glsmfirst=\toks24
 \@glsmrest=\toks25
@@ -279,7 +281,7 @@ Package: datatool-base 2013/09/06 v2.18 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count113
+\c@su@anzahl=\count114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2013/08/29 v2.17 (NLCT)
@@ -290,19 +292,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count114
+\actioncount=\count115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count115
-\FP@xia=\count116
-\FP@xib=\count117
-\FP@xfa=\count118
-\FP@xfb=\count119
-\FP@rega=\count120
-\FP@regb=\count121
-\FP@regs=\count122
-\FP@times=\count123
+\FP@xs=\count116
+\FP@xia=\count117
+\FP@xib=\count118
+\FP@xfa=\count119
+\FP@xfb=\count120
+\FP@rega=\count121
+\FP@regb=\count122
+\FP@regs=\count123
+\FP@times=\count124
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -321,7 +323,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count124
+\FPseed=\count125
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -333,20 +335,20 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks26
-\@dtl@tmpcount=\count125
+\@dtl@tmpcount=\count126
 \dtl@tmplength=\skip71
-\dtl@sortresult=\count126
-\@dtl@numgrpsepcount=\count127
-\@dtl@datatype=\count128
-\dtl@codeA=\count129
-\dtl@codeB=\count130
-\@dtl@foreach@level=\count131
+\dtl@sortresult=\count127
+\@dtl@numgrpsepcount=\count128
+\@dtl@datatype=\count129
+\dtl@codeA=\count130
+\dtl@codeB=\count131
+\@dtl@foreach@level=\count132
 )
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
 307.sty
 Package: glossaries-compatible-307 2013/11/14 v4.0 (NLCT)
 )
-\gls@level=\count132
+\gls@level=\count133
 \@gls@tmpb=\toks27
 \gls@tmplen=\skip72
 \glswrite=\write4
@@ -370,16 +372,16 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip75
 \LTpre=\skip76
 \LTpost=\skip77
-\LTchunksize=\count133
+\LTchunksize=\count134
 \LTcapwidth=\dimen128
 \LT@head=\box38
 \LT@firsthead=\box39
 \LT@foot=\box40
 \LT@lastfoot=\box41
-\LT@cols=\count134
-\LT@rows=\count135
-\c@LT@tables=\count136
-\c@LT@chunks=\count137
+\LT@cols=\count135
+\LT@rows=\count136
+\c@LT@tables=\count137
+\c@LT@chunks=\count138
 \LT@p@ftn=\toks32
 )
 \glsdescwidth=\skip78
@@ -390,7 +392,7 @@ Package: glossary-super 2013/11/14 v4.0 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count138
+\c@tracingst=\count139
 \ST@wd=\dimen129
 \ST@rightskip=\skip80
 \ST@leftskip=\skip81
@@ -414,39 +416,39 @@ Package: glossary-tree 2013/11/14 v4.0 (NLCT)
 \glo@main@file=\write5
 \openout5 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 47.
+Package glossaries Info: Writing glossary file main.glo on input line 49.
 \glo@acronym@file=\write6
 \openout6 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 47.
+Package glossaries Info: Writing glossary file main.acn on input line 49.
 
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count139
+\scratchcounter=\count140
 \scratchdimen=\dimen140
 \scratchbox=\box43
-\nofMPsegments=\count140
-\nofMParguments=\count141
+\nofMPsegments=\count141
+\nofMParguments=\count142
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count142
+\MPscratchCnt=\count143
 \MPscratchDim=\dimen141
-\MPnumerator=\count143
-\makeMPintoPDFobject=\count144
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -516,13 +518,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [4] (./main.lof)
+ [4] (./main.lof [5
+
+])
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [5
-
-] [6] (./main.lot)
+ [6] (./main.lot)
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
@@ -538,414 +540,425 @@ Chapter 1.
 Chapter 2.
 
 LaTeX Warning: Citation `littman1996algorithms' on page 2 undefined on input li
-ne 203.
+ne 205.
 
 
 LaTeX Warning: Citation `wiering2012reinforcement' on page 2 undefined on input
- line 206.
+ line 208.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 208.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 210.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
  [2
 
 ] [3]
 
 LaTeX Warning: Citation `puterman2014markov' on page 4 undefined on input line 
-230.
+232.
 
 [4]
+
+LaTeX Warning: Citation `kaelbling1996reinforcement' on page 5 undefined on inp
+ut line 271.
+
+[5] <images/rl_model.pdf, id=53, 432.61626pt x 192.72pt>
+File: images/rl_model.pdf Graphic file (type pdf)
+
+<use images/rl_model.pdf>
+Package pdftex.def Info: images/rl_model.pdf used on input line 278.
+(pdftex.def)             Requested size: 227.62204pt x 101.40005pt.
+
+Overfull \hbox (4.89159pt too wide) in paragraph at lines 275--284
+\OT1/cmr/m/n/12 A sim-pli-fied Re-in-force-ment Learn-ing Model can be rep-re-s
+ented as shown in fig-ure 2.1[] Formally,
+ []
+
+
+LaTeX Warning: Citation `berry1985bandit' on page 6 undefined on input line 286
+.
+
+[6 <./images/rl_model.pdf>]
+
+LaTeX Warning: Citation `kaelbling1996reinforcement' on page 7 undefined on inp
+ut line 297.
+
+
+LaTeX Warning: Citation `strehl2006pac' on page 7 undefined on input line 304.
+
+
+LaTeX Warning: Citation `brafman2002r' on page 7 undefined on input line 308.
+
+
+LaTeX Warning: Citation `kearns2002near' on page 7 undefined on input line 308.
+
+
+[7] [8] [9] <images/gridworld.pdf, id=71, 387.046pt x 264.99pt>
+File: images/gridworld.pdf Graphic file (type pdf)
+
+<use images/gridworld.pdf>
+Package pdftex.def Info: images/gridworld.pdf used on input line 345.
+(pdftex.def)             Requested size: 227.62204pt x 155.8454pt.
+
+<images/gp_laser.pdf, id=72, 800.59097pt x 563.70598pt>
+File: images/gp_laser.pdf Graphic file (type pdf)
+
+<use images/gp_laser.pdf>
+Package pdftex.def Info: images/gp_laser.pdf used on input line 354.
+(pdftex.def)             Requested size: 227.62204pt x 160.2708pt.
+ [10 <./images/gridworld.pdf> <./images/gp_laser.pdf
+
+pdfTeX warning: pdflatex (file ./images/gp_laser.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>] [11]
 Chapter 3.
-[5
+[12
 
 ]
 Chapter 4.
 
-LaTeX Warning: Citation `cutler2014reinforcement' on page 6 undefined on input 
-line 286.
+LaTeX Warning: Citation `cutler2014reinforcement' on page 13 undefined on input
+ line 409.
 
 Package epstopdf Info: Source file: <images/mf.eps>
 (epstopdf)                    date: 2017-05-15 22:21:52
 (epstopdf)                    size: 7310017 bytes
 (epstopdf)             Output file: <images/mf-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:54
+(epstopdf)                    size: 190512 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/mf-eps-converted-to
 .pdf images/mf.eps>
-(epstopdf)             \includegraphics on input line 290.
-runsystem(repstopdf --outfile=images/mf-eps-converted-to.pdf images/mf.eps)...e
-xecuted safely (allowed).
-
-Package epstopdf Info: Result file: <images/mf-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:54
-(epstopdf)                    size: 190512 bytes.
-<images/mf-eps-converted-to.pdf, id=50, 580.1675pt x 144.54pt>
+(epstopdf)             \includegraphics on input line 413.
+Package epstopdf Info: Output file is already uptodate.
+<images/mf-eps-converted-to.pdf, id=90, 580.1675pt x 144.54pt>
 File: images/mf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/mf-eps-converted-to.pdf>
-Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 290.
+Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 413.
 
 (pdftex.def)             Requested size: 469.75499pt x 117.03262pt.
 
 
-LaTeX Warning: Citation `taylor2007transfer' on page 6 undefined on input line 
-295.
+LaTeX Warning: Citation `taylor2007transfer' on page 13 undefined on input line
+ 418.
 
 
-LaTeX Warning: Citation `li2011knows' on page 6 undefined on input line 297.
+LaTeX Warning: Citation `li2011knows' on page 13 undefined on input line 420.
 
-[6
+[13
 
 ]
 
-LaTeX Warning: Citation `Dames2015' on page 7 undefined on input line 299.
+LaTeX Warning: Citation `Dames2015' on page 14 undefined on input line 422.
 
 
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 7 undefined on input li
-ne 299.
+LaTeX Warning: Citation `rasmussen2003gaussian' on page 14 undefined on input l
+ine 422.
 
 
-LaTeX Warning: Citation `deisenroth2010efficient' on page 7 undefined on input 
-line 299.
+LaTeX Warning: Citation `deisenroth2010efficient' on page 14 undefined on input
+ line 422.
 
 
-LaTeX Warning: Citation `engel2005reinforcement' on page 7 undefined on input l
-ine 299.
+LaTeX Warning: Citation `engel2005reinforcement' on page 14 undefined on input 
+line 422.
 
 
-LaTeX Warning: Citation `puterman2014markov' on page 7 undefined on input line 
-303.
+LaTeX Warning: Citation `puterman2014markov' on page 14 undefined on input line
+ 426.
 
 
-LaTeX Warning: Citation `brafman2002r' on page 7 undefined on input line 307.
+LaTeX Warning: Citation `brafman2002r' on page 14 undefined on input line 430.
 
 
-LaTeX Warning: Citation `kearns2002near' on page 7 undefined on input line 307.
+LaTeX Warning: Citation `kearns2002near' on page 14 undefined on input line 430
+.
 
 
+LaTeX Warning: Citation `sutton1998reinforcement' on page 14 undefined on input
+ line 430.
 
-LaTeX Warning: Citation `sutton1998reinforcement' on page 7 undefined on input 
-line 307.
+
+LaTeX Warning: Citation `strehl2006pac' on page 14 undefined on input line 430.
 
 
-LaTeX Warning: Citation `strehl2006pac' on page 7 undefined on input line 307.
+[14 <./images/mf-eps-converted-to.pdf>]
 
-[7 <./images/mf-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 8 undefined on input li
-ne 309.
+LaTeX Warning: Citation `rasmussen2003gaussian' on page 15 undefined on input l
+ine 432.
 
 Package epstopdf Info: Source file: <images/gp-mfrl.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 85212 bytes
 (epstopdf)             Output file: <images/gp-mfrl-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:54
+(epstopdf)                    size: 24678 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gp-mfrl-eps-convert
 ed-to.pdf images/gp-mfrl.eps>
-(epstopdf)             \includegraphics on input line 313.
-runsystem(repstopdf --outfile=images/gp-mfrl-eps-converted-to.pdf images/gp-mfr
-l.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <images/gp-mfrl-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:54
-(epstopdf)                    size: 24678 bytes.
-<images/gp-mfrl-eps-converted-to.pdf, id=70, 598.235pt x 478.78876pt>
+(epstopdf)             \includegraphics on input line 436.
+Package epstopdf Info: Output file is already uptodate.
+<images/gp-mfrl-eps-converted-to.pdf, id=106, 598.235pt x 478.78876pt>
 File: images/gp-mfrl-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/gp-mfrl-eps-converted-to.pdf>
 Package pdftex.def Info: images/gp-mfrl-eps-converted-to.pdf used on input line
- 313.
-(pdftex.def)             Requested size: 469.75499pt x 375.96689pt.
- [8 <./images/gp-mfrl-eps-converted-to.pdf>] [9]
+ 436.
+(pdftex.def)             Requested size: 227.62204pt x 182.1754pt.
+ [15 <./images/gp-mfrl-eps-converted-to.pdf>]
 
-LaTeX Warning: Citation `abbeel2006using' on page 10 undefined on input line 35
-1.
-
-
-LaTeX Warning: Citation `taylor2007transfer' on page 10 undefined on input line
- 351.
+LaTeX Warning: Citation `abbeel2006using' on page 16 undefined on input line 47
+4.
 
 
-LaTeX Warning: Citation `cutler2014reinforcement' on page 10 undefined on input
- line 351.
+LaTeX Warning: Citation `taylor2007transfer' on page 16 undefined on input line
+ 474.
 
 
-LaTeX Warning: Citation `sutton1998reinforcement' on page 10 undefined on input
- line 354.
-
-[10]
-
-LaTeX Warning: Float too large for page by 136.42699pt on input line 430.
+LaTeX Warning: Citation `cutler2014reinforcement' on page 16 undefined on input
+ line 474.
 
 
-LaTeX Warning: Citation `koenig2004design' on page 11 undefined on input line 4
-35.
+LaTeX Warning: Citation `sutton1998reinforcement' on page 16 undefined on input
+ line 477.
+
+[16] [17]
+
+LaTeX Warning: Float too large for page by 136.42699pt on input line 553.
 
 
-LaTeX Warning: Citation `quigley2009ros' on page 11 undefined on input line 435
+LaTeX Warning: Citation `koenig2004design' on page 18 undefined on input line 5
+58.
+
+
+LaTeX Warning: Citation `quigley2009ros' on page 18 undefined on input line 558
 .
 
 
-LaTeX Warning: Citation `scikit-learn' on page 11 undefined on input line 437.
+LaTeX Warning: Citation `scikit-learn' on page 18 undefined on input line 560.
 
 Package epstopdf Info: Source file: <images/env.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 550429 bytes
 (epstopdf)             Output file: <images/env-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:55
+(epstopdf)                    size: 103364 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/env-eps-converted-t
 o.pdf images/env.eps>
-(epstopdf)             \includegraphics on input line 441.
-runsystem(repstopdf --outfile=images/env-eps-converted-to.pdf images/env.eps)..
-.executed safely (allowed).
-
-Package epstopdf Info: Result file: <images/env-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:55
-(epstopdf)                    size: 103364 bytes.
-<images/env-eps-converted-to.pdf, id=106, 595.22375pt x 252.945pt>
+(epstopdf)             \includegraphics on input line 564.
+Package epstopdf Info: Output file is already uptodate.
+<images/env-eps-converted-to.pdf, id=143, 595.22375pt x 252.945pt>
 File: images/env-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/env-eps-converted-to.pdf>
-Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 441
+Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 564
 .
 (pdftex.def)             Requested size: 469.75499pt x 199.62366pt.
 Package epstopdf Info: Source file: <images/epoch.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 15366 bytes
 (epstopdf)             Output file: <images/epoch-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:55
+(epstopdf)                    size: 6136 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/epoch-eps-converted
 -to.pdf images/epoch.eps>
-(epstopdf)             \includegraphics on input line 449.
-runsystem(repstopdf --outfile=images/epoch-eps-converted-to.pdf images/epoch.ep
-s)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 572.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/epoch-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:55
-(epstopdf)                    size: 6136 bytes.
-
-<images/epoch-eps-converted-to.pdf, id=107, 593.21625pt x 524.96124pt>
+<images/epoch-eps-converted-to.pdf, id=144, 593.21625pt x 524.96124pt>
 File: images/epoch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/epoch-eps-converted-to.pdf>
-Package pdftex.def Info: images/epoch-eps-converted-to.pdf used on input line 4
-49.
+Package pdftex.def Info: images/epoch-eps-converted-to.pdf used on input line 5
+72.
 (pdftex.def)             Requested size: 170.71652pt x 151.07336pt.
- [11 <./images/env-eps-converted-to.pdf>] [12]
+ [18 <./images/env-eps-converted-to.pdf>] [19]
 Package epstopdf Info: Source file: <images/heat_init_same.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 21355 bytes
 (epstopdf)             Output file: <images/heat_init_same-eps-converted-to.pdf
 >
+(epstopdf)                    date: 2017-05-16 08:20:56
+(epstopdf)                    size: 23470 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_same-eps-
 converted-to.pdf images/heat_init_same.eps>
-(epstopdf)             \includegraphics on input line 463.
-runsystem(repstopdf --outfile=images/heat_init_same-eps-converted-to.pdf images
-/heat_init_same.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 586.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/heat_init_same-eps-converted-to.pdf
->
-(epstopdf)                    date: 2017-05-16 08:20:56
-(epstopdf)                    size: 23470 bytes.
-
-<images/heat_init_same-eps-converted-to.pdf, id=125, 513.92pt x 423.5825pt>
+<images/heat_init_same-eps-converted-to.pdf, id=160, 513.92pt x 423.5825pt>
 File: images/heat_init_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_init_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_same-eps-converted-to.pdf used on inp
-ut line 463.
+ut line 586.
 (pdftex.def)             Requested size: 113.81102pt x 93.80244pt.
 Package epstopdf Info: Source file: <images/heat_same.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 24054 bytes
 (epstopdf)             Output file: <images/heat_same-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:56
+(epstopdf)                    size: 25220 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_same-eps-conve
 rted-to.pdf images/heat_same.eps>
-(epstopdf)             \includegraphics on input line 464.
-runsystem(repstopdf --outfile=images/heat_same-eps-converted-to.pdf images/heat
-_same.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 587.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/heat_same-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:56
-(epstopdf)                    size: 25220 bytes.
-
-<images/heat_same-eps-converted-to.pdf, id=126, 518.93875pt x 422.57875pt>
+<images/heat_same-eps-converted-to.pdf, id=161, 518.93875pt x 422.57875pt>
 File: images/heat_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_same-eps-converted-to.pdf used on input li
-ne 464.
+ne 587.
 (pdftex.def)             Requested size: 113.81102pt x 92.67744pt.
 Package epstopdf Info: Source file: <images/heat_init_opposite.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 21629 bytes
 (epstopdf)             Output file: <images/heat_init_opposite-eps-converted-to
 .pdf>
+(epstopdf)                    date: 2017-05-16 08:20:56
+(epstopdf)                    size: 23411 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_opposite-
 eps-converted-to.pdf images/heat_init_opposite.eps>
-(epstopdf)             \includegraphics on input line 471.
-runsystem(repstopdf --outfile=images/heat_init_opposite-eps-converted-to.pdf im
-ages/heat_init_opposite.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 594.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/heat_init_opposite-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:56
-(epstopdf)                    size: 23411 bytes.
-
-<images/heat_init_opposite-eps-converted-to.pdf, id=127, 508.90125pt x 423.5825
+<images/heat_init_opposite-eps-converted-to.pdf, id=162, 508.90125pt x 423.5825
 pt>
 File: images/heat_init_opposite-eps-converted-to.pdf Graphic file (type pdf)
  <use images/heat_init_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_opposite-eps-converted-to.pdf used on
- input line 471.
+ input line 594.
 (pdftex.def)             Requested size: 113.81102pt x 94.7267pt.
 Package epstopdf Info: Source file: <images/heat_opposite.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 25740 bytes
 (epstopdf)             Output file: <images/heat_opposite-eps-converted-to.pdf>
 
+(epstopdf)                    date: 2017-05-16 08:20:57
+(epstopdf)                    size: 75576 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_opposite-eps-c
 onverted-to.pdf images/heat_opposite.eps>
-(epstopdf)             \includegraphics on input line 472.
-runsystem(repstopdf --outfile=images/heat_opposite-eps-converted-to.pdf images/
-heat_opposite.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 595.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/heat_opposite-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2017-05-16 08:20:57
-(epstopdf)                    size: 75576 bytes.
-
-<images/heat_opposite-eps-converted-to.pdf, id=128, 517.935pt x 426.59375pt>
+<images/heat_opposite-eps-converted-to.pdf, id=163, 517.935pt x 426.59375pt>
 File: images/heat_opposite-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_opposite-eps-converted-to.pdf used on inpu
-t line 472.
+t line 595.
 (pdftex.def)             Requested size: 113.81102pt x 93.74025pt.
 Package epstopdf Info: Source file: <images/heatmap_new.eps>
 (epstopdf)                    date: 2017-05-15 22:28:54
 (epstopdf)                    size: 20779 bytes
 (epstopdf)             Output file: <images/heatmap_new-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:57
+(epstopdf)                    size: 22108 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heatmap_new-eps-con
 verted-to.pdf images/heatmap_new.eps>
-(epstopdf)             \includegraphics on input line 480.
-runsystem(repstopdf --outfile=images/heatmap_new-eps-converted-to.pdf images/he
-atmap_new.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 603.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/heatmap_new-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:57
-(epstopdf)                    size: 22108 bytes.
-
-<images/heatmap_new-eps-converted-to.pdf, id=129, 476.78125pt x 426.59375pt>
+<images/heatmap_new-eps-converted-to.pdf, id=164, 476.78125pt x 426.59375pt>
 File: images/heatmap_new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heatmap_new-eps-converted-to.pdf>
 Package pdftex.def Info: images/heatmap_new-eps-converted-to.pdf used on input 
-line 480.
+line 603.
 (pdftex.def)             Requested size: 170.71652pt x 152.74695pt.
- [13 <./images/epoch-eps-converted-to.pdf> <./images/heat_init_same-eps-convert
-ed-to.pdf> <./images/heat_same-eps-converted-to.pdf>] [14 <./images/heat_init_o
+ [20 <./images/epoch-eps-converted-to.pdf> <./images/heat_init_same-eps-convert
+ed-to.pdf> <./images/heat_same-eps-converted-to.pdf>] [21 <./images/heat_init_o
 pposite-eps-converted-to.pdf> <./images/heat_opposite-eps-converted-to.pdf> <./
 images/heatmap_new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/ratio.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 20680 bytes
 (epstopdf)             Output file: <images/ratio-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:57
+(epstopdf)                    size: 7076 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/ratio-eps-converted
 -to.pdf images/ratio.eps>
-(epstopdf)             \includegraphics on input line 495.
-runsystem(repstopdf --outfile=images/ratio-eps-converted-to.pdf images/ratio.ep
-s)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <images/ratio-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:57
-(epstopdf)                    size: 7076 bytes.
- <images/ratio-eps-converted-to.pdf, id=157, 896.34875pt x 554.07pt>
+(epstopdf)             \includegraphics on input line 618.
+Package epstopdf Info: Output file is already uptodate.
+ <images/ratio-eps-converted-to.pdf, id=193, 896.34875pt x 554.07pt>
 File: images/ratio-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/ratio-eps-converted-to.pdf>
-Package pdftex.def Info: images/ratio-eps-converted-to.pdf used on input line 4
-95.
+Package pdftex.def Info: images/ratio-eps-converted-to.pdf used on input line 6
+18.
 (pdftex.def)             Requested size: 227.62204pt x 140.6984pt.
 Package epstopdf Info: Source file: <images/samples_gathered_.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 26715 bytes
 (epstopdf)             Output file: <images/samples_gathered_-eps-converted-to.
 pdf>
+(epstopdf)                    date: 2017-05-16 08:20:57
+(epstopdf)                    size: 8109 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/samples_gathered_-e
 ps-converted-to.pdf images/samples_gathered_.eps>
-(epstopdf)             \includegraphics on input line 502.
-runsystem(repstopdf --outfile=images/samples_gathered_-eps-converted-to.pdf ima
-ges/samples_gathered_.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 625.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/samples_gathered_-eps-converted-to.
-pdf>
-(epstopdf)                    date: 2017-05-16 08:20:57
-(epstopdf)                    size: 8109 bytes.
-
-<images/samples_gathered_-eps-converted-to.pdf, id=158, 764.8575pt x 654.445pt>
+<images/samples_gathered_-eps-converted-to.pdf, id=194, 764.8575pt x 654.445pt>
 File: images/samples_gathered_-eps-converted-to.pdf Graphic file (type pdf)
 <use images/samples_gathered_-eps-converted-to.pdf>
 Package pdftex.def Info: images/samples_gathered_-eps-converted-to.pdf used on 
-input line 502.
+input line 625.
 (pdftex.def)             Requested size: 227.62204pt x 194.75722pt.
- [15 <./images/ratio-eps-converted-to.pdf> <./images/samples_gathered_-eps-conv
+ [22 <./images/ratio-eps-converted-to.pdf> <./images/samples_gathered_-eps-conv
 erted-to.pdf>]
 Package epstopdf Info: Source file: <images/thre.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 35582 bytes
 (epstopdf)             Output file: <images/thre-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:58
+(epstopdf)                    size: 10778 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/thre-eps-converted-
 to.pdf images/thre.eps>
-(epstopdf)             \includegraphics on input line 512.
-runsystem(repstopdf --outfile=images/thre-eps-converted-to.pdf images/thre.eps)
-...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 635.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/thre-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:58
-(epstopdf)                    size: 10778 bytes.
-
-<images/thre-eps-converted-to.pdf, id=172, 682.55pt x 572.1375pt>
+<images/thre-eps-converted-to.pdf, id=208, 682.55pt x 572.1375pt>
 File: images/thre-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/thre-eps-converted-to.pdf>
-Package pdftex.def Info: images/thre-eps-converted-to.pdf used on input line 51
-2.
+Package pdftex.def Info: images/thre-eps-converted-to.pdf used on input line 63
+5.
 (pdftex.def)             Requested size: 227.62204pt x 190.79642pt.
 
 
-LaTeX Warning: Citation `cutler2014reinforcement' on page 16 undefined on input
- line 518.
+LaTeX Warning: Citation `cutler2014reinforcement' on page 23 undefined on input
+ line 641.
 
 
-LaTeX Warning: Citation `cutler2014reinforcement' on page 16 undefined on input
- line 518.
+LaTeX Warning: Citation `cutler2014reinforcement' on page 23 undefined on input
+ line 641.
 
 Package epstopdf Info: Source file: <images/reward.eps>
 (epstopdf)                    date: 2017-05-15 22:21:50
 (epstopdf)                    size: 20267 bytes
 (epstopdf)             Output file: <images/reward-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-16 08:20:58
+(epstopdf)                    size: 8145 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/reward-eps-converte
 d-to.pdf images/reward.eps>
-(epstopdf)             \includegraphics on input line 521.
-runsystem(repstopdf --outfile=images/reward-eps-converted-to.pdf images/reward.
-eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <images/reward-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-16 08:20:58
-(epstopdf)                    size: 8145 bytes.
-<images/reward-eps-converted-to.pdf, id=173, 1396.21625pt x 705.63625pt>
+(epstopdf)             \includegraphics on input line 644.
+Package epstopdf Info: Output file is already uptodate.
+<images/reward-eps-converted-to.pdf, id=209, 1396.21625pt x 705.63625pt>
 File: images/reward-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/reward-eps-converted-to.pdf>
 Package pdftex.def Info: images/reward-eps-converted-to.pdf used on input line 
-521.
+644.
 (pdftex.def)             Requested size: 227.62204pt x 115.036pt.
- [16 <./images/thre-eps-converted-to.pdf>] [17 <./images/reward-eps-converted-t
+ [23 <./images/thre-eps-converted-to.pdf>] [24 <./images/reward-eps-converted-t
 o.pdf>]
 Chapter 5.
 Excluding 'comment' comment.
 No file main.bbl.
-[18
+[25
 
 ] (./main.aux)
 
@@ -960,13 +973,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7792 strings out of 494985
- 112479 string characters out of 6180356
- 236457 words of memory out of 5000000
- 10795 multiletter control sequences out of 15000+600000
+ 7828 strings out of 494985
+ 113045 string characters out of 6180356
+ 236623 words of memory out of 5000000
+ 10828 multiletter control sequences out of 15000+600000
  12935 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,21n,38p,1718b,5538s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,21n,38p,1718b,5548s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
@@ -982,10 +995,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on main.pdf (26 pages, 695018 bytes).
+Output written on main.pdf (33 pages, 746769 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 278 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

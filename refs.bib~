@@ -161,22 +161,3 @@
  pages={2825--2830},
  year={2011}
 }
-
-@article{kaelbling1996reinforcement,
-  title={Reinforcement learning: A survey},
-  author={Kaelbling, Leslie Pack and Littman, Michael L and Moore, Andrew W},
-  journal={Journal of artificial intelligence research},
-  volume={4},
-  pages={237--285},
-  year={1996}
-}
-@book{berry1985bandit,
-  title={Bandit problems: sequential allocation of experiments (Monographs on statistics and applied probability)},
-  author={Berry, Donald A and Fristedt, Bert},
-  year={1985},
-  publisher={Springer}
-}
-@article{kuvayevmodel,
-  title={Model-Based Reinforcement Learning},
-  author={Kuvayev, Leonid and Sutton, Richard S}
-}
