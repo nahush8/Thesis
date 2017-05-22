@@ -26,6 +26,8 @@
 \usepackage{color}
 \usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
 
+\usepackage{physics}
+
 \newtheorem{mydef}{Definition}
 \newcommand{\pcomment}[1]{{\color{red}{#1}}}
 \newcommand{\eg}{\textit{e.g.}}
@@ -156,6 +158,8 @@ Grant information goes here ..
 %----------------------------------------------------------------------------------------
 This is a general introduction of the idea
 
+\section{Motivation}
+
 \section{Applications to general scenarios and Challenges}
 This section shall talk about the application and the shortcomings
 
@@ -163,8 +167,7 @@ This section shall talk about the application and the shortcomings
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
-\subsection{Subsection 1}
-Any appropriate subsections.
+
 
 
 %----------------------------------------------------------------------------------------
@@ -357,15 +360,116 @@ Consider the following example. A robot (represented in green) with $6$ laser se
 \end{figure}
 The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. In terms of space and time complexity to learn the $Q[S,A]$ and eventually an optimal policy, this state space is too large for a naive Q-Learning algorithm to achieve faster convergence. As we have seen in section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. What could be done to approximate and better estimate all the $Q[S,A]$ values based on the observed set of $Q$ values?
 
-\section{Introduction to GPs} % Main chapter title
+\section{Introduction to Gaussian Processes (GP)} % Main chapter title
 \label{introToGPs} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+\subsubsection{What are GPs ?}
+Consider a typical example of a prediction problem given in the figure \ref{fig:gp_intro}. Given some noisy observations at a certain values of the variable $x$, what is the best estimate at a new value, $x^*$. We can assume the underlying function $f(x)$ to be some polynomial function and try to select an appropriate regression model to fit the given data. We have numerous possibilities of the function being a quadratic, cubic or even an exponential function. \textit{Gaussian Process Regression} provides a subtle approach in supervised learning in order to learn input-output mappings from empirical data also known as the \textit{training set}. \par 
+
+\begin{figure}[htp]
+	\centering 
+	\includegraphics[width=8cm]{gp_intro.pdf}
+	\caption{Given ten noisy data points (error bars are indicated with vertical lines), we are interested in estimating the value of the eleventh point at $x^* = 1.2$.}
+   \label{fig:gp_intro}
+\end{figure}
+
+A Gaussian Process(GP) is a generalization of the Gaussian Probability Distribution. GPs extend multivariate Gaussian distributions to infinite dimensions. A GP is considered to be a collection of random variables, where any finite subset of which has a joint Gaussian distribution function and a \textit{covariance kernel}. For example, a set of $n$ arbitrary data points $y$ = \{$y_1$,$y_2$, ... $y_n$\} can be considered as a single sample from an $n$-variate Gaussian distribution. It is often assumed that it is a zero mean GP. The relation between the observations is given by the \textit{covariance function/ kernel function}, $k(x,x')$. 
+
+\subsubsection{Kernel Functions}
+A few basic kernels are defined below for input points $x$ and $x'$ :
+\begin{itemize}
+\item Squared-Exponential (SE) : This is a popular choice of a kernel function which is also known as the \textit{Radial Basis Function} kernel (RBF), or the \textit{Gaussian} kernel. It has the following form.
+\begin{equation}
+k(x,x') = {\sigma_f} ^2 \exp{\dfrac{-(x-x')^2}{2l^2}}
+\end{equation}
+where the maximum allowable covariance is defined as ${\sigma_f}^2$. $k(x, x')$
+approaches this maximum when $f(x)$ is nearly perfectly correlated with $f(x')$.
+
+\item Periodic
+The periodic kernel allows one to model functions which repeat themselves exactly. It has the following form.
+\begin{equation}
+k_{Per}(x,x') = {\sigma} ^2 \exp{-\dfrac{2\sin^2(\pi \abs{x-x'}/p)}{l^2}}
+\end{equation}
+
+\item Linear 
+Using a linear kernel in a GP, is equivalent to doing Bayesian linear regression. It has the following form.
+\begin{equation}
+k_{Lin}(x,x') = {\sigma_b} ^2 + {\sigma_v}^2(x-c)(x'-c)
+\end{equation}
+\begin{itemize}
+\item The offset $c$ determines the x-coordinate of the point that all the lines in the posterior go though. The mean will be zero unless noise is added.
+\item The constant variance ${\sigma_b}^2$ determines how far from $0$ the height of the function will be at zero. It is putting a prior to the value of the function instead of specifying the value of the function directly.
+\end{itemize}
+
+\end{itemize}
+
+In all the above kernels, 
+\begin{itemize}
+\item \textbf{Lengthscale} $l$ : The lengthscale $l$ describes how smooth a function is. Small lengthscale value means that function values can change quickly, large values characterize functions that change only slowly. In general, we won't be able to extrapolate more than $l$ units away from your data.
+
+\item \textbf{Signal variance} $\sigma^2$ : The signal variance $\sigma^2$ determines the average distance of your function away from its mean. It describes the variation of function values from their mean.
+\end{itemize}
+
+
+\cite{rasmussen2003gaussian}
+
+\textbf{Kernel Parameters} Each kernel has a number of parameters which are used to specify the precise shape of the covariance function. These are referred to as \textit{hyper-parameters}, since they can be viewed as specifying a distribution over function parameters, instead of being parameters which specify a function directly. 
+An example would be the lengthscale parameter $l$of the RBF kernel, which specifies the width of the kernel and thereby the smoothness of the functions in the model.
+
+\textbf{Stationary and Non-stationary Kernels} The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x − x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
+
+\subsection{Gaussian Process Regression}
+Consider a least-square line fit  $\hat{y} = p_0 + p_1x$. We are specifying two parameters $p_0$ and $p_1$ for the figure \ref{fig:lease_square}. A better fit would be to use a quadratic function say $\hat{y} = p_0 + p_1x + p_2x^2$. In this case, we need $3$ parameters $p_0$, $p_1$ and $p_2$. What if we would like to consider all possible functions without specifying the number of parameters? So in GPs, there are no parameters \ie there are infinitely many parameters. \par
+\begin{figure}[htp]
+	\centering 
+	\includegraphics[width=8cm]{ls_fit.pdf}
+	\caption{To find a function that is consistent over the observed data}
+   \label{fig:lease_square}
+\end{figure}
+
+
+The mathematical foundation of GPs is the multivariate Gaussian distribution. Consider the bivariate normal distribution given in figure \ref{fig:bvnpdf}. The shape of the bell curve is determined by the covariance matrix. If we imagine a horizontal plane slicing the bell curve and if we see a circle, that means the two independent variables are normally distributed meaning their covariance is $0$.\par  
+\begin{figure}[htp]
+	\centering 
+	\includegraphics[width=8cm]{bvnpdf.eps}
+	\caption{A Bivariate Normal Distribution}
+   \label{fig:bvnpdf}
+\end{figure}
+Given a joint probability distribution of the variables $x_1$ and $x_2$ as:
+
+\begin{equation}
+\begin{pmatrix}x_1\\
+x_2\\
+\end{pmatrix} 
+\sim \mathcal{N}\begin{pmatrix} 
+\begin{pmatrix}\mu_1\\
+\mu_2\\
+\end{pmatrix} ,\begin{pmatrix}\sigma_{11} & \sigma_{12}\\
+\sigma_{21} & \sigma_{22}\\
+\end{pmatrix} 
+\end{pmatrix}
+\end{equation}
+
+It is possible to get the conditional probability of $x_1 | x_2$ or vice-versa. In a GP, we can derive the posterior from the prior and the observations; it's just that,  we are talking about the joint probability all the values of the function $f(x)$ for all the values of $x$ within the specified bounds.
+
+To sum it up, the posterior is the joint probability of the outcome of the values of the function out of which some are observed (denoted by $f$) and some are not (denoted by $f^*$). 
+
+\begin{equation}
+\label{equ:f_f*}
+\begin{pmatrix}f\\
+{f^*}_2\\
+\end{pmatrix} 
+\sim \mathcal{N}\begin{pmatrix} 
+\begin{pmatrix}\mu\\
+\mu_*\\
+\end{pmatrix} ,\begin{pmatrix}K & K_*\\
+{K_*}^T & K_{**}\\
+\end{pmatrix} 
+\end{pmatrix}
+\end{equation}
+
+Here, $K$ is the matrix we get by applying the kernel function to the observed values, \ie the similarity between each observed $x$ .$K_*$ represents the similarity of the training values to the test values whose output values are to be estimated. $K_{**}$ gives the similarity of the test values with each other. We are ultimately trying to determine $p(f_*|x_*,x,f)$ where $f$ and $f_*$ are jointly distributed as shown in equation \ref{equ:f_f*}.
+
 \subsection{Gaussian Processes for Machine Learning}
-\subsection{Use of GPs in Q learning}
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
 
 
 \chapter{The GP-Q Algorithm} % Main chapter title
