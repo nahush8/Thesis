@@ -1,9 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Applications to general scenarios and Challenges}{1}
-\contentsline {subsection}{\numberline {1.1.1}Subsection 1}{1}
-\contentsline {section}{\numberline {1.2}Contributions}{1}
-\contentsline {subsection}{\numberline {1.2.1}Subsection 2}{1}
-\contentsline {section}{\numberline {1.3}Organization of the Thesis}{1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}
+\contentsline {section}{\numberline {1.2}Applications to general scenarios and Challenges}{1}
+\contentsline {section}{\numberline {1.3}Contributions}{1}
+\contentsline {subsection}{\numberline {1.3.1}Subsection 2}{1}
+\contentsline {section}{\numberline {1.4}Organization of the Thesis}{1}
 \contentsline {chapter}{\numberline {2}Background}{2}
 \contentsline {section}{\numberline {2.1}Sequential Decision Making}{2}
 \contentsline {subsection}{\numberline {2.1.1}Approaches to solve sequential decision making}{2}
@@ -24,22 +24,27 @@
 \contentsline {subsection}{\numberline {2.3.5}Q-Learning Algorithm}{9}
 \contentsline {subsubsection}{The need of learning Q values.}{9}
 \contentsline {subsubsection}{Learning Laser data and space complexity!}{10}
-\contentsline {section}{\numberline {2.4}Introduction to GPs}{11}
-\contentsline {subsection}{\numberline {2.4.1}Gaussian Processes for Machine Learning}{11}
-\contentsline {subsection}{\numberline {2.4.2}Use of GPs in Q learning}{11}
-\contentsline {chapter}{\numberline {3}The GP-Q Algorithm}{12}
-\contentsline {section}{\numberline {3.1}What is "Perception in the loop"?}{12}
-\contentsline {subsection}{\numberline {3.1.1}Laser data and feedback}{12}
-\contentsline {subsection}{\numberline {3.1.2}How is it useful?}{12}
-\contentsline {section}{\numberline {3.2}The Simulator setup and Software}{12}
-\contentsline {chapter}{\numberline {4}The GP-MFRL Algorithm}{13}
-\contentsline {section}{\numberline {4.1}Multi-Fidelity Reinforcement Learning}{13}
-\contentsline {section}{\numberline {4.2}Learning Transition Dynamics as a GP}{14}
-\contentsline {section}{\numberline {4.3}GP-MFRL Algorithm}{16}
-\contentsline {section}{\numberline {4.4}Simulation Results}{18}
-\contentsline {subsection}{\numberline {4.4.1}Representative simulations}{20}
-\contentsline {subsection}{\numberline {4.4.2}Effect of fidelity on the number of samples.}{21}
-\contentsline {subsection}{\numberline {4.4.3}Effect of the confidence parameters.}{23}
-\contentsline {subsection}{\numberline {4.4.4}Comparison with R-max MFRL}{23}
-\contentsline {section}{\numberline {4.5}Conclusion}{23}
-\contentsline {chapter}{\numberline {5}Bridge Inspection}{25}
+\contentsline {section}{\numberline {2.4}Introduction to Gaussian Processes (GP)}{11}
+\contentsline {subsubsection}{What are GPs ?}{11}
+\contentsline {subsubsection}{Kernel Functions}{12}
+\contentsline {subsection}{\numberline {2.4.1}Gaussian Process Regression}{13}
+\contentsline {subsection}{\numberline {2.4.2}Gaussian Processes for Machine Learning}{15}
+\contentsline {chapter}{\numberline {3}The GP-Q Algorithm}{16}
+\contentsline {section}{\numberline {3.1}What is "Perception in the loop"?}{16}
+\contentsline {subsection}{\numberline {3.1.1}Laser data and feedback}{16}
+\contentsline {subsection}{\numberline {3.1.2}How is it useful?}{16}
+\contentsline {section}{\numberline {3.2}The Simulator setup and Software}{16}
+\contentsline {chapter}{\numberline {4}The GP-MFRL Algorithm}{17}
+\contentsline {section}{\numberline {4.1}Multi-Fidelity Reinforcement Learning}{17}
+\contentsline {section}{\numberline {4.2}Learning Transition Dynamics as a GP}{18}
+\contentsline {section}{\numberline {4.3}GP-MFRL Algorithm}{20}
+\contentsline {section}{\numberline {4.4}Simulation Results}{22}
+\contentsline {subsection}{\numberline {4.4.1}Representative simulations}{24}
+\contentsline {subsection}{\numberline {4.4.2}Effect of fidelity on the number of samples.}{25}
+\contentsline {subsection}{\numberline {4.4.3}Effect of the confidence parameters.}{27}
+\contentsline {subsection}{\numberline {4.4.4}Comparison with R-max MFRL}{27}
+\contentsline {section}{\numberline {4.5}Conclusion}{27}
+\contentsline {chapter}{\numberline {5}Bridge Inspection}{29}
+\contentsline {section}{\numberline {5.1}Background}{29}
+\contentsline {subsection}{\numberline {5.1.1}Conventional Inspection of Bridges}{29}
+\contentsline {subsection}{\numberline {5.1.2}UAVs in Bridge Inspection}{31}

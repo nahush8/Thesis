@@ -25,14 +25,12 @@
 \usepackage{comment}
 \usepackage{color}
 \usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
-
 \usepackage{physics}
 
 \newtheorem{mydef}{Definition}
 \newcommand{\pcomment}[1]{{\color{red}{#1}}}
 \newcommand{\eg}{\textit{e.g.}}
 \newcommand{\ie}{\textit{i.e.}}
-
 \usepackage[acronym]{glossaries}
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{8.5in}
@@ -430,7 +428,7 @@ Consider a least-square line fit  $\hat{y} = p_0 + p_1x$. We are specifying two 
 The mathematical foundation of GPs is the multivariate Gaussian distribution. Consider the bivariate normal distribution given in figure \ref{fig:bvnpdf}. The shape of the bell curve is determined by the covariance matrix. If we imagine a horizontal plane slicing the bell curve and if we see a circle, that means the two independent variables are normally distributed meaning their covariance is $0$.\par  
 \begin{figure}[htp]
 	\centering 
-	\includegraphics[width=8cm]{bvnpdf.eps}
+	\includegraphics[width=8cm]{bvnpdf_gray.eps}
 	\caption{A Bivariate Normal Distribution}
    \label{fig:bvnpdf}
 \end{figure}
@@ -467,10 +465,11 @@ To sum it up, the posterior is the joint probability of the outcome of the value
 \end{pmatrix}
 \end{equation}
 
-Here, $K$ is the matrix we get by applying the kernel function to the observed values, \ie the similarity between each observed $x$ .$K_*$ represents the similarity of the training values to the test values whose output values are to be estimated. $K_{**}$ gives the similarity of the test values with each other. We are ultimately trying to determine $p(f_*|x_*,x,f)$ where $f$ and $f_*$ are jointly distributed as shown in equation \ref{equ:f_f*}.
+Here, $K$ is the matrix we get by applying the kernel function to the observed values, \ie the similarity between each observed $x$ .$K_*$ represents the similarity of the training values to the test values whose output values are to be estimated. $K_{**}$ gives the similarity of the test values with each other. We are ultimately trying to determine $p(f_*|x_*,x,f)$ where $f$ and $f_*$ are jointly distributed as shown in equation \ref{equ:f_f*}. {\color{red}Skipping the proof details}, we ultimately are able to define the distribution $f_* \sim \mathcal{N} (\mu_*,\Sigma_*)$, where $\mu_*$ is the mean and $\Sigma_*$ is the covariance matrix.
 
 \subsection{Gaussian Processes for Machine Learning}
-
+As stated in \cite{rasmussen2003gaussian}, GPs can be used to model system dynamics. Assuming a set of $N$-dimensional observations of the form $(s,a,s')$, we can use separate Gaussian Process model for predicting each coordinate of the system dynamics. For example, the inputs can be the state-action pair $(s,a)$ and the output is a Gaussian distribution over $y = s'_n$, $n = 1,2,...N$. A multivariate Gaussian distribution over the next state and transition probability can be obtained. GPs can be used to model value functions as a function of states. We'd typically specify a finite number of data points $S=s_1,s_2,..s_m$ and let the GP predict it over the space. \par 
+In general, a few useful properties of GPs are exploited in order to make them popular in terms of their use in machine learning.
 
 \chapter{The GP-Q Algorithm} % Main chapter title
 
@@ -755,7 +754,45 @@ The GP-MFRL algorithm provides a general RL technique that is particularly suite
 
 
 \chapter{Bridge Inspection}
+\section{Background}
+When it comes to inspecting bridges, UAVs are often considered as harbingers, a truly disruptive technology capable of giving engineers eyes in the hardest to reach places, without the need for expensive access vehicles or potentially dangerous rigging or ladders or harnesses. A recent paper  \cite{morgenthal2014quality} discusses the application of UAVs for visual inspection and damage detection of civil structures. The quality of such pictures and videos taken by the UAV strongly depends on various factors viz. lighting conditions, distance from the structure, vehicle motion influenced by environmental effects etc. It is very important for the UAVs to be equipped with sophisticated control algorithms and sensors to be able to provide reliable data which can be conclusively used for inspection and analysis of damage.
 
+\subsection{Conventional Inspection of Bridges}
+Figure \ref{fig:bridge_inspection} shows typical inspection units like under-bridge units or truck cranes. Inspection units are in most cases expensive custom products. Often, specially trained staff, like industrial climbers, can get access to special parts of the structure but they can rarely evaluate what influences detected damages have on these structures. Therefore, they can only take Photos or Videos of the concerned part of the structure, which must be analyzed by civil engineers off-line.\par It is often dangerous to use such large truck cranes. Figure \ref{bridge_fail} shows an unfortunate incidence where the inspection truck has tipped over causing a life threating situation for the people involved.\par
+ 
+\begin{figure}[htp]
+	\centering 
+    \subfigure[Truck Crane]{\includegraphics[width=6cm,height=4cm]{truck_crane.jpg}}
+    \subfigure[Under Bridge Inspection unit]{\includegraphics[width=6cm,height=4cm]{under_bridge.jpg}}
+	\caption{Conventional inspection units for Bridge Inspection: (left,Bridge Inspection platform with a truck crane) , A-30 Hi-Rail Under Bridge Units(right,N.E. Bridge Contractors Inc.)}
+   \label{fig:bridge_inspection}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering 
+    \includegraphics[width=8cm]{tip.jpg}
+	\caption{Bridgeriggers' Aspen A-75 under-bridge inspection crane overturns on Sakonnet River Bridge in Rhode Island; August 30, 2016}
+   \label{fig:bridge_fail}
+\end{figure}
+
+\subsection{UAVs in Bridge Inspection}
+
+UAVs often have following advantages in comparison to the conventional bridge-inspection methods.
+\begin{itemize}
+\item  UAVs only need an operator on the ground for controlling the flight and the
+camera. A more advanced scenario includes \textit{autonomous} UAVs navigating around the structures while collecting the required data such as pictures, videos etc. {\color{red} reference to a later section where we talk about challenges of navigating around such structures.}
+\item UAVs can be used in high-risk situations without endangering human lives. Situations like \ref{fig:bridge_fail} could be avoided to a certain extent.
+\item UAVs are capable of fast real time data acquisition and the storage of all the relevant flight data.
+\item Overall, they often turn out to be lower in costs compared to the large custom inspection units.
+\end{itemize}
+
+As they say \textit{Every good thing comes with a price}, UAVs are no different. Despite the obvious advantages, UAVs have some essential limitations. 
+\begin{itemize}
+\item  Due to the small payload capacity of the UAVs, only small format and light digital compact cameras can be used for visual inspection. 
+\item The smaller payload also affects the battery size leading to shorter flight times. 
+\item Due to unexpected flight situations or due to unreliable GPS-signal strength, a change from the autonomous flight mode into a manual mode is required which demands a skillful pilot to override the control.
+\item  Currently, UAVs are not equipped with effective collision avoidance systems. 
+\end{itemize}
 %%%%%%%%%%%%%%%%%
 %
 % Include an EPS figure with this command:
