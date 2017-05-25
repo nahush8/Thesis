@@ -15,6 +15,7 @@
 \usepackage{cite}
 \usepackage{amsmath,amssymb}
 \usepackage{framed}
+\usepackage{todonotes}
 \usepackage{graphicx}
 \usepackage{color}
 \graphicspath{ {images/} }
@@ -794,8 +795,47 @@ As they say \textit{Every good thing comes with a price}, UAVs are no different.
 \item  Currently, UAVs are not equipped with effective collision avoidance systems. 
 \end{itemize}
 
+\section{Present Work}
+We performed a few experiments in order to analyze the limitations and challenges of performing autonomous navigation of UAVs around bridges. We performed several manual flights of a UAV on the Smart Road Bridge (the tallest state-maintained bridge in Virginia). The goal of the experiment was to capture visuals of the inside as well as the outside of the bridge for analysis of the structure and to analyze challenges in order to improve the system for fully autonomous flights.
 
-%
+\subsection{The System Setup}
+DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_frame}. The UAV is equipped with sensors, controller and an on-board computer.
+
+\begin{figure}[htp]
+	\centering 
+    \includegraphics[width=8cm]{uav-1.JPG}
+	\caption{UAV used for the experiments}
+   \label{fig:dji_frame}
+\end{figure}
+\todo{Add pictures and more information about the system}
+\begin{itemize}
+\item Camera: The camera used to capture the visuals was \cite{flea_camera}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
+\item Intel NUC:
+\item Pixhawk-Flight Controller:
+\item LIDAR:
+\item GPS: 
+\end{itemize}
+
+\subsection{Flights without GPS signal}
+While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In section \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. 
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=8cm]{indoor_1.JPG}}
+    \subfigure{\includegraphics[width=8cm]{indoor_2.jpeg}}
+	\caption{Indoor flight of the UAV visually inspecting the structure}
+   \label{fig:indoor_flight}
+\end{figure}
+
+\subsection{Outdoor Inspection}
+
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=8cm]{outdoor_1.JPG}}
+    \subfigure{\includegraphics[width=8cm]{outdoor_2.JPG}}
+	\caption{Outdoor flight of the UAV visually inspecting the structure}
+   \label{fig:indoor_flight}
+\end{figure}
+
 % Do tables like this:
 \begin{comment}
  \begin{table}
