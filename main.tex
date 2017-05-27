@@ -152,12 +152,17 @@ Grant information goes here ..
 
 \label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
-This is a general introduction of the idea
+With increasing popularity of Mobile Robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as ones of \textit{reinforcement learning}. Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered as \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as "obstacle avoidance" or "following the wall". Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to figure out \textit{how} to achieve that.\par
+
+Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement
+learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by continuous state-action space. A true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to maintain the information of the environment that provides information along with uncertainty (Mean and Variance). Many times it is difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time-frame, approximations of state, value functions or even system dynamics are introduced.  However, no matter how costly the real-world experience is, it often cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par \todo{Add figures showing examples of RL in robotics}.
+
+In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time-frame?. In this thesis we study some of these questions related to Unmanned Aerial Vehicles. Before introducing the particular problems, we will discuss the applications and associated challenges in navigation of UAVs to complete certain tasks.
 
 \section{Motivation}
+This work is motivated by the growing interest in using small Unmanned Aerial Vehicles (UAVs) for infrastructure and environmental monitoring. UAVs equipped high resolution cameras are being used for bridge inspection~\cite{liu2014review}, penstock inspection~\cite{ozaslaninspection}, and yield estimation in farms~\cite{das2015devices}. In order for these systems to be successfully deployed, it is crucial that UAVs are able to plan and navigate autonomously in narrow, confined spaces while withstanding large wind disturbances. A controller that is not robust to these disturbances may cause catastrophic failures. Designing custom controllers for UAVs in every new situation is a tedious task and not practical as it requires constant human supervision~\cite{kober2012reinforcement}. Instead, reinforcement learning (RL) can provide a general solution. 
+
+
 
 \section{Applications to general scenarios and Challenges}
 This section shall talk about the application and the shortcomings
@@ -166,9 +171,6 @@ This section shall talk about the application and the shortcomings
 %-----------------------------------
 %	SUBSECTION 1
 %-----------------------------------
-
-
-
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
@@ -176,16 +178,7 @@ This section shall talk about the application and the shortcomings
 \section{Contributions}
 
 This section highlights contributions of our work.
-%-----------------------------------
-%	SUBSECTION 2
-%-----------------------------------
 
-\subsection{Subsection 2}
-Any appropriate subsections. 
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
 
 \section{Organization of the Thesis}
 
@@ -472,38 +465,42 @@ Here, $K$ is the matrix we get by applying the kernel function to the observed v
 As stated in \cite{rasmussen2003gaussian}, GPs can be used to model system dynamics. Assuming a set of $N$-dimensional observations of the form $(s,a,s')$, we can use separate Gaussian Process model for predicting each coordinate of the system dynamics. For example, the inputs can be the state-action pair $(s,a)$ and the output is a Gaussian distribution over $y = s'_n$, $n = 1,2,...N$. A multivariate Gaussian distribution over the next state and transition probability can be obtained. GPs can be used to model value functions as a function of states. We'd typically specify a finite number of data points $S=s_1,s_2,..s_m$ and let the GP predict it over the space. \par 
 In general, a few useful properties of GPs are exploited in order to make them popular in terms of their use in machine learning.
 
-\chapter{The GP-Q Algorithm} % Main chapter title
+\chapter{The GPQ Algorithm} % Main chapter title
 
 \label{gpq} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-\section{What is "Perception in the loop"?}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies 
-
-%-----------------------------------
-%	SUBSECTION 1
-%-----------------------------------
-\subsection{Laser data and feedback}
-
-Nunc posuere quam at lectus tristique eu ultrices augue venenatis. Vestibulum 
-
-%-----------------------------------
-%	SUBSECTION 2
-%-----------------------------------
-
-\subsection{How is it useful?}
-Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus fringilla, nibh eu 
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
+\section{Perception in the loop}
+ 
+ Perception is how the robot is aware of the dynamics of the environment. Just as humans perceive things with their ey es, robots use sensors in order to be aware of its surroundings. Perception usually provides data which allows the robot to determine where it is as well as how far the obstacles or goals or adversaries are. The robot must be able to make intelligent decisions based on the data it gathers. Sensors are very critical for intelligent robots to carry out tasks in dynamic environment which limit and define the capability of a robot \cite{tokekar2014placement}. In order for the robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it.\par 
+\textit{Perception in the loop} may be explained with this example. Imagine a robot equipped with a laser sensor (as shown in figure \ref{fig:perception_example}) which provides the distance between the robot and its nearest obstacle essentially informing the robot about its surroundings. The task of the robot is to navigate through this environment without crashing into obstacles assuming the robot has no prior information about the environment and only has access to the real time laser data. How can we use the laser data in order to carry out the task?
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{perception_1.pdf}
+	\caption {A UAV equipped with a laser sensor}
+   \label{fig:perception_example}
+\end{figure}
 
 \section{The Simulator setup and Software}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia 
+\subsection{Laser data and feedback}
 
+Two simulators were implemented in order to present the idea of perception and subsequently implementing the idea of reinforcement learning in order to learn a \textit{skill}.
+\begin{itemize}
+\item A python based obstacle avoidance simulator: As shown in figure , the environment is a dynamic environment where the robot is trying to navigate without colliding with obstacles.
 
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{perception_sim_1.png}
+	\caption {A python based simulator for obstacle avoidance}
+   \label{fig:perception_sim_1}
+\end{figure}
 
+\end{itemize}
+
+\section{GPQ Algorithm}
+ A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings.
 % Chapter Template
+
+
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
 In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
@@ -817,7 +814,7 @@ DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_fra
 \end{itemize}
 
 \subsection{Flights without GPS signal}
-While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In section \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. 
+While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In section \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures.
 \begin{figure}[htp]
 	\centering 
   	\subfigure{\includegraphics[width=8cm]{indoor_1.JPG}}
@@ -827,13 +824,13 @@ While the UAV is flying indoors or inside the bridge, it does not get a GPS sign
 \end{figure}
 
 \subsection{Outdoor Inspection}
-
+Figure \ref{fig:outdoor_flight}.
 \begin{figure}[htp]
 	\centering 
   	\subfigure{\includegraphics[width=8cm]{outdoor_1.JPG}}
     \subfigure{\includegraphics[width=8cm]{outdoor_2.JPG}}
 	\caption{Outdoor flight of the UAV visually inspecting the structure}
-   \label{fig:indoor_flight}
+   \label{fig:outdoor_flight}
 \end{figure}
 
 % Do tables like this:
