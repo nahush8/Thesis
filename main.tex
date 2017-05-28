@@ -410,6 +410,7 @@ An example would be the lengthscale parameter $l$of the RBF kernel, which specif
 \textbf{Stationary and Non-stationary Kernels} The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x − x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
 
 \subsection{Gaussian Process Regression}
+\label{GPR}
 Consider a least-square line fit  $\hat{y} = p_0 + p_1x$. We are specifying two parameters $p_0$ and $p_1$ for the figure \ref{fig:lease_square}. A better fit would be to use a quadratic function say $\hat{y} = p_0 + p_1x + p_2x^2$. In this case, we need $3$ parameters $p_0$, $p_1$ and $p_2$. What if we would like to consider all possible functions without specifying the number of parameters? So in GPs, there are no parameters \ie there are infinitely many parameters. \par
 \begin{figure}[htp]
 	\centering 
@@ -472,20 +473,18 @@ In general, a few useful properties of GPs are exploited in order to make them p
  
  Perception is how the robot is aware of the dynamics of the environment. Just as humans perceive things with their ey es, robots use sensors in order to be aware of its surroundings. Perception usually provides data which allows the robot to determine where it is as well as how far the obstacles or goals or adversaries are. The robot must be able to make intelligent decisions based on the data it gathers. Sensors are very critical for intelligent robots to carry out tasks in dynamic environment which limit and define the capability of a robot \cite{tokekar2014placement}. In order for the robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it.\par 
 \textit{Perception in the loop} may be explained with this example. Imagine a robot equipped with a laser sensor (as shown in figure \ref{fig:perception_example}) which provides the distance between the robot and its nearest obstacle essentially informing the robot about its surroundings. The task of the robot is to navigate through this environment without crashing into obstacles assuming the robot has no prior information about the environment and only has access to the real time laser data. How can we use the laser data in order to carry out the task?
-\begin{figure}[htp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=8cm]{perception_1.pdf}
 	\caption {A UAV equipped with a laser sensor}
    \label{fig:perception_example}
 \end{figure}
 
-\section{The Simulator setup and Software}
-
-\subsection{Laser data and feedback}
-
+\section{The Simulator setup}caption
+\label{sims}
 Two simulators were implemented in order to present the idea of perception and subsequently implementing the idea of reinforcement learning in order to learn a \textit{skill}.
 \begin{itemize}
-\item A python based obstacle avoidance simulator: As shown in figure , the environment is a dynamic environment where the robot is trying to navigate without colliding with obstacles.
+\item Simulator 1: A python based obstacle avoidance simulator: As shown in figure \ref{fig:perception_sim_1}, the robot is trying to navigate without colliding with obstacles in a dynamic environment setting. The white obstacles move slower compared to the orange obstacle. The robot is equipped with a laser sensor which uses $6$ beams in order to find out the distances from the obstacles at different angles. The robot has a constant speed and can perform $3$ actions; turn left, turn right or stay in the same direction. 
 
 \begin{figure}[htp]
 	\centering
@@ -494,13 +493,78 @@ Two simulators were implemented in order to present the idea of perception and s
    \label{fig:perception_sim_1}
 \end{figure}
 
+\item Simulator 2: A second simulator was implemented in the Gazebo robot simulator~\cite{koenig2004design}. A UAV equipped with a Hokuyo Laser was implemented in the simulator as shown in figure \ref{fig:perception_sim_2}. This may be considered as a $3$D extension of the simulator shown in figure \ref{fig:perception_sim_1}. With infinite state-action space and ability to add robot dynamics, this simulator is a higher fidelity simulator compared to the python-pygame based $2$D simulator. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{perception_sim_2.png}
+	\caption {A UAV equipped with laser sensor in Gazebo Robot Simulator}
+   \label{fig:perception_sim_2}
+\end{figure}
 \end{itemize}
 
+In both of the above simulators the main principle of \textit{perception in the loop} is used in order to use the laser data to find out the current position of the obstacle with respect to the robot and take an optimal action in order to avoid the obstacle. In order to learn \textit{obstacle avoidance} as a \textit{skill} the algorithm must be agnostic to the shape or size of the obstacle and it should work in case of moving obstacles as well.
+
+\subsection{Laser data and $Q$-Learning}
+\label{laser_learning}
+In order to learn the \textit{skill} of obstacle avoidance, we decided to learn the mapping from sensor values to action. A naive $Q$-Learning algorithm was implemented (refer to algorithm \ref{q_learning}) on the simulators described in section \ref{sims}. For the python based simulator, any state $s \in S$ is defined as a set of laser sensor values \{$l_1,l_2,l_3,l_4,l_5,l_6$\}, where $l_i \in \mathcal {P} (\mathbb{Z})$ Action $a$ can be chosen from a set of action $A := \{0,1,2\}$ where action = $0$ turns the robot left by a certain angle, action = $1$ turns the robot right by a certain angle and action = $2$ does not change the orientation of the robot. A reward of $-500$ is given on a crash else the reward is an increasing function of the sum of the readings of the $6$ laser sensors. (higher the readings farther the robot is from the obstacle which must be rewarded well.)\par 
+In case of the Gazebo Robot Simulator, the state-space $S$ and the action-space $A$ are both continuous spaces. Assuming there are $8$ laser beams, the state $s$ may be represented as \{$l_1,l_2,l_3,l_4,l_5,l_6,l_7,l_8$\}. Here $l_i$ can take any real value from $0$ to $6$. (The Hokuyo sensor is simulated in Gazebo Simulator with a maximum range of $6$ meters.) The action $a$ may be represented as a $3$D vector $x_{\hat{i}} + y_{\hat{j}} + z_{\hat{k}}$. By excluding the robot dynamic constraints from the analysis, we have infinite possible values for a state-action pair $(s,a)$.\par 
+
+Let us consider a static environment first. Assuming each sensor can give $20$ discrete values in case of Simulator $1$ given in section \ref{sims}, we have about $2$ \textit{million} possible states. To observe all of the states in order to be able to store and update the value function (or $Q$ values) is a tedious task. Once a sufficient number of states are observed for the optimal $Q$ values, the robot may learn to navigate through the environment successfully. This may take a longer time due to the size of the state space. In case of simulator $2$, the state space is infinite and hence it is not possible to observe all the possible state-action pairs. 
+
 \section{GPQ Algorithm}
- A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings.
-% Chapter Template
+ A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Consider the problem of finding the value function for over a $million$ state-action pairs in limited time described in section \ref{laser_learning}. The problem here closely relates to the problem in section \ref{GPR} where we were tasked to find out a function to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (Refer algorithm \ref{batch_gpq_algorithm}). 
+ 
+ \begin{algorithm}
+\label{batch_gpq_algorithm}
+\SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
+\SetKwFunction{trainingPhase}{trainingPhase}\SetKwFunction{findMax}{findMax}\SetKwFunction{batchGPQ}{batchGPQ}\SetKwFunction{updateGP}{updateGP} \SetKwFunction{gpPredict}{gpPredict}
 
+\SetKwProg{training}{}{}{}
+\training{\trainingPhase{}}{
+\Input{$S$ is a set of states\\$A$ is a set of action}
+\local{store the training data $T := \{s,a,r,s'\}$,\\previous state $s$\\previous action $a$\\,current reward $r$\\next state $s'$}
+\Init{$T$ $\leftarrow$ empty}
+ \For{$i \in (1,N)$}{
+        $s \leftarrow$ current state \\
+        $a \leftarrow$ random action \\
+        Apply $a$ for a $\Delta t$ time\\
+        $s' \leftarrow$ observed state\\
+        $r \leftarrow $ observed reward\\
+        $T \leftarrow T \cup \{(s,a,r,s')\}$
+     }
+}
 
+\SetKwProg{gpq}{}{}{}
+\gpq{\batchGPQ{}}{
+\Input{$T:= {(s,a,r,s')}$ is the training set recorded during the training phase}
+\Init{Gaussian Process \texttt{GP} with RBF kernel of appropriate length scale}
+\While{Termination condition not reached}
+{$dX \leftarrow$ \texttt{input to the GP}\\
+$tX \leftarrow$ \texttt{output of the GP}.\\
+ \For{$i \in (1,N)$}{
+ $dX \leftarrow dX \cup {(s_i,a_i)}$\\
+ $tX \leftarrow r_i + \findMax(\texttt{GP},s')$
+ }
+ \updateGP($dX,tX$)
+}
+}
+
+\SetKwProg{find}{}{}{}
+\find{\findMax{\texttt{GP}, $s'$}}{
+\Init{$max \leftarrow 0$ }
+	\For{$a \in A$}{
+		$temp \leftarrow$ \gpPredict($s'$,$a$)\\
+        \uIf {temp $>$ max}
+        {
+        	$max \leftarrow temp$
+		}
+}
+\texttt{return} $max$
+}
+
+\caption{Batch GPQ Algorithm}
+\end{algorithm}
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
 In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
@@ -645,7 +709,7 @@ $t \leftarrow t + 	1$ \;
 \For{every s:}{
 \emph{$temp \leftarrow \mathcal{V}(s) $} \;
 \emph{$\mathcal{V}(s) \leftarrow   \textnormal{max}_a \sum_{a} \sum_{s'} \mathcal{P}_{ss'}^a[\mathcal{R}_{ss'}^a+\gamma  \mathcal{V}(s')] $}\;
-\emph{$\Delta \leftarrow \textnormal{max}(0, \  |temp - \mathcal{V}(s)|)$}
+\emph{$\Delta \leftarrow \textnormal{max}(0, \  |temp - \mathcal{V}(s)Init|)$}
 }
 }
 \emph{return $\mathcal{Q}(s,a)$}
@@ -800,7 +864,7 @@ DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_fra
 
 \begin{figure}[htp]
 	\centering 
-    \includegraphics[width=8cm]{uav-1.JPG}
+    \includegraphics[width=8cm]{uav-1.JPG}Init
 	\caption{UAV used for the experiments}
    \label{fig:dji_frame}
 \end{figure}
@@ -822,7 +886,7 @@ While the UAV is flying indoors or inside the bridge, it does not get a GPS sign
 	\caption{Indoor flight of the UAV visually inspecting the structure}
    \label{fig:indoor_flight}
 \end{figure}
-
+Init
 \subsection{Outdoor Inspection}
 Figure \ref{fig:outdoor_flight}.
 \begin{figure}[htp]
