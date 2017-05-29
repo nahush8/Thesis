@@ -152,28 +152,28 @@ Grant information goes here ..
 
 \label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-With increasing popularity of Mobile Robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as ones of \textit{reinforcement learning}. Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered as \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as "obstacle avoidance" or "following the wall". Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to figure out \textit{how} to achieve that.\par
+With increasing popularity of Mobile Robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as ones of \textit{reinforcement learning}. Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as "obstacle avoidance" or "following the wall". Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to figure out \textit{how} to achieve that.\par
 
 Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement
 learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by continuous state-action space. A true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to maintain the information of the environment that provides information along with uncertainty (Mean and Variance). Many times it is difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time-frame, approximations of state, value functions or even system dynamics are introduced.  However, no matter how costly the real-world experience is, it often cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par \todo{Add figures showing examples of RL in robotics}.
 
 In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time-frame?. In this thesis we study some of these questions related to Unmanned Aerial Vehicles. Before introducing the particular problems, we will discuss the applications and associated challenges in navigation of UAVs to complete certain tasks.
 
-\section{Motivation}
-This work is motivated by the growing interest in using small Unmanned Aerial Vehicles (UAVs) for infrastructure and environmental monitoring. UAVs equipped high resolution cameras are being used for bridge inspection~\cite{liu2014review}, penstock inspection~\cite{ozaslaninspection}, and yield estimation in farms~\cite{das2015devices}. In order for these systems to be successfully deployed, it is crucial that UAVs are able to plan and navigate autonomously in narrow, confined spaces while withstanding large wind disturbances. A controller that is not robust to these disturbances may cause catastrophic failures. Designing custom controllers for UAVs in every new situation is a tedious task and not practical as it requires constant human supervision~\cite{kober2012reinforcement}. Instead, reinforcement learning (RL) can provide a general solution. 
+\section{Motivation and applications to general scenarios} 
+This work is motivated by the growing interest in using small Unmanned Aerial Vehicles (UAVs) for infrastructure and environmental monitoring. UAVs equipped high resolution cameras are being used for bridge inspection~\cite{liu2014review}, penstock inspection~\cite{ozaslaninspection}, and yield estimation in farms~\cite{das2015devices}. In order for these systems to be successfully deployed, it is crucial that UAVs are able to plan and navigate autonomously in narrow, confined spaces while withstanding large wind disturbances. A controller that is not robust to these disturbances may cause catastrophic failures. Designing custom controllers for UAVs in every new situation is a tedious task and not practical as it requires constant human supervision~\cite{kober2012reinforcement}. Instead, reinforcement learning (RL) can provide a general solution.\par 
+For a UAV, navigating through a previously-unseen environment is of paramount importance as colliding with obstacles can be fatal for a flying object. We will discuss a few main challenges next.
 
 
 
-\section{Applications to general scenarios and Challenges}
-This section shall talk about the application and the shortcomings
+\subsection{Challenges}
+When a UAV needs to inspect a bridge from inside or when it tries to fly near the structures or around the bridge pillars, GPS-signal or any other external localization system is either not available or not reliable. In order to be able to autonomously navigate in such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board laser sensors.\par
+A flight control system with conventional methods where the designer needs to be aware of the dynamics of the vehicle and environment increases the development time. If some modifications are made to the vehicle later, most of the work may be needed to be redone from scratch. Specifically, reinforcement learning (RL) algorithms provide a number of characteristics which
+could partly address dynamic environments and dynamics changes: RL can control
+an agent when a model of the environment is unavailable; RL can control an agent without an
+existing programmed system; and RL can compensate for changes in the environment
+as they are encountered since the agent continuously \textit{explores} and \textit{learns}.
 
-
-%-----------------------------------
-%	SUBSECTION 1
-%-----------------------------------
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
+One of several immediate questions is: how does the \textit{learning} occur? In many control systems, stability is critically important. Having a \textit{trial and error} way of experimentation may result in a crash which is unacceptable. Trying out experiments in real world is expensive. Development of simulators in order to maximize the performance minimizing the real world costs is crucial. The main contributions of this thesis in development of some RL algorithms centered around UAV navigation reducing real world samples is discussed next.
 
 \section{Contributions}
 
@@ -254,8 +254,8 @@ A policy for an MDP is a function which gives an action $a \in A$ as an output f
 
 \subsection{Solving MDPs}
 \label{bellman}
-As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based {\color{red} Add reference to RL section} algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation. {\color{red} Add Bellman equation and its reference}\par 
-In Model-Free {\color{red} Add reference to RL section} algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
+As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based RL (section \ref{types}) algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation. {\color{red} Add Bellman equation and its reference}\par 
+In Model-Free RL (section \ref{types}) algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
 To directly compute the value functions for the state-action pairs when the model of the environment is not available or to determine the model by interacting with the environment in order to maximize the performance, the agent needs to posses artificial intelligence. We will discuss this branch of machine learning the next section (section \ref{rl}).
 
 \section{Reinforcement Learning (RL)}
@@ -466,6 +466,12 @@ Here, $K$ is the matrix we get by applying the kernel function to the observed v
 As stated in \cite{rasmussen2003gaussian}, GPs can be used to model system dynamics. Assuming a set of $N$-dimensional observations of the form $(s,a,s')$, we can use separate Gaussian Process model for predicting each coordinate of the system dynamics. For example, the inputs can be the state-action pair $(s,a)$ and the output is a Gaussian distribution over $y = s'_n$, $n = 1,2,...N$. A multivariate Gaussian distribution over the next state and transition probability can be obtained. GPs can be used to model value functions as a function of states. We'd typically specify a finite number of data points $S=s_1,s_2,..s_m$ and let the GP predict it over the space. \par 
 In general, a few useful properties of GPs are exploited in order to make them popular in terms of their use in machine learning.
 
+
+\section{Reinforcement Learning for UAVs}
+The concept of using reinforcement learning techniques for the control of unmanned aerial
+vehicles is not new; it has peaked interest outside of academia. {\color{red}Add more literature on RL in UAVs}
+
+
 \chapter{The GPQ Algorithm} % Main chapter title
 
 \label{gpq} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
@@ -515,7 +521,7 @@ Let us consider a static environment first. Assuming each sensor can give $20$ d
 \section{GPQ Algorithm}
  A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Consider the problem of finding the value function for over a $million$ state-action pairs in limited time described in section \ref{laser_learning}. The problem here closely relates to the problem in section \ref{GPR} where we were tasked to find out a function to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (Refer algorithm \ref{batch_gpq_algorithm}). 
  
- \begin{algorithm}
+\begin{algorithm}
 \label{batch_gpq_algorithm}
 \SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
 \SetKwFunction{trainingPhase}{trainingPhase}\SetKwFunction{findMax}{findMax}\SetKwFunction{batchGPQ}{batchGPQ}\SetKwFunction{updateGP}{updateGP} \SetKwFunction{gpPredict}{gpPredict}
@@ -565,6 +571,7 @@ $tX \leftarrow$ \texttt{output of the GP}.\\
 
 \caption{Batch GPQ Algorithm}
 \end{algorithm}
+
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
 In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
