@@ -164,7 +164,6 @@ This work is motivated by the growing interest in using small Unmanned Aerial Ve
 For a UAV, navigating through a previously-unseen environment is of paramount importance as colliding with obstacles can be fatal for a flying object. We will discuss a few main challenges next.
 
 
-
 \subsection{Challenges}
 When a UAV needs to inspect a bridge from inside or when it tries to fly near the structures or around the bridge pillars, GPS-signal or any other external localization system is either not available or not reliable. In order to be able to autonomously navigate in such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board laser sensors.\par
 A flight control system with conventional methods where the designer needs to be aware of the dynamics of the vehicle and environment increases the development time. If some modifications are made to the vehicle later, most of the work may be needed to be redone from scratch. Specifically, reinforcement learning (RL) algorithms provide a number of characteristics which
@@ -469,8 +468,10 @@ In general, a few useful properties of GPs are exploited in order to make them p
 
 \section{Reinforcement Learning for UAVs}
 The concept of using reinforcement learning techniques for the control of unmanned aerial
-vehicles is not new; it has peaked interest outside of academia. {\color{red}Add more literature on RL in UAVs}
-
+vehicles is not new; it has peaked interest outside of academia. Most of the existing literature related to using learning algorithms in a UAV context mainly discusses high level planning or trajectory control. More traditional low level control along with the implantation of machine learning algorithms to learn a set of skills or planning the  desired trajectories is employed.\par 
+\cite{bou2010controller} discusses about learning the non-linear control for advanced stabilization of the UAVs whereas \cite{lupashin2010simple} developed a more high level control implementing learning strategies for high speed quadrotor multi flips. The system is able to do a series of flips for a quadrotor demonstrating online learning of acrobatics.These are some of the examples of reinforcement learning algorithms being applied to a low level motion control of UAV.\par 
+Some of the early examples of robot reinforcement learning are; The OBELIX robot which learned to push boxes \cite{mahadevan1992automatic} using value function-based approach, Carnegie Mellon’s autonomous helicopter leveraged a
+model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}, Petar Kormushev and Sylvain Calinon–taught from Italian Institute of Technology taught a robot the technique to flip pancakes \cite{kormushev2010robot}.
 
 \chapter{The GPQ Algorithm} % Main chapter title
 
