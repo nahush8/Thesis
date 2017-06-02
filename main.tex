@@ -177,7 +177,7 @@ One of several immediate questions is: how does the \textit{learning} occur? In 
 \section{Contributions}
 
 As we've seen previously, it is difficult to collect real world samples in order to train a UAV. A Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GP) to learn the optimal policy in a real world environment is presented in this thesis. In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. The main contribution of this thesis is to show how we can use GP regression with MFRL to approximate the state-action transition dynamics in large state spaces. GPs exploit the spatial correlation in the transition function for agents that are physical grounded (e.g., a robot). By incorporating GP in MFRL framework, we achieve further reduction in the number of samples used as we move up the simulator chain. We examine the performance with the help of simulations for navigation with an aerial robot.\par 
-We also present an implementation of GPQ algorithm \cite{chowdhary2014off} on different kinds of simulators. The feedback from the laser sensors is utilized by the learning algorithm in order to \textit{learn} a particular \textit{skill}.
+We also present an implementation of GPQ algorithm \cite{chowdhary2014off} on different kinds of simulators. The feedback from the laser sensors is utilized by the learning algorithm in order to \textit{learn} a particular \textit{skill}. This is useful while flying indoors where the GPS signal or any other localization data is not available for the UAV to navigate through the space. Learning \textit{skills} like \textit{wall following} or \textit{obstacle avoidance} can be very useful in these scenarios. How GPs can be used to learn the $Q$ values to learn a skill of obstacle avoidance in a dynamic environment is described with the help of a basic python simulator in order to extend it to a multi-fidelity simulator framework with Gazebo Robot Simulator and an actual quadrotor as the highest fidelity simulator.
 
 
 \section{Organization of the Thesis}
@@ -250,11 +250,68 @@ The reward functions determines the reward obtained by the agent for being in a 
 
 \subsection{Policies}
 \label{policies}
-A policy for an MDP is a function which gives an action $a \in A$ as an output for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to try to optimize its behavior in the environment modeled as an MDP. \textit{Optimality} is dependent on what exactly is being optimized? What is the goal of the agent? {\color{red} Add Bellman equation and briefly describe value function etc.} 
+A policy for an MDP is a function which gives an action $a \in A$ as an output for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to try to optimize its behavior in the environment modeled as an MDP. \textit{Optimality} is dependent on what exactly is being optimized? What is the goal of the agent?
+
+\subsection{Value Function and Bellman Equation}
+Most of the learning algorithms for MDPs compute optimal policies by learning value functions. A \textit{value function} represents an estimate of \textit{how good} it is for the agent to be in a certain state (or how good it is to perform a certain action in that state). The notion of \textit{how good} is expressed in
+terms of an optimality criterion,\ie in terms of the expected return.\par 
+The \textit{value function} of a state $s$ under policy $\pi$ denoted by $V^\pi(s)$ is the expected return when we start in the state $s$ and follow the policy $\pi$ after that. In an infinite horizon discounted model with discount factor $\gamma$, it is expressed as, 
+
+\begin{equation}
+\label{value_function_equation}
+V^\pi(s) =  \mathop{\mathbb{E_\pi}}\bigg\{\sum_{k=0}^{\infty} \gamma^k r_{t+k}|s_t = s\bigg\} 
+\end{equation}
+
+A similar state-action value function $Q : S \times A \rightarrow R$ can be expressed as an expected return starting at state $s$, taking action $a$ and following the policy $\pi$.
+
+\begin{equation}
+\label{value_function_state_action_equation}
+Q^\pi(s,a) =  \mathop{\mathbb{E_\pi}}\bigg\{\sum_{k=0}^{\infty} \gamma^k r_{t+k}|s_t = s, a_t = a \bigg\} 
+\end{equation}
+
+A very important property of the value function equation is that they satisfy certain recursive relations. For any policy $\pi$ and state $s$, the equation \ref{value_function_equation} can be recursively defined in terms of \textit{Bellman Equation}\cite{Bellman:1957}. 
+
+\begin{equation}
+\label{bellman_equation}
+V^\pi(s) = \sum_{s'} T(s,\pi(s),s') \bigg( R(s,a,s') + \gamma V^\pi(s')\bigg) 
+\end{equation}
+
+Equation \ref{bellman_equation} represents the expected value of a state $s$ in terms of the immediate reward $R(s,a,s')$ and the value of possible next states $V^\pi(s')$ weighted by the transition probabilities $T(s,a,s')$ with a discount factor of $\gamma$. \par
+
+The goal is to find the best policy \ie the policy that maximizes the reward. An \textit{optimal policy} denoted by $\pi^*$ is such that $V^{\pi^*}(s) \geq V^\pi(s)$
+for all $s \in S$ and all policies $\pi$. The optimal solution can be given by the \textit{Bellman optimality equation} given  in equation \ref{bellman_optimality_equation}
+
+\begin{equation}
+\label{bellman_optimality_equation}
+V^*(s) = \max_{a \in A}\sum_{s' \in S} T(s,a,s') \bigg( R(s,a,s') + \gamma V^*(s')\bigg) 
+\end{equation}
+
+Similarly, we can express the optimal state-action equation as, 
+\begin{equation}
+\label{bellman_optimality_equation}
+Q^*(s,a) = \sum_{s'} T(s,a,s') \bigg( R(s,a,s') + \gamma \max_{a'}Q^*(s',a')\bigg) 
+\end{equation}
+
+In case of model-free approaches (section \ref{types}) where $T$ and $R$ are unknown, the $Q$ functions are learned instead of $V$ functions. We can see the relation in equation \ref{v_q_relation}.
+
+\begin{equation}
+\label{v_q_relation}
+V^*(s) = \max_{a}Q^*(s,a)
+\end{equation}
+
+So conclusively, to find an optimal policy in case of model-free learning algorithms,
+
+\begin{equation}
+\label{v_q_relation}
+\pi^*(s) = arg\max_{a}Q^*(s,a)
+\end{equation}
+
+the best action $a$ in a particular state $s$ is the one which has the highest utility based on the possible next state. We call this policy the greedy policy, denoted $\pi_greedy(V)$ because it greedily selects the best action using the value function V.
+
 
 \subsection{Solving MDPs}
 \label{bellman}
-As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based RL (section \ref{types}) algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation. {\color{red} Add Bellman equation and its reference}\par 
+As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based RL (section \ref{types}) algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation.(Refer to equation \ref{bellman_equation}).\par 
 In Model-Free RL (section \ref{types}) algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
 To directly compute the value functions for the state-action pairs when the model of the environment is not available or to determine the model by interacting with the environment in order to maximize the performance, the agent needs to posses artificial intelligence. We will discuss this branch of machine learning the next section (section \ref{rl}).
 
