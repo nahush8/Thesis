@@ -17,7 +17,6 @@
 \usepackage{framed}
 \usepackage{todonotes}
 \usepackage{graphicx}
-\usepackage{color}
 \graphicspath{ {images/} }
 \usepackage{float}
 \usepackage{epsfig}
@@ -32,7 +31,7 @@
 \newcommand{\pcomment}[1]{{\color{red}{#1}}}
 \newcommand{\eg}{\textit{e.g.}}
 \newcommand{\ie}{\textit{i.e.}}
-\usepackage[acronym]{glossaries}
+%\usepackage[acronym]{glossaries}
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{8.5in}
 \setlength{\evensidemargin}{0in}
@@ -42,13 +41,9 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.1in}
 
-% Uncomment for double-spaced document.
-%\renewcommand{\baselinestretch}{2}
-\newacronym{uav}{UAV}{Unmanned Aerial Vehicle}
-\newacronym{gps}{GPS}{Global Positioning System}
-
-\makeglossaries
 % \usepackage{eps
+
+% class `abbrev': abbreviations:
 
 \begin{document}
 
@@ -90,7 +85,7 @@ Blacksburg, Virginia
 
 \vfill
 
-Keywords: Reinforcement Learning,Gaussian Processes 
+Keywords: Reinforcement Learning,Gaussian Processes, Unmanned Aerial Vehicle Navigation
 \\
 Copyright 2017, Nahush Gondhalekar
 
@@ -121,13 +116,22 @@ Abstract Goes here ..
 
 % GRANT INFORMATION
 
-Grant information goes here ..
+This work has been funded by the Center for Unmanned Aircraft Systems (C-UAS), a National Science Foundation-sponsored industry/university cooperative research center (I/UCRC) under NSF Award No. IIP-1161036 along with significant contributions from C-UAS industry members.
 
 \pagebreak
 
 % Dedication and Acknowledgments are both optional
-% \chapter*{Dedication}
-% \chapter*{Acknowledgments}
+\chapter*{Dedication}
+To Dad and Maa. 
+\chapter*{Acknowledgments}
+First and foremost, I would like to express my gratitude towards my advisor, Dr. Pratap Tokekar. Thank you very much for the constant support and motivation. This wouldn't be possible without your encouragement. My sincere acknowledgment for believing in me. I am looking forward to have a continued association and keep learning new things and hoping to collaborate in the future. I could not have asked for a better advisor. \par 
+A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support for the grants {\color{red}enlist the grant \#}. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
+Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Arvind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
+I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia T ech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
+I'd like to express my sincere thanks to the Mccomas Gym and the War Memorial Gym at Virginia Tech which have been my meditation centers and have helped me through the stressful times.\par 
+Last but certainly not the least, I cannot describe how thankful I am towards my family. My mother's confidence in me and her endless support has kept me going for these two years. Thank you to my mother Sudha Gondhalekar for being just a phone call away. A special thanks to my dad Ramesh Gondhalekar who's been watching over me from heaven for the past $5$ years and I know he would continue to do so. 
+
+
 
 \tableofcontents
 \pagebreak
@@ -135,11 +139,9 @@ Grant information goes here ..
 \listoffigures
 \pagebreak
 
-\listoftables
-\pagebreak
 
-\printacronyms
-\pagebreak
+%\listoftables
+%\pagebreak
 
 \pagenumbering{arabic}
 \pagestyle{myheadings}
@@ -152,12 +154,12 @@ Grant information goes here ..
 
 \label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-With increasing popularity of Mobile Robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as ones of \textit{reinforcement learning}. Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as "obstacle avoidance" or "following the wall". Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to figure out \textit{how} to achieve that.\par
+With increasing popularity of Mobile Robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as the ones of \textit{Reinforcement Learning}(RL). Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as "obstacle avoidance" or "following the wall". Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to figure out \textit{how} to achieve that.\par
 
 Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement
 learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by continuous state-action space. A true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to maintain the information of the environment that provides information along with uncertainty (Mean and Variance). Many times it is difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time-frame, approximations of state, value functions or even system dynamics are introduced.  However, no matter how costly the real-world experience is, it often cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par \todo{Add figures showing examples of RL in robotics}.
 
-In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time-frame?. In this thesis we study some of these questions related to Unmanned Aerial Vehicles. Before introducing the particular problems, we will discuss the applications and associated challenges in navigation of UAVs to complete certain tasks.
+In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time-frame?. In this thesis we study some of these questions related to Unmanned Aerial Vehicles (UAVs). Before introducing the particular problems, we will discuss the applications and associated challenges in navigation of UAVs to complete certain tasks.
 
 \section{Motivation and applications to general scenarios} 
 This work is motivated by the growing interest in using small Unmanned Aerial Vehicles (UAVs) for infrastructure and environmental monitoring. UAVs equipped high resolution cameras are being used for bridge inspection~\cite{liu2014review}, penstock inspection~\cite{ozaslaninspection}, and yield estimation in farms~\cite{das2015devices}. In order for these systems to be successfully deployed, it is crucial that UAVs are able to plan and navigate autonomously in narrow, confined spaces while withstanding large wind disturbances. A controller that is not robust to these disturbances may cause catastrophic failures. Designing custom controllers for UAVs in every new situation is a tedious task and not practical as it requires constant human supervision~\cite{kober2012reinforcement}. Instead, reinforcement learning (RL) can provide a general solution.\par 
@@ -165,7 +167,7 @@ For a UAV, navigating through a previously-unseen environment is of paramount im
 
 
 \subsection{Challenges}
-When a UAV needs to inspect a bridge from inside or when it tries to fly near the structures or around the bridge pillars, GPS-signal or any other external localization system is either not available or not reliable. In order to be able to autonomously navigate in such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board laser sensors.\par
+When a UAV needs to inspect a bridge from inside or when it tries to fly near the structures or around the bridge pillars, GPS signal or any other external localization system is either not available or not reliable. In order to be able to autonomously navigate in such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board laser sensors.\par
 A flight control system with conventional methods where the designer needs to be aware of the dynamics of the vehicle and environment increases the development time. If some modifications are made to the vehicle later, most of the work may be needed to be redone from scratch. Specifically, reinforcement learning (RL) algorithms provide a number of characteristics which
 could partly address dynamic environments and dynamics changes: RL can control
 an agent when a model of the environment is unavailable; RL can control an agent without an
@@ -176,7 +178,7 @@ One of several immediate questions is: how does the \textit{learning} occur? In 
 
 \section{Contributions}
 
-As we've seen previously, it is difficult to collect real world samples in order to train a UAV. A Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GP) to learn the optimal policy in a real world environment is presented in this thesis. In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. The main contribution of this thesis is to show how we can use GP regression with MFRL to approximate the state-action transition dynamics in large state spaces. GPs exploit the spatial correlation in the transition function for agents that are physical grounded (e.g., a robot). By incorporating GP in MFRL framework, we achieve further reduction in the number of samples used as we move up the simulator chain. We examine the performance with the help of simulations for navigation with an aerial robot.\par 
+As we've seen previously, it is difficult to collect real world samples in order to train a UAV. A Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes(GPs) to learn the optimal policy in a real world environment is presented in this thesis. In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. The main contribution of this thesis is to show how we can use GP regression with MFRL to approximate the state-action transition dynamics in large state spaces. GPs exploit the spatial correlation in the transition function for agents that are physical grounded (e.g., a robot). By incorporating GP in MFRL framework, we achieve further reduction in the number of samples used as we move up the simulator chain. We examine the performance with the help of simulations for navigation with an aerial robot.\par 
 We also present an implementation of GPQ algorithm \cite{chowdhary2014off} on different kinds of simulators. The feedback from the laser sensors is utilized by the learning algorithm in order to \textit{learn} a particular \textit{skill}. This is useful while flying indoors where the GPS signal or any other localization data is not available for the UAV to navigate through the space. Learning \textit{skills} like \textit{wall following} or \textit{obstacle avoidance} can be very useful in these scenarios. How GPs can be used to learn the $Q$ values to learn a skill of obstacle avoidance in a dynamic environment is described with the help of a basic python simulator in order to extend it to a multi-fidelity simulator framework with Gazebo Robot Simulator and an actual quadrotor as the highest fidelity simulator.
 
 
@@ -188,7 +190,7 @@ This section should talk about how the chapters are organized.
 %-----------------------------------
 
 
-\chapter{Background} % Main chapter title
+ \chapter{Background} % Main chapter title
 
 \label{background} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
@@ -217,7 +219,7 @@ Though in this thesis we are mainly interested in the algorithms which deal with
 \end{itemize}
 
 \subsection{Online Vs Off-line Learning}
-Let's again take an example of an \gls{uav} which needs to fly close to a surface of a bridge and take pictures. It is difficult to control it manually with an erratic \gls{gps} signal and wind disturbances near the bridge surface. What if the UAV is equipped with a knowledge of maintaining a certain distance from the bridge surface and fly near the bridge autonomously? \par This demands for a situation where the UAV needs to be trained to perform the task of flying close to a surface without hitting the obstacle. Learning the controller directly on the real task \textit{Online} is often difficult since learning a task needs a lot of data which sometimes is too time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad-rotor colliding several times with the bridge causing financial and other setbacks. It is often desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{Off-line} learning uses a simulator of the environment as a \textit{cheap} way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world.
+Let's again take an example of a UAV which needs to fly close to a surface of a bridge and take pictures. It is difficult to control it manually with an erratic GPS signal and wind disturbances near the bridge surface. What if the UAV is equipped with a knowledge of maintaining a certain distance from the bridge surface and fly near the bridge autonomously? \par This demands for a situation where the UAV needs to be trained to perform the task of flying close to a surface without hitting the obstacle. Learning the controller directly on the real task \textit{Online} is often difficult since learning a task needs a lot of data which sometimes is too time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad-rotor colliding several times with the bridge causing financial and other setbacks. It is often desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{Off-line} learning uses a simulator of the environment as a \textit{cheap} way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world.
 
 \subsection{Rewards, and how to assign them ?}
 The important aspect of Sequential Decision Making is the fact that, if the action is going to result in \textit{good} or \textit{bad} outcomes, cannot be decided right away. Sometimes the first action may have a large influence in reaching the goal even though the actions between the first one and the reward obtained at the end, may be \textit{bad}. A formal model to represent such problems would be extremely useful in analyzing and solving sequential decision making problems. In section \ref{mdp} we would take a look at the most popular way to represent sequential decision making in an uncertain environment.
@@ -391,7 +393,7 @@ However, we can control the parameter $\alpha$, which is the learning rate so as
 
 \subsubsection{The need of learning Q values.}
 Consider an agent that has to navigate through a grid given in the figure \ref{fig:gridworld_ex}. The walls in the grid block the agent's path. The actions taken by the agent are noisy $\ie$  $80\%$ of the time, the action North takes the agent North if there's no wall, $10\%$ of the time action North takes the agent West, and $10\%$ of the times to East. Each step taken by the agent has a small negative reward say $-0.25$. A reward of $+1$ or $-1$ is given at the states shown in figure \ref{fig:gridworld_ex}. The goal of the agent is to maximize the sum of the rewards. \par 
-This problem can be solved using value iteration where the Bellman equations {\color{red} Reference the equation here} characterize the optimal values. The agent has to store the Q values for each state-action pair ($Q(s,a)$). The space required to store the $Q$-table is $S \times A$. In this example, the number of states are $11$ and number of possible actions are $4$. The efficiency of recursive Bellman update is $O(S^2)$. Imagine when the state space becomes larger and the time complexity increases with the square of number of states. A naive Q-Learning approach wouldn't be able to scale up to give faster solutions as the problem space grows. We will see that in the following scenario.
+This problem can be solved using value iteration where the Bellman optimality equation (Refer to equation \ref{bellman_optimality_equation}) characterize the optimal values. The agent has to store the Q values for each state-action pair ($Q(s,a)$). The space required to store the $Q$-table is $S \times A$. In this example, the number of states are $11$ and number of possible actions are $4$. The efficiency of recursive Bellman update is $O(S^2)$. Imagine when the state space becomes larger and the time complexity increases with the square of number of states. A naive Q-Learning approach wouldn't be able to scale up to give faster solutions as the problem space grows. We will see that in the following scenario.
 
 \begin{figure}[htp]
 	\centering
@@ -884,6 +886,7 @@ The GP-MFRL algorithm provides a general RL technique that is particularly suite
 
 
 \chapter{Bridge Inspection}
+\label{bridge_chapter}
 \section{Background}
 When it comes to inspecting bridges, UAVs are often considered as harbingers, a truly disruptive technology capable of giving engineers eyes in the hardest to reach places, without the need for expensive access vehicles or potentially dangerous rigging or ladders or harnesses. A recent paper  \cite{morgenthal2014quality} discusses the application of UAVs for visual inspection and damage detection of civil structures. The quality of such pictures and videos taken by the UAV strongly depends on various factors viz. lighting conditions, distance from the structure, vehicle motion influenced by environmental effects etc. It is very important for the UAVs to be equipped with sophisticated control algorithms and sensors to be able to provide reliable data which can be conclusively used for inspection and analysis of damage.
 
@@ -946,7 +949,7 @@ DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_fra
 \end{itemize}
 
 \subsection{Flights without GPS signal}
-While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In section \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures.
+While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In chapter \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures. \par 
 \begin{figure}[htp]
 	\centering 
   	\subfigure{\includegraphics[width=8cm]{indoor_1.JPG}}
@@ -954,9 +957,10 @@ While the UAV is flying indoors or inside the bridge, it does not get a GPS sign
 	\caption{Indoor flight of the UAV visually inspecting the structure}
    \label{fig:indoor_flight}
 \end{figure}
-Init
+
 \subsection{Outdoor Inspection}
-Figure \ref{fig:outdoor_flight}.
+Similar to the indoor bridge inspection, while flying close to the bridge surfaces, the UAV does not get reliable GPS signal or any other localization inputs. It is vital for the robot to have learned the skill of flying close to the surfaces and following certain trajectories using on board laser sensor data. As iterated multiple times in this thesis, while learning in the real world, collecting negative samples (Colliding with the wall/surface in this scenario) can lead to catastrophic results. It is important for the robot to learn a skill in a simulator environment before executing the required tasks in the real world.
+Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the outdoor visual inspection of the bridge. 
 \begin{figure}[htp]
 	\centering 
   	\subfigure{\includegraphics[width=8cm]{outdoor_1.JPG}}
