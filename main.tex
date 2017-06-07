@@ -536,15 +536,21 @@ However in this study we explore the use of Gaussian Processes on Reinforcement 
 \section{Deep Reinforcement Learning}
 \label{deep_rl_section}
 Reinforcement learning is a branch of machine learning primarily based on sequential decision making (refer to section \ref{sequential_decision_making}). The conventional reinforcement learning focuses on linear function approximations and tabular representations \cite{gamedeep}. To generalize in large and continuous state and action spaces, the linear approximations and tabular functions are not enough\cite{morton2016deep}. Performance of most of the successful RL applications operating in high dimensional sensor inputs like vision and speech rely on the quality of features along with the function approximations or policy representation.\par 
-\cite{krizhevsky2012imagenet} states that, with sufficient data fed into a deep neural network, it is often possible to learn better representations compared to handcrafted features. The approach for deep $Q$ learning given in \cite{mnih2013playing} is advantageous over an online $Q$ learning algorithm in the following ways.
+\cite{krizhevsky2012imagenet} states that, with sufficient data fed into a deep neural network, it is often possible to learn better representations compared to handcrafted features. \cite{mnih2015human} describes a Deep-RL system which combines Deep Neural Networks with Reinforcement Learning at scale for the first time. This work represents the first demonstration of a general-purpose agent that is able to continually adapt its behavior without any human intervention. 
+The algorithm - \textit{Deep Q-learning with experience replay} for deep $Q$ learning given in \cite{mnih2013playing} is advantageous over an online $Q$ learning algorithm in the following ways.
 \begin{itemize}
 \item Each step of experience may be used in many weight updates which results in greater data efficiency.
 \item Due to strong correlation, learning from consecutive samples may be inefficient. Randomizing samples leads to decrease in covariance of the updates.
+\end{itemize}.\par 
+Basic steps of applying RL to deep neural networks are:
+\begin{itemize}
+\item Use of a deep network to represent value function or policy or model.
+\item End to end optimization of this value function or policy or model.
+\item Use of Stochastic Gradient Decent to update the weights.
 \end{itemize}
-
-A naive implementation of a Deep-$Q$ network can be represented as shown in figure \ref{fig:deep_q}. 
-
-\begin{figure}[htp]
+\cite{mnih2013playing}
+A naive representation of a Deep-$Q$ network is shown in figure \ref{fig:deep_q}.
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=6cm]{deep_q.png}
 	\caption {A naive representation of deep Q-network}
@@ -598,8 +604,12 @@ In case of the Gazebo Robot Simulator, the state-space $S$ and the action-space 
 Let us consider a static environment first. Assuming each sensor can give $20$ discrete values in case of Simulator $1$ given in section \ref{sims}, we have about $2$ \textit{million} possible states. To observe all of the states in order to be able to store and update the value function (or $Q$ values) is a tedious task. Once a sufficient number of states are observed for the optimal $Q$ values, the robot may learn to navigate through the environment successfully. This may take a longer time due to the size of the state space. In case of simulator $2$, the state space is infinite and hence it is not possible to observe all the possible state-action pairs. 
 
 \section{GPQ Algorithm}
- A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Consider the problem of finding the value function for over a $million$ state-action pairs in limited time described in section \ref{laser_learning}. The problem here closely relates to the problem in section \ref{GPR} where we were tasked to find out a function to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (Refer algorithm \ref{batch_gpq_algorithm}). 
- 
+ A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Consider the problem of finding the value function for over a $million$ state-action pairs in limited time described in section \ref{laser_learning}. The problem here closely relates to the problem in section \ref{GPR} where we were tasked to find out a function to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (Refer algorithm \ref{batch_gpq_algorithm}).\par
+ The batch off-line algorithm may be considered in two phases.
+ \begin{itemize}
+\item Training phase: Refer to the lines $1$ to $9$ in algorithm \ref{batch_gpq_algorithm}. Take a random action $a$ in state $s$. Let the observed state and the reward be $s'$ and $r$ respectively. The new data $(s,a,r,s')$ is added to the training set $T$. This loop is executed for a predefined number of iterations $N$.
+\item Batch GP-Q: From the training set $T$ obtained in the training phase, the input to the GP extracted as $dX$, is the set of all state-action pairs $(s,a)$. The target value is the sum of current reward $r$ and the maximum value predicted by the GP for the next state $s'$ over all actions $a \in A$ (Returned by the function findMax(GP,s') line 20). The GP is updated with the input $dX$ and the target vector $tX$ (refer to line 18) and the loop is continued till the termination condition is not reached.
+\end{itemize}
 \begin{algorithm}
 \label{batch_gpq_algorithm}
 \SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
@@ -650,6 +660,7 @@ $tX \leftarrow$ \texttt{output of the GP}.\\
 
 \caption{Batch GPQ Algorithm}
 \end{algorithm}
+
 
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
@@ -1045,8 +1056,16 @@ The specifications are as follows:
 \item Diameter $60$mm total size, $32$ grams with case.
 \end{itemize}
 
-\item \textbf{Motors}:
-\item ESC Motor Controllers: 
+\item \textbf{Motors and ESC Motor Controllers}: E800 Tuned Propulsion System is designed for multi-rotor copters. Shown in figure \ref{fig:dji_propulsion_system}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=6cm]{motors.jpg}}
+     \subfigure{\includegraphics[width=6cm]{esc.jpg}}
+	\caption{E800 Tuned Propulsion System by DJI}
+   \label{fig:dji_propulsion_system}
+\end{figure}
+
 \end{itemize}
 
 \subsection{Flights without GPS signal}
