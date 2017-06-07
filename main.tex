@@ -9,7 +9,7 @@
 
 % Instructions: Remove the data from this document and replace it with your own,
 % keeping the style and formatting information intact.  More instructions
-% appear on the Web site listed above.
+% appear on the Web site listed above
 
 \documentclass[12pt]{report}
 \usepackage{cite}
@@ -17,6 +17,7 @@
 \usepackage{framed}
 \usepackage{todonotes}
 \usepackage{graphicx}
+\usepackage{textcomp}
 \graphicspath{ {images/} }
 \usepackage{float}
 \usepackage{epsfig}
@@ -126,8 +127,8 @@ To Dad and Maa.
 \chapter*{Acknowledgments}
 First and foremost, I would like to express my gratitude towards my advisor, Dr. Pratap Tokekar. Thank you very much for the constant support and motivation. This wouldn't be possible without your encouragement. My sincere acknowledgment for believing in me. I am looking forward to have a continued association and keep learning new things and hoping to collaborate in the future. I could not have asked for a better advisor. \par 
 A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support for the grants {\color{red}enlist the grant \#}. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
-Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Arvind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
-I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia T ech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
+Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Aravind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
+I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia Tech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
 I'd like to express my sincere thanks to the Mccomas Gym and the War Memorial Gym at Virginia Tech which have been my meditation centers and have helped me through the stressful times.\par 
 Last but certainly not the least, I cannot describe how thankful I am towards my family. My mother's confidence in me and her endless support has kept me going for these two years. Thank you to my mother Sudha Gondhalekar for being just a phone call away. A special thanks to my dad Ramesh Gondhalekar who's been watching over me from heaven for the past $5$ years and I know he would continue to do so. 
 
@@ -190,15 +191,12 @@ This section should talk about how the chapters are organized.
 %-----------------------------------
 
 
- \chapter{Background} % Main chapter title
+\chapter{Background} % Main chapter title
 
 \label{background} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
-
 \section{Sequential Decision Making}
+\label{sequential_decision_making}
 A delivery truck trying to decide which house to go first on a tour to deliver the packages, a sudden price drop in the merchandise trying to increase the sales, a robot trying to explore unknown environments. These are all examples of sequential decision making. One of the main factors in sequential decision making is that the decisions made now can have both immediate and long term effects \cite{littman1996algorithms}. Sometimes it's effective to make a greedy choice but sometimes the decisions made depend critically on future situations. So how to approach sequential decision making?
 
 \subsection{Approaches to solve sequential decision making}
@@ -370,7 +368,7 @@ Q(s,a) = r(s,a) + \gamma \max_{a'}(Q(s',a'))
 \end{equation}
 where,\\
 $r(s,a)$ is the immediate reward,\\
-$\gamma$ is the relative value of the delayed Vs. immediate reward, also known as \textit{discount factor} $ \gamma \in [0,1]$,\\
+$\gamma$ is the relative value of the delayed Vs. immediate reward, also known as \textit{discount factor} $ \gamma \in (0,1]$,\\
 $s'$ is the new state after action $a$ is taken in state $s$,\\
 $a,a'$ are the actions in state $s$ and $s'$ respectively.\\
 The selected action $\pi(s) = \arg\max_a Q(s,a)$.\\
@@ -467,7 +465,7 @@ In all the above kernels,
 \textbf{Kernel Parameters} Each kernel has a number of parameters which are used to specify the precise shape of the covariance function. These are referred to as \textit{hyper-parameters}, since they can be viewed as specifying a distribution over function parameters, instead of being parameters which specify a function directly. 
 An example would be the lengthscale parameter $l$of the RBF kernel, which specifies the width of the kernel and thereby the smoothness of the functions in the model.
 
-\textbf{Stationary and Non-stationary Kernels} The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x − x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
+\textbf{Stationary and Non-stationary Kernels} The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x$ − $x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
 
 \subsection{Gaussian Process Regression}
 \label{GPR}
@@ -535,7 +533,25 @@ Some of the early examples of robot reinforcement learning are; The OBELIX robot
 model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}, Petar Kormushev and Sylvain Calinon–taught from Italian Institute of Technology taught a robot the technique to flip pancakes \cite{kormushev2010robot}. The autonomous UAV learns the landing skill from scratch by interacting with the environment. The reinforcement learning algorithm explored in \cite{Shaker:2010:VLS:1901614.1902128}  is Least-Squares Policy Iteration (LSPI) to gain a fast learning process and a smooth landing trajectory. A recent paper \cite{sugimoto2016acquisition} applied reinforcement learning to a UAV to achieve stable hovering using the well known technique of Q-learning (section \ref{q_learning_section}). Unlike most of the studies, experiments using an actual quadrotor UAV were performed and the experimental results demonstrate that the UAV can acquire knowledge to achieve stable hovering over a marker placed on the ground.\par 
 However in this study we explore the use of Gaussian Processes on Reinforcement Learning algorithms for UAV navigation.
 
-\chapter{The GPQ Algorithm} % Main chapter title
+\section{Deep Reinforcement Learning}
+\label{deep_rl_section}
+Reinforcement learning is a branch of machine learning primarily based on sequential decision making (refer to section \ref{sequential_decision_making}). The conventional reinforcement learning focuses on linear function approximations and tabular representations \cite{gamedeep}. To generalize in large and continuous state and action spaces, the linear approximations and tabular functions are not enough\cite{morton2016deep}. Performance of most of the successful RL applications operating in high dimensional sensor inputs like vision and speech rely on the quality of features along with the function approximations or policy representation.\par 
+\cite{krizhevsky2012imagenet} states that, with sufficient data fed into a deep neural network, it is often possible to learn better representations compared to handcrafted features. The approach for deep $Q$ learning given in \cite{mnih2013playing} is advantageous over an online $Q$ learning algorithm in the following ways.
+\begin{itemize}
+\item Each step of experience may be used in many weight updates which results in greater data efficiency.
+\item Due to strong correlation, learning from consecutive samples may be inefficient. Randomizing samples leads to decrease in covariance of the updates.
+\end{itemize}
+
+A naive implementation of a Deep-$Q$ network can be represented as shown in figure \ref{fig:deep_q}. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=6cm]{deep_q.png}
+	\caption {A naive representation of deep Q-network}
+   \label{fig:deep_q}
+\end{figure}
+
+\chapter{The End to End GPQ Algorithm} % Main chapter title
 
 \label{gpq} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 \section{Perception in the loop}
@@ -935,17 +951,102 @@ DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_fra
 
 \begin{figure}[htp]
 	\centering 
-    \includegraphics[width=8cm]{uav-1.JPG}Init
+    \includegraphics[width=8cm]{uav-1.JPG}
 	\caption{UAV used for the experiments}
    \label{fig:dji_frame}
 \end{figure}
-\todo{Add pictures and more information about the system}
+
+The specific components are listed below. 
+
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=8cm]{quad.png}
+	\caption{System Components}
+   \label{fig:system_components}
+\end{figure}
+
 \begin{itemize}
-\item Camera: The camera used to capture the visuals was \cite{flea_camera}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
-\item Intel NUC:
-\item Pixhawk-Flight Controller:
-\item LIDAR:
-\item GPS: 
+\item \textbf{Camera}: The camera used to capture the visuals is \cite{flea_camera} as shown in figure \ref{fig:cam}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{cam.jpg}
+	\caption{Flea3 2.0 MP Color USB3 Vision (e2v EV76C5706F)}
+   \label{fig:cam}
+\end{figure}
+
+\item \textbf{Intel NUC}: Intel NUC5I7RYH Mini PC NUC Kit as shown in figure \ref{fig:nuc}. 
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{nuc.jpg}
+	\caption{Intel NUC NUC5I7RYH}
+   \label{fig:nuc}
+\end{figure}
+Specifications are as follows:
+\begin {itemize}
+\item 5th Generation Intel Core $i7$-$5557$U processor
+\item Intel Iris Graphics $6100$
+\item Mini HDMI \& Mini Display Port
+\item Internal support for M.$2$ SSD card \& SATA$3$ for $2.5$" HDD/SSD
+\end{itemize}
+
+\item \textbf{Pixhawk-Flight Controller}: Pixhawk is an independent, open-hardware project which mainly aims at providing high-end autopilot hardware to the academic, hobby and industrial communities at low costs as shown in figure \ref{fig:pixhawk}.The Pixhawk autopilot module runs a very efficient real-time operating system (RTOS), which provides a POSIX-style environment.
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{pixhawk.jpg}
+	\caption{Pixhawk Flight Controller}
+   \label{fig:pixhawk}
+\end{figure}
+
+Some of the specifications are as follows:
+\begin {itemize}
+\item $68$ MHz Cortex M$4$F CPU ($256$ KB RAM, $2$ MB Flash)
+\item Sensors: $3$D Accelerometer / Gyroscope / Magnetometer / Barometer
+\item Integrated backup, override and failsafe processor with mixing
+\item MicroSD slot, $5$ UARTs, CAN, I$2$C, SPI, ADC, etc
+\end{itemize}
+
+\item \textbf{LIDAR}: The LIDAR-Lite v$3$ is a compact, high-performance optical distance measurement sensor from Garmin\textsuperscript{TM} as shown in figure \ref{fig:lidar}.
+
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{lidar.jpg}
+	\caption{LIDAR-Lite v$3$}
+   \label{fig:lidar}
+\end{figure}
+The specifications are as follows:
+\begin{itemize}
+\item Range: $0$-$40$m Laser Emitter
+\item Accuracy: +/- $2.5$cm at distances greater than $1$m
+\item Power: $4.75$–$5$V DC; $6$V Max
+\item Current Consumption: $105$mA idle; $130$mA continuous
+\item Rep Rate: $1$–$500$Hz
+\item Laser Wave Length/Peak Power: $905$nm/$1.3$ watts
+\item Beam Divergence: $4$m Radian $\times$ $2$m Radian
+\item Optical Aperture: $12.5$mm
+\item Interface: I$2$C or PWM
+\end{itemize}
+
+\item \textbf{GPS}: GPS used is Ublox Neo-M$8$N GPS with Compass as shown in figure \ref{fig:gps}.
+
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{gps.jpg}
+	\caption{Ublox Neo-M$8$N GPS}
+   \label{fig:gps}
+\end{figure}
+The specifications are as follows:
+\begin{itemize}
+\item $–167$ dBm navigation sensitivity
+\item Navigation update rate up to $10 H_z$
+\item Cold starts: $26$s
+\item $25 \times 25 \times 4$ mm ceramic patch antenna
+\item Rechargeable $3$V lithium backup battery
+\item Low noise $3.3$V regulator
+\item Diameter $60$mm total size, $32$ grams with case.
+\end{itemize}
+
+\item \textbf{Motors}:
+\item ESC Motor Controllers: 
 \end{itemize}
 
 \subsection{Flights without GPS signal}
