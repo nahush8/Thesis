@@ -584,7 +584,7 @@ Two simulators were implemented in order to present the idea of perception and s
    \label{fig:perception_sim_1}
 \end{figure}
 
-\item Simulator 2: A second simulator was implemented in the Gazebo robot simulator~\cite{koenig2004design}. A UAV equipped with a Hokuyo Laser was implemented in the simulator as shown in figure \ref{fig:perception_sim_2}. This may be considered as a $3$D extension of the simulator shown in figure \ref{fig:perception_sim_1}. With infinite state-action space and ability to add robot dynamics, this simulator is a higher fidelity simulator compared to the python-pygame based $2$D simulator. 
+\item Simulator 2: A second simulator is implemented in the Gazebo robot simulator~\cite{koenig2004design}. A UAV equipped with a Hokuyo Laser is implemented in the simulator as shown in figure \ref{fig:perception_sim_2}. This may be considered as a $3$D extension of the simulator shown in figure \ref{fig:perception_sim_1}. With infinite state-action space and ability to add robot dynamics, this simulator is a higher fidelity simulator compared to the python-pygame based $2$D simulator. 
 
 \begin{figure}[htp]
 	\centering
@@ -1068,6 +1068,16 @@ The specifications are as follows:
 
 \end{itemize}
 
+\subsection{Camera Software and ROS nodes}
+The ROS-flea3 camera driver enables publishing of images on ROS topics which can in turn be viewed on rqt image view tool. The images can be viewed real time and are also stored in a rosbag. The screen capture of an instance of the camera view and ROS node running the rosbag to record to images is shown in figure
+
+\begin{figure}[htp]
+	\centering 
+    \includegraphics[width=10cm]{cam_rqt.png}
+	\caption{Camera view and ROS-bag record}
+   \label{fig:cam_rqt}
+\end{figure}
+
 \subsection{Flights without GPS signal}
 While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In chapter \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures. \par 
 \begin{figure}[htp]
@@ -1088,6 +1098,8 @@ Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the o
 	\caption{Outdoor flight of the UAV visually inspecting the structure}
    \label{fig:outdoor_flight}
 \end{figure}
+
+
 
 % Do tables like this:
 \begin{comment}
