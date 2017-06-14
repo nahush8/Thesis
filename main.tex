@@ -192,7 +192,11 @@ We also present an implementation of an \textit{End to End GPQ algorithm} based 
 
 \section{Organization of the Thesis}
 
-This section should talk about how the chapters are organized.
+The thesis is organized in $5$ chapters following this chapter.\par
+In Chapter \ref{background}, we present a review of the fundamental concepts and background of sequential decision making, reinforcement learning and Gaussian processes.\par
+In chapter \ref{gpq}, we study the GP-Q algorithm along with the coverage of perception in the loop which is the foundation of the Multi-Fidelity Reinforcement Learning presented in the chapter following that.\par
+Chapter \ref{gpMfrl} presents the idea of Multi-Fidelity Reinforcement Learning with Gaussian Processes which helps to reduce the number of real world samples using a simulator framework. Chapter \ref{bridge_chapter} discusses the practical application of the algorithms presented in the thesis along with some field experiments.\par 
+We conclude the thesis with an overview of the main contributions and discussions about some future work. All the software corresponding to this thesis is available online on github. 
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
@@ -669,25 +673,32 @@ $tX \leftarrow$ \texttt{output of the GP}.\\
 \end{algorithm}
 
 \section{Simulations and Results}
-The performance of a batch-GPQ algorithm is compared with a naive $Q$-learning algorithm on the simulator shown in figure \ref{fig:gpq_sim}. Similar to the figure \ref{fig:perception_sim_1}, we use $3$ lasers on the robot to gather the distance data. The goal of the robot is to navigate in the environment without colliding into the obstacles. A reward of $-5$ is given on collision and a positive reward which is a function of the sum of the laser values is awarded on being able to avoid colliding into obstacles. 
+The performance of a batch-GPQ algorithm is compared with a naive $Q$-learning algorithm on the simulators shown in figure \ref{fig:gpq_sim}. Similar to the figure \ref{fig:perception_sim_1}, we use $3$ lasers on the robot to gather the distance data. The goal of the robot is to navigate in the environment without colliding into the obstacles. A reward of $-5$ is given on collision and a positive reward which is a function of the sum of the laser values is awarded on being able to avoid colliding into obstacles. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{gpq_sim.pdf}
+    \subfigure{\includegraphics[width=6cm]{env1.pdf}}
+    \subfigure{\includegraphics[width=6cm]{env2.pdf}}
+    \subfigure{\includegraphics[width=6cm]{env3.pdf}}
+    \subfigure{\includegraphics[width=6cm]{env4.pdf}}
 	\caption {Simulator Environment}
    \label{fig:gpq_sim}
 \end{figure}
 
+
+
 \subsection{Reward as a function of time}
-In order to compare the performance of the algorithms, we use \textit{reward} as a metric of comparison. The plot shown in figure \ref{fig:gpq_vs_q} , shows the reward obtained over time for the naive $Q$ learning and the end to end GP-Q learning algorithm. An \textit{epoch} is defined to be a set of $200$ actions. After every epoch, the reward obtained by the agent is calculated. 
+In order to compare the performance of the algorithms, we use \textit{reward} as a metric of comparison. The plot shown in figure \ref{fig:gpq_vs_q_reward} , shows the reward obtained over time for the naive $Q$ learning and the end to end GP-Q learning algorithm. An \textit{epoch} is defined to be a set of $200$ actions. After every epoch, the reward obtained by the agent is calculated. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{gpq_q_reward.eps}
-	\caption {Reward collected in each epoch Vs. Epoch}
-   \label{fig:gpq_vs_q}
+    \subfigure{\includegraphics[width=8cm]{r_env1.eps}}
+    \subfigure{\includegraphics[width=8cm]{r_env2.eps}}
+    \subfigure{\includegraphics[width=8cm]{r_env3.eps}}
+    \subfigure{\includegraphics[width=8cm]{r_env3.eps}}
+	\caption {Reward obtained over time}
+   \label{fig:gpq_vs_q_reward}
 \end{figure}
-
 \chapter{The GP-MFRL Algorithm} % Main chapter title
 In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
 
@@ -1125,6 +1136,7 @@ Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the o
 \end{figure}
 
 
+\chapter{conclusion and Future research}
 
 % Do tables like this:
 \begin{comment}
