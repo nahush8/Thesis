@@ -6,6 +6,7 @@
 \contentsline {section}{\numberline {1.3}Organization of the Thesis}{4}
 \contentsline {chapter}{\numberline {2}Background}{5}
 \contentsline {section}{\numberline {2.1}Sequential Decision Making}{5}
+<<<<<<< HEAD
 \contentsline {subsection}{\numberline {2.1.1}Approaches to solve sequential decision making problems}{5}
 \contentsline {subsection}{\numberline {2.1.2}Why learning?}{6}
 \contentsline {subsection}{\numberline {2.1.3}Online vs off-line learning}{6}
@@ -17,6 +18,19 @@
 \contentsline {section}{\numberline {2.3}Reinforcement Learning (RL)}{10}
 \contentsline {subsection}{\numberline {2.3.1}Model of Reinforcement Learning}{10}
 \contentsline {subsection}{\numberline {2.3.2}Exploration vs. Exploitation}{11}
+=======
+\contentsline {subsection}{\numberline {2.1.1}Approaches to solve sequential decision making}{5}
+\contentsline {subsection}{\numberline {2.1.2}Why Learning?}{6}
+\contentsline {subsection}{\numberline {2.1.3}Online Vs Off-line Learning}{6}
+\contentsline {subsection}{\numberline {2.1.4}Rewards, and how to assign them ?}{7}
+\contentsline {section}{\numberline {2.2}Markov Decision Processes}{7}
+\contentsline {subsection}{\numberline {2.2.1}Policies}{8}
+\contentsline {subsection}{\numberline {2.2.2}Value Function and Bellman Equation}{8}
+\contentsline {subsection}{\numberline {2.2.3}Solving MDPs}{9}
+\contentsline {section}{\numberline {2.3}Reinforcement Learning (RL)}{10}
+\contentsline {subsection}{\numberline {2.3.1}Model of Reinforcement Learning}{10}
+\contentsline {subsection}{\numberline {2.3.2}Exploration Vs. Exploitation}{11}
+>>>>>>> 68388e9d5dfda464cad3b31bdd028bdbe5625b41
 \contentsline {subsection}{\numberline {2.3.3}Classification/Types}{11}
 \contentsline {subsubsection}{Model-free}{11}
 \contentsline {subsubsection}{Model-based}{12}
@@ -32,6 +46,7 @@
 \contentsline {subsection}{\numberline {2.4.2}Gaussian Processes for Machine Learning}{19}
 \contentsline {section}{\numberline {2.5}Reinforcement Learning for UAVs}{19}
 \contentsline {section}{\numberline {2.6}Deep Reinforcement Learning}{20}
+<<<<<<< HEAD
 \contentsline {chapter}{\numberline {3}The End-to-End GPQ Algorithm}{22}
 \contentsline {section}{\numberline {3.1}Perception in the loop}{22}
 \contentsline {section}{\numberline {3.2}The Simulator setup}{23}
@@ -59,3 +74,32 @@
 \contentsline {subsection}{\numberline {5.2.3}Flights without GPS signal}{49}
 \contentsline {subsection}{\numberline {5.2.4}Outdoor Inspection}{50}
 \contentsline {chapter}{\numberline {6}Conclusion and Future Research}{51}
+=======
+\contentsline {chapter}{\numberline {3}The End to End GPQ Algorithm}{22}
+\contentsline {section}{\numberline {3.1}Perception in the loop}{22}
+\contentsline {section}{\numberline {3.2}The Simulator setup}{23}
+\contentsline {subsection}{\numberline {3.2.1}Laser data and $Q$-Learning}{24}
+\contentsline {section}{\numberline {3.3}End to end GPQ Algorithm}{25}
+\contentsline {section}{\numberline {3.4}Simulations and Results}{25}
+\contentsline {subsection}{\numberline {3.4.1}Reward as a function of time}{27}
+\contentsline {chapter}{\numberline {4}The GP-MFRL Algorithm}{29}
+\contentsline {section}{\numberline {4.1}Multi-Fidelity Reinforcement Learning}{29}
+\contentsline {section}{\numberline {4.2}Learning Transition Dynamics as a GP}{30}
+\contentsline {section}{\numberline {4.3}GP-MFRL Algorithm}{32}
+\contentsline {section}{\numberline {4.4}Simulation Results}{34}
+\contentsline {subsection}{\numberline {4.4.1}Representative simulations}{36}
+\contentsline {subsection}{\numberline {4.4.2}Effect of fidelity on the number of samples.}{37}
+\contentsline {subsection}{\numberline {4.4.3}Effect of the confidence parameters.}{39}
+\contentsline {subsection}{\numberline {4.4.4}Comparison with R-max MFRL}{39}
+\contentsline {section}{\numberline {4.5}Conclusion}{39}
+\contentsline {chapter}{\numberline {5}Bridge Inspection}{41}
+\contentsline {section}{\numberline {5.1}Background}{41}
+\contentsline {subsection}{\numberline {5.1.1}Conventional Inspection of Bridges}{41}
+\contentsline {subsection}{\numberline {5.1.2}UAVs in Bridge Inspection}{43}
+\contentsline {section}{\numberline {5.2}Present Work}{43}
+\contentsline {subsection}{\numberline {5.2.1}The System Setup}{44}
+\contentsline {subsection}{\numberline {5.2.2}Camera Software and ROS nodes}{48}
+\contentsline {subsection}{\numberline {5.2.3}Flights without GPS signal}{49}
+\contentsline {subsection}{\numberline {5.2.4}Outdoor Inspection}{50}
+\contentsline {chapter}{\numberline {6}conclusion and Future research}{51}
+>>>>>>> 68388e9d5dfda464cad3b31bdd028bdbe5625b41

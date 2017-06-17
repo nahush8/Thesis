@@ -1,6 +1,10 @@
 \select@language {english}
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Quadrotor navigating through a confined space without GPS signal. Images collected during field trial reported in chapter \ref {bridge_chapter}}}{2}
+=======
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Quadrotor navigating through a confined space without GPS signal}}{2}
+>>>>>>> 68388e9d5dfda464cad3b31bdd028bdbe5625b41
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A Simplified Reinforcement Learning Model}}{10}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces An example gridlworld with stochastic actions}}{14}
@@ -13,6 +17,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces A UAV equipped with a laser sensor}}{23}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces A python based simulator for obstacle avoidance}}{23}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A UAV equipped with laser sensor in Gazebo Robot Simulator}}{24}
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Simulator Environments}}{27}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Environment 1}}}{27}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Environment 2}}}{27}
@@ -59,5 +64,40 @@
 \contentsline {figure}{\numberline {5.10}{\ignorespaces E800 Tuned Propulsion System by DJI}}{49}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Camera view and ROS-bag record}}{49}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Indoor flight of the UAV visually inspecting the structure}}{50}
+=======
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Simulator Environment}}{27}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Reward obtained over time}}{28}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MFRL framework: First simulator captures only gridworld movements of a point robot while second simulator has more fidelity using a physics simulator. Control can switch back and forth between simulators and real environment which is essentially the third simulator in the multi-fidelity simulator chain.}}{30}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Overview of the GP-MFRL algorithm }}{31}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The environment setup for a multi-fidelity simulator chain. The simple gridworld environment has two wall obstacles whereas the gazebo environment has four wall obstacles as shown.}}{34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The figure represents the samples collected in each level of simulator for a $21 \times 21$ grid in a simple grid-world and Gazebo environments. $\Psi $ and $\psi $ were kept 0.4 and $0.1$}}{36}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{36}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{36}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}}{37}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {After Initial Training}}}{37}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {After Convergence}}}{37}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Variance plot for $21 \times 21$ multi-fidelity environment after the algorithm has converged. Walls A and B are only present in the grid-world simulator, whereas all four walls are present in the Gazebo simulator.}}{37}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }}{38}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Ratio of samples gathered in the second simulator to the total samples gathered increases with inaccuracy in the first simulator. The reference line depicts the average number of samples gathered over $10$ runs when only Gazebo simulator was present.}}{38}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ratio of samples gathered in second simulator vs. total samples gathered as we change the threshold or confidence parameters of the two simulators.}}{39}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}}{40}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Conventional inspection units for Bridge Inspection: (left,Bridge Inspection platform with a truck crane) , A-30 Hi-Rail Under Bridge Units(right,N.E. Bridge Contractors Inc.)}}{42}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Truck Crane}}}{42}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Under Bridge Inspection unit}}}{42}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Bridgeriggers' Aspen A-75 under-bridge inspection crane overturns on Sakonnet River Bridge in Rhode Island; August 30, 2016}}{42}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces UAV used for the experiments}}{44}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces System Components}}{45}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Flea3 2.0 MP Color USB3 Vision (e2v EV76C5706F)}}{45}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Intel NUC NUC5I7RYH}}{46}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Pixhawk Flight Controller}}{46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces LIDAR-Lite v$3$}}{47}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ublox Neo-M$8$N GPS}}{48}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces E800 Tuned Propulsion System by DJI}}{48}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Camera view and ROS-bag record}}{49}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Indoor flight of the UAV visually inspecting the structure}}{49}
+>>>>>>> 68388e9d5dfda464cad3b31bdd028bdbe5625b41
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Outdoor flight of the UAV visually inspecting the structure}}{50}
 \addvspace {10\p@ }
