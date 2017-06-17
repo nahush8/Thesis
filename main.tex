@@ -20,7 +20,7 @@
 \usepackage{textcomp}
 \graphicspath{ {images/} }
 \usepackage{float}
-\usepackage{epsfig}
+%\usepackage{epsfig}
 \usepackage{subfigure}
 \usepackage{url}
 \usepackage{comment}
@@ -113,7 +113,7 @@ Nahush Gondhalekar
 
 \end{center}
 
-We present the problem of studying reinforcement learning (RL) for unmanned aerial vehicle (UAV) navigation with as few real world samples as possible. A naive implementation suffers from curse of dimensionality in large continuous state spaces. Gaussian Processes(GPs) exploit the spatial correlation to approximate state-action transition dynamics in large state spaces. By incorporating GPs in naive Q-learning we achieve better performance in lesser number of samples. The illustrations are performed using simulations with an aerial robot. Further, we present a Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GP) to learn the optimal policy in a real world environment.In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. This is illustrated with the help of simulations. One of the promising yet fairly unexplored applications of learning autonomous navigation for aerial robots is in structural inspection.
+We present the problem of studying reinforcement learning (RL) for unmanned aerial vehicle (UAV) navigation with few real world samples as possible. A naive implementation suffers from curse of dimensionality in large continuous state spaces. Gaussian Processes(GPs) exploit the spatial correlation to approximate state-action transition dynamics in large state spaces. By incorporating GPs in naive Q-learning we achieve better performance in lesser number of samples. The illustrations are performed using simulations with an aerial robot. Further, we present a Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GP) to learn the optimal policy in a real world environment.In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. This is illustrated with the help of simulations. One of the promising yet fairly unexplored applications of learning autonomous navigation for aerial robots is in Structural Inspection.
 
 \vfill
 
@@ -128,7 +128,7 @@ This work has been funded by the Center for Unmanned Aircraft Systems (C-UAS), a
 To Dad and Maa. 
 \chapter*{Acknowledgments}
 First and foremost, I would like to express my gratitude towards my advisor, Dr. Pratap Tokekar. Thank you very much for the constant support and motivation. This wouldn't be possible without your encouragement. My sincere acknowledgment for believing in me. I am looking forward to have a continued association and keep learning new things and hoping to collaborate in the future. I could not have asked for a better advisor. \par 
-A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support for the NSF Award No. IIP-1161036. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
+A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support for the grants {\color{red}enlist the grant \#}. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
 Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Aravind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
 I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia Tech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
 I'd like to express my sincere thanks to the Mccomas Gym and the War Memorial Gym at Virginia Tech which have been my meditation centers and have helped me through the stressful times.\par 
@@ -157,7 +157,7 @@ Last but certainly not the least, I cannot describe how thankful I am towards my
 
 \label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-With increasing popularity of mobile robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as the ones of \textit{Reinforcement Learning} (RL). Unlike the traditional setting of \textit{perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as \quotes{obstacle avoidance} or \quotes{following the wall.} Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to Figure out \textit{how} to achieve that.\par
+With increasing popularity of mobile robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as the ones of \textit{Reinforcement Learning}  (RL). Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as \quotes{obstacle avoidance} or \quotes{following the wall.} Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to Figure out \textit{how} to achieve that.\par
 
 Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement
 learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by a continuous state-action space. The true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to know the state of the robot in the environment which gives information with uncertainty. It can be difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time, approximations of the environment and system dynamics are used through simulations.  However, no matter how costly the real-world experience is, it wholly cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par 
@@ -215,46 +215,31 @@ We conclude the thesis with an overview of the main contributions and discussion
 
 \section{Sequential Decision Making}
 \label{sequential_decision_making}
-A delivery truck trying to decide which house to go first on a tour to deliver the packages, a sudden price drop in the merchandise trying to increase the sales, a robot trying to explore unknown environments. These are all examples of sequential decision making. One of the main factors in sequential decision making is that the decisions made now can have both immediate and long term effects \cite{littman1996algorithms}. Sometimes it's effective to make a greedy choice but sometimes the decisions made depend critically on future situations. So how to approach sequential decision making?
+A delivery truck deciding which house to go first on a tour to deliver the packages, a robot exploring unknown environments, are all examples of sequential decision making. One of the main factors in sequential decision making is that the decisions made now can have both immediate and long term effects \cite{littman1996algorithms}. Sometimes it is effective to make a greedy choice but sometimes the decisions made depend critically on future situations. In the following sections, we review common sequential decision techniques.
 
 \subsection{Approaches to solve sequential decision making problems}
-Though in this thesis we are mainly interested in the algorithms which deal with \textit{learning}, there exist other algorithms which are used to solve the problems related to sequential decision making. The following ways can be used in approaching sequential decision problems \cite{wiering2012reinforcement}. 
-\begin{itemize}
-\item \textit{Programming}: For each possible event/outcome, try to specify an appropriate or optimal action \textit{a priori}. In most of the general scenarios, this is not possible due to the massive state space of the problem or the intrinsic uncertainty of the environment or both. These solutions may work only for completely known static environments with fixed probability distribution. 
-
-\item \textit{Search and Planning}: If we know the dynamics of a system, it is easy to plan \textit{Search and Planning} from a defined start state to a goal state. With an uncertainty element added to the environment for the outcomes of the actions, the standard algorithms would not work. Additionally, we are looking for a general policy for all states of an environment.
-
-\item \textit{Learning}: Imagine a robot trying to navigate an unknown maze trying to get out of it. The robot is mounted with an onboard laser sensor for obstacle detection. It's much easier and faster for the robot to interact with the environment to gather data and find the door which gets it to the exit of the maze. So why is \textit{Learning} an effective way to solve the Sequential Decision Problems. The section \ref{whyLearning} briefly enlists the advantages.
-\end{itemize}
-
-\subsection{Why learning?} \label{whyLearning}
-\begin{itemize}
-\item No need to perform the tedious task of trying to program all the possibilities in the design phase.
-\item Learning can effectively cope with uncertain environments, changing states and actions and reward oriented goal finding.
-\item It can successfully solve the given problem for all the states and come up with a general policy. 
-\end{itemize}
-
-\subsection{Online vs off-line learning}
-Let's again take an example of a UAV which needs to fly close to a surface of a bridge and take pictures. It is difficult to control it manually with an erratic GPS signal and wind disturbances near the bridge surface. What if the UAV is equipped with a knowledge of maintaining a certain distance from the bridge surface and fly near the bridge autonomously? \par This demands for a situation where the UAV needs to be trained to perform the task of flying close to a surface without hitting the obstacle. Learning the controller directly on the real task \textit{Online} is often difficult since learning a task needs a lot of data which sometimes is too time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad-rotor colliding several times with the bridge causing financial and other setbacks. It is often desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{Off-line} learning uses a simulator of the environment as a \textit{cheap} way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world.
+Although in this thesis we are mainly interested in the algorithms which deal with \textit{learning}, there exist other algorithms which are used to solve the problems related to sequential decision making. The following ways can be used in approaching sequential decision problems \cite{wiering2012reinforcement}. 
+\textit{Programming}: For each possible event/outcome, we can specify an action \textit{a priori}. In most general, this is not possible due to the large state spaces of the problem or the intrinsic uncertainty of the environment or both. These solutions may work only for small problems with completely known static environments. \textit{Search and Planning}: If we know the dynamics of a system, we can plan Search and Planning from a defined start state to a goal state. With uncertain actions, the standard algorithms do not work.\par 
+In contrast, \textit{learning} offers many advantages to solve sequential decision making problems. There is no explicit need to perform the tedious task of programming all the possibilities in the design phase. Learning can effectively cope with uncertain environments, changing states and actions and reward oriented goal finding and lastly it can successfully solve the given problem for all the states and come up with a general policy. 
 
 \subsection{Rewards, and how to assign them?}
-The important aspect of Sequential Decision Making is the fact that, if the action is going to result in \textit{good} or \textit{bad} outcomes, cannot be decided right away. Sometimes the first action may have a large influence in reaching the goal even though the actions between the first one and the reward obtained at the end, may be \textit{bad}. A formal model to represent such problems would be extremely useful in analyzing and solving sequential decision making problems. In section \ref{mdp} we would take a look at the most popular way to represent sequential decision making in an uncertain environment.
+The important aspect of sequential decision making is the fact that, if the current action good or bad, cannot be decided right away. Sometimes the first action may have a large influence in reaching the goal even though the actions between the first one and the reward obtained at the end, may be bad. A formal model to represent such problems would be extremely useful in analyzing and solving sequential decision making problems. In Section \ref{mdp} we would take a look at the most popular way to represent sequential decision making in an uncertain environment.
 
 \section{Markov Decision Processes}
 \label{mdp}
-Markov Decision Processes are popularly used to model sequential decision making when the outcomes of the actions are uncertain.\cite{puterman2014markov}. In fact MDPs have become the \textit{de facto} standard formalism for learning sequential decision making. When an action is taken in a particular state, a reward is generated and a next state is attained through a particular transition probability.
+Markov Decision Processes are commonly used to model sequential decision making when the outcomes of the actions are uncertain.\cite{puterman2014markov}. When an action is taken in a particular state, a reward is generated and a next state is attained through a particular transition probability.
 
 \begin{mydef}
 \label{mdp_def}
-A Markov decision process is a tuple $(S, A, T, R)$ in which $S$ is a finite set of states, $A$ a finite set of actions, $T$ a transition function defined as $T : S \times A \times S \rightarrow [0, 1] $and $R$ a reward function defined
-as $R : S \times A \times S \rightarrow R$.
+A Markov decision process is a tuple $(S, A, T, R)$ in which $S$ is a finite set of states, $A$ a finite set of actions, $T$ a transition function defined as $T : S \times A \times S \rightarrow [0, 1]$ and $R$ a reward function defined
+as $R : S \times A \times S \rightarrow \mathbb{R}$.
 \end{mydef}
 
 As seen in Definition \ref{mdp_def}, MDPs consist of states, actions, transitions between states and a reward function.
 \begin{itemize}
-\item States: The set of states $S$ is defined as the finite set $\{s^1,...,s^N\}$ where the size of the state space is $N$, \ie $|S| = N$. For example, for a robot moving in a $2D$ grid-world like environment, each position $(x,y)$ may be represented as a unique state.
+\item States: The set of states $S$ is defined as the finite set $\{s^1,...,s^N\}$ where the size of the state space is $N$, \ie, $|S| = N$. For example, for a robot moving in a $2D$ grid-world like environment, each position $(x,y)$ may be represented as a unique state.
 
-\item Actions: The set of actions $A$ is defined as the finite set $\{a^1,...,a^M\}$ where the size of the action space is $M$, \ie $|A| = M$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$,
+\item Actions: The set of actions $A$ is defined as the finite set $\{a^1,...,a^M\}$ where the size of the action space is $M$, \ie, $|A| = M$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$,
 where $A(s) \subseteq A$. For examples, moving the robot forward, backward or sideways can be recognized as actions.
 
 \item The Transition Function: 
@@ -268,39 +253,38 @@ The reward functions determines the reward obtained by the agent for being in a 
 
 \subsection{Policies}
 \label{policies}
-A policy for an MDP is a function which gives an action $a \in A$ as an output for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to try to optimize its behavior in the environment modeled as an MDP. \textit{Optimality} is dependent on what exactly is being optimized? What is the goal of the agent?
+A policy for an MDP is a function which gives an action $a \in A$ that must be executed for each state $s \in S$. Formally, a deterministic policy $\pi$ is a mapping from $\pi: S \rightarrow A$. Optimal policy $\pi^*$ is computed and used by the agent to optimize its behavior in the environment modeled as an MDP.
 
 \subsection{Value function and Bellman equation}
-Most of the learning algorithms for MDPs compute optimal policies by learning value functions. A \textit{value function} represents an estimate of \textit{how good} it is for the agent to be in a certain state (or how good it is to perform a certain action in that state). The notion of \textit{how good} is expressed in
-terms of an optimality criterion,\ie in terms of the expected return.\par 
-The \textit{value function} of a state $s$ under policy $\pi$ denoted by $V^\pi(s)$ is the expected return when we start in the state $s$ and follow the policy $\pi$ after that. In an infinite horizon discounted model with discount factor $\gamma$, it is expressed as, 
+A \textit{value function} represents an estimate of how good it is for the agent to be in a certain state (or how good it is to perform a certain action in that state). The notion of how good is expressed in
+terms of an optimality criterion, \ie, in terms of the expected return.\par 
+The \textit{value function} of a state $s$ at time $t$ under policy $\pi$ denoted by $V^\pi(s)$ is the expected return when we start in the state $s$ and follow the policy $\pi$ after that. In an infinite horizon discounted model with discount factor $\gamma$, it is expressed as, 
 
 \begin{equation}
 \label{value_function_equation}
 V^\pi(s) =  \mathop{\mathbb{E_\pi}}\bigg\{\sum_{k=0}^{\infty} \gamma^k r_{t+k}|s_t = s\bigg\} 
 \end{equation}
 
-A similar state-action value function $Q : S \times A \rightarrow R$ can be expressed as an expected return starting at state $s$, taking action $a$ and following the policy $\pi$.
+A similar state-action value function $Q : S \times A \rightarrow R$ can be expressed as an expected return starting at state $s$, taking action $a$ and following the policy $\pi$ therefore,
 
 \begin{equation}
 \label{value_function_state_action_equation}
 Q^\pi(s,a) =  \mathop{\mathbb{E_\pi}}\bigg\{\sum_{k=0}^{\infty} \gamma^k r_{t+k}|s_t = s, a_t = a \bigg\} 
 \end{equation}
 
-A very important property of the value function equation is that they satisfy certain recursive relations. For any policy $\pi$ and state $s$, the equation \ref{value_function_equation} can be recursively defined in terms of \textit{Bellman Equation}\cite{Bellman:1957}. 
+For any policy $\pi$ and state $s$, the Equation \ref{value_function_equation} can be recursively defined in terms of the \textit{Bellman equation}\cite{Bellman:1957}. 
 
 \begin{equation}
 \label{bellman_equation}
-V^\pi(s) = \sum_{s'} T(s,\pi(s),s') \bigg( R(s,a,s') + \gamma V^\pi(s')\bigg) 
+V^\pi(s_0) = \sum_{k=0}^{\infty} T(s_k,\pi(s_k),s_{k+1}) \bigg( R(s_k,\pi(s_k),s_{k+1}) + \gamma V^\pi(s_{k+1})\bigg)
 \end{equation}
 
-Equation \ref{bellman_equation} represents the expected value of a state $s$ in terms of the immediate reward $R(s,a,s')$ and the value of possible next states $V^\pi(s')$ weighted by the transition probabilities $T(s,a,s')$ with a discount factor of $\gamma$. \par
+Equation \ref{bellman_equation} represents the expected value of a state $s$ in terms of the immediate reward $R(s_k,a,s_{k+1})$ and the value of possible next states $V^\pi(s_{k+1})$ weighted by the transition probabilities $T(s_k,a,s_{k+1})$ with a discount factor of $\gamma$. \par
 
-The goal is to find the best policy \ie the policy that maximizes the reward. An \textit{optimal policy} denoted by $\pi^*$ is such that $V^{\pi^*}(s) \geq V^\pi(s)$
-for all $s \in S$ and all policies $\pi$. The optimal solution can be given by the \textit{Bellman optimality equation} given  in equation \ref{bellman_optimality_equation}
+The goal is to find the best policy \ie, the policy that maximizes the reward. An \textit{optimal policy} denoted by $\pi^*$ is such that $V^{\pi^*}(s) \geq V^\pi(s)$
+for all $s \in S$ and all policies $\pi$. The optimal solution can be given by the \textit{Bellman optimality equation} given in Equation \ref{bellman_optimality_equation}
 
 \begin{equation}
-\label{bellman_optimality_equation}
 V^*(s) = \max_{a \in A}\sum_{s' \in S} T(s,a,s') \bigg( R(s,a,s') + \gamma V^*(s')\bigg) 
 \end{equation}
 
@@ -310,38 +294,37 @@ Similarly, we can express the optimal state-action equation as,
 Q^*(s,a) = \sum_{s'} T(s,a,s') \bigg( R(s,a,s') + \gamma \max_{a'}Q^*(s',a')\bigg) 
 \end{equation}
 
-In case of model-free approaches (section \ref{types}) where $T$ and $R$ are unknown, the $Q$ functions are learned instead of $V$ functions. We can see the relation in equation \ref{v_q_relation}.
+In case of model-free approaches (Section \ref{types}) where $T$ and $R$ are unknown, the $Q$ functions are learned instead of $V$ functions. We can see the relation in Equation \ref{v_q_relation}.
 
 \begin{equation}
 \label{v_q_relation}
 V^*(s) = \max_{a}Q^*(s,a)
 \end{equation}
 
-So conclusively, to find an optimal policy in case of model-free learning algorithms,
+We can find an optimal policy in case of model-free learning algorithms,
 
 \begin{equation}
-\label{v_q_relation}
 \pi^*(s) = arg\max_{a}Q^*(s,a)
 \end{equation}
 
-the best action $a$ in a particular state $s$ is the one which has the highest utility based on the possible next state. We call this policy the greedy policy, denoted $\pi_greedy(V)$ because it greedily selects the best action using the value function V.
+The best action $a$ in a particular state $s$ is the one which has the highest expected reward based on the possible next state.
 
 
 \subsection{Solving MDPs}
 \label{bellman}
-As discussed in the section \ref{policies}, finding an optimal policy $\pi^*$ is an important task of the agent. \textit{Solving} an MDP is nothing but finding the optimal policy $\pi^*$. When the model of the MDP is known, the algorithms may be classified under Model Based RL (section \ref{types}) algorithms. Here, we know the transition function and the reward function of the environment. These can be used to find out the value functions and policies using Bellman Equation.(Refer to equation \ref{bellman_equation}).\par 
-In Model-Free RL (section \ref{types}) algorithms, agent relies on the \textit{interaction} with the environment. \textit{Simulations} or actual execution of the policy leads to collect \textit{samples} of transition functions and rewards which are thereby used to determine the state-action value functions.\par 
-To directly compute the value functions for the state-action pairs when the model of the environment is not available or to determine the model by interacting with the environment in order to maximize the performance, the agent needs to posses artificial intelligence. We will discuss this branch of machine learning the next section (section \ref{rl}).
+The two main dynamic programming methods to solve MDPs are policy iteration \cite{kaelbling1998planning} and value iteration \cite{Bellman:1957}. In policy iteration the general policy iteration is separated into two steps whereas the latter represents a tight integration of policy evaluation and improvement. Policy iteration is a two step process. In policy iteration we start with an arbitrary initialized policy $\pi_0$. Then a sequence of iterations follows in which the current policy is evaluated after which it is improved. The first step, the policy evaluation step computes $V^{\pi_k}$. The second step, the policy improvement step, computes $\pi_{k+1}$ from $\pi_k$ using $V^{\pi_k}$. For each state, the optimal action is determined. If for all states $s$, $\pi_{k+1}$ = $\pi_k$, the policy
+is stable and the policy iteration algorithm can stop.\par 
+However in value iteration, it is not necessary to wait for full convergence in the policy evaluation step.
+It is possible to stop evaluating earlier and improve the policy based on the evaluation obtained so far. The evaluation part can be stopped after the first step  and it blends the policy improvement step into the iterations. The updates are done on the fly and the main goal is to directly estimate the value function.
 
 \section{Reinforcement Learning (RL)}
 \label{rl}
-Reinforcement Learning is a class of problems where the agent needs to learn the \textit{behavior} with trial and error by interacting with a dynamic environment. The two main methods to approach Reinforcement Learning Problems are:
-\begin{itemize}
-\item To search the entire behavior space in order to find the optimal one for the given environment. Examples of these kind of algorithms are genetic programming algorithms.
-\item Use of statistical methods and dynamic programming to estimate the effect of actions in the states of the given environment. \cite{kaelbling1996reinforcement}
-\end{itemize}
 
-\subsection{Model of Reinforcement Learning}
+Reference \cite{bou2010controller} discusses learning the non-linear control for advanced stabilization of the UAVs whereas reference \cite{lupashin2010simple} developed a high level control implementing learning strategies for high speed quadrotor multi flips. The system is able to do a series of flips for a quadrotor demonstrating online learning of acrobatics.\par  
+Some of the early examples of robot reinforcement learning are the OBELIX robot which learned to push boxes \cite{mahadevan1992automatic} using value function-based approach. Carnegie Mellon\textquotesingle s autonomous helicopter leveraged a model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}. Kormushev and Calinon taught a robot the technique to flip pancakes \cite{kormushev2010robot}. The reinforcement learning algorithm explored in \cite{Shaker:2010:VLS:1901614.1902128} is Least Squares Policy Iteration (LSPI) to gain a fast learning process and a smooth landing trajectory. A recent paper \cite{sugimoto2016acquisition} applied reinforcement learning to a UAV to achieve stable hovering using the well known technique of Q-learning (section \ref{q_learning_section}). Unlike most of the studies, experiments using an actual quad rotor UAV were performed and the experimental results demonstrate that the UAV can acquire knowledge to achieve stable hovering over a marker placed on the ground.\par 
+
+Reinforcement Learning is a class of problems where the agent needs to learn the \textit{behavior} with trial and error by interacting with a dynamic environment.
+
 A simplified Reinforcement Learning Model can be represented as shown in Figure \ref{fig:rl_model}
 \begin{figure}[htp]
 	\centering
@@ -349,48 +332,47 @@ A simplified Reinforcement Learning Model can be represented as shown in Figure 
 	\caption {A Simplified Reinforcement Learning Model}
    \label{fig:rl_model}
 \end{figure}
-Formally, the model consists of a set of environment states, $S$
-a set of agent actions, $A$; and a set of scalar reinforcement signals which are typically known as rewards. The agent's job is to find a policy $\pi$, mapping states to actions ( $\pi: S \rightarrow A$) to maximize some long term measure known as \textit{reward}. The environment is typically assumed to be stochastic \ie the same action in the same state at two different occasions may result in two different next states and/or two different rewards. The main difference between Reinforcement Learning and Supervised Learning is that, in RL, the agent needs to gather experience by interacting with the environment to find out the system states, transitions, actions and rewards whereas in Supervised Learning, some information about prior input/output pairs is used to approximate the mapping function.
+The environment is typically assumed to be stochastic \ie, the same action in the same state at two different occasions may result in two different next states and/or two different rewards. The main difference between Reinforcement Learning and Supervised Learning is that, in RL, the agent needs to gather experience by interacting with the environment to find out the system states, transitions, actions and rewards whereas in Supervised Learning, some information about prior input/output pairs is used to approximate the mapping function.
+
+\subsection{Classification/Types}
+\label{types}
+As we have seen previously, reinforcement learning agent needs to know the model of the environment; the transition function $T(s,a,s')$ and the reward function $R(s,a)$ in order to find an optimal policy. There are two broad approaches to solve this problem \cite{kaelbling1996reinforcement}.
+\begin{itemize}
+\item Model-free: Learn a controller without learning the model.
+\item Model-based: Learn the model of the environment in order to derive the controller.
+\end{itemize}
+A model is defined by the transition function $T(s,a,s')$ and the reward function $R(s,a)$.
+
+\subsubsection{Model-free}
+Model-free algorithms are the algorithms which do not have an explicit knowledge of the environment. The evaluation of how good the actions are is done by gathering samples. Model free algorithms tend to keep track of only the value functions whereas the model-based algorithms store the transition function $T(s,a,s')$ and the reward function $R(s,a)$. \par Model-free algorithms need extensive experience to find an optimal policy. Examples of model-free algorithms are; Q-learning \cite{watkins1992q} and SARSA (State Action Reward State Action)\cite{rummery1994line}.
+
+\subsubsection{Model-based}
+The online algorithms such as Q-learning guarantee convergence if the approximations are accurate. When the state-action space contains an infinite number of elements, it is impossible to loop over all the state-action pairs in finite time. Instead, a sample-based, approximate update has to be used that only considers a finite number of state-action samples. It is expensive to run these algorithms in the real world \cite{hester2017learning}. In model-based algorithms, an agent tries to learn the model of the environment while obtaining on-line experience and then this model can be used to facilitate learning. \par 
+$T(s,a,s')$ and $R(s,a)$ can be learned and be used during the further runs in order to improve the convergence. It is expected that, during the subsequent runs of the algorithm, the model should already be sufficiently learned to speed up convergence. Extensive amount of computation is required in model-based algorithms. A few examples of model-based reinforcement learning algorithms are ;  $R$-$MAX$ \cite{brafman2002r} and $E^3$ \cite{kearns2002near}.\par 
+
+The space complexity of model-free algorithms is considered to be asymptotically less than the space required to store an MDP \cite{strehl2006pac}. Model-based algorithms are more data efficient. However, if the reward function is not known, it needs to be learned. Model-free algorithms do not require explicit knowledge or learning of the reward function. A serious challenge for model-based approaches is overcoming
+inaccurate modeling. The policy found by these algorithm is only as good as the model of the environment. Both model-free and model-based approaches face challenges in handling high dimensional data \cite{atkeson1997comparison}. 
+
+\subsection{Online vs off-line learning}
+Consider a situation where the UAV needs to be trained to fly close to a surface without hitting obstacles. Learning the controller directly on the real task \textit{online} is often difficult since learning a task needs a lot of data which is time consuming. More importantly, it is not very economic and \textit{safe}, since there is a chance of the quad rotor colliding several times with the bridge causing damage. It is desirable to train the robot in a simulator which provides much faster and \textit{safe} training situations where the agent can explore and can afford to make mistakes. \textit{offline} learning uses a simulator of the environment as a cheap way to gather samples in a \textit{fast} and a \textit{safe} way. Often times one can use the simulators to obtain a reasonable policy for a given problem and then \textit{fine tune} it in the real world. This thesis directly contributes to the development of such simulators training the UAVs to effectively navigate environments avoiding obstacles.
 
 \subsection{Exploration vs. Exploitation}
-An RL agent needs to explicitly explore the environment. One of the classic problems in the literature known as the \textit{k-armed bandit problem} \cite{berry1985bandit} may best illustrate the concept of exploration Vs. exploitation. The agent is in a room with a collection of
+An RL agent needs to explicitly explore the environment. One of the classic problems in the literature known as the \textit{k-armed bandit problem} \cite{berry1985bandit} may best illustrate the concept of exploration vs. exploitation. The agent is in a room with a collection of
 $k$ gambling machines. The agent is permitted a fixed number of pulls, $z$. Any arm may be pulled on each turn. The machines do not require a deposit to play; the only cost is in wasting a pull playing a suboptimal machine. When arm $i$ is pulled, machine $i$ pays $1$ or $0$, according to some underlying
-probability parameter $p_i$, where the pays are independent events and the $p_i$s are unknown.
+probability $p_i$, where the pays are independent events and the $p_i$s are unknown.
 What should the agent's strategy be to maximize the payoffs?\par 
 The agent may believe that some arm may have a higher payoff probability. The question now is, whether to choose the same arm all the time or to explore the other arm that has less information but seems to be better? Depending on how long the game is going to last, if the game is going to last longer, then the agent should not converge to a sub-optimal arm too early and instead explore more. In short, 
 exploitation means to use the knowledge that the agent has found for the current state $s$ by doing one of the actions $a$ that maximizes the value function of the state whereas exploration means, in order to build a better estimate of the optimal value function it should select a different action from the one that it currently thinks is best.\par 
 We will see one of the ways to trade of exploration-exploitation using $\epsilon$-greedy strategy used in Q-learning which is a form of model-free learning. The section \ref{types} describes the two fundamental types of Reinforcement Learning.
 
 
-\subsection{Classification/Types}
-\label{types}
-As we have seen previously, Reinforcement Learning agent needs to know the model of the environment; The transition function $T(s,a,s')$ and the reward function $R(s,a)$ in order to find an optimal policy. How to find an algorithm to find an optimal policy when such a model is not known in advance? There may be two approaches we can take \cite{kaelbling1996reinforcement}.
-\begin{itemize}
-\item Model-free: Learn a controller without learning the model.
-\item Model-based: Learn the model of the environment in order to derive the controller.
-\end{itemize}
-
-\subsubsection{Model-free}
-Model-free algorithms are the algorithms which do not have an explicit knowledge of the environment. The evaluation of \textit{how good the actions are} is done through trial and error. The space complexity of such algorithms may be considered to be asymptotically less than the space required to store an MDP \cite{strehl2006pac}. Model free algorithms tend to keep track of the value functions only unlike the model-based algorithms which tend to store the environment model information.\par The limitation of model-free algorithms may be stated as; these algorithms need \textbf{extensive experience} to find an optimal policy. A few examples of model-free algorithms are; \textit{Q-Learning} (section: \ref{q_learning}) and SARSA (State Action Reward State Action).
-
-\subsubsection{Model-based}
-The on-line algorithms such as Q-Learning guarantee convergence if the approximations are accurate. It is expensive to run these algorithms in the real world. In model-based algorithms, an agent tries to learn the model of the environment while obtaining on-line experience and then this model can be used to facilitate learning. \par 
-Given a state $s$ and an action $a$, the probability of going to the next state $s'$ is given by the transition function $T(s,a,a')$. The reward obtained by taking an action $a$ in state $s$ is given by the reward function $R(s,a)$. $T(s,a,s')$ and $R(s,a)$ can be learned and be used during the further runs in order to improve the convergence. It is expected that, during the subsequent runs of the algorithm, the model should already be sufficiently learned to speed up convergence. Extensive amount of computation is required in model-based algorithms. A few examples of model-based reinforcement learning algorithms are;  $R$-$MAX$ \cite{brafman2002r} and $E^3$ \cite{kearns2002near}.
-
 \subsection{Q-Learning}
 \label{q_learning_section}
-\subsubsection{What is Q-Learning?} 
-The basic concept behind Q-learning is that we have a representation of the environmental states $s \in S$ and actions $a \in A$, and an agent is trying to learn the value of each of these actions in each of these states. The agent maintains a table $Q[s,a]$ and at each state $s$ tries to choose the action $a$ which maximizes the function $Q(s,a)$. The formal definition of the $Q$ function is given as follows:
+In Q-learning is that we maintain a table $Q[s,a]$. In each state $s$ we choose actions $a$ that maximize the function $Q(s,a)$. 
 \begin{equation} \label{q_function}
 Q(s,a) = r(s,a) + \gamma \max_{a'}(Q(s',a'))
 \end{equation}
-where,\\
-$r(s,a)$ is the immediate reward,\\
-$\gamma$ is the relative value of the delayed Vs. immediate reward, also known as \textit{discount factor} $ \gamma \in (0,1]$,\\
-$s'$ is the new state after action $a$ is taken in state $s$,\\
-$a,a'$ are the actions in state $s$ and $s'$ respectively.\\
-The selected action $\pi(s) = \arg\max_a Q(s,a)$.\\
-\pagebreak
+
 \subsection{Q-Learning Algorithm}
 \begin{algorithm}
 \SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
@@ -404,12 +386,12 @@ Update $Q(s,a) := Q(s,a) + \alpha [r(s,a) + \gamma \max_{a'}Q(s',a') - Q(s,a)]$:
 }
 \caption{Q-Learning Algorithm}\label{q_learning}
 \end{algorithm}
-The update equation given in algorithm \ref{q_learning} updates the $Q$-value of the last state-action pair (s,a) with respect to the observed next state $s'$ and the reward $r$ with a learning rate parameter $\alpha \in (0,1)$. Recalling Bellman update equation from section \ref{bellman}, we can see that updated $Q$-value is the expected sum of the reward and discounted value of the next state. Unlike a general Bellman update equation, we are not marginalizing over all possible next states, since we have only observed one state here along with the reward for a particular state-action pair.\par 
-However, we can control the parameter $\alpha$, which is the learning rate so as to allow the Q-value to change slightly from its old estimate to a new estimate in the direction of the observed state and reward.
+The update equation given in Algorithm \ref{q_learning} updates the $Q$-value of the last state-action pair (s,a) with respect to the observed next state $s'$ and the reward $r$ with a learning rate parameter $\alpha \in (0,1)$. Recalling Bellman update equation from Section \ref{bellman}, we can see that updated $Q$-value is the expected sum of the reward and discounted value of the next state. Unlike a general Bellman update equation, we are not marginalizing over all possible next states, since we have only observed one state here along with the reward for a particular state-action pair.\par 
+However, we can control the parameter $\alpha$, which is the learning rate so as to allow the Q-value to change from its old estimate to a new estimate in the direction of the observed state and reward.
 
-\subsubsection{The need of learning Q values.}
-Consider an agent that has to navigate through a grid given in the Figure \ref{fig:gridworld_ex}. The walls in the grid block the agent's path. The actions taken by the agent are noisy $\ie$  $80\%$ of the time, the action North takes the agent North if there's no wall, $10\%$ of the time action North takes the agent West, and $10\%$ of the times to East. Each step taken by the agent has a small negative reward say $-0.25$. A reward of $+1$ or $-1$ is given at the states shown in Figure \ref{fig:gridworld_ex}. The goal of the agent is to maximize the sum of the rewards. \par 
-This problem can be solved using value iteration where the Bellman optimality equation (Refer to equation \ref{bellman_optimality_equation}) characterize the optimal values. The agent has to store the Q values for each state-action pair ($Q(s,a)$). The space required to store the $Q$-table is $S \times A$. In this example, the number of states are $11$ and number of possible actions are $4$. The efficiency of recursive Bellman update is $O(S^2)$. Imagine when the state space becomes larger and the time complexity increases with the square of number of states. A naive Q-Learning approach wouldn't be able to scale up to give faster solutions as the problem space grows. We will see that in the following scenario.
+\subsubsection{Example}
+Consider an agent that has to navigate through a grid given in the Figure \ref{fig:gridworld_ex}. The walls in the grid block the agent's path. The actions taken by the agent are noisy \ie,  $80\%$ of the time, the action North takes the agent North if there's no wall, $10\%$ of the time action North takes the agent West, and $10\%$ of the times to East. Each step taken by the agent has a small negative reward say, $-0.25$. A reward of $+1$ or $-1$ is given at the states shown in Figure \ref{fig:gridworld_ex}. The goal of the agent is to maximize the sum of the rewards. \par 
+The agent has to store the Q values for each state-action pair ($Q(s,a)$). The space required to store the $Q$-table is $S \times A$. In this example, the number of states are $11$ and number of possible actions are $4$. A naive Q-Learning approach does not scale up to give faster solutions as the problem space grows. 
 
 \begin{figure}[htp]
 	\centering
@@ -418,34 +400,37 @@ This problem can be solved using value iteration where the Bellman optimality eq
    \label{fig:gridworld_ex}
 \end{figure}
 
-\subsubsection{Learning Laser data and space complexity!}
-Consider the following example. A robot (represented in green) with $6$ laser sensors is trying to navigate in an environment without colliding with obstacles of different sizes which are moving with different speeds. (The white obstacles are moving at slower speeds whereas the orange obstacle moves faster).
+Consider the following example. A robot (represented in green) with $6$ laser beams is learning to navigate in an environment without colliding with obstacles of different sizes which are moving with different speeds. (The white obstacles move at slower speeds whereas the orange obstacle moves faster).
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=8cm]{gp_laser.pdf}
 	\caption{Navigation with perception in the loop}
    \label{fig:gp_laser}
 \end{figure}
-The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. In terms of space and time complexity to learn the $Q[S,A]$ and eventually an optimal policy, this state space is too large for a naive Q-Learning algorithm to achieve faster convergence. As we have seen in section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. What could be done to approximate and better estimate all the $Q[S,A]$ values based on the observed set of $Q$ values?
+The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. This state space can be too large for a naive Q-Learning algorithm to achieve convergence. As we have seen in section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. Instead, we will approximate the  $Q[S,A]$ values using GP as function approximator.
+
 
 \section{Introduction to Gaussian Processes (GP)} % Main chapter title
 \label{introToGPs} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-\subsubsection{What are GPs ?}
-Consider a typical example of a prediction problem given in the Figure \ref{fig:gp_intro}. Given some noisy observations at a certain values of the variable $x$, what is the best estimate at a new value, $x^*$. We can assume the underlying function $f(x)$ to be some polynomial function and try to select an appropriate regression model to fit the given data. We have numerous possibilities of the function being a quadratic, cubic or even an exponential function. \textit{Gaussian Process Regression} provides a subtle approach in supervised learning in order to learn input-output mappings from empirical data also known as the \textit{training set}. \par 
+Consider a typical example of a prediction problem. Given some noisy observations at a certain values of the variable $x$, we wish to find the best estimate at a new value, $x^*$. We can assume the underlying function $f(x)$ to be some polynomial function and select an appropriate regression model to fit the given data. We have numerous possibilities of the function being a linear, quadratic or a cubic function.\par 
+Consider a least-square line fit  $\hat{y} = p_0 + p_1x$. We are specifying two parameters $p_0$ and $p_1$ for the Figure \ref{fig:least_square}. A better fit would be to use a quadratic function say $\hat{y} = p_0 + p_1x + p_2x^2$. In this case, we need $3$ parameters $p_0$, $p_1$ and $p_2$. 
 
-\begin{figure}[htp]
+\begin{figure}[H]
 	\centering 
-	\includegraphics[width=8cm]{gp_intro.pdf}
-	\caption{Given ten noisy data points (error bars are indicated with vertical lines), we are interested in estimating the value of the eleventh point at $x^* = 1.2$.}
-   \label{fig:gp_intro}
+	\includegraphics[width=8cm]{ls_fit.pdf}
+	\caption{To find a function that is consistent over the observed data}
+   \label{fig:least_square}
 \end{figure}
 
-A Gaussian Process(GP) is a generalization of the Gaussian Probability Distribution. GPs extend multivariate Gaussian distributions to infinite dimensions. A GP is considered to be a collection of random variables, where any finite subset of which has a joint Gaussian distribution function and a \textit{covariance kernel}. For example, a set of $n$ arbitrary data points $y$ = \{$y_1$,$y_2$, ... $y_n$\} can be considered as a single sample from an $n$-variate Gaussian distribution. It is often assumed that it is a zero mean GP. The relation between the observations is given by the \textit{covariance function/ kernel function}, $k(x,x')$. 
+\textit{Gaussian Process Regression} provides a model-free approach in supervised learning in order to learn input-output mappings from empirical data.\par 
+
+A Gaussian Process(GP) is a generalization of the multivariate Gaussian distributions to infinite dimensions. A GP is considered to be a collection of random variables, any finite subset of which has a joint Gaussian distribution function. For example, a set of $n$ data points $y$ = \{$y_1$,$y_2$, ... $y_n$\} can be considered as a single sample from an $n$-variate Gaussian distribution.
 
 \subsubsection{Kernel Functions}
-A few basic kernels are defined below for input points $x$ and $x'$ :
+The relation between the observations is given by the \textit{covariance function/ kernel function}, $k(x,x')$. 
+A few basic kernels are defined below for input points $x$ and $x'$:
 \begin{itemize}
-\item Squared-Exponential (SE) : This is a popular choice of a kernel function which is also known as the \textit{Radial Basis Function} kernel (RBF), or the \textit{Gaussian} kernel. It has the following form.
+\item Squared-Exponential (SE): This is a popular choice of a kernel function which is also known as the \textit{Radial Basis Function} kernel (RBF). It has the following form.
 \begin{equation}
 k(x,x') = {\sigma_f} ^2 \exp{\dfrac{-(x-x')^2}{2l^2}}
 \end{equation}
@@ -465,37 +450,24 @@ k_{Lin}(x,x') = {\sigma_b} ^2 + {\sigma_v}^2(x-c)(x'-c)
 \end{equation}
 \begin{itemize}
 \item The offset $c$ determines the x-coordinate of the point that all the lines in the posterior go though. The mean will be zero unless noise is added.
-\item The constant variance ${\sigma_b}^2$ determines how far from $0$ the height of the function will be at zero. It is putting a prior to the value of the function instead of specifying the value of the function directly.
+\item The constant variance ${\sigma_b}^2$ determines how far from $0$ the height of the function will be at zero. It gives a prior to the value of the function instead of specifying the value of the function directly.
 \end{itemize}
 
 \end{itemize}
 
-In all the above kernels, 
-\begin{itemize}
-\item \textbf{Lengthscale} $l$ : The lengthscale $l$ describes how smooth a function is. Small lengthscale value means that function values can change quickly, large values characterize functions that change only slowly. In general, we won't be able to extrapolate more than $l$ units away from your data.
+Each kernel has a number of parameters which are used to specify the precise shape of the covariance function. These are referred to as \textit{hyper-parameters}, since they can be viewed as specifying a distribution over function parameters, instead of being parameters which specify a function directly. 
+An example would be the lengthscale parameter $l$of the RBF kernel, which specifies the width of the kernel and thereby the smoothness of the functions in the model.\par 
 
-\item \textbf{Signal variance} $\sigma^2$ : The signal variance $\sigma^2$ determines the average distance of your function away from its mean. It describes the variation of function values from their mean.
-\end{itemize}
+\textbf{Lengthscale} $l$ describes how smooth a function is. Small lengthscale value means that function values can change quickly, large values characterize functions that change only slowly. In general, we won't be able to extrapolate more than $l$ units away from your data.
 
-
+\textbf{Signal variance} $\sigma^2$ determines the average distance of your function away from its mean. It describes the variation of function values from their mean.
 \cite{rasmussen2003gaussian}
 
-\textbf{Kernel Parameters} Each kernel has a number of parameters which are used to specify the precise shape of the covariance function. These are referred to as \textit{hyper-parameters}, since they can be viewed as specifying a distribution over function parameters, instead of being parameters which specify a function directly. 
-An example would be the lengthscale parameter $l$of the RBF kernel, which specifies the width of the kernel and thereby the smoothness of the functions in the model.
-
-\textbf{Stationary and Non-stationary Kernels} The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x$ − $x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
+The SE and Periodic kernels are \textit{stationary}. This implies that their value only depends on the difference $x - x'$ . The probability of observing a particular dataset remains the same even if we move all the $x$ values by some offset. In contrast, the linear kernel is \textit{non-stationary}, This means that the corresponding GP model will produce different predictions if the data were moved while the kernel parameters were kept fixed.
 
 \subsection{Gaussian Process Regression}
 \label{GPR}
-Consider a least-square line fit  $\hat{y} = p_0 + p_1x$. We are specifying two parameters $p_0$ and $p_1$ for the Figure \ref{fig:lease_square}. A better fit would be to use a quadratic function say $\hat{y} = p_0 + p_1x + p_2x^2$. In this case, we need $3$ parameters $p_0$, $p_1$ and $p_2$. What if we would like to consider all possible functions without specifying the number of parameters? So in GPs, there are no parameters \ie there are infinitely many parameters. \par
-\begin{figure}[htp]
-	\centering 
-	\includegraphics[width=8cm]{ls_fit.pdf}
-	\caption{To find a function that is consistent over the observed data}
-   \label{fig:lease_square}
-\end{figure}
-
-
+\begin{comment}
 The mathematical foundation of GPs is the multivariate Gaussian distribution. Consider the bivariate normal distribution given in Figure \ref{fig:bvnpdf}. The shape of the bell curve is determined by the covariance matrix. If we imagine a horizontal plane slicing the bell curve and if we see a circle, that means the two independent variables are normally distributed meaning their covariance is $0$.\par  
 \begin{figure}[htp]
 	\centering 
@@ -503,6 +475,8 @@ The mathematical foundation of GPs is the multivariate Gaussian distribution. Co
 	\caption{A Bivariate Normal Distribution}
    \label{fig:bvnpdf}
 \end{figure}
+\end{comment}
+
 Given a joint probability distribution of the variables $x_1$ and $x_2$ as:
 
 \begin{equation}
@@ -518,9 +492,7 @@ x_2\\
 \end{pmatrix}
 \end{equation}
 
-It is possible to get the conditional probability of $x_1 | x_2$ or vice-versa. In a GP, we can derive the posterior from the prior and the observations; it's just that,  we are talking about the joint probability all the values of the function $f(x)$ for all the values of $x$ within the specified bounds.
-
-To sum it up, the posterior is the joint probability of the outcome of the values of the function out of which some are observed (denoted by $f$) and some are not (denoted by $f^*$). 
+It is possible to get the conditional probability of $x_1 | x_2$ or vice-versa. In a GP, we can derive the posterior from the prior and the observations. The posterior is the joint probability of the values of the function of which some are observed (denoted by $f$) and some are not (denoted by $f^*$). 
 
 \begin{equation}
 \label{equ:f_f*}
@@ -536,37 +508,17 @@ To sum it up, the posterior is the joint probability of the outcome of the value
 \end{pmatrix}
 \end{equation}
 
-Here, $K$ is the matrix we get by applying the kernel function to the observed values, \ie the similarity between each observed $x$ .$K_*$ represents the similarity of the training values to the test values whose output values are to be estimated. $K_{**}$ gives the similarity of the test values with each other. We are ultimately trying to determine $p(f_*|x_*,x,f)$ where $f$ and $f_*$ are jointly distributed as shown in equation \ref{equ:f_f*}. {\color{red}Skipping the proof details}, we ultimately are able to define the distribution $f_* \sim \mathcal{N} (\mu_*,\Sigma_*)$, where $\mu_*$ is the mean and $\Sigma_*$ is the covariance matrix.
+Here, $K$ is the matrix we get by applying the kernel function to the observed values, \ie the similarity between each observed $x$ .$K_*$ represents the similarity of the training values to the test values whose output values are to be estimated. $K_{**}$ gives the similarity of the test values with each other. We are ultimately trying to determine $p(f_*|x_*,x,f)$ where $f$ and $f_*$ are jointly distributed as shown in equation \ref{equ:f_f*}. We ultimately are able to define the distribution $f_* \sim \mathcal{N} (\mu_*,\Sigma_*)$, where $\mu_*$ is the mean and $\Sigma_*$ is the covariance matrix.
 
-\subsection{Gaussian Processes for Machine Learning}
-As stated in \cite{rasmussen2003gaussian}, GPs can be used to model system dynamics. Assuming a set of $N$-dimensional observations of the form $(s,a,s')$, we can use separate Gaussian Process model for predicting each coordinate of the system dynamics. For example, the inputs can be the state-action pair $(s,a)$ and the output is a Gaussian distribution over $y = s'_n$, $n = 1,2,...N$. A multivariate Gaussian distribution over the next state and transition probability can be obtained. GPs can be used to model value functions as a function of states. We'd typically specify a finite number of data points $S=s_1,s_2,..s_m$ and let the GP predict it over the space. \par 
+
+In model-based learning as stated in \cite{rasmussen2003gaussian}, GPs can be used to model system dynamics. Assuming a set of $N$-dimensional observations of the form $(s,a,s')$, we can use separate Gaussian Process model for predicting each coordinate of the system dynamics. For example, the inputs can be the state-action pair $(s,a)$ and the output is a multivariate Gaussian distribution over the next state. In model-free learning, GPs can be used to model value functions as a function of states. We typically specify a finite number of data points $S=s_1,s_2,..s_m$ and use GP to predict value of $Q$-function over the entire space. \par 
 The Gaussian processes offer nice properties such as uncertainty estimates over the function values, robustness to over-fitting, and principled ways for hyper-parameter tuning. In general, these useful properties of GPs are exploited in order to make them popular in terms of their use in machine learning. 
  
-
-\section{Reinforcement Learning for UAVs}
-The concept of using reinforcement learning techniques for the control of unmanned aerial
-vehicles is not new; it has peaked interest outside of academia. Most of the existing literature related to using learning algorithms in a UAV context mainly discusses high level planning or trajectory control. More traditional low level control along with the implantation of machine learning algorithms to learn a set of skills or planning the  desired trajectories is employed.\par 
-\cite{bou2010controller} discusses about learning the non-linear control for advanced stabilization of the UAVs whereas \cite{lupashin2010simple} developed a more high level control implementing learning strategies for high speed quadrotor multi flips. The system is able to do a series of flips for a quadrotor demonstrating online learning of acrobatics.These are some of the examples of reinforcement learning algorithms being applied to a low level motion control of UAV.\par 
-Some of the early examples of robot reinforcement learning are; The OBELIX robot which learned to push boxes \cite{mahadevan1992automatic} using value function-based approach, Carnegie Mellon’s autonomous helicopter leveraged a
-model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}, Petar Kormushev and Sylvain Calinon–taught from Italian Institute of Technology taught a robot the technique to flip pancakes \cite{kormushev2010robot}. The autonomous UAV learns the landing skill from scratch by interacting with the environment. The reinforcement learning algorithm explored in \cite{Shaker:2010:VLS:1901614.1902128}  is Least-Squares Policy Iteration (LSPI) to gain a fast learning process and a smooth landing trajectory. A recent paper \cite{sugimoto2016acquisition} applied reinforcement learning to a UAV to achieve stable hovering using the well known technique of Q-learning (section \ref{q_learning_section}). Unlike most of the studies, experiments using an actual quadrotor UAV were performed and the experimental results demonstrate that the UAV can acquire knowledge to achieve stable hovering over a marker placed on the ground.\par 
-However in this study we explore the use of Gaussian Processes on Reinforcement Learning algorithms for UAV navigation.
-
 \section{Deep Reinforcement Learning}
 \label{deep_rl_section}
-Reinforcement learning is a branch of machine learning primarily based on sequential decision making (refer to section \ref{sequential_decision_making}). The conventional reinforcement learning focuses on linear function approximations and tabular representations \cite{gamedeep}. To generalize in large and continuous state and action spaces, the linear approximations and tabular functions are not enough\cite{morton2016deep}. Performance of most of the successful RL applications operating in high dimensional sensor inputs like vision and speech rely on the quality of features along with the function approximations or policy representation.\par 
-\cite{krizhevsky2012imagenet} states that, with sufficient data fed into a deep neural network, it is often possible to learn better representations compared to handcrafted features. \cite{mnih2015human} describes a Deep-RL system which combines Deep Neural Networks with Reinforcement Learning at scale for the first time. This work represents the first demonstration of a general-purpose agent that is able to continually adapt its behavior without any human intervention. 
-The algorithm - \textit{Deep Q-learning with experience replay} for deep $Q$ learning given in \cite{mnih2013playing} is advantageous over an online $Q$ learning algorithm in the following ways.
-\begin{itemize}
-\item Each step of experience may be used in many weight updates which results in greater data efficiency.
-\item Due to strong correlation, learning from consecutive samples may be inefficient. Randomizing samples leads to decrease in covariance of the updates.
-\end{itemize}.\par 
-Basic steps of applying RL to deep neural networks are:
-\begin{itemize}
-\item Use of a deep network to represent value function or policy or model.
-\item End to end optimization of this value function or policy or model.
-\item Use of Stochastic Gradient Decent to update the weights.
-\end{itemize}
-\cite{mnih2013playing}
+The conventional reinforcement learning focuses on linear function approximations and tabular representations \cite{gamedeep}. To generalize in large and continuous state and action spaces, the linear approximations and tabular functions are not enough\cite{morton2016deep}. Performance of most of the successful RL applications operating in high dimensional sensor inputs like vision and speech rely on the quality of features along with the function approximations or policy representation. However in this study we explore the use of Gaussian Processes in reinforcement learning algorithms for UAV navigation.\par 
+
+Basic steps of applying RL to deep neural networks are the use of a deep network to represent value function or policy or model. The end-to-end optimization of this value function or policy or model and the use of Stochastic Gradient Decent to update the weights \cite{mnih2013playing}.
 A naive representation of a Deep-$Q$ network is shown in Figure \ref{fig:deep_q}.
 \begin{figure}[H]
 	\centering
@@ -575,12 +527,15 @@ A naive representation of a Deep-$Q$ network is shown in Figure \ref{fig:deep_q}
    \label{fig:deep_q}
 \end{figure}
 
+Reference \cite{krizhevsky2012imagenet} states that, with sufficient data fed into a deep neural network, it is often possible to learn better representations compared to handcrafted features. Reference \cite{mnih2015human} describes a Deep-RL system which combines Deep Neural Networks with Reinforcement Learning at scale for the first time. This work represents the first demonstration of a general-purpose agent that is able to continually adapt its behavior without any human intervention. 
+The algorithm given in \cite{mnih2013playing} is advantageous over an online $Q$-learning algorithm in the following ways. Each step of experience may be used in many weight updates which results in greater data efficiency. Due to strong correlation, learning from consecutive samples may be inefficient. Randomizing samples leads to decrease in covariance of the updates.
+
 \chapter{The End-to-End GPQ Algorithm} % Main chapter title
 
 \label{gpq} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 \section{Perception in the loop}
  
- Perception is how the robot is aware of the dynamics of the environment. Just as humans perceive things with their ey es, robots use sensors in order to be aware of its surroundings. Perception usually provides data which allows the robot to determine where it is as well as how far the obstacles or goals or adversaries are. The robot must be able to make intelligent decisions based on the data it gathers. Sensors are very critical for intelligent robots to carry out tasks in dynamic environment which limit and define the capability of a robot \cite{tokekar2014placement}. In order for the robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it.\par 
+Perception is how the robot is aware of the dynamics of the environment. Just as humans perceive things with their ey es, robots use sensors in order to be aware of its surroundings. Perception usually provides data which allows the robot to determine where it is as well as how far the obstacles or goals or adversaries are. The robot must be able to make intelligent decisions based on the data it gathers. Sensors are very critical for intelligent robots to carry out tasks in dynamic environment which limit and define the capability of a robot \cite{tokekar2014placement}. In order for the robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it.\par 
 \textit{Perception in the loop} may be explained with this example. Imagine a robot equipped with a laser sensor (as shown in Figure \ref{fig:perception_example}) which provides the distance between the robot and its nearest obstacle essentially informing the robot about its surroundings. The task of the robot is to navigate through this environment without crashing into obstacles assuming the robot has no prior information about the environment and only has access to the real time laser data. How can we use the laser data in order to carry out the task?
 \begin{figure}[H]
 	\centering
@@ -720,12 +675,10 @@ The GP learned in the basic kinematic simulators shown in Figure \ref{fig:gpq_si
    \label{fig:gazebo_gpq_sim}
 \end{figure}
 
-\section{Conclusion}
-The UAV model equipped with laser range sensors in the Gazebo Robot Simulator could effectively avoid obstacles in completely different environments by using the optimal policy learned in the lower fidelity simulator \ie the python based basic kinematic simulator. It is empirically shown that the GPQ algorithm performs better than the naive $Q$ learning algorithm and it can be extended to a multi-fidelity simulator chain.
 
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
-In this chapter, the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided.
+In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
 
 \label{gpMfrl} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 \section{Multi-Fidelity Reinforcement Learning}
@@ -1139,7 +1092,6 @@ The ROS-flea3 camera driver enables publishing of images on ROS topics which can
    \label{fig:cam_rqt}
 \end{figure}
 
-\subsection{Flights without GPS signal}
 While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In chapter \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures. \par 
 \begin{figure}[htp]
 	\centering 
@@ -1149,7 +1101,7 @@ While the UAV is flying indoors or inside the bridge, it does not get a GPS sign
    \label{fig:indoor_flight}
 \end{figure}
 
-\subsection{Outdoor Inspection}
+
 Similar to the indoor bridge inspection, while flying close to the bridge surfaces, the UAV does not get reliable GPS signal or any other localization inputs. It is vital for the robot to have learned the skill of flying close to the surfaces and following certain trajectories using on board laser sensor data. As iterated multiple times in this thesis, while learning in the real world, collecting negative samples (Colliding with the wall/surface in this scenario) can lead to catastrophic results. It is important for the robot to learn a skill in a simulator environment before executing the required tasks in the real world.
 Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the outdoor visual inspection of the bridge. 
 \begin{figure}[htp]
@@ -1159,10 +1111,6 @@ Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the o
 	\caption{Outdoor flight of the UAV visually inspecting the structure}
    \label{fig:outdoor_flight}
 \end{figure}
-
-\section{3D reconstruction}
-In the field experiments done at the 
-George P Coleman Memorial Bridge, Yorktown, VA, we collected images flying near the bridge surfaces. The UAV was controlled manually. The future work includes fully autonomous flights for visual inspection of bridge structures. Pictures collected during the experiments are shown below. A 3D reconstruction software is used in order to reconstruct the bridge structure from the images. It is shown in Figure.
 
 
 \chapter{Conclusion and Future Research}
