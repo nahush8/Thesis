@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.17)  17 JUN 2017 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.17)  18 JUN 2017 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -540,25 +540,34 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks34
 \@floatcapt=\box40
 )
+(/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count126
+\bibleftmargin=\skip50
+\bibindent=\skip51
+\bibparsep=\skip52
+\bibitemsep=\skip53
+\biblabelsep=\skip54
+)
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip50
-\subfigcapskip=\skip51
+\subfigtopskip=\skip55
+\subfigcapskip=\skip56
 \subfigcaptopadj=\dimen166
-\subfigbottomskip=\skip52
+\subfigbottomskip=\skip57
 \subfigcapmargin=\dimen167
-\subfiglabelskip=\skip53
-\c@subfigure=\count126
-\c@lofdepth=\count127
-\c@subtable=\count128
-\c@lotdepth=\count129
+\subfiglabelskip=\skip58
+\c@subfigure=\count127
+\c@lofdepth=\count128
+\c@subtable=\count129
+\c@lotdepth=\count130
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip54
-\subfig@bottom=\skip55
+\subfig@top=\skip59
+\subfig@bottom=\skip60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -570,8 +579,8 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Excluding comment 'comment')
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count130
-\algocf@hangindent=\skip56
+\c@AlgoLine=\count131
+\algocf@hangindent=\skip61
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -586,38 +595,38 @@ Package `algorithm2e' Release 5.1 -- october 19 2015 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
 ********************************************************
-\skiptotal=\skip57
-\skiplinenumber=\skip58
-\skiprule=\skip59
-\skiphlne=\skip60
-\skiptext=\skip61
-\skiplength=\skip62
-\algomargin=\skip63
-\skipalgocfslide=\skip64
+\skiptotal=\skip62
+\skiplinenumber=\skip63
+\skiprule=\skip64
+\skiphlne=\skip65
+\skiptext=\skip66
+\skiplength=\skip67
+\algomargin=\skip68
+\skipalgocfslide=\skip69
 \algowidth=\dimen168
 \inoutsize=\dimen169
 \inoutindent=\dimen170
 \interspacetitleruled=\dimen171
 \interspacealgoruled=\dimen172
 \interspacetitleboxruled=\dimen173
-\algocf@ruledwidth=\skip65
+\algocf@ruledwidth=\skip70
 \algocf@inoutbox=\box41
 \algocf@inputbox=\box42
-\AlCapSkip=\skip66
-\AlCapHSkip=\skip67
-\algoskipindent=\skip68
+\AlCapSkip=\skip71
+\AlCapHSkip=\skip72
+\algoskipindent=\skip73
 \algocf@nlbox=\box43
 \algocf@hangingbox=\box44
 \algocf@untilbox=\box45
-\algocf@skipuntil=\skip69
+\algocf@skipuntil=\skip74
 \algocf@capbox=\box46
-\algoheightruledefault=\skip70
-\algoheightrule=\skip71
-\algotitleheightruledefault=\skip72
-\algotitleheightrule=\skip73
-\c@algocfline=\count131
-\c@algocfproc=\count132
-\c@algocf=\count133
+\algoheightruledefault=\skip75
+\algoheightrule=\skip76
+\algotitleheightruledefault=\skip77
+\algotitleheightrule=\skip78
+\c@algocfline=\count132
+\c@algocfproc=\count133
+\c@algocf=\count134
 \algocf@algoframe=\box47
 \algocf@algobox=\box48
 ) (/usr/share/texlive/texmf-dist/tex/latex/physics/physics.sty
@@ -637,24 +646,24 @@ L3 Module: l3tl 2015/09/29 v6121 L3 Token lists
 L3 Module: l3str 2016/01/03 v6357 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2016/01/05 v6366 L3 Integers
-\c_max_int=\count134
-\l_tmpa_int=\count135
-\l_tmpb_int=\count136
-\g_tmpa_int=\count137
-\g_tmpb_int=\count138
+\c_max_int=\count135
+\l_tmpa_int=\count136
+\l_tmpb_int=\count137
+\g_tmpa_int=\count138
+\g_tmpb_int=\count139
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count139
+\g__prg_map_int=\count140
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2015/11/11 v6249 L3 Experimental token manipulation
 L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
 L3 Module: l3msg 2015/09/28 v6113 L3 Messages
 L3 Module: l3file 2015/12/03 v6317 L3 File and I/O operations
-\l_iow_line_count_int=\count140
-\l__iow_target_count_int=\count141
-\l__iow_current_line_int=\count142
-\l__iow_current_word_int=\count143
-\l__iow_current_indentation_int=\count144
+\l_iow_line_count_int=\count141
+\l__iow_target_count_int=\count142
+\l__iow_current_line_int=\count143
+\l__iow_current_word_int=\count144
+\l__iow_current_indentation_int=\count145
 L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \c_zero_dim=\dimen174
 \c_max_dim=\dimen175
@@ -662,12 +671,12 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \l_tmpb_dim=\dimen177
 \g_tmpa_dim=\dimen178
 \g_tmpb_dim=\dimen179
-\c_zero_skip=\skip74
-\c_max_skip=\skip75
-\l_tmpa_skip=\skip76
-\l_tmpb_skip=\skip77
-\g_tmpa_skip=\skip78
-\g_tmpb_skip=\skip79
+\c_zero_skip=\skip79
+\c_max_skip=\skip80
+\l_tmpa_skip=\skip81
+\l_tmpb_skip=\skip82
+\g_tmpa_skip=\skip83
+\g_tmpb_skip=\skip84
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
@@ -675,18 +684,18 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
 L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count145
-\l_keys_choice_int=\count146
+\g__keyval_level_int=\count146
+\l_keys_choice_int=\count147
 L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
-\c__fp_leading_shift_int=\count147
-\c__fp_middle_shift_int=\count148
-\c__fp_trailing_shift_int=\count149
-\c__fp_big_leading_shift_int=\count150
-\c__fp_big_middle_shift_int=\count151
-\c__fp_big_trailing_shift_int=\count152
-\c__fp_Bigg_leading_shift_int=\count153
-\c__fp_Bigg_middle_shift_int=\count154
-\c__fp_Bigg_trailing_shift_int=\count155
+\c__fp_leading_shift_int=\count148
+\c__fp_middle_shift_int=\count149
+\c__fp_trailing_shift_int=\count150
+\c__fp_big_leading_shift_int=\count151
+\c__fp_big_middle_shift_int=\count152
+\c__fp_big_trailing_shift_int=\count153
+\c__fp_Bigg_leading_shift_int=\count154
+\c__fp_Bigg_middle_shift_int=\count155
+\c__fp_Bigg_trailing_shift_int=\count156
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box49
 \l_tmpa_box=\box50
@@ -736,14 +745,14 @@ L3 Module: l3luatex 2015/11/11 v6250 L3 Experimental LuaTeX-specific functions
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/11/11 v6250 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count156
+\l__driver_color_stack_int=\count157
 ))
 Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count157
-\l__xparse_m_args_int=\count158
-\l__xparse_mandatory_args_int=\count159
-\l__xparse_processor_int=\count160
-\l__xparse_v_nesting_int=\count161
+\l__xparse_current_arg_int=\count158
+\l__xparse_m_args_int=\count159
+\l__xparse_mandatory_args_int=\count160
+\l__xparse_processor_int=\count161
+\l__xparse_v_nesting_int=\count162
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -1623,7 +1632,7 @@ Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
 . Defining command \homework with sig. '' on line 764.
 .................................................
 )
-\c@mydef=\count162
+\c@mydef=\count163
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
@@ -1633,7 +1642,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count163
+\babel@savecnt=\count164
 \U@D=\dimen261
 )
 \l@canadian = a dialect from \language\l@american 
@@ -1645,14 +1654,14 @@ Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count164
+\etb@tempcnta=\count165
 )
-\csq@reset=\count165
-\csq@gtype=\count166
-\csq@glevel=\count167
-\csq@qlevel=\count168
-\csq@maxlvl=\count169
-\csq@tshold=\count170
+\csq@reset=\count166
+\csq@gtype=\count167
+\csq@glevel=\count168
+\csq@qlevel=\count169
+\csq@maxlvl=\count170
+\csq@tshold=\count171
 \csq@ltx@everypar=\toks35
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -1673,38 +1682,38 @@ Package csquotes Info: ... found 'babel' package.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    ... okay on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count171
+\scratchcounter=\count172
 \scratchdimen=\dimen262
 \scratchbox=\box64
-\nofMPsegments=\count172
-\nofMParguments=\count173
+\nofMPsegments=\count173
+\nofMParguments=\count174
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count174
+\MPscratchCnt=\count175
 \MPscratchDim=\dimen263
-\MPnumerator=\count175
-\makeMPintoPDFobject=\count176
+\MPnumerator=\count176
+\makeMPintoPDFobject=\count177
 \everyMPtoPDFconversion=\toks37
 ) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -1755,12 +1764,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package csquotes Info: Making character " active on input line 53.
+\c@maskedRefs=\count178
 
-[1
+(/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+Package csquotes Info: Making character " active on input line 54.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (11.65114pt too wide) in paragraph at lines 122--123
+Overfull \hbox (11.65114pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/12 tional Sci-ence Foundation-sponsored in-dus-try/university co-o
 p-er-a-tive re-search cen-ter (I/UCRC)
  []
@@ -1768,11 +1783,11 @@ p-er-a-tive re-search cen-ter (I/UCRC)
 [2] [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 132.
+LaTeX Font Info:    Try loading font information for U+msa on input line 133.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 132.
+LaTeX Font Info:    Try loading font information for U+msb on input line 133.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1793,231 +1808,782 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [9]
 Chapter 1.
+! Use of \@year@ doesn't match its definition.
+\Y@liu2014review ->\@year@ 2
+                            8
+l.167 ...or bridge inspection~\cite{liu2014review}
+                                                  , penstock inspection~\cit...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `mahadevan1992automatic' on page 1 undefined on input l
-ine 160.
+! Use of \@year@ doesn't match its definition.
+\Y@ozaslaninspection ->\@year@ 3
+                                6
+l.167 ...stock inspection~\cite{ozaslaninspection}
+                                                  , and yield estimation in ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@das2015devices ->\@year@ 1
+                             4
+l.167 ...estimation in farms~\cite{das2015devices}
+                                                  . In order for these syste...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `mahadevan1992automatic' on page 1 undefined on input l
-ine 160.
-
-
-LaTeX Warning: Citation `smart2002effective' on page 1 undefined on input line 
-160.
+! Use of \@year@ doesn't match its definition.
+\Y@kober2012reinforcement ->\@year@ 2
+                                     2
+l.167 ...supervision~\cite{kober2012reinforcement}
+                                                  . Instead, reinforcement l...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
 [1
 
-]
-
-LaTeX Warning: Citation `liu2014review' on page 2 undefined on input line 169.
-
-
-LaTeX Warning: Citation `ozaslaninspection' on page 2 undefined on input line 1
-69.
-
-
-LaTeX Warning: Citation `das2015devices' on page 2 undefined on input line 169.
-
-
-
-LaTeX Warning: Citation `kober2012reinforcement' on page 2 undefined on input l
-ine 169.
-
-<images/corridor.JPG, id=44, 4288.02pt x 2858.68pt>
+] <images/corridor.JPG, id=44, 4288.02pt x 2858.68pt>
 File: images/corridor.JPG Graphic file (type jpg)
- <use images/corridor.JPG>
-Package pdftex.def Info: images/corridor.JPG used on input line 174.
+
+<use images/corridor.JPG>
+Package pdftex.def Info: images/corridor.JPG used on input line 172.
 (pdftex.def)             Requested size: 227.56496pt x 126.58492pt.
 
 <images/quad_in_corridor.png, id=45, 1658.195pt x 924.45375pt>
 File: images/quad_in_corridor.png Graphic file (type png)
 
 <use images/quad_in_corridor.png>
-Package pdftex.def Info: images/quad_in_corridor.png used on input line 175.
+Package pdftex.def Info: images/quad_in_corridor.png used on input line 173.
 (pdftex.def)             Requested size: 227.62204pt x 126.89766pt.
- [2 <./images/corridor.JPG> <./images/quad_in_corridor.png>] [3] [4]
+ [2 <./images/corridor.JPG> <./images/quad_in_corridor.png>]
+! Use of \@year@ doesn't match its definition.
+\Y@chowdhary2014off ->\@year@ 1
+                               0
+l.191 ...licy RL with a GP \cite{chowdhary2014off}
+                                                  . The feedback from the la...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[3] [4]
 Chapter 2.
+! Use of \@year@ doesn't match its definition.
+\Y@morgenthal2014quality ->\@year@ 3
+                                    3
+l.213 ...ecent paper  \cite{morgenthal2014quality}
+                                                   discusses the application...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+<images/truck_crane.jpg, id=56, 1284.8pt x 722.7pt>
+File: images/truck_crane.jpg Graphic file (type jpg)
+
+<use images/truck_crane.jpg>
+Package pdftex.def Info: images/truck_crane.jpg used on input line 220.
+(pdftex.def)             Requested size: 170.7155pt x 113.80379pt.
+
+<images/under_bridge.jpg, id=57, 1003.75pt x 752.8125pt>
+File: images/under_bridge.jpg Graphic file (type jpg)
+
+<use images/under_bridge.jpg>
+Package pdftex.def Info: images/under_bridge.jpg used on input line 221.
+(pdftex.def)             Requested size: 170.71182pt x 113.8015pt.
+
+
+LaTeX Warning: Citation `truckCrane' undefined on input line 222.
+
+<images/tip.jpg, id=58, 1204.5pt x 903.375pt>
+File: images/tip.jpg Graphic file (type jpg)
+ <use images/tip.jpg>
+Package pdftex.def Info: images/tip.jpg used on input line 228.
+(pdftex.def)             Requested size: 227.62204pt x 170.70569pt.
+
+
+LaTeX Warning: Citation `truckCraneOverturn' undefined on input line 229.
+
 [5
 
-] [6]
+] [6 <./images/truck_crane.jpg> <./images/under_bridge.jpg> <./images/tip.jpg>]
 
-LaTeX Warning: Citation `Bellman:1957' on page 7 undefined on input line 275.
+! Use of \@year@ doesn't match its definition.
+\Y@djiframe ->\@year@ 1
+                       
+l.254 DJI model F450 \cite{djiframe}
+                                     was used as shown in the Figure \ref{fi...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+<images/uav-1.JPG, id=66, 4288.02pt x 2858.68pt>
+File: images/uav-1.JPG Graphic file (type jpg)
+ <use images/uav-1.JPG>
+Package pdftex.def Info: images/uav-1.JPG used on input line 258.
+(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
+
+<images/quad.png, id=67, 998.73125pt x 997.7275pt>
+File: images/quad.png Graphic file (type png)
+ <use images/quad.png>
+Package pdftex.def Info: images/quad.png used on input line 259.
+(pdftex.def)             Requested size: 170.71652pt x 170.5401pt.
 
 [7]
+! Use of \@year@ doesn't match its definition.
+\Y@fleacamera ->\@year@ 2
+                         
+l.265 ...als is a global shutter \cite{fleacamera}
+                                                   as shown in Figure \ref{f...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `kaelbling1998planning' on page 8 undefined on input li
-ne 315.
+<images/cam.jpg, id=72, 1317.92375pt x 959.585pt>
+File: images/cam.jpg Graphic file (type jpg)
+ <use images/cam.jpg>
+Package pdftex.def Info: images/cam.jpg used on input line 268.
+(pdftex.def)             Requested size: 170.71652pt x 124.29652pt.
+
+<images/nuc.jpg, id=73, 149.358pt x 93.2283pt>
+File: images/nuc.jpg Graphic file (type jpg)
+ <use images/nuc.jpg>
+Package pdftex.def Info: images/nuc.jpg used on input line 276.
+(pdftex.def)             Requested size: 170.71652pt x 106.56871pt.
+ [8 <./images/uav-1.JPG> <./images/quad.png> <./images/cam.jpg>]
+<images/pixhawk.jpg, id=77, 401.5pt x 401.5pt>
+File: images/pixhawk.jpg Graphic file (type jpg)
+ <use images/pixhawk.jpg>
+Package pdftex.def Info: images/pixhawk.jpg used on input line 291.
+(pdftex.def)             Requested size: 170.71652pt x 170.71794pt.
+
+[9 <./images/nuc.jpg> <./images/pixhawk.jpg>]
+<images/lidar.jpg, id=81, 144.54pt x 144.54pt>
+File: images/lidar.jpg Graphic file (type jpg)
+ <use images/lidar.jpg>
+Package pdftex.def Info: images/lidar.jpg used on input line 308.
+(pdftex.def)             Requested size: 170.71652pt x 170.72551pt.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+
+<images/gps.jpg, id=82, 425.33907pt x 311.66437pt>
+File: images/gps.jpg Graphic file (type jpg)
+ <use images/gps.jpg>
+Package pdftex.def Info: images/gps.jpg used on input line 329.
+(pdftex.def)             Requested size: 170.71652pt x 125.09154pt.
+
+[10 <./images/lidar.jpg>]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+ <images/motors.jpg, id=88, 722.7pt x 481.8pt>
+File: images/motors.jpg Graphic file (type jpg)
+
+<use images/motors.jpg>
+Package pdftex.def Info: images/motors.jpg used on input line 348.
+(pdftex.def)             Requested size: 170.71652pt x 113.81114pt.
+ <images/esc.jpg, id=89, 501.875pt x 320.19624pt>
+File: images/esc.jpg Graphic file (type jpg)
+
+<use images/esc.jpg>
+Package pdftex.def Info: images/esc.jpg used on input line 349.
+(pdftex.def)             Requested size: 170.71652pt x 108.91902pt.
 
 
-LaTeX Warning: Citation `Bellman:1957' on page 8 undefined on input line 315.
+LaTeX Warning: Citation `ros' undefined on input line 357.
+
+[11 <./images/gps.jpg> <./images/motors.jpg> <./images/esc.jpg>]
+<images/cam_rqt.png, id=94, 968.61874pt x 432.61626pt>
+File: images/cam_rqt.png Graphic file (type png)
+
+<use images/cam_rqt.png>
+Package pdftex.def Info: images/cam_rqt.png used on input line 361.
+(pdftex.def)             Requested size: 284.52756pt x 127.07939pt.
+ <images/indoor_1.JPG, id=95, 4288.02pt x 2858.68pt>
+File: images/indoor_1.JPG Graphic file (type jpg)
+
+<use images/indoor_1.JPG>
+Package pdftex.def Info: images/indoor_1.JPG used on input line 369.
+(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
+
+<images/indoor_2.jpeg, id=96, 1204.5pt x 801.99625pt>
+File: images/indoor_2.jpeg Graphic file (type jpg)
+
+<use images/indoor_2.jpeg>
+Package pdftex.def Info: images/indoor_2.jpeg used on input line 370.
+(pdftex.def)             Requested size: 227.62204pt x 151.54872pt.
 
 
-LaTeX Warning: Citation `bou2010controller' on page 8 undefined on input line 3
-23.
+LaTeX Warning: Reference `fig:cam_pics' on page 12 undefined on input line 375.
 
 
-LaTeX Warning: Citation `lupashin2010simple' on page 8 undefined on input line 
-323.
+<images/sr1.png, id=97, 1606.0pt x 1204.5pt>
+File: images/sr1.png Graphic file (type png)
+ <use images/sr1.png>
+Package pdftex.def Info: images/sr1.png used on input line 379.
+(pdftex.def)             Requested size: 170.71652pt x 128.02927pt.
 
-[8]
+<images/sr2.png, id=98, 1606.0pt x 1204.5pt>
+File: images/sr2.png Graphic file (type png)
+ <use images/sr2.png>
+Package pdftex.def Info: images/sr2.png used on input line 380.
+(pdftex.def)             Requested size: 170.71652pt x 128.02927pt.
 
-LaTeX Warning: Citation `mahadevan1992automatic' on page 9 undefined on input l
-ine 324.
+<images/sr3.png, id=99, 1606.0pt x 1204.5pt>
+File: images/sr3.png Graphic file (type png)
+ <use images/sr3.png>
+Package pdftex.def Info: images/sr3.png used on input line 381.
+(pdftex.def)             Requested size: 170.71652pt x 128.02927pt.
+
+<images/sr4.png, id=100, 1606.0pt x 1204.5pt>
+File: images/sr4.png Graphic file (type png)
+ <use images/sr4.png>
+Package pdftex.def Info: images/sr4.png used on input line 382.
+(pdftex.def)             Requested size: 170.71652pt x 128.02927pt.
+
+<images/outdoor_1.JPG, id=101, 4288.02pt x 2858.68pt>
+File: images/outdoor_1.JPG Graphic file (type jpg)
+
+<use images/outdoor_1.JPG>
+Package pdftex.def Info: images/outdoor_1.JPG used on input line 391.
+(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
+
+<images/outdoor_2.JPG, id=102, 4288.02pt x 2858.68pt>
+File: images/outdoor_2.JPG Graphic file (type jpg)
+
+<use images/outdoor_2.JPG>
+Package pdftex.def Info: images/outdoor_2.JPG used on input line 392.
+(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
+ [12 <./images/cam_rqt.png> <./images/indoor_1.JPG> <./images/indoor_2.jpeg>]
+
+LaTeX Warning: Reference `fig:outdoor_flight_2' on page 13 undefined on input l
+ine 399.
+
+<images/cm1.jpg, id=106, 490.83376pt x 369.38pt>
+File: images/cm1.jpg Graphic file (type jpg)
+ <use images/cm1.jpg>
+Package pdftex.def Info: images/cm1.jpg used on input line 404.
+(pdftex.def)             Requested size: 227.62119pt x 142.26527pt.
+
+<images/coleman2.png, id=107, 722.09775pt x 469.15276pt>
+File: images/coleman2.png Graphic file (type png)
+
+<use images/coleman2.png>
+Package pdftex.def Info: images/coleman2.png used on input line 405.
+(pdftex.def)             Requested size: 227.62204pt x 147.88411pt.
 
 
-LaTeX Warning: Citation `bagnell2001autonomous' on page 9 undefined on input li
-ne 324.
+LaTeX Warning: Reference `fig:cam_pics_2' on page 13 undefined on input line 41
+0.
 
 
-LaTeX Warning: Citation `kormushev2010robot' on page 9 undefined on input line 
-324.
+LaTeX Warning: Citation `pix4d' undefined on input line 412.
 
 
-LaTeX Warning: Citation `Shaker:2010:VLS:1901614.1902128' on page 9 undefined o
-n input line 324.
+LaTeX Warning: Reference `fig:3d' on page 13 undefined on input line 412.
 
 
-LaTeX Warning: Citation `sugimoto2016acquisition' on page 9 undefined on input 
-line 324.
+LaTeX Warning: File `bridge_img1.png' not found on input line 416.
 
-<images/rl_model.pdf, id=76, 432.61626pt x 192.72pt>
+
+! Package pdftex.def Error: File `bridge_img1.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.416 ...ludegraphics[width=6cm]{bridge_img1.png}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<images/bridge_img2.png, id=108, 1606.0pt x 1204.5pt>
+File: images/bridge_img2.png Graphic file (type png)
+
+<use images/bridge_img2.png>
+Package pdftex.def Info: images/bridge_img2.png used on input line 417.
+(pdftex.def)             Requested size: 170.71652pt x 128.02927pt.
+ <images/3d1.png, id=109, 317.185pt x 361.35pt>
+File: images/3d1.png Graphic file (type png)
+
+<use images/3d1.png>
+Package pdftex.def Info: images/3d1.png used on input line 424.
+(pdftex.def)             Requested size: 170.72075pt x 142.26578pt.
+ <images/3d3.png, id=111, 1510.64375pt x 664.4825pt>
+File: images/3d3.png Graphic file (type png)
+
+<use images/3d3.png>
+Package pdftex.def Info: images/3d3.png used on input line 425.
+(pdftex.def)             Requested size: 227.62204pt x 100.12433pt.
+ [13 <./images/sr1.png (PNG copy)> <./images/sr2.png (PNG copy)> <./images/sr3.
+png (PNG copy)> <./images/sr4.png (PNG copy)>] [14 <./images/outdoor_1.JPG> <./
+images/outdoor_2.JPG> <./images/cm1.jpg> <./images/coleman2.png> <./images/brid
+ge_img2.png (PNG copy)>] [15 <./images/3d1.png> <./images/3d3.png>]
+Chapter 3.
+! Use of \@year@ doesn't match its definition.
+\Y@littman1996algorithms ->\@year@ 2
+                                    7
+l.442 ...term effects \cite{littman1996algorithms}
+                                                  . Sometimes it is effectiv...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@wiering2012reinforcement ->\@year@ 5
+                                       0
+l.445 ... problems \cite{wiering2012reinforcement}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[16
+
+]
+! Use of \@year@ doesn't match its definition.
+\Y@puterman2014markov ->\@year@ 3
+                                 8
+l.454 ...s are uncertain.\cite{puterman2014markov}
+                                                  . When an action is taken ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[17]
+! Use of \@year@ doesn't match its definition.
+\Y@Bellman:1957 ->\@year@ 6
+                           
+l.499 ...xtit{Bellman equation}\cite{Bellman:1957}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[18]
+! Use of \@year@ doesn't match its definition.
+\Y@kaelbling1998planning ->\@year@ 1
+                                    9
+l.539 ...cy iteration \cite{kaelbling1998planning}
+                                                   and value iteration \cite...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@Bellman:1957 ->\@year@ 6
+                           
+l.539 ...} and value iteration \cite{Bellman:1957}
+                                                  . In policy iteration the ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@bou2010controller ->\@year@ 8
+                                
+l.547 Reference \cite{bou2010controller}
+                                         discusses learning the non-linear c...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@lupashin2010simple ->\@year@ 2
+                                 9
+l.547 ...ereas reference \cite{lupashin2010simple}
+                                                   developed a high level co...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[19]
+! Use of \@year@ doesn't match its definition.
+\Y@mahadevan1992automatic ->\@year@ 3
+                                     0
+l.548 ... push boxes \cite{mahadevan1992automatic}
+                                                   using value function-base...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@bagnell2001autonomous ->\@year@ 5
+                                    
+l.548 ...t controller \cite{bagnell2001autonomous}
+                                                  . Kormushev and Calinon ta...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@kormushev2010robot ->\@year@ 2
+                                 4
+l.548 ...o flip pancakes \cite{kormushev2010robot}
+                                                  . The reinforcement learni...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@Shaker:2010:VLS:1901614.1902128 ->\@year@ 4
+                                              2
+l.548 ...in \cite{Shaker:2010:VLS:1901614.1902128}
+                                                   is Least Squares Policy I...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@sugimoto2016acquisition ->\@year@ 4
+                                      5
+l.548 ...cent paper \cite{sugimoto2016acquisition}
+                                                   applied reinforcement lea...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+<images/rl_model.pdf, id=141, 432.61626pt x 192.72pt>
 File: images/rl_model.pdf Graphic file (type pdf)
- <use images/rl_model.pdf>
-Package pdftex.def Info: images/rl_model.pdf used on input line 331.
+
+<use images/rl_model.pdf>
+Package pdftex.def Info: images/rl_model.pdf used on input line 555.
 (pdftex.def)             Requested size: 227.62204pt x 101.40005pt.
 
-[9 <./images/rl_model.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@kaelbling1996reinforcement ->\@year@ 2
+                                         0
+l.563 ...problem \cite{kaelbling1996reinforcement}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `watkins1992q' on page 10 undefined on input line 347.
+[20 <./images/rl_model.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@watkins1992q ->\@year@ 4
+                           9
+l.571 ...ithms are; Q-learning \cite{watkins1992q}
+                                                   and SARSA (State Action R...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@rummery1994line ->\@year@ 4
+                              1
+l.571 ...eward State Action)\cite{rummery1994line}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `rummery1994line' on page 10 undefined on input line 34
-7.
+! Use of \@year@ doesn't match its definition.
+\Y@hester2017learning ->\@year@ 1
+                                 8
+l.574 ... the real world \cite{hester2017learning}
+                                                  . In model-based algorithm...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@brafman2002r ->\@year@ 9
+                           
+l.575 ...thms are ;  $R$-$MAX$ \cite{brafman2002r}
+                                                   and $E^3$ \cite{kearns200...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `hester2017learning' on page 10 undefined on input line
- 350.
+! Use of \@year@ doesn't match its definition.
+\Y@kearns2002near ->\@year@ 2
+                             1
+l.575 ...man2002r} and $E^3$ \cite{kearns2002near}
+                                                  .\par
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@strehl2006pac ->\@year@ 4
+                            4
+l.577 ...ired to store an MDP \cite{strehl2006pac}
+                                                  . Model-based algorithms a...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `atkeson1997comparison' on page 10 undefined on input l
-ine 354.
+! Use of \@year@ doesn't match its definition.
+\Y@atkeson1997comparison ->\@year@ 4
+                                    
+l.578 ...nsional data \cite{atkeson1997comparison}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-[10] [11] [12] <images/gridworld.pdf, id=94, 387.046pt x 264.99pt>
+[21]
+! Use of \@year@ doesn't match its definition.
+\Y@berry1985bandit ->\@year@ 7
+                              
+l.584 ...ed bandit problem} \cite{berry1985bandit}
+                                                   may best illustrate the c...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[22] [23] <images/gridworld.pdf, id=159, 387.046pt x 264.99pt>
 File: images/gridworld.pdf Graphic file (type pdf)
 
 <use images/gridworld.pdf>
-Package pdftex.def Info: images/gridworld.pdf used on input line 397.
+Package pdftex.def Info: images/gridworld.pdf used on input line 621.
 (pdftex.def)             Requested size: 227.62204pt x 155.8454pt.
 
-<images/gp_laser.pdf, id=95, 800.59097pt x 563.70598pt>
+<images/gp_laser.pdf, id=160, 800.59097pt x 563.70598pt>
 File: images/gp_laser.pdf Graphic file (type pdf)
 
 <use images/gp_laser.pdf>
-Package pdftex.def Info: images/gp_laser.pdf used on input line 405.
+Package pdftex.def Info: images/gp_laser.pdf used on input line 629.
 (pdftex.def)             Requested size: 227.62204pt x 160.2708pt.
- [13 <./images/gridworld.pdf>]
-<images/ls_fit.pdf, id=103, 507.496pt x 407.924pt>
+ [24 <./images/gridworld.pdf>]
+<images/ls_fit.pdf, id=168, 507.496pt x 407.924pt>
 File: images/ls_fit.pdf Graphic file (type pdf)
  <use images/ls_fit.pdf>
-Package pdftex.def Info: images/ls_fit.pdf used on input line 419.
+Package pdftex.def Info: images/ls_fit.pdf used on input line 643.
 (pdftex.def)             Requested size: 227.62204pt x 182.96033pt.
 
-[14 <./images/gp_laser.pdf> <./images/ls_fit.pdf
+[25 <./images/gp_laser.pdf> <./images/ls_fit.pdf
 
 pdfTeX warning: pdflatex (file ./images/ls_fit.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 426.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 650.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 426.
- [15]
-Excluding 'comment' comment. [16]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 650.
+ [26]
+! Use of \@year@ doesn't match its definition.
+\Y@rasmussen2003gaussian ->\@year@ 4
+                                    0
+l.687 \cite{rasmussen2003gaussian}
+                                  
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `gamedeep' on page 17 undefined on input line 518.
+Excluding 'comment' comment.
+! Use of \@year@ doesn't match its definition.
+\Y@rasmussen2003gaussian ->\@year@ 4
+                                    0
+l.737 ...as stated in \cite{rasmussen2003gaussian}
+                                                  , GPs can be used to model...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+[27]
+! Use of \@year@ doesn't match its definition.
+\Y@gamedeep ->\@year@ 1
+                       7
+l.742 ...d tabular representations \cite{gamedeep}
+                                                  . To generalize in large a...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `morton2016deep' on page 17 undefined on input line 518
-.
+! Use of \@year@ doesn't match its definition.
+\Y@morton2016deep ->\@year@ 3
+                             4
+l.742 ...tions are not enough\cite{morton2016deep}
+                                                  . Performance of most of t...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@mnih2013playing ->\@year@ 3
+                              1
+l.744 ...update the weights \cite{mnih2013playing}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `mnih2013playing' on page 17 undefined on input line 52
-0.
-
-<images/deep_q.png, id=121, 282.05376pt x 362.35374pt>
+<images/deep_q.png, id=185, 282.05376pt x 362.35374pt>
 File: images/deep_q.png Graphic file (type png)
  <use images/deep_q.png>
-Package pdftex.def Info: images/deep_q.png used on input line 524.
+Package pdftex.def Info: images/deep_q.png used on input line 748.
 (pdftex.def)             Requested size: 170.71652pt x 219.32144pt.
 
+! Use of \@year@ doesn't match its definition.
+\Y@krizhevsky2012imagenet ->\@year@ 2
+                                     5
+l.753 Reference \cite{krizhevsky2012imagenet}
+                                              states that, with sufficient d...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `krizhevsky2012imagenet' on page 17 undefined on input 
-line 529.
+! Use of \@year@ doesn't match its definition.
+\Y@mnih2015human ->\@year@ 3
+                            2
+l.753 ... features. Reference \cite{mnih2015human}
+                                                   describes a Deep-RL syste...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@mnih2013playing ->\@year@ 3
+                              1
+l.754 ...algorithm given in \cite{mnih2013playing}
+                                                   is advantageous over an o...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `mnih2015human' on page 17 undefined on input line 529.
-
-
-
-LaTeX Warning: Citation `mnih2013playing' on page 17 undefined on input line 53
-0.
-
-[17 <./images/deep_q.png>] [18]
-Chapter 3.
-
-LaTeX Warning: Citation `tokekar2014placement' on page 19 undefined on input li
-ne 537.
-
-<images/perception_1.pdf, id=130, 923.45pt x 650.43pt>
+[28 <./images/deep_q.png>] [29]
+Chapter 4.
+<images/perception_1.pdf, id=194, 923.45pt x 650.43pt>
 File: images/perception_1.pdf Graphic file (type pdf)
 
 <use images/perception_1.pdf>
-Package pdftex.def Info: images/perception_1.pdf used on input line 541.
+Package pdftex.def Info: images/perception_1.pdf used on input line 765.
 (pdftex.def)             Requested size: 227.62204pt x 160.3244pt.
- [19
 
-]
-<images/perception_sim_1.png, id=134, 1000.73875pt x 731.73375pt>
+! Use of \@year@ doesn't match its definition.
+\Y@chowdhary2014off ->\@year@ 1
+                               0
+l.772 ...ithm described in \cite{chowdhary2014off}
+                                                  , we present its novel app...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@chowdhary2014off ->\@year@ 1
+                               0
+l.773 ...) is presented in \cite{chowdhary2014off}
+                                                   in both batch and online ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[30
+
+ <./images/perception_1.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@chowdhary2014off ->\@year@ 1
+                               0
+l.778 ...n is not reached. \cite{chowdhary2014off}
+                                                   show that the algorithm c...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+
+LaTeX Warning: Float too large for page by 35.88814pt on input line 841.
+
+[31] [32] [33]
+<images/perception_sim_1.png, id=212, 1000.73875pt x 731.73375pt>
 File: images/perception_sim_1.png Graphic file (type png)
 
 <use images/perception_sim_1.png>
-Package pdftex.def Info: images/perception_sim_1.png used on input line 554.
+Package pdftex.def Info: images/perception_sim_1.png used on input line 911.
 (pdftex.def)             Requested size: 227.62204pt x 166.4306pt.
- [20 <./images/perception_1.pdf> <./images/perception_sim_1.png>]
-<images/perception_sim_2.png, id=143, 1003.75pt x 649.42625pt>
+
+! Use of \@year@ doesn't match its definition.
+\Y@koenig2004design ->\@year@ 2
+                               3
+l.916 ...o robot simulator~\cite{koenig2004design}
+                                                  . A UAV equipped with a Ho...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+<images/perception_sim_2.png, id=213, 1003.75pt x 649.42625pt>
 File: images/perception_sim_2.png Graphic file (type png)
 
 <use images/perception_sim_2.png>
-Package pdftex.def Info: images/perception_sim_2.png used on input line 563.
+Package pdftex.def Info: images/perception_sim_2.png used on input line 920.
 (pdftex.def)             Requested size: 227.62204pt x 147.26408pt.
- [21 <./images/perception_sim_2.png>] [22]
-[23] <images/env1.pdf, id=156, 1281.58804pt x 850.37701pt>
+ [34 <./images/perception_sim_1.png>]
+<images/env1.pdf, id=220, 1281.58804pt x 850.37701pt>
 File: images/env1.pdf Graphic file (type pdf)
+ <use images/env1.pdf>
+Package pdftex.def Info: images/env1.pdf used on input line 936.
+(pdftex.def)             Requested size: 227.62204pt x 151.02406pt.
 
-<use images/env1.pdf>
-Package pdftex.def Info: images/env1.pdf used on input line 641.
-(pdftex.def)             Requested size: 170.71652pt x 113.2648pt.
- <images/env2.pdf, id=157, 1201.28806pt x 800.59097pt>
+<images/env2.pdf, id=221, 1201.28806pt x 800.59097pt>
 File: images/env2.pdf Graphic file (type pdf)
+ <use images/env2.pdf>
+Package pdftex.def Info: images/env2.pdf used on input line 937.
+(pdftex.def)             Requested size: 227.62204pt x 151.6863pt.
 
-<use images/env2.pdf>
-Package pdftex.def Info: images/env2.pdf used on input line 642.
-(pdftex.def)             Requested size: 170.71652pt x 113.76778pt.
- <images/env3.pdf, id=158, 1198.87903pt x 803.0pt>
+<images/env3.pdf, id=222, 1198.87903pt x 803.0pt>
 File: images/env3.pdf Graphic file (type pdf)
+ <use images/env3.pdf>
+Package pdftex.def Info: images/env3.pdf used on input line 938.
+(pdftex.def)             Requested size: 227.62204pt x 152.44905pt.
 
-<use images/env3.pdf>
-Package pdftex.def Info: images/env3.pdf used on input line 643.
-(pdftex.def)             Requested size: 170.71652pt x 114.34291pt.
- <images/env4.pdf, id=159, 1200.485pt x 801.39403pt>
+<images/env4.pdf, id=223, 1200.485pt x 801.39403pt>
 File: images/env4.pdf Graphic file (type pdf)
-
-<use images/env4.pdf>
-Package pdftex.def Info: images/env4.pdf used on input line 644.
-(pdftex.def)             Requested size: 170.71652pt x 113.95526pt.
+ <use images/env4.pdf>
+Package pdftex.def Info: images/env4.pdf used on input line 939.
+(pdftex.def)             Requested size: 227.62204pt x 151.9485pt.
 Package epstopdf Info: Source file: <images/r_env1.eps>
 (epstopdf)                    date: 2017-06-17 13:55:10
 (epstopdf)                    size: 56464 bytes
@@ -2026,16 +2592,16 @@ Package epstopdf Info: Source file: <images/r_env1.eps>
 (epstopdf)                    size: 22413 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env1-eps-converte
 d-to.pdf images/r_env1.eps>
-(epstopdf)             \includegraphics on input line 655.
+(epstopdf)             \includegraphics on input line 952.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env1-eps-converted-to.pdf, id=160, 1411.2725pt x 728.7225pt>
+<images/r_env1-eps-converted-to.pdf, id=224, 1411.2725pt x 728.7225pt>
 File: images/r_env1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env1-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env1-eps-converted-to.pdf used on input line 
-655.
-(pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
+952.
+(pdftex.def)             Requested size: 284.52756pt x 146.90945pt.
 Package epstopdf Info: Source file: <images/r_env2.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
 (epstopdf)                    size: 272892 bytes
@@ -2044,16 +2610,16 @@ Package epstopdf Info: Source file: <images/r_env2.eps>
 (epstopdf)                    size: 29383 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env2-eps-converte
 d-to.pdf images/r_env2.eps>
-(epstopdf)             \includegraphics on input line 656.
+(epstopdf)             \includegraphics on input line 953.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env2-eps-converted-to.pdf, id=161, 1411.2725pt x 728.7225pt>
+<images/r_env2-eps-converted-to.pdf, id=225, 1411.2725pt x 728.7225pt>
 File: images/r_env2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env2-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env2-eps-converted-to.pdf used on input line 
-656.
-(pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
+953.
+(pdftex.def)             Requested size: 284.52756pt x 146.90945pt.
 Package epstopdf Info: Source file: <images/r_env3.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
 (epstopdf)                    size: 273391 bytes
@@ -2062,16 +2628,16 @@ Package epstopdf Info: Source file: <images/r_env3.eps>
 (epstopdf)                    size: 29852 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env3-eps-converte
 d-to.pdf images/r_env3.eps>
-(epstopdf)             \includegraphics on input line 657.
+(epstopdf)             \includegraphics on input line 954.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env3-eps-converted-to.pdf, id=162, 1411.2725pt x 728.7225pt>
+<images/r_env3-eps-converted-to.pdf, id=226, 1411.2725pt x 728.7225pt>
 File: images/r_env3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env3-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env3-eps-converted-to.pdf used on input line 
-657.
-(pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
+954.
+(pdftex.def)             Requested size: 284.52756pt x 146.90945pt.
 Package epstopdf Info: Source file: <images/r_env4_main.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
 (epstopdf)                    size: 54604 bytes
@@ -2080,17 +2646,18 @@ Package epstopdf Info: Source file: <images/r_env4_main.eps>
 (epstopdf)                    size: 22368 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env4_main-eps-con
 verted-to.pdf images/r_env4_main.eps>
-(epstopdf)             \includegraphics on input line 658.
+(epstopdf)             \includegraphics on input line 955.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env4_main-eps-converted-to.pdf, id=163, 1396.21625pt x 721.69624pt>
+<images/r_env4_main-eps-converted-to.pdf, id=227, 1396.21625pt x 721.69624pt>
 File: images/r_env4_main-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env4_main-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env4_main-eps-converted-to.pdf used on input 
-line 658.
-(pdftex.def)             Requested size: 170.71652pt x 88.24062pt.
- [24 <./images/env1.pdf> <./images/env2.pdf
+line 955.
+(pdftex.def)             Requested size: 284.52756pt x 147.0677pt.
+ [35 <./images/perception_sim_2.png>] [36 <./images/env1.pdf> <./images/env2.pd
+f
 
 pdfTeX warning: pdflatex (file ./images/env2.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
@@ -2102,12 +2669,18 @@ pdfTeX warning: pdflatex (file ./images/env3.pdf): PDF inclusion: multiple pdfs
 
 pdfTeX warning: pdflatex (file ./images/env4.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
->] <images/corridor.pdf, id=181, 774.09201pt x 692.18597pt>
+>]
+Overfull \vbox (98.33438pt too high) has occurred while \output is active []
+
+
+[37 <./images/r_env1-eps-converted-to.pdf> <./images/r_env2-eps-converted-to.pd
+f> <./images/r_env3-eps-converted-to.pdf> <./images/r_env4_main-eps-converted-t
+o.pdf>] <images/corridor.pdf, id=283, 774.09201pt x 692.18597pt>
 File: images/corridor.pdf Graphic file (type pdf)
 
 <use images/corridor.pdf>
-Package pdftex.def Info: images/corridor.pdf used on input line 667.
-(pdftex.def)             Requested size: 170.71417pt x 113.8044pt.
+Package pdftex.def Info: images/corridor.pdf used on input line 966.
+(pdftex.def)             Requested size: 170.71652pt x 152.65105pt.
 Package epstopdf Info: Source file: <images/gpq_q_epoch_20.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
 (epstopdf)                    size: 62050 bytes
@@ -2117,23 +2690,23 @@ Package epstopdf Info: Source file: <images/gpq_q_epoch_20.eps>
 (epstopdf)                    size: 12647 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gpq_q_epoch_20-eps-
 converted-to.pdf images/gpq_q_epoch_20.eps>
-(epstopdf)             \includegraphics on input line 668.
+(epstopdf)             \includegraphics on input line 967.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/gpq_q_epoch_20-eps-converted-to.pdf, id=182, 1396.21625pt x 721.69624pt
+<images/gpq_q_epoch_20-eps-converted-to.pdf, id=284, 1396.21625pt x 721.69624pt
 >
 File: images/gpq_q_epoch_20-eps-converted-to.pdf Graphic file (type pdf)
  <use images/gpq_q_epoch_20-eps-converted-to.pdf>
 Package pdftex.def Info: images/gpq_q_epoch_20-eps-converted-to.pdf used on inp
-ut line 668.
-(pdftex.def)             Requested size: 227.62204pt x 117.65416pt.
+ut line 967.
+(pdftex.def)             Requested size: 284.52756pt x 147.0677pt.
 
-<images/gazebo_env2.pdf, id=183, 872.86098pt x 522.75299pt>
+<images/gazebo_env2.pdf, id=285, 872.86098pt x 522.75299pt>
 File: images/gazebo_env2.pdf Graphic file (type pdf)
 
 <use images/gazebo_env2.pdf>
-Package pdftex.def Info: images/gazebo_env2.pdf used on input line 670.
-(pdftex.def)             Requested size: 170.70665pt x 113.80952pt.
+Package pdftex.def Info: images/gazebo_env2.pdf used on input line 969.
+(pdftex.def)             Requested size: 170.71652pt x 102.23553pt.
 Package epstopdf Info: Source file: <images/gpq_q_epoch_20_2.eps>
 (epstopdf)                    date: 2017-06-17 13:55:06
 (epstopdf)                    size: 22954 bytes
@@ -2143,25 +2716,33 @@ df>
 (epstopdf)                    size: 9870 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gpq_q_epoch_20_2-ep
 s-converted-to.pdf images/gpq_q_epoch_20_2.eps>
-(epstopdf)             \includegraphics on input line 671.
+(epstopdf)             \includegraphics on input line 970.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/gpq_q_epoch_20_2-eps-converted-to.pdf, id=184, 1396.21625pt x 721.69624
+<images/gpq_q_epoch_20_2-eps-converted-to.pdf, id=286, 1396.21625pt x 721.69624
 pt>
 File: images/gpq_q_epoch_20_2-eps-converted-to.pdf Graphic file (type pdf)
  <use images/gpq_q_epoch_20_2-eps-converted-to.pdf>
 Package pdftex.def Info: images/gpq_q_epoch_20_2-eps-converted-to.pdf used on i
-nput line 671.
-(pdftex.def)             Requested size: 227.62204pt x 117.65416pt.
- [25 <./images/r_env1-eps-converted-to.pdf> <./images/r_env2-eps-converted-to.p
-df> <./images/r_env3-eps-converted-to.pdf> <./images/r_env4_main-eps-converted-
-to.pdf>] [26 <./images/corridor.pdf> <./images/gpq_q_epoch_20-eps-converted-to.
-pdf> <./images/gazebo_env2.pdf
+nput line 970.
+(pdftex.def)             Requested size: 284.52756pt x 147.0677pt.
+ [38 <./images/corridor.pdf> <./images/gpq_q_epoch_20-eps-converted-to.pdf> <./
+images/gazebo_env2.pdf
 
 pdfTeX warning: pdflatex (file ./images/gazebo_env2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
-> <./images/gpq_q_epoch_20_2-eps-converted-to.pdf>]
-Chapter 4.
+> <./images/gpq_q_epoch_20_2-eps-converted-to.pdf>] [39]
+Chapter 5.
+! Use of \@year@ doesn't match its definition.
+\Y@cutler2014reinforcement ->\@year@ 1
+                                      2
+l.988 ...ler et al.~\cite{cutler2014reinforcement}
+                                                  . MFRL leverages multiple ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
 Package epstopdf Info: Source file: <images/mf.eps>
 (epstopdf)                    date: 2017-06-17 13:55:12
 (epstopdf)                    size: 3559267 bytes
@@ -2170,18 +2751,140 @@ Package epstopdf Info: Source file: <images/mf.eps>
 (epstopdf)                    size: 236910 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/mf-eps-converted-to
 .pdf images/mf.eps>
-(epstopdf)             \includegraphics on input line 688.
+(epstopdf)             \includegraphics on input line 992.
 Package epstopdf Info: Output file is already uptodate.
-<images/mf-eps-converted-to.pdf, id=247, 572.1375pt x 143.53625pt>
+<images/mf-eps-converted-to.pdf, id=316, 572.1375pt x 143.53625pt>
 File: images/mf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/mf-eps-converted-to.pdf>
-Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 688.
+Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 992.
 
 (pdftex.def)             Requested size: 469.75499pt x 117.8516pt.
- [27
 
-] [28 <./images/mf-eps-converted-to.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@taylor2007transfer ->\@year@ 4
+                                 7
+l.997 ...ansfer learning~\cite{taylor2007transfer}
+                                                   where transfer of paramet...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@li2011knows ->\@year@ 2
+                          6
+l.999 ...Knows (KWIK) framework~\cite{li2011knows}
+                                                   to learn the transition a...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[40
+
+]
+! Use of \@year@ doesn't match its definition.
+\Y@Dames2015 ->\@year@ 1
+                        3
+l.1001 ...oving in the real world~\cite{Dames2015}
+                                                   and have been used in RL ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@rasmussen2003gaussian ->\@year@ 4
+                                    0
+l.1001 ...on function~\cite{rasmussen2003gaussian}
+                                                  , the reward function~\cit...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@deisenroth2010efficient ->\@year@ 1
+                                      5
+l.1001 ... function~\cite{deisenroth2010efficient}
+                                                   and the value function~\c...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@engel2005reinforcement ->\@year@ 1
+                                     6
+l.1001 ...e function~\cite{engel2005reinforcement}
+                                                  . GPs can predict the lear...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@puterman2014markov ->\@year@ 3
+                                 8
+l.1005 ...rocesses (MDP)~\cite{puterman2014markov}
+                                                   is defined by a tuple: $\...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@brafman2002r ->\@year@ 9
+                           
+l.1009 ...rning \cite{brafman2002r,kearns2002near}
+                                                  . The learned transition a...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@kearns2002near ->\@year@ 2
+                             1
+l.1009 ...rning \cite{brafman2002r,kearns2002near}
+                                                  . The learned transition a...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@sutton1998reinforcement ->\@year@ 4
+                                      6
+l.1009 ...iteration~\cite{sutton1998reinforcement}
+                                                   which are often referred ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@strehl2006pac ->\@year@ 4
+                            4
+l.1009 ...rast, Strehl et al.~\cite{strehl2006pac}
+                                                   presented a model-free al...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[41 <./images/mf-eps-converted-to.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@rasmussen2003gaussian ->\@year@ 4
+                                    0
+l.1011 ...en and Kuss~\cite{rasmussen2003gaussian}
+                                                   showed how to use GPs for...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
 Package epstopdf Info: Source file: <images/gp-mfrl.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
 (epstopdf)                    size: 85212 bytes
@@ -2190,18 +2893,89 @@ Package epstopdf Info: Source file: <images/gp-mfrl.eps>
 (epstopdf)                    size: 24678 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gp-mfrl-eps-convert
 ed-to.pdf images/gp-mfrl.eps>
-(epstopdf)             \includegraphics on input line 711.
+(epstopdf)             \includegraphics on input line 1015.
 Package epstopdf Info: Output file is already uptodate.
- <images/gp-mfrl-eps-converted-to.pdf, id=264, 598.235pt x 478.78876pt>
+<images/gp-mfrl-eps-converted-to.pdf, id=333, 598.235pt x 478.78876pt>
 File: images/gp-mfrl-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/gp-mfrl-eps-converted-to.pdf>
 Package pdftex.def Info: images/gp-mfrl-eps-converted-to.pdf used on input line
- 711.
+ 1015.
 (pdftex.def)             Requested size: 227.62204pt x 182.1754pt.
- [29 <./images/gp-mfrl-eps-converted-to.pdf>] [30] [31]
+ [42 <./images/gp-mfrl-eps-converted-to.pdf>]
+! Use of \@year@ doesn't match its definition.
+\Y@abbeel2006using ->\@year@ 3
+                              
+l.1053 ...cite{abbeel2006using,taylor2007transfer}
+                                                  . Cutler et al. used model...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Float too large for page by 136.42699pt on input line 828.
+! Use of \@year@ doesn't match its definition.
+\Y@taylor2007transfer ->\@year@ 4
+                                 7
+l.1053 ...cite{abbeel2006using,taylor2007transfer}
+                                                  . Cutler et al. used model...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@cutler2014reinforcement ->\@year@ 1
+                                      2
+l.1053 ...framework \cite{cutler2014reinforcement}
+                                                  . We use GP regression to ...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@sutton1998reinforcement ->\@year@ 4
+                                      6
+l.1056 ...iteration~\cite{sutton1998reinforcement}
+                                                   as our planner to calcula...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+[43] [44]
+
+LaTeX Warning: Float too large for page by 136.42699pt on input line 1132.
+
+! Use of \@year@ doesn't match its definition.
+\Y@koenig2004design ->\@year@ 2
+                               3
+l.1137 ... robot simulator~\cite{koenig2004design}
+                                                  . The setup is shown in Fi...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@quigley2009ros ->\@year@ 3
+                             9
+l.1137 ...t Operating System~\cite{quigley2009ros}
+                                                   via the \texttt{mavros} n...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@scikit-learn ->\@year@ 3
+                           7
+l.1139 ...nd uses scikit-learn \cite{scikit-learn}
+                                                   to implement GP-regressio...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
 Package epstopdf Info: Source file: <images/env.eps>
 (epstopdf)                    date: 2017-06-17 13:55:22
@@ -2211,14 +2985,14 @@ Package epstopdf Info: Source file: <images/env.eps>
 (epstopdf)                    size: 103375 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/env-eps-converted-t
 o.pdf images/env.eps>
-(epstopdf)             \includegraphics on input line 839.
+(epstopdf)             \includegraphics on input line 1143.
 Package epstopdf Info: Output file is already uptodate.
-<images/env-eps-converted-to.pdf, id=298, 595.22375pt x 252.945pt>
+<images/env-eps-converted-to.pdf, id=367, 595.22375pt x 252.945pt>
 File: images/env-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/env-eps-converted-to.pdf>
-Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 839
-.
+Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 114
+3.
 (pdftex.def)             Requested size: 469.75499pt x 199.62366pt.
 Package epstopdf Info: Source file: <images/epoch.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2228,17 +3002,17 @@ Package epstopdf Info: Source file: <images/epoch.eps>
 (epstopdf)                    size: 6137 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/epoch-eps-converted
 -to.pdf images/epoch.eps>
-(epstopdf)             \includegraphics on input line 847.
+(epstopdf)             \includegraphics on input line 1151.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/epoch-eps-converted-to.pdf, id=299, 593.21625pt x 524.96124pt>
+<images/epoch-eps-converted-to.pdf, id=368, 593.21625pt x 524.96124pt>
 File: images/epoch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/epoch-eps-converted-to.pdf>
-Package pdftex.def Info: images/epoch-eps-converted-to.pdf used on input line 8
-47.
+Package pdftex.def Info: images/epoch-eps-converted-to.pdf used on input line 1
+151.
 (pdftex.def)             Requested size: 170.71652pt x 151.07336pt.
- [32 <./images/env-eps-converted-to.pdf>] [33]
+ [45 <./images/env-eps-converted-to.pdf>] [46]
 Package epstopdf Info: Source file: <images/heat_init_same.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
 (epstopdf)                    size: 21355 bytes
@@ -2248,15 +3022,15 @@ Package epstopdf Info: Source file: <images/heat_init_same.eps>
 (epstopdf)                    size: 23468 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_same-eps-
 converted-to.pdf images/heat_init_same.eps>
-(epstopdf)             \includegraphics on input line 861.
+(epstopdf)             \includegraphics on input line 1165.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_init_same-eps-converted-to.pdf, id=314, 513.92pt x 423.5825pt>
+<images/heat_init_same-eps-converted-to.pdf, id=384, 513.92pt x 423.5825pt>
 File: images/heat_init_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_init_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_same-eps-converted-to.pdf used on inp
-ut line 861.
+ut line 1165.
 (pdftex.def)             Requested size: 113.81102pt x 93.80244pt.
 Package epstopdf Info: Source file: <images/heat_same.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2266,15 +3040,15 @@ Package epstopdf Info: Source file: <images/heat_same.eps>
 (epstopdf)                    size: 25220 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_same-eps-conve
 rted-to.pdf images/heat_same.eps>
-(epstopdf)             \includegraphics on input line 862.
+(epstopdf)             \includegraphics on input line 1166.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_same-eps-converted-to.pdf, id=315, 518.93875pt x 422.57875pt>
+<images/heat_same-eps-converted-to.pdf, id=385, 518.93875pt x 422.57875pt>
 File: images/heat_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_same-eps-converted-to.pdf used on input li
-ne 862.
+ne 1166.
 (pdftex.def)             Requested size: 113.81102pt x 92.67744pt.
 Package epstopdf Info: Source file: <images/heat_init_opposite.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2285,15 +3059,15 @@ Package epstopdf Info: Source file: <images/heat_init_opposite.eps>
 (epstopdf)                    size: 23411 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_opposite-
 eps-converted-to.pdf images/heat_init_opposite.eps>
-(epstopdf)             \includegraphics on input line 869.
+(epstopdf)             \includegraphics on input line 1173.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_init_opposite-eps-converted-to.pdf, id=316, 508.90125pt x 423.5825
+<images/heat_init_opposite-eps-converted-to.pdf, id=386, 508.90125pt x 423.5825
 pt>
 File: images/heat_init_opposite-eps-converted-to.pdf Graphic file (type pdf)
  <use images/heat_init_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_opposite-eps-converted-to.pdf used on
- input line 869.
+ input line 1173.
 (pdftex.def)             Requested size: 113.81102pt x 94.7267pt.
 Package epstopdf Info: Source file: <images/heat_opposite.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2304,15 +3078,15 @@ Package epstopdf Info: Source file: <images/heat_opposite.eps>
 (epstopdf)                    size: 75576 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_opposite-eps-c
 onverted-to.pdf images/heat_opposite.eps>
-(epstopdf)             \includegraphics on input line 870.
+(epstopdf)             \includegraphics on input line 1174.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_opposite-eps-converted-to.pdf, id=317, 517.935pt x 426.59375pt>
+<images/heat_opposite-eps-converted-to.pdf, id=387, 517.935pt x 426.59375pt>
 File: images/heat_opposite-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_opposite-eps-converted-to.pdf used on inpu
-t line 870.
+t line 1174.
 (pdftex.def)             Requested size: 113.81102pt x 93.74025pt.
 Package epstopdf Info: Source file: <images/heatmap_new.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
@@ -2322,18 +3096,18 @@ Package epstopdf Info: Source file: <images/heatmap_new.eps>
 (epstopdf)                    size: 22120 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heatmap_new-eps-con
 verted-to.pdf images/heatmap_new.eps>
-(epstopdf)             \includegraphics on input line 878.
+(epstopdf)             \includegraphics on input line 1182.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heatmap_new-eps-converted-to.pdf, id=318, 476.78125pt x 426.59375pt>
+<images/heatmap_new-eps-converted-to.pdf, id=388, 476.78125pt x 426.59375pt>
 File: images/heatmap_new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heatmap_new-eps-converted-to.pdf>
 Package pdftex.def Info: images/heatmap_new-eps-converted-to.pdf used on input 
-line 878.
+line 1182.
 (pdftex.def)             Requested size: 170.71652pt x 152.74695pt.
- [34 <./images/epoch-eps-converted-to.pdf> <./images/heat_init_same-eps-convert
-ed-to.pdf> <./images/heat_same-eps-converted-to.pdf>] [35 <./images/heat_init_o
+ [47 <./images/epoch-eps-converted-to.pdf> <./images/heat_init_same-eps-convert
+ed-to.pdf> <./images/heat_same-eps-converted-to.pdf>] [48 <./images/heat_init_o
 pposite-eps-converted-to.pdf> <./images/heat_opposite-eps-converted-to.pdf> <./
 images/heatmap_new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/ratio.eps>
@@ -2344,14 +3118,14 @@ Package epstopdf Info: Source file: <images/ratio.eps>
 (epstopdf)                    size: 7077 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/ratio-eps-converted
 -to.pdf images/ratio.eps>
-(epstopdf)             \includegraphics on input line 893.
+(epstopdf)             \includegraphics on input line 1197.
 Package epstopdf Info: Output file is already uptodate.
- <images/ratio-eps-converted-to.pdf, id=346, 896.34875pt x 554.07pt>
+ <images/ratio-eps-converted-to.pdf, id=416, 896.34875pt x 554.07pt>
 File: images/ratio-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/ratio-eps-converted-to.pdf>
-Package pdftex.def Info: images/ratio-eps-converted-to.pdf used on input line 8
-93.
+Package pdftex.def Info: images/ratio-eps-converted-to.pdf used on input line 1
+197.
 (pdftex.def)             Requested size: 227.62204pt x 140.6984pt.
 Package epstopdf Info: Source file: <images/samples_gathered_.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
@@ -2362,16 +3136,16 @@ pdf>
 (epstopdf)                    size: 8110 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/samples_gathered_-e
 ps-converted-to.pdf images/samples_gathered_.eps>
-(epstopdf)             \includegraphics on input line 900.
+(epstopdf)             \includegraphics on input line 1204.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/samples_gathered_-eps-converted-to.pdf, id=347, 764.8575pt x 654.445pt>
+<images/samples_gathered_-eps-converted-to.pdf, id=417, 764.8575pt x 654.445pt>
 File: images/samples_gathered_-eps-converted-to.pdf Graphic file (type pdf)
 <use images/samples_gathered_-eps-converted-to.pdf>
 Package pdftex.def Info: images/samples_gathered_-eps-converted-to.pdf used on 
-input line 900.
+input line 1204.
 (pdftex.def)             Requested size: 227.62204pt x 194.75722pt.
- [36 <./images/ratio-eps-converted-to.pdf> <./images/samples_gathered_-eps-conv
+ [49 <./images/ratio-eps-converted-to.pdf> <./images/samples_gathered_-eps-conv
 erted-to.pdf>]
 Package epstopdf Info: Source file: <images/thre.eps>
 (epstopdf)                    date: 2017-06-17 13:55:22
@@ -2381,16 +3155,37 @@ Package epstopdf Info: Source file: <images/thre.eps>
 (epstopdf)                    size: 10776 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/thre-eps-converted-
 to.pdf images/thre.eps>
-(epstopdf)             \includegraphics on input line 910.
+(epstopdf)             \includegraphics on input line 1214.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/thre-eps-converted-to.pdf, id=361, 682.55pt x 572.1375pt>
+<images/thre-eps-converted-to.pdf, id=431, 682.55pt x 572.1375pt>
 File: images/thre-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/thre-eps-converted-to.pdf>
-Package pdftex.def Info: images/thre-eps-converted-to.pdf used on input line 91
-0.
+Package pdftex.def Info: images/thre-eps-converted-to.pdf used on input line 12
+14.
 (pdftex.def)             Requested size: 227.62204pt x 190.79642pt.
+
+! Use of \@year@ doesn't match its definition.
+\Y@cutler2014reinforcement ->\@year@ 1
+                                      2
+l.1220 ...algorithm \cite{cutler2014reinforcement}
+                                                  , GP-MFRL algorithm only i...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \@year@ doesn't match its definition.
+\Y@cutler2014reinforcement ->\@year@ 1
+                                      2
+l.1220 ...lgorithm, \cite{cutler2014reinforcement}
+                                                  .
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
 Package epstopdf Info: Source file: <images/reward.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
 (epstopdf)                    size: 20267 bytes
@@ -2399,171 +3194,957 @@ Package epstopdf Info: Source file: <images/reward.eps>
 (epstopdf)                    size: 8000 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/reward-eps-converte
 d-to.pdf images/reward.eps>
-(epstopdf)             \includegraphics on input line 919.
+(epstopdf)             \includegraphics on input line 1223.
 Package epstopdf Info: Output file is already uptodate.
-
-<images/reward-eps-converted-to.pdf, id=362, 1396.21625pt x 705.63625pt>
+<images/reward-eps-converted-to.pdf, id=432, 1396.21625pt x 705.63625pt>
 File: images/reward-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/reward-eps-converted-to.pdf>
 Package pdftex.def Info: images/reward-eps-converted-to.pdf used on input line 
-919.
-(pdftex.def)             Requested size: 227.62204pt x 115.036pt.
- [37 <./images/thre-eps-converted-to.pdf>] [38 <./images/reward-eps-converted-t
+1223.
+(pdftex.def)             Requested size: 341.43306pt x 172.55399pt.
+ [50 <./images/thre-eps-converted-to.pdf>] [51 <./images/reward-eps-converted-t
 o.pdf>]
-Chapter 5.
-<images/truck_crane.jpg, id=380, 1284.8pt x 722.7pt>
-File: images/truck_crane.jpg Graphic file (type jpg)
-
-<use images/truck_crane.jpg>
-Package pdftex.def Info: images/truck_crane.jpg used on input line 938.
-(pdftex.def)             Requested size: 170.7155pt x 113.80379pt.
-
-<images/under_bridge.jpg, id=381, 1003.75pt x 752.8125pt>
-File: images/under_bridge.jpg Graphic file (type jpg)
-
-<use images/under_bridge.jpg>
-Package pdftex.def Info: images/under_bridge.jpg used on input line 939.
-(pdftex.def)             Requested size: 170.71182pt x 113.8015pt.
- <images/tip.jpg, id=382, 1204.5pt x 903.375pt>
-File: images/tip.jpg Graphic file (type jpg)
-
-<use images/tip.jpg>
-Package pdftex.def Info: images/tip.jpg used on input line 946.
-(pdftex.def)             Requested size: 227.62204pt x 170.70569pt.
- [39
-
-] [40 <./images/truck_crane.jpg> <./images/under_bridge.jpg> <./images/tip.jpg>
-]
-
-LaTeX Warning: Citation `djiframe' on page 41 undefined on input line 974.
-
-<images/uav-1.JPG, id=390, 4288.02pt x 2858.68pt>
-File: images/uav-1.JPG Graphic file (type jpg)
- <use images/uav-1.JPG>
-Package pdftex.def Info: images/uav-1.JPG used on input line 978.
-(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
-
-[41] <images/quad.png, id=394, 1510.64375pt x 2014.52625pt>
-File: images/quad.png Graphic file (type png)
-
-<use images/quad.png>
-Package pdftex.def Info: images/quad.png used on input line 987.
-(pdftex.def)             Requested size: 227.62204pt x 303.54916pt.
-
-
-LaTeX Warning: Citation `fleacamera' on page 42 undefined on input line 993.
-
-<images/cam.jpg, id=395, 1317.92375pt x 959.585pt>
-File: images/cam.jpg Graphic file (type jpg)
- <use images/cam.jpg>
-Package pdftex.def Info: images/cam.jpg used on input line 996.
-(pdftex.def)             Requested size: 170.71652pt x 124.29652pt.
-
-[42 <./images/uav-1.JPG> <./images/quad.png>]
-<images/nuc.jpg, id=400, 149.358pt x 93.2283pt>
-File: images/nuc.jpg Graphic file (type jpg)
- <use images/nuc.jpg>
-Package pdftex.def Info: images/nuc.jpg used on input line 1004.
-(pdftex.def)             Requested size: 170.71652pt x 106.56871pt.
-
-<images/pixhawk.jpg, id=401, 401.5pt x 401.5pt>
-File: images/pixhawk.jpg Graphic file (type jpg)
- <use images/pixhawk.jpg>
-Package pdftex.def Info: images/pixhawk.jpg used on input line 1019.
-(pdftex.def)             Requested size: 170.71652pt x 170.71794pt.
-
-[43 <./images/cam.jpg> <./images/nuc.jpg>]
-<images/lidar.jpg, id=405, 144.54pt x 144.54pt>
-File: images/lidar.jpg Graphic file (type jpg)
- <use images/lidar.jpg>
-Package pdftex.def Info: images/lidar.jpg used on input line 1036.
-(pdftex.def)             Requested size: 170.71652pt x 170.72551pt.
- [44 <./images/pixhawk.jpg> <./images/lidar.jpg>]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-
-<images/gps.jpg, id=409, 425.33907pt x 311.66437pt>
-File: images/gps.jpg Graphic file (type jpg)
- <use images/gps.jpg>
-Package pdftex.def Info: images/gps.jpg used on input line 1057.
-(pdftex.def)             Requested size: 170.71652pt x 125.09154pt.
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-
-<images/motors.jpg, id=410, 722.7pt x 481.8pt>
-File: images/motors.jpg Graphic file (type jpg)
- <use images/motors.jpg>
-Package pdftex.def Info: images/motors.jpg used on input line 1076.
-(pdftex.def)             Requested size: 170.71652pt x 113.81114pt.
-
-<images/esc.jpg, id=411, 501.875pt x 320.19624pt>
-File: images/esc.jpg Graphic file (type jpg)
- <use images/esc.jpg>
-Package pdftex.def Info: images/esc.jpg used on input line 1077.
-(pdftex.def)             Requested size: 170.71652pt x 108.91902pt.
- [45 <./images/gps.jpg>] <images/cam_rqt.png, id=415, 968.61874pt x 432.61626pt
->
-File: images/cam_rqt.png Graphic file (type png)
-
-<use images/cam_rqt.png>
-Package pdftex.def Info: images/cam_rqt.png used on input line 1089.
-(pdftex.def)             Requested size: 284.52756pt x 127.07939pt.
- <images/indoor_1.JPG, id=416, 4288.02pt x 2858.68pt>
-File: images/indoor_1.JPG Graphic file (type jpg)
-
-<use images/indoor_1.JPG>
-Package pdftex.def Info: images/indoor_1.JPG used on input line 1097.
-(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
-
-<images/indoor_2.jpeg, id=417, 1204.5pt x 801.99625pt>
-File: images/indoor_2.jpeg Graphic file (type jpg)
-
-<use images/indoor_2.jpeg>
-Package pdftex.def Info: images/indoor_2.jpeg used on input line 1098.
-(pdftex.def)             Requested size: 227.62204pt x 151.54872pt.
-
-<images/outdoor_1.JPG, id=418, 4288.02pt x 2858.68pt>
-File: images/outdoor_1.JPG Graphic file (type jpg)
-
-<use images/outdoor_1.JPG>
-Package pdftex.def Info: images/outdoor_1.JPG used on input line 1108.
-(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
-
-<images/outdoor_2.JPG, id=419, 4288.02pt x 2858.68pt>
-File: images/outdoor_2.JPG Graphic file (type jpg)
-
-<use images/outdoor_2.JPG>
-Package pdftex.def Info: images/outdoor_2.JPG used on input line 1109.
-(pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
- [46 <./images/motors.jpg> <./images/esc.jpg> <./images/cam_rqt.png>] [47 <./im
-ages/indoor_1.JPG> <./images/indoor_2.jpeg> <./images/outdoor_1.JPG> <./images/
-outdoor_2.JPG>]
 Chapter 6.
+! Use of \@year@ doesn't match its definition.
+\Y@osborne2010bayesian ->\@year@ 3
+                                  5
+l.1233 ...on techniques~\cite{osborne2010bayesian}
+                                                   as well as numerical opti...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `osborne2010bayesian' on page 48 undefined on input lin
-e 1117.
+! Use of \@year@ doesn't match its definition.
+\Y@engel2005reinforcement ->\@year@ 1
+                                     6
+l.1233 ...techniques~\cite{engel2005reinforcement}
+                                                   to speed up this process....
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
+! Use of \@year@ doesn't match its definition.
+\Y@csato2002sparse ->\@year@ 1
+                              1
+l.1233 ...aussian Processes \cite{csato2002sparse}
+                                                   should be able to overcom...
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
 
-LaTeX Warning: Citation `csato2002sparse' on page 48 undefined on input line 11
-17.
-
-Excluding 'comment' comment. (./main.bbl [48
+Excluding 'comment' comment. (./main.bbl [52
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 9--13
-[]\OT1/cmr/m/n/12 Flea3 2.0 MP Cam-era.  $\OT1/cmtt/m/n/12 https : / / www . pt
-grey . com /
- []
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.3 \bibitem{djiframe}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[49
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.3 \bibitem{djiframe}
+                      
+I'm forgetting what you said and using zero instead.
 
-] [50] [51] [52]) [53] (./main.aux)
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.8 \bibitem{fleacamera}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.8 \bibitem{fleacamera}
+                        
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.14 \bibitem{abbeel2006using}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.14 \bibitem{abbeel2006using}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.20 \bibitem{atkeson1997comparison}
+                                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.20 \bibitem{atkeson1997comparison}
+                                    
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.26 \bibitem{bagnell2001autonomous}
+                                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.26 \bibitem{bagnell2001autonomous}
+                                    
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.33 \bibitem{Bellman:1957}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.33 \bibitem{Bellman:1957}
+                           
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.38 \bibitem{berry1985bandit}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.38 \bibitem{berry1985bandit}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.44 \bibitem{bou2010controller}
+                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.44 \bibitem{bou2010controller}
+                                
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.50 \bibitem{brafman2002r}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.50 \bibitem{brafman2002r}
+                           
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.56 \bibitem{chowdhary2014off}
+                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.56 \bibitem{chowdhary2014off}
+                               
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.62 \bibitem{csato2002sparse}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.62 \bibitem{csato2002sparse}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.67 \bibitem{cutler2014reinforcement}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.67 \bibitem{cutler2014reinforcement}
+                                      
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.73 \bibitem{Dames2015}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.73 \bibitem{Dames2015}
+                        
+I'm forgetting what you said and using zero instead.
+
+[53
+
+]
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.79 \bibitem{das2015devices}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.79 \bibitem{das2015devices}
+                             
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.87 \bibitem{deisenroth2010efficient}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.87 \bibitem{deisenroth2010efficient}
+                                      
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.93 \bibitem{engel2005reinforcement}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.93 \bibitem{engel2005reinforcement}
+                                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.99 \bibitem{gamedeep}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.99 \bibitem{gamedeep}
+                       
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.103 \bibitem{hester2017learning}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.103 \bibitem{hester2017learning}
+                                  
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.110 \bibitem{kaelbling1998planning}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.110 \bibitem{kaelbling1998planning}
+                                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.115 \bibitem{kaelbling1996reinforcement}
+                                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.115 \bibitem{kaelbling1996reinforcement}
+                                          
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.120 \bibitem{kearns2002near}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.120 \bibitem{kearns2002near}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.125 \bibitem{kober2012reinforcement}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.125 \bibitem{kober2012reinforcement}
+                                      
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.130 \bibitem{koenig2004design}
+                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.130 \bibitem{koenig2004design}
+                                
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.138 \bibitem{kormushev2010robot}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.138 \bibitem{kormushev2010robot}
+                                  
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.144 \bibitem{krizhevsky2012imagenet}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.144 \bibitem{krizhevsky2012imagenet}
+                                      
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.150 \bibitem{li2011knows}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.150 \bibitem{li2011knows}
+                           
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.155 \bibitem{littman1996algorithms}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.155 \bibitem{littman1996algorithms}
+                                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.160 \bibitem{liu2014review}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.160 \bibitem{liu2014review}
+                             
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.167 \bibitem{lupashin2010simple}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.167 \bibitem{lupashin2010simple}
+                                  
+I'm forgetting what you said and using zero instead.
+
+[54]
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.173 \bibitem{mahadevan1992automatic}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.173 \bibitem{mahadevan1992automatic}
+                                      
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.179 \bibitem{mnih2013playing}
+                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.179 \bibitem{mnih2013playing}
+                               
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.185 \bibitem{mnih2015human}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.185 \bibitem{mnih2015human}
+                             
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.192 \bibitem{morgenthal2014quality}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.192 \bibitem{morgenthal2014quality}
+                                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.198 \bibitem{morton2016deep}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.198 \bibitem{morton2016deep}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.203 \bibitem{osborne2010bayesian}
+                                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.203 \bibitem{osborne2010bayesian}
+                                   
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.208 \bibitem{ozaslaninspection}
+                                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.208 \bibitem{ozaslaninspection}
+                                 
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.215 \bibitem{scikit-learn}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.215 \bibitem{scikit-learn}
+                            
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.222 \bibitem{puterman2014markov}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.222 \bibitem{puterman2014markov}
+                                  
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.228 \bibitem{quigley2009ros}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.228 \bibitem{quigley2009ros}
+                              
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.234 \bibitem{rasmussen2003gaussian}
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.234 \bibitem{rasmussen2003gaussian}
+                                     
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.239 \bibitem{rummery1994line}
+                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.239 \bibitem{rummery1994line}
+                               
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.244 \bibitem{Shaker:2010:VLS:1901614.1902128}
+                                               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.244 \bibitem{Shaker:2010:VLS:1901614.1902128}
+                                               
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.252 \bibitem{smart2002effective}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.252 \bibitem{smart2002effective}
+                                  
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.258 \bibitem{strehl2006pac}
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.258 \bibitem{strehl2006pac}
+                             
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.265 \bibitem{sugimoto2016acquisition}
+                                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.265 \bibitem{sugimoto2016acquisition}
+                                       
+I'm forgetting what you said and using zero instead.
+
+[55]
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.271 \bibitem{sutton1998reinforcement}
+                                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.271 \bibitem{sutton1998reinforcement}
+                                       
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.275 \bibitem{taylor2007transfer}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.275 \bibitem{taylor2007transfer}
+                                  
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.281 \bibitem{tokekar2014placement}
+                                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.281 \bibitem{tokekar2014placement}
+                                    
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.287 \bibitem{watkins1992q}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.287 \bibitem{watkins1992q}
+                            
+I'm forgetting what you said and using zero instead.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.292 \bibitem{wiering2012reinforcement}
+                                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.292 \bibitem{wiering2012reinforcement}
+                                        
+I'm forgetting what you said and using zero instead.
+
+) [56] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2572,11 +4153,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 23677 strings out of 493029
- 453238 string characters out of 6136234
- 483770 words of memory out of 5000000
- 26790 multiletter control sequences out of 15000+600000
- 15741 words of font info for 60 fonts, out of 8000000 for 9000
+ 24261 strings out of 493029
+ 461779 string characters out of 6136234
+ 497860 words of memory out of 5000000
+ 27358 multiletter control sequences out of 15000+600000
+ 15095 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,56p,10380b,658s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
@@ -2597,10 +4178,10 @@ fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1200.pfb>
-Output written on main.pdf (62 pages, 27723093 bytes).
+Output written on main.pdf (65 pages, 43566273 bytes).
 PDF statistics:
- 507 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
+ 526 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 318 words of extra memory for PDF output out of 10000 (max. 10000000)
 

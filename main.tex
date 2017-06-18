@@ -20,6 +20,7 @@
 \usepackage{textcomp}
 \graphicspath{ {images/} }
 \usepackage{float}
+\usepackage{apacite} 
 %\usepackage{epsfig}
 \usepackage{subfigure}
 \usepackage{url}
@@ -113,7 +114,7 @@ Nahush Gondhalekar
 
 \end{center}
 
-We present the problem of studying reinforcement learning (RL) for unmanned aerial vehicle (UAV) navigation with few real world samples as possible. A naive implementation suffers from curse of dimensionality in large continuous state spaces. Gaussian Processes(GPs) exploit the spatial correlation to approximate state-action transition dynamics in large state spaces. By incorporating GPs in naive Q-learning we achieve better performance in lesser number of samples. The illustrations are performed using simulations with an aerial robot. Further, we present a Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GP) to learn the optimal policy in a real world environment.In MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced. This is illustrated with the help of simulations. One of the promising yet fairly unexplored applications of learning autonomous navigation for aerial robots is in Structural Inspection.
+We study the problem of Reinforcement Learning (RL) for Unmanned Aerial Vehicle (UAV) navigation with as few real world samples as possible. This work is motivated by applications of learning autonomous navigation for aerial robots in structural inspection. A naive RL implementation suffers from curse of dimensionality in large continuous state spaces. Gaussian Processes (GPs) exploit the spatial correlation to approximate state-action transition dynamics or value function in large state spaces. By incorporating GPs in naive Q-learning we achieve better performance in lesser number of samples. The evaluation is performed using simulations with an aerial robot. We also present a Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes to learn the optimal policy in a real world environment leveraging samples gathered from a lower fidelity simulator. In MFRL, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used in successively higher simulators can be reduced.
 
 \vfill
 
@@ -128,7 +129,7 @@ This work has been funded by the Center for Unmanned Aircraft Systems (C-UAS), a
 To Dad and Maa. 
 \chapter*{Acknowledgments}
 First and foremost, I would like to express my gratitude towards my advisor, Dr. Pratap Tokekar. Thank you very much for the constant support and motivation. This wouldn't be possible without your encouragement. My sincere acknowledgment for believing in me. I am looking forward to have a continued association and keep learning new things and hoping to collaborate in the future. I could not have asked for a better advisor. \par 
-A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support NSF Award No. IIP-1161036. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
+A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support NSF Award No. IIP-1161036. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in Chapter \ref{bridge_chapter}.\par
 Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Aravind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
 I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia Tech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
 I'd like to express my sincere thanks to the Mccomas Gym and the War Memorial Gym at Virginia Tech which have been my meditation centers and have helped me through the stressful times.\par 
@@ -157,12 +158,9 @@ Last but certainly not the least, I cannot describe how thankful I am towards my
 
 \label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-With increasing popularity of mobile robots and challenges in their autonomous navigation, a remarkable variety of problems can be phrased as the ones of \textit{Reinforcement Learning}  (RL). Unlike the traditional setting of \textit{Perception}, \textit{planning} and \textit{learning} as separate modules, the agent is layered in \textit{task-achieving} modules \cite{mahadevan1992automatic}. Each module may be referred to as a \textit{skill} such as \quotes{obstacle avoidance} or \quotes{following the wall.} Programming robots can be a long, time consuming process. A major disadvantage with the behavior-based robots is the laborious programming efforts needed by the designer \cite{mahadevan1992automatic} \cite{smart2002effective}. The idea of having \textit{learning} involved is to specify \textit{what} needs to be achieved and let the robot explore the possibilities in order to Figure out \textit{how} to achieve that.\par
+With increasing popularity of mobile robots and challenges in their autonomous navigation, a variety of problems can be phrased as the ones of \textit{Reinforcement Learning} (RL). Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by a continuous state-action space. The true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to know the state of the robot in the environment which gives information with uncertainty. It can be difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time, approximations of the environment and system dynamics are used through simulations.  However, no matter how costly the real-world experience is, it wholly cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par 
 
-Reinforcement learning in the robotics domain differs considerably from most well-studied reinforcement
-learning benchmark problems. Problems in robotics are often high-dimensional and are best represented by a continuous state-action space. The true state is not always observable and noise-free. Sometimes, greatly different states may look very similar. It is often essential to know the state of the robot in the environment which gives information with uncertainty. It can be difficult to obtain real-world experience since it is often tedious to obtain and hard to reproduce. In order to learn a particular task at hand within reasonable time, approximations of the environment and system dynamics are used through simulations.  However, no matter how costly the real-world experience is, it wholly cannot be replaced by simulations. Smallest of the modeling errors can accumulate to cause a different behavior in the real world.\par 
-
-In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time?. \par 
+In particular, obtaining negative samples may require the robot to collide or fail which is undesirable. Hence, it is desirable to minimize the number of real world samples required for learning optimal paths or desired tasks. With a better understanding of reinforcement learning framework for robotics, we may be able to answer fundamental questions such as: What skills are needed to be learned by the robot achieve a particular task? How can we reduce the number of real world samples by optimally building the simulators? How to use approximations in order to learn the desired skill within an acceptable time? \par 
 In this thesis we study these questions for the specific application of Unmanned Aerial Vehicle (UAV). Before introducing the particular problems, we will discuss the challenges in navigation for specific motivating applications.
 
 \section{Motivation and applications to general scenarios} 
@@ -173,12 +171,12 @@ Navigating safely through a previously-unseen environment is of paramount import
 	\centering
     \subfigure{\includegraphics[width=8cm,height=4.45cm]{corridor.JPG}}
 	\subfigure{\includegraphics[width=8cm]{quad_in_corridor.png}}
-	\caption {Quadrotor navigating through a confined space without GPS signal. Images collected during field trial reported in chapter \ref{bridge_chapter}}
+	\caption {Quadrotor navigating through a confined space without GPS signal. Images collected during field trial reported in Chapter \ref{bridge_chapter}.}
    \label{fig:motivation}
 \end{figure}
 
 \subsection{Challenges}
-When a UAV needs to inspect a bridge from inside or when it tries to fly near the structures or around the bridge pillars, GPS signal is either not available or not reliable. In order to be able to autonomously navigate such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board sensors such as laser range-finders.\par
+When a UAV needs to inspect a bridge from inside or when it flies near the structures or around the bridge pillars, GPS signal is either not available or not reliable. In order to be able to autonomously navigate such areas, the UAV must be equipped with an ability to fly close to the surfaces using on-board sensors such as laser range-finders.\par
 A flight control system with conventional methods where the designer needs to be aware of the dynamics of the vehicle and environment increases the development time. If some modifications are made to the vehicle later, most of the controller tuning may be needed to be redone from scratch. Reinforcement learning algorithms provide a number of characteristics which
 could partly address dynamic environments and dynamics changes: RL can control
 an agent when a model of the environment is unavailable; RL can control an agent without an
@@ -190,23 +188,251 @@ One of several immediate questions is: how does the \textit{learning} occur? In 
 \section{Contributions}
 
 A Multi-Fidelity Reinforcement Learning (MFRL) algorithm that leverages Gaussian Processes (GPs) to learn the optimal policy in a real world environment is presented in this thesis. In the MFRL framework, an agent uses multiple simulators of the real environment to perform actions. With multiple levels of fidelity in a simulator chain, the number of samples used while learning in successively higher simulators can be reduced. The main contribution of this thesis is to show how we can use GP regression with MFRL to approximate the state-action transition dynamics in large state spaces. GPs exploit the spatial correlation in the transition function for agents that are physical grounded (e.g., a robot). By incorporating GP in the MFRL framework, we achieve further reduction in the number of samples used as we move up the simulator chain. We examine the performance with the help of simulations for navigation with an aerial robot.\par 
-We also present an implementation of an \textit{End to End GPQ algorithm} based on a recent work on batch off policy RL with a GP \cite{chowdhary2014off}. The feedback from the laser sensors is utilized by the learning algorithm in order to \textit{learn} a particular \textit{skill}. The algorithm uses GP regression to learn the $Q$ values associated with the skill of obstacle avoidance in a dynamic environment. The algorithm is testes in a python simulator with a simple kinematic robot model. The learned $Q$ values are transferred to the Gazebo Robot Simulator and an actual quadrotor as the highest fidelity simulator.
+We also present an implementation of an \textit{End-to-End GPQ algorithm} based on a recent work on batch off policy RL with a GP \cite{chowdhary2014off}. The feedback from the laser sensors is utilized by the learning algorithm in order to \textit{learn} a particular \textit{skill}. The algorithm uses GP regression to learn the $Q$ values associated with the skill of obstacle avoidance in a dynamic environment. The algorithm is testes in a python simulator with a simple kinematic robot model. The learned $Q$ values are transferred to the Gazebo Robot Simulator and an actual quadrotor as the highest fidelity simulator.
 
 
 \section{Organization of the Thesis}
 
 The thesis is organized in five chapters.\par
-In Chapter \ref{background}, we present a review of the fundamental concepts and background of sequential decision making, reinforcement learning and Gaussian processes.\par
+
+Chapter \ref{bridge_chapter} discusses the motivating application of bridge inspection for the algorithms presented in the thesis along with preliminary field experiments.\par
+
+In Chapter \ref{background}, we present a review of the fundamental concepts and background of sequential decision making, reinforcement learning and Gaussian processes.\par 
+
 In Chapter \ref{gpq}, we present the End-to-End GPQ algorithm which forms the basis of the Multi-Fidelity Reinforcement Learning presented in the next chapter.\par
 
 Chapter \ref{gpMfrl} covers Multi-Fidelity Reinforcement Learning with Gaussian Processes. This framework helps to reduce the number of real world samples.\par 
 
-Chapter \ref{bridge_chapter} discusses the motivating application of bridge inspection for the algorithms presented in the thesis along with preliminary field experiments.\par 
-
-We conclude the thesis with an overview of the main contributions and discussions of  future work. All the software corresponding to this thesis is available online on github.
+We conclude the thesis with an overview of the main contributions and discussions of  future work. All the software corresponding to this thesis is available online on github. The source code for the Gazebo Robot Simulator implementation of the GPQ algorithm: \url{https://github.com/nahush8/wall_follower}. The python based basic kinematic simulator: \url{https://github.com/nahush8/obstacle_avoidance}, The GP-MFRL algorithm: \url{https://github.com/raaslab/gp_gazebo}.
 %-----------------------------------
 %	SUBSECTION 2
 %-----------------------------------
+
+
+\chapter{Motivating Application: Bridge Inspection}
+\label{bridge_chapter}
+\section{Background}
+UAVs can be truly disruptive technology for inspecting civil infrastructure. They are capable of giving engineers eyes in the hardest to reach places, without the need for expensive access vehicles or potentially dangerous rigging or ladders or harnesses. A recent paper \cite{morgenthal2014quality} discusses the application of UAVs for visual inspection and damage detection of civil structures. The quality of pictures and videos taken by the UAV strongly depends on various factors viz. lighting conditions, distance from the structure, vehicle motion which is influenced by environmental factors. It is very important for the UAVs to be equipped with sophisticated control algorithms and sensors to be able to provide reliable data which can be conclusively used for inspection and analysis of damage.
+
+\subsection{Conventional Inspection of Bridges}
+Figure \ref{fig:bridge_inspection} shows typical inspection units like under-bridge units or truck cranes. Inspection units are in most cases expensive custom products. Often, specially trained staff, like industrial climbers, can get access to special parts of the structure but they can rarely evaluate what influences detected damages have on these structures. Therefore, they can only take photos or videos of the concerned part of the structure, which must be analyzed by civil engineers off-line.\par It can be dangerous to use such large truck cranes. Figure \ref{fig:bridge_fail} shows an unfortunate incident where the inspection truck tipped over causing a life threating situation for the people involved.\par
+ 
+\begin{figure}[htp]
+	\centering 
+    \subfigure[Truck Crane]{\includegraphics[width=6cm,height=4cm]{truck_crane.jpg}}
+    \subfigure[Under Bridge Inspection unit]{\includegraphics[width=6cm,height=4cm]{under_bridge.jpg}}
+	\caption{Conventional inspection units for Bridge Inspection: (left, Bridge Inspection platform with a truck crane.), A-30 Hi-Rail Under Bridge Units (right, N.E. Bridge Contractors Inc.)} \cite{truckCrane}
+   \label{fig:bridge_inspection}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering 
+    \includegraphics[width=8cm]{tip.jpg}
+	\caption{Bridgeriggers' Aspen A-75 under-bridge inspection crane overturns on Sakonnet River Bridge in Rhode Island, August 30, 2016. }\cite{truckCraneOverturn}
+   \label{fig:bridge_fail}
+\end{figure}
+
+UAVs often have following advantages in comparison to the conventional bridge-inspection methods.
+\begin{itemize}
+\item  UAVs only need an operator on the ground for controlling the flight and the
+camera. A more advanced scenario includes \textit{autonomous} UAVs navigating around the structures while collecting the required data such as pictures and videos.
+\item UAVs can be used in high-risk situations without endangering human lives. Situations like Figure \ref{fig:bridge_fail} could be avoided.
+\item UAVs are capable of fast real time data acquisition and the storage of all the relevant flight data. They can process data on-board and adaptively collect information.
+\item Overall, they often turn out to be lower in costs compared to the large custom inspection units. In particular, expensive insurance for human operators will be avoided.
+\end{itemize}
+
+Despite the obvious advantages, UAVs have some essential limitations. 
+\begin{itemize}
+\item  Due to the small payload capacity of the UAVs, only small format and light digital compact cameras can be used for visual inspection. 
+\item The smaller payload also affects the battery size leading to shorter flight times. 
+\item Due to unexpected flight situations or due to unreliable GPS-signal strength, a change from the autonomous flight mode into a manual mode can be required which demands a skillful pilot to override the control.
+\item  Currently, UAVs are not equipped with effective collision avoidance systems. 
+\end{itemize}
+
+\section{Preliminary Experiments}
+We performed experiments in order to analyze the limitations and challenges of performing autonomous navigation of UAVs around bridges. We performed several manual flights of a UAV on the Smart Road Bridge (the tallest state-maintained bridge in Virginia). Another set of field experiments were performed at the George Coleman Memorial Bridge, Yorktown, VA. The goal of the experiments was to capture visuals of the inside as well as the outside of the bridge for analysis of the structure and to analyze challenges in order to improve the system for fully autonomous flights.
+
+\subsection{System Setup}
+DJI model F450 \cite{djiframe} was used as shown in the Figure \ref{fig:dji_frame}. The UAV is equipped with sensors, controller and an on-board computer.
+
+\begin{figure}[H]
+	\centering 
+    \subfigure{\includegraphics[width=8cm]{uav-1.JPG}}
+    \subfigure{\includegraphics[width=6cm]{quad.png}}
+	\caption{The UAV used for the experiments.}
+   \label{fig:dji_frame}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Camera}: The camera used to capture the visuals is a global shutter \cite{fleacamera} as shown in Figure \ref{fig:cam}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{cam.jpg}
+	\caption{Flea3 2.0 MP Color USB3 Vision. (e2v EV76C5706F)}
+   \label{fig:cam}
+\end{figure}
+
+\item \textbf{Intel NUC}: Intel NUC5I7RYH Mini PC NUC Kit as shown in Figure \ref{fig:nuc}. 
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{nuc.jpg}
+	\caption{Intel NUC NUC5I7RYH}
+   \label{fig:nuc}
+\end{figure}
+Specifications are as follows:
+\begin {itemize}
+\item 5th Generation Intel Core $i7$-$5557$U processor
+\item Intel Iris Graphics $6100$
+\item Mini HDMI \& Mini Display Port
+\item Internal support for M.$2$ SSD card \& SATA$3$ for $2.5$`` HDD/SSD
+\end{itemize}
+
+\item \textbf{Pixhawk-Flight Controller}: Pixhawk is an independent, open-hardware project which mainly aims at providing high-end autopilot hardware to the academic, hobby and industrial communities at low costs as shown in Figure \ref{fig:pixhawk}. The Pixhawk autopilot module runs efficient real-time operating system (RTOS), which provides a POSIX-style environment.
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{pixhawk.jpg}
+	\caption{Pixhawk Flight Controller}
+   \label{fig:pixhawk}
+\end{figure}
+
+Specifications are as follows:
+\begin {itemize}
+\item $68$ MHz Cortex M$4$F CPU ($256$ KB RAM, $2$ MB Flash)
+\item Sensors: $3$D Accelerometer / Gyroscope / Magnetometer / Barometer
+\item Integrated backup, override and failsafe processor with mixing
+\item MicroSD slot, $5$ UARTs, CAN, I$2$C, SPI, ADC, etc
+\end{itemize}
+
+\item \textbf{LIDAR}: The LIDAR-Lite v$3$ is a compact, high-performance optical distance measurement sensor from Garmin\textsuperscript{TM} as shown in Figure \ref{fig:lidar}.
+
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{lidar.jpg}
+	\caption{LIDAR-Lite v$3$}
+   \label{fig:lidar}
+\end{figure}
+The specifications are as follows:
+\begin{itemize}
+\item Range: $0$-$40$m Laser Emitter
+\item Accuracy: +/- $2.5$cm at distances greater than $1$m
+\item Power: $4.75$–$5$V DC; $6$V Max
+\item Current Consumption: $105$mA idle; $130$mA continuous
+\item Rep Rate: $1$–$500$Hz
+\item Laser Wave Length/Peak Power: $905$nm/$1.3$ watts
+\item Beam Divergence: $4$m Radian $\times$ $2$m Radian
+\item Optical Aperture: $12.5$mm
+\item Interface: I$2$C or PWM
+\end{itemize}
+
+\item \textbf{GPS}: GPS used is Ublox Neo-M$8$N GPS with Compass as shown in Figure \ref{fig:gps}.
+
+\begin{figure}[H]
+	\centering 
+    \includegraphics[width=6cm]{gps.jpg}
+	\caption{Ublox Neo-M$8$N GPS}
+   \label{fig:gps}
+\end{figure}
+The specifications are as follows:
+\begin{itemize}
+\item $–167$ dBm navigation sensitivity
+\item Navigation update rate up to $10 H_z$
+\item Cold starts: $26$s
+\item $25 \times 25 \times 4$ mm ceramic patch antenna
+\item Rechargeable $3$V lithium backup battery
+\item Low noise $3.3$V regulator
+\item Diameter $60$mm total size, $32$ grams with case.
+\end{itemize}
+
+\item \textbf{Motors and ESC Motor Controllers}: E800 Tuned Propulsion System is designed for multi-rotor copters. Shown in Figure \ref{fig:dji_propulsion_system}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=6cm]{motors.jpg}}
+     \subfigure{\includegraphics[width=6cm]{esc.jpg}}
+	\caption{E800 Tuned Propulsion System by DJI}
+   \label{fig:dji_propulsion_system}
+\end{figure}
+
+\end{itemize}
+
+\subsection{Camera Software and ROS nodes}
+ROS (Robot Operating System) provides libraries and tools to create robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. ROS is licensed under an open source, BSD license \cite{ros}. The ROS-flea3 camera driver enables publishing of images on ROS topics which can in turn be viewed on rqt image view tool. The images can be viewed real time and are also stored in a rosbag. The screen capture of an instance of the camera view and ROS node running the rosbag to record the images is shown in Figure \ref{fig:cam_rqt}.
+
+\begin{figure}[htp]
+	\centering 
+    \includegraphics[width=10cm]{cam_rqt.png}
+	\caption{Camera view and the ROS-bag record running nodes on a Linux machine.}
+   \label{fig:cam_rqt}
+\end{figure}
+
+While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In Chapter \ref{gpq}, we discuss the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is useful in these scenarios where the UAV needs to rely on its on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures. The flight conducted at the VTTI smart road bridge was under manual control. \par 
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=8cm]{indoor_1.JPG}}
+    \subfigure{\includegraphics[width=8cm]{indoor_2.jpeg}}
+	\caption{Indoor flight of the UAV visually inspecting the structure.}
+   \label{fig:indoor_flight}
+\end{figure}
+
+Pictures captured by the on-board camera are shown in Figure \ref{fig:cam_pics}.
+
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=6cm]{sr1.png}}
+    \subfigure{\includegraphics[width=6cm]{sr2.png}}
+    \subfigure{\includegraphics[width=6cm]{sr3.png}}
+    \subfigure{\includegraphics[width=6cm]{sr4.png}}
+	\caption{Pictures captured by the on-board camera at VTTI smart road bridge.}
+   \label{fig:cam_pics}
+\end{figure}
+
+Similar to the indoor bridge inspection, while flying close to the bridge surfaces, the UAV does not get reliable GPS signal or any other localization inputs. It is vital for the robot to have learned the skill of flying close to the surfaces and following certain trajectories using on board laser sensor data. As iterated multiple times in this thesis, while learning in the real world, collecting negative samples (colliding with the wall/surface in this scenario) can lead to catastrophic results. It is important for the robot to learn a skill in a simulator environment before executing the required tasks in the real world.
+Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the outdoor visual inspection of the bridge. The flights were conducted at the VTTI smart road bridge.
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=8cm]{outdoor_1.JPG}}
+    \subfigure{\includegraphics[width=8cm]{outdoor_2.JPG}}
+	\caption{Outdoor flight of the UAV visually inspecting the structure at VTTI smart road bridge.}
+   \label{fig:outdoor_flight}
+\end{figure}
+
+We conducted another set of field experiments at the George Coleman Memorial Bridge, Yorktown, VA. it is a double swing bridge that spans the York River. It is a different type of bridge compared to the VTTI smart road bridge because of its movable span needed to allow ship access. The bridge spans over a river posing different challenges for UAV navigation compared to the VTTI smart road bridge.During the experiments at the George Coleman Memorial Bridge, the off the shelf controller was not able to hold position due to windy conditions. 
+
+The pictures from the flights at the George Coleman Memorial Bridge are shown in Figure \ref{fig:outdoor_flight_2}.
+
+
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=8cm,height=5cm]{cm1.jpg}}
+    \subfigure{\includegraphics[width=8cm]{coleman2.png}}
+	\caption{Outdoor flight of the UAV visually inspecting the structure at the Coleman Memorial Bridge.}
+   \label{fig:outdoor_flight_2}
+\end{figure}
+
+Pictures captured by the on-board camera are shown in Figure \ref{fig:cam_pics_2}. 
+
+A 3D reconstruction software Pix4D \cite{pix4d} is used to create a 3D scan of the bridge from the images obtained during the flights shown in Figure \ref{fig:3d}.  
+
+\begin{figure}[htp]
+	\centering 
+  	\subfigure{\includegraphics[width=6cm]{bridge_img1.png}}
+    \subfigure{\includegraphics[width=6cm]{bridge_img2.png}}
+	\caption{Images captured by the on-board camera at the Coleman Memorial Bridge.}
+   \label{fig:cam_pics_2}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering 
+    \subfigure{\includegraphics[width=6cm,height=5cm]{3d1.png}}
+    \subfigure{\includegraphics[width=8cm]{3d3.png}}
+	\caption{The 3D scan of the Coleman Memorial Bridge obtained from the collected images.}
+   \label{fig:3d}
+\end{figure}
+
+
+
+The unreliability of GPS and compass around these structures mean that relying on position for navigation is not recommended. Instead, this motivates the end-to-end perception based controller.
+
 
 
 \chapter{Background} % Main chapter title
@@ -321,7 +547,7 @@ It is possible to stop evaluating earlier and improve the policy based on the ev
 \label{rl}
 
 Reference \cite{bou2010controller} discusses learning the non-linear control for advanced stabilization of the UAVs whereas reference \cite{lupashin2010simple} developed a high level control implementing learning strategies for high speed quadrotor multi flips. The system is able to do a series of flips for a quadrotor demonstrating online learning of acrobatics.\par  
-Some of the early examples of robot reinforcement learning are the OBELIX robot which learned to push boxes \cite{mahadevan1992automatic} using value function-based approach. Carnegie Mellon\textquotesingle s autonomous helicopter leveraged a model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}. Kormushev and Calinon taught a robot the technique to flip pancakes \cite{kormushev2010robot}. The reinforcement learning algorithm explored in \cite{Shaker:2010:VLS:1901614.1902128} is Least Squares Policy Iteration (LSPI) to gain a fast learning process and a smooth landing trajectory. A recent paper \cite{sugimoto2016acquisition} applied reinforcement learning to a UAV to achieve stable hovering using the well known technique of Q-learning (section \ref{q_learning_section}). Unlike most of the studies, experiments using an actual quad rotor UAV were performed and the experimental results demonstrate that the UAV can acquire knowledge to achieve stable hovering over a marker placed on the ground.\par 
+Some of the early examples of robot reinforcement learning are the OBELIX robot which learned to push boxes \cite{mahadevan1992automatic} using value function-based approach. Carnegie Mellon\textquotesingle s autonomous helicopter leveraged a model-based policy-search approach to learn a robust flight controller \cite{bagnell2001autonomous}. Kormushev and Calinon taught a robot the technique to flip pancakes \cite{kormushev2010robot}. The reinforcement learning algorithm explored in \cite{Shaker:2010:VLS:1901614.1902128} is Least Squares Policy Iteration (LSPI) to gain a fast learning process and a smooth landing trajectory. A recent paper \cite{sugimoto2016acquisition} applied reinforcement learning to a UAV to achieve stable hovering using the well known technique of Q-learning (Section \ref{q_learning_section}). Unlike most of the studies, experiments using an actual quad rotor UAV were performed and the experimental results demonstrate that the UAV can acquire knowledge to achieve stable hovering over a marker placed on the ground.\par 
 
 Reinforcement Learning is a class of problems where the agent needs to learn the \textit{behavior} with trial and error by interacting with a dynamic environment.
 
@@ -363,7 +589,7 @@ probability $p_i$, where the pays are independent events and the $p_i$s are unkn
 What should the agent's strategy be to maximize the payoffs?\par 
 The agent may believe that some arm may have a higher payoff probability. The question now is, whether to choose the same arm all the time or to explore the other arm that has less information but seems to be better? Depending on how long the game is going to last, if the game is going to last longer, then the agent should not converge to a sub-optimal arm too early and instead explore more. In short, 
 exploitation means to use the knowledge that the agent has found for the current state $s$ by doing one of the actions $a$ that maximizes the value function of the state whereas exploration means, in order to build a better estimate of the optimal value function it should select a different action from the one that it currently thinks is best.\par 
-We will see one of the ways to trade of exploration-exploitation using $\epsilon$-greedy strategy used in Q-learning which is a form of model-free learning. The section \ref{types} describes the two fundamental types of Reinforcement Learning.
+We will see one of the ways to trade of exploration-exploitation using $\epsilon$-greedy strategy used in Q-learning which is a form of model-free learning. The Section \ref{types} describes the two fundamental types of Reinforcement Learning.
 
 
 \subsection{Q-Learning}
@@ -406,7 +632,7 @@ Consider the following example. A robot (represented in green) with $6$ laser be
 	\caption{Navigation with perception in the loop}
    \label{fig:gp_laser}
 \end{figure}
-The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. This state space can be too large for a naive Q-Learning algorithm to achieve convergence. As we have seen in section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. Instead, we will approximate the  $Q[S,A]$ values using GP as function approximator.
+The laser sensor can output distance values in the range $0$ to $19$. If we consider the state space to be the laser data $[l_1,l_2,l_3,l_4,l_5,l_6]$ and each of the $6$ sensors can give $20$ values, then we have a total of $2 \times 10^6$ possible states. This state space can be too large for a naive Q-Learning algorithm to achieve convergence. As we have seen in Section \ref{types}, model-free algorithms need extensive experience in order to compute optimal policies. To experience states of the order of $10^6$ is a lengthy process. Instead, we will approximate the  $Q[S,A]$ values using GP as function approximator.
 
 
 \section{Introduction to Gaussian Processes (GP)} % Main chapter title
@@ -532,60 +758,35 @@ The algorithm given in \cite{mnih2013playing} is advantageous over an online $Q$
 \chapter{The End-to-End GPQ Algorithm} % Main chapter title
 
 \label{gpq} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-\section{Perception in the loop}
- 
-Perception is how the robot is aware of the dynamics of the environment. Just as humans perceive things with their ey es, robots use sensors in order to be aware of its surroundings. Perception usually provides data which allows the robot to determine where it is as well as how far the obstacles or goals or adversaries are. The robot must be able to make intelligent decisions based on the data it gathers. Sensors are very critical for intelligent robots to carry out tasks in dynamic environment which limit and define the capability of a robot \cite{tokekar2014placement}. In order for the robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it.\par 
-\textit{Perception in the loop} may be explained with this example. Imagine a robot equipped with a laser sensor (as shown in Figure \ref{fig:perception_example}) which provides the distance between the robot and its nearest obstacle essentially informing the robot about its surroundings. The task of the robot is to navigate through this environment without crashing into obstacles assuming the robot has no prior information about the environment and only has access to the real time laser data. How can we use the laser data in order to carry out the task?
+
+In order for a robot to be able to navigate through an environment or perform a task of obstacle avoidance it needs to be equipped with sensors which are able to tell what surrounds it. The preliminary experiments reported in Chapter \ref{bridge_chapter} motivate the need for robust navigation algorithms that do not rely on just positional sensors such as GPS and compass. Instead we present an algorithm that learns to navigate directly using onboard sensor input. We term this end-to-end learning. \par 
+
+The robot is equipped with a laser sensor (as shown in Figure \ref{fig:perception_example}) which provides the distance between the robot and its nearby obstacles. The task of the robot is to navigate through this environment without crashing into obstacles assuming the robot has no prior information about the environment and only has access to the real time laser data.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=8cm]{perception_1.pdf}
-	\caption {A UAV equipped with a laser sensor}
+	\caption {A UAV equipped with a laser sensor.}
    \label{fig:perception_example}
 \end{figure}
 
-\section{The Simulator setup}caption
-\label{sims}
-Two simulators were implemented in order to present the idea of perception and subsequently implementing the idea of reinforcement learning in order to learn a \textit{skill}.
-\begin{itemize}
-\item \textbf{Simulator 1}: A python based obstacle avoidance simulator: As shown in Figure \ref{fig:perception_sim_1}, the robot is trying to navigate without colliding with obstacles in a dynamic environment setting. The white obstacles move slower compared to the orange obstacle. The robot is equipped with a laser sensor which uses $6$ beams in order to find out the distances from the obstacles at different angles. The robot has a constant speed and can perform $3$ actions; turn left, turn right or stay in the same direction. 
-
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=8cm]{perception_sim_1.png}
-	\caption {A python based simulator for obstacle avoidance}
-   \label{fig:perception_sim_1}
-\end{figure}
-
-\item \textbf{Simulator 2}: A second simulator is implemented in the Gazebo robot simulator~\cite{koenig2004design}. A UAV equipped with a Hokuyo Laser is implemented in the simulator as shown in Figure \ref{fig:perception_sim_2}. This may be considered as a $3$D extension of the simulator shown in Figure \ref{fig:perception_sim_1}. With infinite state-action space and ability to add robot dynamics, this simulator is a higher fidelity simulator compared to the python-pygame based $2$D simulator. 
-
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=8cm]{perception_sim_2.png}
-	\caption {A UAV equipped with laser sensor in Gazebo Robot Simulator}
-   \label{fig:perception_sim_2}
-\end{figure}
-\end{itemize}
-
-In both of the above simulators the main principle of \textit{perception in the loop} is used in order to use the laser data to find out the current position of the obstacle with respect to the robot and take an optimal action in order to avoid the obstacle. In order to learn \textit{obstacle avoidance} as a \textit{skill} the algorithm must be agnostic to the shape or size of the obstacle and it should work in case of moving obstacles as well.
-
-\subsection{Laser data and $Q$-Learning}
+\section{Laser data and $Q$-Learning}
 \label{laser_learning}
-In order to learn the \textit{skill} of obstacle avoidance, we decided to learn the mapping from sensor values to action. A naive $Q$-Learning algorithm was implemented (refer to algorithm \ref{q_learning}) on the simulators described in section \ref{sims}. For the python based simulator, any state $s \in S$ is defined as a set of laser sensor values \{$l_1,l_2,l_3,l_4,l_5,l_6$\}, where $l_i \in \mathcal {P} (\mathbb{Z})$ Action $a$ can be chosen from a set of action $A := \{0,1,2\}$ where action = $0$ turns the robot left by a certain angle, action = $1$ turns the robot right by a certain angle and action = $2$ does not change the orientation of the robot. A reward of $-500$ is given on a crash else the reward is an increasing function of the sum of the readings of the $6$ laser sensors. (higher the readings farther the robot is from the obstacle which must be rewarded well.)\par 
-In case of the Gazebo Robot Simulator, the state-space $S$ and the action-space $A$ are both continuous spaces. Assuming there are $8$ laser beams, the state $s$ may be represented as \{$l_1,l_2,l_3,l_4,l_5,l_6,l_7,l_8$\}. Here $l_i$ can take any real value from $0$ to $6$. (The Hokuyo sensor is simulated in Gazebo Simulator with a maximum range of $6$ meters.) The action $a$ may be represented as a $3$D vector $x_{\hat{i}} + y_{\hat{j}} + z_{\hat{k}}$. By excluding the robot dynamic constraints from the analysis, we have infinite possible values for a state-action pair $(s,a)$.\par 
+In order to learn the skill of obstacle avoidance, we decided to learn the mapping from sensor values to action. A naive $Q$-Learning algorithm was implemented (refer to algorithm \ref{q_learning}) on the simulators described in Section \ref{sims}. Building on the GPQ algorithm described in \cite{chowdhary2014off}, we present its novel application to UAV navigation using laser data.
+A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Our goal is to find out a function that approximates the $Q$ values to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (Section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (refer Algorithm \ref{batch_gpq_algorithm}).\par
 
-Let us consider a static environment first. Assuming each sensor can give $20$ discrete values in case of Simulator $1$ given in section \ref{sims}, we have about $2$ \textit{million} possible states. To observe all of the states in order to be able to store and update the value function (or $Q$ values) is a tedious task. Once a sufficient number of states are observed for the optimal $Q$ values, the robot may learn to navigate through the environment successfully. This may take a longer time due to the size of the state space. In case of simulator $2$, the state space is infinite and hence it is not possible to observe all the possible state-action pairs. 
-
-\section{End-to-End GPQ Algorithm}
- A Gaussian Process model of the value function ($Q$) is presented in \cite{chowdhary2014off} in both batch and online settings. Consider the problem of finding the value function for over a $million$ state-action pairs in limited time described in section \ref{laser_learning}. The problem here closely relates to the problem in section \ref{GPR} where we were tasked to find out a function to fit the observed data. Given a set of observed state-action pairs $(s,a)$ and the reward $r$, we calculate the $Q$ values for the observed state-action pairs $(s,a)$. Using Gaussian Process Regression (section \ref{GPR}), we predict the $Q$ values over the entire state space $S$ (Refer algorithm \ref{batch_gpq_algorithm}).\par
- The batch off-line algorithm may be considered in two phases.
+The batch off-line algorithm may be considered in two phases.
  \begin{itemize}
 \item Training phase: Refer to the lines $1$ to $9$ in algorithm \ref{batch_gpq_algorithm}. Take a random action $a$ in state $s$. Let the observed state and the reward be $s'$ and $r$ respectively. The new data $(s,a,r,s')$ is added to the training set $T$. This loop is executed for a predefined number of iterations $N$.
-\item Batch GP-Q: From the training set $T$ obtained in the training phase, the input to the GP extracted as $dX$, is the set of all state-action pairs $(s,a)$. The target value is the sum of current reward $r$ and the maximum value predicted by the GP for the next state $s'$ over all actions $a \in A$ (Returned by the function findMax(GP,s') line 20). The GP is updated with the input $dX$ and the target vector $tX$ (refer to line 18) and the loop is continued till the termination condition is not reached.
+\item Batch GP-Q: From the training set $T$ obtained in the training phase, the input to the GP extracted as $dX$, is the set of all state-action pairs $(s,a)$. The target value is the sum of current reward $r$ and the maximum value predicted by the GP for the next state $s'$ over all actions $a \in A$ (returned by the function findMax(GP, s') line 20). The GP is updated with the input $dX$ and the target vector $tX$ (refer to line 18) and the loop is continued till the termination condition is not reached. \cite{chowdhary2014off} show that the algorithm converges.
 \end{itemize}
+
+After we obtain the GP, an action $a^* = \textit{findMax}(\texttt{GP},s')$ is selected. The action is applied for a $\Delta t$ time and the reward $r$ is observed.
+
+
 \begin{algorithm}
 \label{batch_gpq_algorithm}
 \SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
-\SetKwFunction{trainingPhase}{trainingPhase}\SetKwFunction{findMax}{findMax}\SetKwFunction{batchGPQ}{batchGPQ}\SetKwFunction{updateGP}{updateGP} \SetKwFunction{gpPredict}{gpPredict}
+\SetKwFunction{trainingPhase}{trainingPhase}\SetKwFunction{findMax}{findMax}\SetKwFunction{batchGPQ}{batchGPQ}\SetKwFunction{updateGP}{updateGP} \SetKwFunction{gpPredict}{gpPredict} \SetKwFunction{main}{main}
 
 \SetKwProg{training}{}{}{}
 \training{\trainingPhase{}}{
@@ -601,21 +802,54 @@ Let us consider a static environment first. Assuming each sensor can give $20$ d
         $T \leftarrow T \cup \{(s,a,r,s')\}$
      }
 }
+\SetKwProg{find}{}{}{}
+\find{\findMax{\texttt{GP}, $s'$}}{
+\Init{$max \leftarrow 0$ }
+	\For{$a \in A$}{
+		$temp \leftarrow$ \gpPredict($s'$,$a$)\\
+        \uIf {temp $>$ max}
+        {
+        	$max \leftarrow temp$
+		}
+}
+\texttt{return} $max$
+}
 
 \SetKwProg{gpq}{}{}{}
 \gpq{\batchGPQ{}}{
 \Input{$T:= {(s,a,r,s')}$ is the training set recorded during the training phase}
 \Init{Gaussian Process \texttt{GP} with RBF kernel of appropriate length scale}
-\While{Termination condition not reached}
-{$dX \leftarrow$ \texttt{input to the GP}\\
+$dX \leftarrow$ \texttt{input to the GP}\\
 $tX \leftarrow$ \texttt{output of the GP}.\\
  \For{$i \in (1,N)$}{
  $dX \leftarrow dX \cup {(s_i,a_i)}$\\
  $tX \leftarrow r_i + \findMax(\texttt{GP},s')$
  }
  \updateGP($dX,tX$)
+ \textit{return} $GP$
 }
+
+\SetKwProg{run}{}{}{}
+\run{\main{}}{
+	\While{\textit{termination condition not reached}}{
+	$GP$ = \batchGPQ{}\\
+    Choose action $a^* = \findMax(\texttt{GP},s')$\\
+    Apply $a^*$ for a $\Delta t$ time\\
+    observe reward $r$\\
+    }
+    
 }
+\caption{Batch GPQ Algorithm}
+\end{algorithm}
+
+The online implementation of the algorithm is described below (Refer Algorithm \ref{online_gpq_algorithm}).\\
+First consider the naive implementation of the batch GPQ algorithm described in Algorithm \ref{batch_gpq_algorithm}. At each timestep t, the greedy action $a^* = \textit{findMax}(\texttt{GP},s')$ is selected with probability $1 - \epsilon$ and with probability $\epsilon$ a random action is chosen. After each $(s, a, r, s')$ experience, GP is updated by adding the new record. As the size of the record increases, the time required for GP computation grows in a cubic fashion. We modify the naive implementation such that a new experience will only be added to the GP if the reward obtained in that epoch (An \textit{epoch} is defined as a fixed number of actions taken by the agent.) is less than a certain percentage of the sum of the reward obtained over time. This prevents the input to the GP from becoming too large over time.
+
+
+\begin{algorithm}
+\label{online_gpq_algorithm}
+\SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
+\SetKwFunction{trainingPhase}{trainingPhase}\SetKwFunction{findMax}{findMax}\SetKwFunction{batchGPQ}{batchGPQ}\SetKwFunction{updateGP}{updateGP} \SetKwFunction{gpPredict}{gpPredict} \SetKwFunction{main}{main}
 
 \SetKwProg{find}{}{}{}
 \find{\findMax{\texttt{GP}, $s'$}}{
@@ -630,54 +864,126 @@ $tX \leftarrow$ \texttt{output of the GP}.\\
 \texttt{return} $max$
 }
 
-\caption{Batch GPQ Algorithm}
+\SetKwProg{gpq}{}{}{}
+\gpq{\batchGPQ{\texttt{GP}, T}}{
+\Input{$T:= {(s,a,r,s')}$ is the new experience obtained during runtime}
+$dX \leftarrow$ \texttt{input to the GP}\\
+$tX \leftarrow$ \texttt{output of the GP}.\\
+ \For{$i \in (1,N)$}{
+ $dX \leftarrow dX \cup {(s_i,a_i)}$\\
+ $tX \leftarrow r_i + \findMax(\texttt{GP},s')$
+ }
+ \updateGP($dX,tX$)
+ \textit{return} $GP$
+}
+
+\SetKwProg{run}{}{}{}
+\run{\main{}}{
+	\Init{$T$ $\leftarrow$ empty}
+    \Init{Gaussian Process \texttt{GP} with RBF kernel of appropriate length scale}
+	\While{\textit{termination condition not reached}}{
+	$GP$ = \batchGPQ{\texttt{GP}, T}\\
+    $s \leftarrow$ current state \\
+    Choose greedy action $a = \findMax(\texttt{GP},s')$ with probability $1 - \epsilon$\\
+    A random action is chosen with a probability $\epsilon$\\
+    Apply $a$ for a $\Delta t$ time\\
+    $s' \leftarrow$ observed state\\
+    $r \leftarrow $ observed reward\\
+    $T \leftarrow T \cup \{(s,a,r,s')\}$\\
+    \If{$r < .75$ $\times$ sum of rewards over time}
+    {
+    Update the GP using $GP$ = \batchGPQ{\texttt{GP}, T}\\
+    }
+    }
+    
+}
+\caption{$\epsilon$ greedy online GPQ Algorithm}
 \end{algorithm}
 
+
+
+\section{The Simulator setup}
+\label{sims}
+Two simulators were implemented in order to present the idea of perception and subsequently implementing the idea of reinforcement learning in order to learn a \textit{skill}.
+\begin{itemize}
+\item \textbf{Simulator 1}: A python based obstacle avoidance simulator: As shown in Figure \ref{fig:perception_sim_1}, the robot is trying to navigate without colliding with obstacles in a dynamic environment setting. The white obstacles move slower compared to the orange obstacle. The robot is equipped with a laser sensor which uses $6$ beams in order to find out the distances from the obstacles at different angles. The robot has a constant speed and can perform $3$ actions; turn left, turn right or stay in the same direction. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{perception_sim_1.png}
+	\caption {A python based simulator for obstacle avoidance.}
+   \label{fig:perception_sim_1}
+\end{figure}
+
+\item \textbf{Simulator 2}: A second simulator is implemented in the Gazebo robot simulator~\cite{koenig2004design}. A UAV equipped with a Hokuyo Laser is implemented in the simulator as shown in Figure \ref{fig:perception_sim_2}. This may be considered as a $3$D extension of the simulator shown in Figure \ref{fig:perception_sim_1}. With infinite state-action space and ability to add robot dynamics, this simulator is a higher fidelity simulator compared to the python-pygame based $2$D simulator. 
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=8cm]{perception_sim_2.png}
+	\caption {A UAV equipped with laser sensor in Gazebo Robot Simulator.}
+   \label{fig:perception_sim_2}
+\end{figure}
+\end{itemize}
+
+In both of the above simulators the main principle of \textit{perception in the loop} is used in order to use the laser data to find out the current position of the obstacle with respect to the robot and take an optimal action in order to avoid the obstacle. In order to learn \textit{obstacle avoidance} as a \textit{skill} the algorithm must be agnostic to the shape or size of the obstacle and it should work in case of moving obstacles as well.
+
+
 \section{Simulations and Results}
-The performance of a batch-GPQ algorithm is compared with a naive $Q$-learning algorithm on the simulators shown in Figure \ref{fig:gpq_sim}. Similar to the Figure \ref{fig:perception_sim_1}, we use $3$ lasers on the robot to gather the distance data. The goal of the robot is to navigate in the environment without colliding into the obstacles. A reward of $-5$ is given on collision and a positive reward which is a function of the sum of the laser values is awarded on being able to avoid colliding into obstacles. 
+
+
+The performance of the batch-GPQ algorithm is compared with a naive $Q$-learning algorithm on the simulators shown in Figure \ref{fig:gpq_sim}. Similar to the Figure \ref{fig:perception_sim_1}, we use three beams on the robot to gather the distance data. The goal of the robot is to navigate in the environment without colliding into the obstacles. A reward of $-5$ is given on collision and a positive reward which is a function of the sum of the laser values is awarded on being able to avoid colliding into obstacles. 
 
 \begin{figure}
 	\centering 
-    \subfigure[Environment 1]{\includegraphics[width=6cm]{env1.pdf}}
-    \subfigure[Environment 2]{\includegraphics[width=6cm]{env2.pdf}}
-    \subfigure[Environment 3]{\includegraphics[width=6cm]{env3.pdf}}
-    \subfigure[Environment 4]{\includegraphics[width=6cm]{env4.pdf}}
-	\caption {Simulator Environments}
+    \subfigure[Environment 1]{\includegraphics[width=8cm]{env1.pdf}}
+    \subfigure[Environment 2]{\includegraphics[width=8cm]{env2.pdf}}
+    \subfigure[Environment 3]{\includegraphics[width=8cm]{env3.pdf}}
+    \subfigure[Environment 4]{\includegraphics[width=8cm]{env4.pdf}}
+	\caption {Simulator Environments.}
    \label{fig:gpq_sim}
 \end{figure}
 
 
-\subsection{Reward as a function of time}
-In order to compare the performance of the algorithms, we use \textit{reward} as a metric of comparison. The plot shown in Figure \ref{fig:gpq_vs_q_reward} , shows the reward obtained over time for the naive $Q$ learning and the end to end GP-Q learning algorithm. After every epoch, the reward obtained by the agent is calculated. 
+\subsection{Simulation Results}
+We carry out two types of experiments. In the first set of experiments, we train and test the performance of the agent in the same simulator. In the second type of experiments, we train the robot in  simulator $1$ shown in Figure \ref{fig:gpq_sim} and test the performance in the Gazebo Robot simulator which is shown in Figure \ref{fig:gazebo_gpq_sim}.\par 
+
+In order to compare the performance of the algorithms, we use \textit{reward} as a metric of comparison. An \textit{epoch} is defined as a set of fixed number of actions. The experiments are run in an online setting described in Algorithm \ref{online_gpq_algorithm}. $\epsilon$ value is set to $0.1$ for all the experiments. Reward $r$ is collected over a set of $200$ actions defined as one epoch. The plot shown in Figure \ref{fig:gpq_vs_q_reward}, shows the reward obtained over 1000 epochs. The performance of the algorithm is compared with a naive $Q$ learning algorithm run on the same set of environments with identical $\epsilon$ and epoch size.
 
 \begin{figure}[H]
 	\centering
-    \subfigure[Reward collected in Environment 1]{\includegraphics[width=6cm]{r_env1.eps}}
-    \subfigure[Reward collected in Environment 2]{\includegraphics[width=6cm]{r_env2.eps}}
-    \subfigure[Reward collected in Environment 3]{\includegraphics[width=6cm]{r_env3.eps}}
-    \subfigure[Reward collected in Environment 4]{\includegraphics[width=6cm]{r_env4_main.eps}}
+    \subfigure[Reward collected in Environment 1]{\includegraphics[width=10cm]{r_env1.eps}}
+    \subfigure[Reward collected in Environment 2]{\includegraphics[width=10cm]{r_env2.eps}}
+    \subfigure[Reward collected in Environment 3]{\includegraphics[width=10cm]{r_env3.eps}}
+    \subfigure[Reward collected in Environment 4]{\includegraphics[width=10cm]{r_env4_main.eps}}
 	\caption {Reward obtained over time for environments shown in Figure \ref{fig:gpq_sim}. One \textit{epoch} is a set of $200$ actions.}
    \label{fig:gpq_vs_q_reward}
 \end{figure}
 
-The GP learned in the basic kinematic simulators shown in Figure \ref{fig:gpq_sim} is used directly to find the optimal policy to navigate the Gazebo Robot Simulator environments and the performance of the GP algorithm is compared with a naive $Q$ learning algorithm by the reward plots shown in Figure \ref{fig:gazebo_gpq_sim}. It is evident from the plots that the GPQ algorithm performs better than the naive $Q$ learning algorithm.
+The second set of experiments is performed in the Gazebo Robot Simulator. The GP learned in the basic kinematic simulators shown in Figure \ref{fig:gpq_sim} is used directly to find the optimal policy to navigate the Gazebo Robot Simulator environments. An epoch is defined to be a set of $20$ actions. Reward is collected over $200$ such epochs and is plotted in Figure \ref{fig:gazebo_gpq_sim}.
+
+A naive $Q$ learning algorithm is run in the same simulator in order to compare the performance of the two algorithms. It is evident from the plots that the GPQ algorithm where the agent is tested in a different simulator after learning the GP in the simulator shown in Figure \ref{fig:gpq_sim} performs better than the naive $Q$ learning algorithm.
 
 \begin{figure}[H]
 	\centering   
-	\subfigure[Gazebo environment 1]{\includegraphics[width=6cm,height=4cm]{corridor.pdf}}
-    \subfigure[Reward collected in Gazebo environment 1]{\includegraphics[width=8cm]{gpq_q_epoch_20.eps}}
+	\subfigure[Gazebo environment 1]{\includegraphics[width=6cm]{corridor.pdf}}
+    \subfigure[Reward collected in Gazebo environment 1]{\includegraphics[width=10cm]{gpq_q_epoch_20.eps}}
 	
-    \subfigure[Gazebo environment 2]{\includegraphics[width=6cm,height=4cm]{gazebo_env2.pdf}}
-    \subfigure[Reward collected in Gazebo environment 2]{\includegraphics[width=8cm]{gpq_q_epoch_20_2.eps}}
+    \subfigure[Gazebo environment 2]{\includegraphics[width=6cm]{gazebo_env2.pdf}}
+    \subfigure[Reward collected in Gazebo environment 2]{\includegraphics[width=10cm]{gpq_q_epoch_20_2.eps}}
     
     \caption {Gazebo Robot Simulator environments and the reward collected over time. One \textit{epoch} is a set of $20$ actions.} 
    \label{fig:gazebo_gpq_sim}
 \end{figure}
 
+The UAV model equipped with laser range sensors in the Gazebo Robot Simulator could
+effectively avoid obstacles in completely different environments by using the optimal policy
+learned in the lower fidelity simulator \ie. the python based basic kinematic simulator. It
+is empirically shown that the GPQ algorithm performs better than the naive Q learning
+algorithm and it can be extended to a multi-fidelity simulator chain in order to further reduce the number of samples required in the real world. The next chapter presents Multi-Fidelity Reinforcement Learning technique combined with GPs.
 
 
 \chapter{The GP-MFRL Algorithm} % Main chapter title
-In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm -- the main work of this thesis are provided. The simulator system setup is discussed in the section
+In this chapter,the use of GP regression to learn the transition function is described and the details about the GP-MFRL algorithm are presented. This chapter emphasizes mainly on model-based approaches but can also be applied to model-free scenarios explained in the previous chapter. 
 
 \label{gpMfrl} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 \section{Multi-Fidelity Reinforcement Learning}
@@ -702,14 +1008,14 @@ A Markov Decision Processes (MDP)~\cite{puterman2014markov} is defined by a tupl
 
 Generally the agent does not know the reward it will receive after making a transition nor does it know the next state it will land in. The agent learns these parameters through interactions with the environment which is subsequently used to plan an optimal policy to earn the maximum expected reward, \ie, $\pi^{*}:S \rightarrow A$.
 
-RL algorithms are broadly classified into \emph{model-free} learning and \emph{model-based} learning as seen in section \ref{rl}. Approaches that explicitly learn transition dynamics and/or reward dynamics of an environment are known as model-based learning \cite{brafman2002r,kearns2002near}. The learned transition and reward dynamics can then be used to find the optimal policy using, for example, policy iteration or value iteration~\cite{sutton1998reinforcement} which are often referred to as \emph{planners}. In contrast, Strehl et al.~\cite{strehl2006pac} presented a model-free algorithm wherein the agent directly learns the value function and obtains the optimal policy. In this paper, we focus on model-based approaches and use GP regression to learn the transition dynamics. 
+RL algorithms are broadly classified into \emph{model-free} learning and \emph{model-based} learning as seen in Section \ref{rl}. Approaches that explicitly learn transition dynamics and/or reward dynamics of an environment are known as model-based learning \cite{brafman2002r,kearns2002near}. The learned transition and reward dynamics can then be used to find the optimal policy using, for example, policy iteration or value iteration~\cite{sutton1998reinforcement} which are often referred to as \emph{planners}. In contrast, Strehl et al.~\cite{strehl2006pac} presented a model-free algorithm wherein the agent directly learns the value function and obtains the optimal policy. In this paper, we focus on model-based approaches and use GP regression to learn the transition dynamics. 
 
 Rasmussen and Kuss~\cite{rasmussen2003gaussian} showed how to use GPs for carrying out model-based RL. They assumed that the reward dynamics are known and the transition and value function was modeled as a GP. We use the same assumption for ease of exposition. However, assuming reward dynamics to be known is not a critical requirement. In fact, reward dynamics can also be easily be modeled as GPs.
 
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=8cm]{gp-mfrl.eps}
-	\caption {Overview of the GP-MFRL algorithm }
+	\caption {Overview of the GP-MFRL algorithm. }
    \label{fig:gp_mfrl_system}
 \end{figure}
 
@@ -845,7 +1151,7 @@ Figure~\ref{fig:epoch_samples} shows the switching between the simulators for on
 \begin{figure}[htp]
 	\centering 
     \includegraphics[width=6cm]{epoch.eps}
-	\caption{ The figure represents the samples collected in each level of simulator for a $21 \times 21$ grid in a simple grid-world and Gazebo environments. $\Psi$ and $\psi$ were kept 0.4 and $0.1$}
+	\caption{ The figure represents the samples collected in each level of simulator for a $21 \times 21$ grid in a simple grid-world and Gazebo environments. $\Psi$ and $\psi$ were kept 0.4 and $0.1$.}
    \label{fig:epoch_samples}
 \end{figure}
 
@@ -860,7 +1166,7 @@ Figures~\ref{fig:heatmap1} and \ref{fig:heatmap2} show the heatmaps at the start
 	\centering
     \subfigure[After Initial Training]{\includegraphics[width=4cm]{heat_init_same.eps}}
     \subfigure[After Convergence]{\includegraphics[width=4cm]{heat_same.eps}}
-	\caption{Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged}
+	\caption{Variance plot for $21 \times 21$ multi-fidelity environment after transition dynamics initialization and after algorithm has converged.}
    \label{fig:heatmap1}
 \end{figure}
 
@@ -891,7 +1197,7 @@ In order to validate this hypothesis, we varied the noise parameter used to simu
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=8cm]{ratio.eps}
-	\caption{As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator }
+	\caption{As we make first simulator more inaccurate by adding noise, the agent tends to gather more samples in second simulator. }
    \label{fig:gp_mfrl_samples}
 \end{figure}
 
@@ -916,201 +1222,13 @@ The GP-MFRL algorithm uses two confidence parameters, $\psi$ and $\Psi$, which a
 Figure \ref{fig:value_function} shows the comparison between performance of GP-MFRL algorithm with the existing MFRL algorithm \cite{cutler2014reinforcement}, GP-MFRL algorithm only in the highest fidelity simulator and Rmax algorithm running only in the highest fidelity simulator. The experiments are performed in the environment same as the one used in Figure \ref{fig:heatmap_four_walls_complex}. As expected, the GP-MFRL algorithm performs better than the existing MFRL algorithm, \cite{cutler2014reinforcement}.
 \begin{figure}[htp]
 	\centering 
-    \includegraphics[width=8cm]{reward.eps}
+    \includegraphics[width=12cm]{reward.eps}
 	\caption{ Discounted return in the start state Vs. the number of samples collected in the highest fidelity simulator.}
    \label{fig:value_function}
 \end{figure}
 
 \section{Conclusion}
 The GP-MFRL algorithm provides a general RL technique that is particularly suited for robotics. An extension to the existing work would be implementing the GP-MFRL algorithm on an actual quadrotor as the highest-fidelity simulator to demonstrate the utility of GP-MFRL. In this thesis, it is shown empirically that, GP-MFRL finds optimal policies using fewer samples than MFRL algorithm. 
-
-
-\chapter{Bridge Inspection}
-\label{bridge_chapter}
-\section{Background}
-When it comes to inspecting bridges, UAVs are often considered as harbingers, a truly disruptive technology capable of giving engineers eyes in the hardest to reach places, without the need for expensive access vehicles or potentially dangerous rigging or ladders or harnesses. A recent paper  \cite{morgenthal2014quality} discusses the application of UAVs for visual inspection and damage detection of civil structures. The quality of such pictures and videos taken by the UAV strongly depends on various factors viz. lighting conditions, distance from the structure, vehicle motion influenced by environmental effects etc. It is very important for the UAVs to be equipped with sophisticated control algorithms and sensors to be able to provide reliable data which can be conclusively used for inspection and analysis of damage.
-
-\subsection{Conventional Inspection of Bridges}
-Figure \ref{fig:bridge_inspection} shows typical inspection units like under-bridge units or truck cranes. Inspection units are in most cases expensive custom products. Often, specially trained staff, like industrial climbers, can get access to special parts of the structure but they can rarely evaluate what influences detected damages have on these structures. Therefore, they can only take Photos or Videos of the concerned part of the structure, which must be analyzed by civil engineers off-line.\par It is often dangerous to use such large truck cranes. Figure \ref{fig:bridge_fail} shows an unfortunate incidence where the inspection truck has tipped over causing a life threating situation for the people involved.\par
- 
-\begin{figure}[htp]
-	\centering 
-    \subfigure[Truck Crane]{\includegraphics[width=6cm,height=4cm]{truck_crane.jpg}}
-    \subfigure[Under Bridge Inspection unit]{\includegraphics[width=6cm,height=4cm]{under_bridge.jpg}}
-	\caption{Conventional inspection units for Bridge Inspection: (left,Bridge Inspection platform with a truck crane) , A-30 Hi-Rail Under Bridge Units(right,N.E. Bridge Contractors Inc.)}
-   \label{fig:bridge_inspection}
-\end{figure}
-
-\begin{figure}[htp]
-	\centering 
-    \includegraphics[width=8cm]{tip.jpg}
-	\caption{Bridgeriggers' Aspen A-75 under-bridge inspection crane overturns on Sakonnet River Bridge in Rhode Island; August 30, 2016}
-   \label{fig:bridge_fail}
-\end{figure}
-
-\subsection{UAVs in Bridge Inspection}
-
-UAVs often have following advantages in comparison to the conventional bridge-inspection methods.
-\begin{itemize}
-\item  UAVs only need an operator on the ground for controlling the flight and the
-camera. A more advanced scenario includes \textit{autonomous} UAVs navigating around the structures while collecting the required data such as pictures, videos etc. {\color{red} reference to a later section where we talk about challenges of navigating around such structures.}
-\item UAVs can be used in high-risk situations without endangering human lives. Situations like \ref{fig:bridge_fail} could be avoided to a certain extent.
-\item UAVs are capable of fast real time data acquisition and the storage of all the relevant flight data.
-\item Overall, they often turn out to be lower in costs compared to the large custom inspection units.
-\end{itemize}
-
-As they say \textit{Every good thing comes with a price}, UAVs are no different. Despite the obvious advantages, UAVs have some essential limitations. 
-\begin{itemize}
-\item  Due to the small payload capacity of the UAVs, only small format and light digital compact cameras can be used for visual inspection. 
-\item The smaller payload also affects the battery size leading to shorter flight times. 
-\item Due to unexpected flight situations or due to unreliable GPS-signal strength, a change from the autonomous flight mode into a manual mode is required which demands a skillful pilot to override the control.
-\item  Currently, UAVs are not equipped with effective collision avoidance systems. 
-\end{itemize}
-
-\section{Present Work}
-We performed a few experiments in order to analyze the limitations and challenges of performing autonomous navigation of UAVs around bridges. We performed several manual flights of a UAV on the Smart Road Bridge (the tallest state-maintained bridge in Virginia). The goal of the experiment was to capture visuals of the inside as well as the outside of the bridge for analysis of the structure and to analyze challenges in order to improve the system for fully autonomous flights.
-
-\subsection{The System Setup}
-DJI model F450 \cite{djiframe} was used as shown in the figure \ref{fig:dji_frame}. The UAV is equipped with sensors, controller and an on-board computer.
-
-\begin{figure}[htp]
-	\centering 
-    \includegraphics[width=8cm]{uav-1.JPG}
-	\caption{UAV used for the experiments}
-   \label{fig:dji_frame}
-\end{figure}
-
-The specific components are listed below. 
-
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=8cm]{quad.png}
-	\caption{System Components}
-   \label{fig:system_components}
-\end{figure}
-
-\begin{itemize}
-\item \textbf{Camera}: The camera used to capture the visuals is \cite{fleacamera} as shown in figure \ref{fig:cam}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=6cm]{cam.jpg}
-	\caption{Flea3 2.0 MP Color USB3 Vision (e2v EV76C5706F)}
-   \label{fig:cam}
-\end{figure}
-
-\item \textbf{Intel NUC}: Intel NUC5I7RYH Mini PC NUC Kit as shown in figure \ref{fig:nuc}. 
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=6cm]{nuc.jpg}
-	\caption{Intel NUC NUC5I7RYH}
-   \label{fig:nuc}
-\end{figure}
-Specifications are as follows:
-\begin {itemize}
-\item 5th Generation Intel Core $i7$-$5557$U processor
-\item Intel Iris Graphics $6100$
-\item Mini HDMI \& Mini Display Port
-\item Internal support for M.$2$ SSD card \& SATA$3$ for $2.5$`` HDD/SSD
-\end{itemize}
-
-\item \textbf{Pixhawk-Flight Controller}: Pixhawk is an independent, open-hardware project which mainly aims at providing high-end autopilot hardware to the academic, hobby and industrial communities at low costs as shown in figure \ref{fig:pixhawk}.The Pixhawk autopilot module runs a very efficient real-time operating system (RTOS), which provides a POSIX-style environment.
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=6cm]{pixhawk.jpg}
-	\caption{Pixhawk Flight Controller}
-   \label{fig:pixhawk}
-\end{figure}
-
-Some of the specifications are as follows:
-\begin {itemize}
-\item $68$ MHz Cortex M$4$F CPU ($256$ KB RAM, $2$ MB Flash)
-\item Sensors: $3$D Accelerometer / Gyroscope / Magnetometer / Barometer
-\item Integrated backup, override and failsafe processor with mixing
-\item MicroSD slot, $5$ UARTs, CAN, I$2$C, SPI, ADC, etc
-\end{itemize}
-
-\item \textbf{LIDAR}: The LIDAR-Lite v$3$ is a compact, high-performance optical distance measurement sensor from Garmin\textsuperscript{TM} as shown in figure \ref{fig:lidar}.
-
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=6cm]{lidar.jpg}
-	\caption{LIDAR-Lite v$3$}
-   \label{fig:lidar}
-\end{figure}
-The specifications are as follows:
-\begin{itemize}
-\item Range: $0$-$40$m Laser Emitter
-\item Accuracy: +/- $2.5$cm at distances greater than $1$m
-\item Power: $4.75$–$5$V DC; $6$V Max
-\item Current Consumption: $105$mA idle; $130$mA continuous
-\item Rep Rate: $1$–$500$Hz
-\item Laser Wave Length/Peak Power: $905$nm/$1.3$ watts
-\item Beam Divergence: $4$m Radian $\times$ $2$m Radian
-\item Optical Aperture: $12.5$mm
-\item Interface: I$2$C or PWM
-\end{itemize}
-
-\item \textbf{GPS}: GPS used is Ublox Neo-M$8$N GPS with Compass as shown in figure \ref{fig:gps}.
-
-\begin{figure}[H]
-	\centering 
-    \includegraphics[width=6cm]{gps.jpg}
-	\caption{Ublox Neo-M$8$N GPS}
-   \label{fig:gps}
-\end{figure}
-The specifications are as follows:
-\begin{itemize}
-\item $–167$ dBm navigation sensitivity
-\item Navigation update rate up to $10 H_z$
-\item Cold starts: $26$s
-\item $25 \times 25 \times 4$ mm ceramic patch antenna
-\item Rechargeable $3$V lithium backup battery
-\item Low noise $3.3$V regulator
-\item Diameter $60$mm total size, $32$ grams with case.
-\end{itemize}
-
-\item \textbf{Motors and ESC Motor Controllers}: E800 Tuned Propulsion System is designed for multi-rotor copters. Shown in figure \ref{fig:dji_propulsion_system}
-
-\begin{figure}[H]
-\centering
-    \subfigure{\includegraphics[width=6cm]{motors.jpg}}
-     \subfigure{\includegraphics[width=6cm]{esc.jpg}}
-	\caption{E800 Tuned Propulsion System by DJI}
-   \label{fig:dji_propulsion_system}
-\end{figure}
-
-\end{itemize}
-
-\subsection{Camera Software and ROS nodes}
-The ROS-flea3 camera driver enables publishing of images on ROS topics which can in turn be viewed on rqt image view tool. The images can be viewed real time and are also stored in a rosbag. The screen capture of an instance of the camera view and ROS node running the rosbag to record to images is shown in figure
-
-\begin{figure}[htp]
-	\centering 
-    \includegraphics[width=10cm]{cam_rqt.png}
-	\caption{Camera view and ROS-bag record}
-   \label{fig:cam_rqt}
-\end{figure}
-
-While the UAV is flying indoors or inside the bridge, it does not get a GPS signal for a better position estimate. Manual control is very difficult due to the smaller space and narrow pathways. In chapter \ref{gpq}, we discussed the advantages of effectively learning obstacle avoidance or wall-following as a skill using the on-board sensor data. It is very useful in these scenarios where the UAV needs to rely on it's on-board sensors to perform a particular task simultaneously trying to avoid obstacles or follow a wall. Figure \ref{fig:indoor_flight} indicates one such scenario where the UAV needs to take pictures inside the structures. \par 
-\begin{figure}[htp]
-	\centering 
-  	\subfigure{\includegraphics[width=8cm]{indoor_1.JPG}}
-    \subfigure{\includegraphics[width=8cm]{indoor_2.jpeg}}
-	\caption{Indoor flight of the UAV visually inspecting the structure}
-   \label{fig:indoor_flight}
-\end{figure}
-
-
-Similar to the indoor bridge inspection, while flying close to the bridge surfaces, the UAV does not get reliable GPS signal or any other localization inputs. It is vital for the robot to have learned the skill of flying close to the surfaces and following certain trajectories using on board laser sensor data. As iterated multiple times in this thesis, while learning in the real world, collecting negative samples (Colliding with the wall/surface in this scenario) can lead to catastrophic results. It is important for the robot to learn a skill in a simulator environment before executing the required tasks in the real world.
-Figure \ref{fig:outdoor_flight} shows a picture of one of such flights for the outdoor visual inspection of the bridge. 
-\begin{figure}[htp]
-	\centering 
-  	\subfigure{\includegraphics[width=8cm]{outdoor_1.JPG}}
-    \subfigure{\includegraphics[width=8cm]{outdoor_2.JPG}}
-	\caption{Outdoor flight of the UAV visually inspecting the structure}
-   \label{fig:outdoor_flight}
-\end{figure}
-
 
 \chapter{Conclusion and Future Research}
 The GP-MFRL algorithm provides a general RL technique that is particularly suited for robotics. Our immediate work focuses on extending the End-to-End GPQ algorithm to a multi-fidelity simulator framework. Implementing the algorithm on an actual quadrotor as the highest fidelity simulator to demonstrate the utility of GP-MFRL is the immediate goal. We analyze empirically that GP-MFRL and GPQ find optimal policies in fewer samples than their naive counterparts. One of the main tasks is to find the theoretical bounds on the sample complexity of GP-MFRL.\par 
@@ -1133,7 +1251,7 @@ Theoretical and simulation results are useful in defining the performance limits
 
 % If you are using BibTeX, uncomment the following:
 \bibliography{refs}
-\bibliographystyle{plain}
+\bibliographystyle{apacite}
 %
 % Otherwise, uncomment the following:
 % \chapter*{Bibliography}
