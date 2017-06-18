@@ -1,0 +1,297 @@
+\begin{thebibliography}{10}
+
+\bibitem{djiframe}
+{DJI} {F-450} {Frame}.
+\newblock \url{http://www.dji.com/flame-wheel-arf/spec}.
+\newblock Accessed: 2016-05-25.
+
+\bibitem{fleacamera}
+Flea3 2.0 {MP} {Camera}.
+\newblock
+  \url{https://www.ptgrey.com/flea3-20-mp-color-usb3-vision-e2v-ev76c5706f-3}.
+\newblock Accessed: 2016-05-25.
+
+\bibitem{abbeel2006using}
+Pieter Abbeel, Morgan Quigley, and Andrew~Y Ng.
+\newblock Using inaccurate models in reinforcement learning.
+\newblock In {\em Proceedings of the 23rd international conference on Machine
+  learning}, pages 1--8. ACM, 2006.
+
+\bibitem{atkeson1997comparison}
+Christopher~G Atkeson and Juan~Carlos Santamaria.
+\newblock A comparison of direct and model-based reinforcement learning.
+\newblock In {\em Robotics and Automation, 1997. Proceedings., 1997 IEEE
+  International Conference on}, volume~4, pages 3557--3564. IEEE, 1997.
+
+\bibitem{bagnell2001autonomous}
+J~Andrew Bagnell and Jeff~G Schneider.
+\newblock Autonomous helicopter control using reinforcement learning policy
+  search methods.
+\newblock In {\em Robotics and Automation, 2001. Proceedings 2001 ICRA. IEEE
+  International Conference on}, volume~2, pages 1615--1620. IEEE, 2001.
+
+\bibitem{Bellman:1957}
+Richard Bellman.
+\newblock {\em Dynamic Programming}.
+\newblock Princeton University Press, Princeton, NJ, USA, 1 edition, 1957.
+
+\bibitem{berry1985bandit}
+Donald~A Berry and Bert Fristedt.
+\newblock {\em Bandit problems: sequential allocation of experiments
+  (Monographs on statistics and applied probability)}.
+\newblock Springer, 1985.
+
+\bibitem{bou2010controller}
+Haitham Bou-Ammar, Holger Voos, and Wolfgang Ertel.
+\newblock Controller design for quadrotor uavs using reinforcement learning.
+\newblock In {\em Control Applications (CCA), 2010 IEEE International
+  Conference on}, pages 2130--2135. IEEE, 2010.
+
+\bibitem{brafman2002r}
+Ronen~I Brafman and Moshe Tennenholtz.
+\newblock R-max-a general polynomial time algorithm for near-optimal
+  reinforcement learning.
+\newblock {\em Journal of Machine Learning Research}, 3(Oct):213--231, 2002.
+
+\bibitem{chowdhary2014off}
+Girish Chowdhary, Miao Liu, Robert Grande, Thomas Walsh, Jonathan How, and
+  Lawrence Carin.
+\newblock Off-policy reinforcement learning with gaussian processes.
+\newblock {\em IEEE/CAA Journal of Automatica Sinica}, 1(3):227--238, 2014.
+
+\bibitem{csato2002sparse}
+Lehel Csat{\'o} and Manfred Opper.
+\newblock Sparse on-line gaussian processes.
+\newblock {\em Neural computation}, 14(3):641--668, 2002.
+
+\bibitem{cutler2014reinforcement}
+Mark Cutler, Thomas~J Walsh, and Jonathan~P How.
+\newblock Reinforcement learning with multi-fidelity simulators.
+\newblock In {\em 2014 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 3888--3895. IEEE, 2014.
+
+\bibitem{Dames2015}
+Philip Dames, Pratap Tokekar, and Vijay Kumar.
+\newblock Detecting, localizing, and tracking an unknown number of moving
+  targets using a team of mobile robots.
+\newblock In {\em International Symposium on Robotics Research (ISRR)}. 2015.
+
+\bibitem{das2015devices}
+Jnaneshwar Das, Gareth Cross, Chao Qu, Anurag Makineni, Pratap Tokekar, Yash
+  Mulgaonkar, and Vijay Kumar.
+\newblock Devices, systems, and methods for automated monitoring enabling
+  precision agriculture.
+\newblock In {\em Proceedings of IEEE Conference on Automation Science and
+  Engineering}, pages 462--469. IEEE, 2015.
+
+\bibitem{deisenroth2010efficient}
+Marc~Peter Deisenroth.
+\newblock {\em Efficient reinforcement learning using Gaussian processes},
+  volume~9.
+\newblock KIT Scientific Publishing, 2010.
+
+\bibitem{engel2005reinforcement}
+Yaakov Engel, Shie Mannor, and Ron Meir.
+\newblock Reinforcement learning with gaussian processes.
+\newblock In {\em Proceedings of the 22nd international conference on Machine
+  learning}, pages 201--208. ACM, 2005.
+
+\bibitem{gamedeep}
+Atari Game.
+\newblock Deep reinforcement learning.
+
+\bibitem{hester2017learning}
+Todd Hester, Matej Vecerik, Olivier Pietquin, Marc Lanctot, Tom Schaul, Bilal
+  Piot, Andrew Sendonaris, Gabriel Dulac-Arnold, Ian Osband, John Agapiou,
+  et~al.
+\newblock Learning from demonstrations for real world reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1704.03732}, 2017.
+
+\bibitem{kaelbling1998planning}
+Leslie~Pack Kaelbling, Michael~L Littman, and Anthony~R Cassandra.
+\newblock Planning and acting in partially observable stochastic domains.
+\newblock {\em Artificial intelligence}, 101(1):99--134, 1998.
+
+\bibitem{kaelbling1996reinforcement}
+Leslie~Pack Kaelbling, Michael~L Littman, and Andrew~W Moore.
+\newblock Reinforcement learning: A survey.
+\newblock {\em Journal of artificial intelligence research}, 4:237--285, 1996.
+
+\bibitem{kearns2002near}
+Michael Kearns and Satinder Singh.
+\newblock Near-optimal reinforcement learning in polynomial time.
+\newblock {\em Machine Learning}, 49(2-3):209--232, 2002.
+
+\bibitem{kober2012reinforcement}
+Jens Kober and Jan Peters.
+\newblock Reinforcement learning in robotics: A survey.
+\newblock In {\em Reinforcement Learning}, pages 579--610. Springer, 2012.
+
+\bibitem{koenig2004design}
+Nathan Koenig and Andrew Howard.
+\newblock Design and use paradigms for gazebo, an open-source multi-robot
+  simulator.
+\newblock In {\em Intelligent Robots and Systems, 2004.(IROS 2004).
+  Proceedings. 2004 IEEE/RSJ International Conference on}, volume~3, pages
+  2149--2154. IEEE, 2004.
+
+\bibitem{kormushev2010robot}
+Petar Kormushev, Sylvain Calinon, and Darwin~G Caldwell.
+\newblock Robot motor skill coordination with em-based reinforcement learning.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ
+  International Conference on}, pages 3232--3237. IEEE, 2010.
+
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem{li2011knows}
+Lihong Li, Michael~L Littman, Thomas~J Walsh, and Alexander~L Strehl.
+\newblock Knows what it knows: a framework for self-aware learning.
+\newblock {\em Machine learning}, 82(3):399--443, 2011.
+
+\bibitem{littman1996algorithms}
+Michael~Lederman Littman.
+\newblock {\em Algorithms for sequential decision making}.
+\newblock PhD thesis, Brown University, 1996.
+
+\bibitem{liu2014review}
+Peter Liu, Albert~Y Chen, Yin-Nan Huang, J~Han, J~Lai, S~Kang, T~Wu, M~Wen, and
+  M~Tsai.
+\newblock A review of rotorcraft unmanned aerial vehicle (uav) developments and
+  applications in civil engineering.
+\newblock {\em Smart Struct. Syst}, 13(6):1065--1094, 2014.
+
+\bibitem{lupashin2010simple}
+Sergei Lupashin, Angela Sch{\"o}llig, Michael Sherback, and Raffaello D'Andrea.
+\newblock A simple learning strategy for high-speed quadrocopter multi-flips.
+\newblock In {\em Robotics and Automation (ICRA), 2010 IEEE International
+  Conference on}, pages 1642--1648. IEEE, 2010.
+
+\bibitem{mahadevan1992automatic}
+Sridhar Mahadevan and Jonathan Connell.
+\newblock Automatic programming of behavior-based robots using reinforcement
+  learning.
+\newblock {\em Artificial intelligence}, 55(2-3):311--365, 1992.
+
+\bibitem{mnih2013playing}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
+  Antonoglou, Daan Wierstra, and Martin Riedmiller.
+\newblock Playing atari with deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
+
+\bibitem{mnih2015human}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei~A Rusu, Joel Veness,
+  Marc~G Bellemare, Alex Graves, Martin Riedmiller, Andreas~K Fidjeland, Georg
+  Ostrovski, et~al.
+\newblock Human-level control through deep reinforcement learning.
+\newblock {\em Nature}, 518(7540):529--533, 2015.
+
+\bibitem{morgenthal2014quality}
+G~Morgenthal and N~Hallermann.
+\newblock Quality assessment of unmanned aerial vehicle (uav) based visual
+  inspection of structures.
+\newblock {\em Advances in Structural Engineering}, 17(3):289--302, 2014.
+
+\bibitem{morton2016deep}
+Jeremy Morton.
+\newblock Deep reinforcement learning.
+\newblock 2016.
+
+\bibitem{osborne2010bayesian}
+Michael Osborne.
+\newblock {\em Bayesian Gaussian processes for sequential prediction,
+  optimisation and quadrature}.
+
+\bibitem{ozaslaninspection}
+Tolga Ozaslan, Shaojie Shen, Yash Mulgaonkar, Nathan Michael, and Vijay Kumar.
+\newblock Inspection of penstocks and featureless tunnel-like environments
+  using micro uavs.
+\newblock In {\em International Conference on Field and Service Robotics},
+  2013.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{puterman2014markov}
+Martin~L Puterman.
+\newblock {\em Markov decision processes: discrete stochastic dynamic
+  programming}.
+\newblock John Wiley \& Sons, 2014.
+
+\bibitem{quigley2009ros}
+M.~Quigley, B.~Gerkey, K.~Conley, J.~Faust, T.~Foote, J.~Leibs, E.~Berger,
+  R.~Wheeler, and A.~Ng.
+\newblock {ROS: an open-source Robot Operating System}.
+\newblock In {\em ICRA Workshop on Open Source Software}, 2009.
+
+\bibitem{rasmussen2003gaussian}
+Carl~Edward Rasmussen and Malte Kuss.
+\newblock Gaussian processes in reinforcement learning.
+\newblock 2003.
+
+\bibitem{rummery1994line}
+Gavin~A Rummery and Mahesan Niranjan.
+\newblock {\em On-line Q-learning using connectionist systems}.
+\newblock University of Cambridge, Department of Engineering, 1994.
+
+\bibitem{Shaker:2010:VLS:1901614.1902128}
+Marwan Shaker, Mark N.~R. Smith, Shigang Yue, and Tom Duckett.
+\newblock Vision-based landing of a simulated unmanned aerial vehicle with fast
+  reinforcement learning.
+\newblock In {\em Proceedings of the 2010 International Conference on Emerging
+  Security Technologies}, EST '10, pages 183--188, Washington, DC, USA, 2010.
+  IEEE Computer Society.
+
+\bibitem{smart2002effective}
+William~D Smart and L~Pack Kaelbling.
+\newblock Effective reinforcement learning for mobile robots.
+\newblock In {\em Robotics and Automation, 2002. Proceedings. ICRA'02. IEEE
+  International Conference on}, volume~4, pages 3404--3410. IEEE, 2002.
+
+\bibitem{strehl2006pac}
+Alexander~L Strehl, Lihong Li, Eric Wiewiora, John Langford, and Michael~L
+  Littman.
+\newblock Pac model-free reinforcement learning.
+\newblock In {\em Proceedings of the 23rd international conference on Machine
+  learning}, pages 881--888. ACM, 2006.
+
+\bibitem{sugimoto2016acquisition}
+Takuya Sugimoto and Manabu Gouko.
+\newblock Acquisition of hovering by actual uav using reinforcement learning.
+\newblock In {\em Information Science and Control Engineering (ICISCE), 2016
+  3rd International Conference on}, pages 148--152. IEEE, 2016.
+
+\bibitem{sutton1998reinforcement}
+Richard~S Sutton and Andrew~G Barto.
+\newblock Reinforcement learning: An introduction, 1998.
+
+\bibitem{taylor2007transfer}
+Matthew~E Taylor, Peter Stone, and Yaxin Liu.
+\newblock Transfer learning via inter-task mappings for temporal difference
+  learning.
+\newblock {\em Journal of Machine Learning Research}, 8(Sep):2125--2167, 2007.
+
+\bibitem{tokekar2014placement}
+Pratap~Rajkumar Tokekar.
+\newblock {\em Placement and Motion Planning Algorithms for Robotic Sensing
+  Systems}.
+\newblock PhD thesis, Citeseer, 2014.
+
+\bibitem{watkins1992q}
+Christopher~JCH Watkins and Peter Dayan.
+\newblock Q-learning.
+\newblock {\em Machine learning}, 8(3-4):279--292, 1992.
+
+\bibitem{wiering2012reinforcement}
+Marco Wiering and Martijn Van~Otterlo.
+\newblock Reinforcement learning.
+\newblock {\em Adaptation, Learning, and Optimization}, 12, 2012.
+
+\end{thebibliography}

@@ -19,7 +19,6 @@
 \contentsline {subsection}{\numberline {2.3.2}Online vs off-line learning}{11}
 \contentsline {subsection}{\numberline {2.3.3}Exploration vs. Exploitation}{11}
 \contentsline {subsection}{\numberline {2.3.4}Q-Learning}{12}
-\contentsline {subsection}{\numberline {2.3.5}Q-Learning Algorithm}{12}
 \contentsline {subsubsection}{Example}{13}
 \contentsline {section}{\numberline {2.4}Introduction to Gaussian Processes (GP)}{14}
 \contentsline {subsubsection}{Kernel Functions}{15}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.17)  17 JUN 2017 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.6.17)  17 JUN 2017 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1781,17 +1781,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] (./main.toc
 [5
 
-] [6])
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [7] (./main.lof [8
+ [6] (./main.lof [7
 
-] [9])
+] [8])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [10]
+ [9]
 Chapter 1.
 
 LaTeX Warning: Citation `mahadevan1992automatic' on page 1 undefined on input l
@@ -1823,41 +1823,23 @@ LaTeX Warning: Citation `das2015devices' on page 2 undefined on input line 169.
 LaTeX Warning: Citation `kober2012reinforcement' on page 2 undefined on input l
 ine 169.
 
-<images/corridor.JPG, id=47, 4288.02pt x 2858.68pt>
+<images/corridor.JPG, id=44, 4288.02pt x 2858.68pt>
 File: images/corridor.JPG Graphic file (type jpg)
  <use images/corridor.JPG>
 Package pdftex.def Info: images/corridor.JPG used on input line 174.
 (pdftex.def)             Requested size: 227.56496pt x 126.58492pt.
 
-<images/quad_in_corridor.png, id=48, 1658.195pt x 924.45375pt>
+<images/quad_in_corridor.png, id=45, 1658.195pt x 924.45375pt>
 File: images/quad_in_corridor.png Graphic file (type png)
 
 <use images/quad_in_corridor.png>
 Package pdftex.def Info: images/quad_in_corridor.png used on input line 175.
 (pdftex.def)             Requested size: 227.62204pt x 126.89766pt.
- [2 <./images/corridor.JPG> <./images/quad_in_corridor.png>]
-
-LaTeX Warning: Citation `chowdhary2014off' on page 3 undefined on input line 19
-3.
-
-[3] [4]
+ [2 <./images/corridor.JPG> <./images/quad_in_corridor.png>] [3] [4]
 Chapter 2.
-
-LaTeX Warning: Citation `littman1996algorithms' on page 5 undefined on input li
-ne 218.
-
-
-LaTeX Warning: Citation `wiering2012reinforcement' on page 5 undefined on input
- line 221.
-
 [5
 
-]
-
-LaTeX Warning: Citation `puterman2014markov' on page 6 undefined on input line 
-230.
-
-[6]
+] [6]
 
 LaTeX Warning: Citation `Bellman:1957' on page 7 undefined on input line 275.
 
@@ -1898,15 +1880,11 @@ n input line 324.
 LaTeX Warning: Citation `sugimoto2016acquisition' on page 9 undefined on input 
 line 324.
 
-<images/rl_model.pdf, id=79, 432.61626pt x 192.72pt>
+<images/rl_model.pdf, id=76, 432.61626pt x 192.72pt>
 File: images/rl_model.pdf Graphic file (type pdf)
  <use images/rl_model.pdf>
 Package pdftex.def Info: images/rl_model.pdf used on input line 331.
 (pdftex.def)             Requested size: 227.62204pt x 101.40005pt.
-
-
-LaTeX Warning: Citation `kaelbling1996reinforcement' on page 9 undefined on inp
-ut line 339.
 
 [9 <./images/rl_model.pdf>]
 
@@ -1921,43 +1899,27 @@ LaTeX Warning: Citation `hester2017learning' on page 10 undefined on input line
  350.
 
 
-LaTeX Warning: Citation `brafman2002r' on page 10 undefined on input line 351.
-
-
-LaTeX Warning: Citation `kearns2002near' on page 10 undefined on input line 351
-.
-
-
-LaTeX Warning: Citation `strehl2006pac' on page 10 undefined on input line 353.
-
-
-
 LaTeX Warning: Citation `atkeson1997comparison' on page 10 undefined on input l
 ine 354.
 
-[10]
-
-LaTeX Warning: Citation `berry1985bandit' on page 11 undefined on input line 36
-0.
-
-[11] [12] <images/gridworld.pdf, id=97, 387.046pt x 264.99pt>
+[10] [11] [12] <images/gridworld.pdf, id=94, 387.046pt x 264.99pt>
 File: images/gridworld.pdf Graphic file (type pdf)
 
 <use images/gridworld.pdf>
-Package pdftex.def Info: images/gridworld.pdf used on input line 398.
+Package pdftex.def Info: images/gridworld.pdf used on input line 397.
 (pdftex.def)             Requested size: 227.62204pt x 155.8454pt.
 
-<images/gp_laser.pdf, id=98, 800.59097pt x 563.70598pt>
+<images/gp_laser.pdf, id=95, 800.59097pt x 563.70598pt>
 File: images/gp_laser.pdf Graphic file (type pdf)
 
 <use images/gp_laser.pdf>
-Package pdftex.def Info: images/gp_laser.pdf used on input line 406.
+Package pdftex.def Info: images/gp_laser.pdf used on input line 405.
 (pdftex.def)             Requested size: 227.62204pt x 160.2708pt.
  [13 <./images/gridworld.pdf>]
-<images/ls_fit.pdf, id=106, 507.496pt x 407.924pt>
+<images/ls_fit.pdf, id=103, 507.496pt x 407.924pt>
 File: images/ls_fit.pdf Graphic file (type pdf)
  <use images/ls_fit.pdf>
-Package pdftex.def Info: images/ls_fit.pdf used on input line 420.
+Package pdftex.def Info: images/ls_fit.pdf used on input line 419.
 (pdftex.def)             Requested size: 227.62204pt x 182.96033pt.
 
 [14 <./images/gp_laser.pdf> <./images/ls_fit.pdf
@@ -1965,114 +1927,96 @@ Package pdftex.def Info: images/ls_fit.pdf used on input line 420.
 pdfTeX warning: pdflatex (file ./images/ls_fit.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 427.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 426.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 427.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 426.
  [15]
+Excluding 'comment' comment. [16]
 
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 16 undefined on input l
-ine 464.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 16 undefined on input l
-ine 514.
-
-[16]
-
-LaTeX Warning: Citation `gamedeep' on page 17 undefined on input line 519.
+LaTeX Warning: Citation `gamedeep' on page 17 undefined on input line 518.
 
 
-LaTeX Warning: Citation `morton2016deep' on page 17 undefined on input line 519
+LaTeX Warning: Citation `morton2016deep' on page 17 undefined on input line 518
 .
 
 
 LaTeX Warning: Citation `mnih2013playing' on page 17 undefined on input line 52
-1.
+0.
 
-<images/deep_q.png, id=124, 282.05376pt x 362.35374pt>
+<images/deep_q.png, id=121, 282.05376pt x 362.35374pt>
 File: images/deep_q.png Graphic file (type png)
  <use images/deep_q.png>
-Package pdftex.def Info: images/deep_q.png used on input line 525.
+Package pdftex.def Info: images/deep_q.png used on input line 524.
 (pdftex.def)             Requested size: 170.71652pt x 219.32144pt.
 
 
 LaTeX Warning: Citation `krizhevsky2012imagenet' on page 17 undefined on input 
-line 530.
+line 529.
 
 
-LaTeX Warning: Citation `mnih2015human' on page 17 undefined on input line 530.
+LaTeX Warning: Citation `mnih2015human' on page 17 undefined on input line 529.
 
 
 
 LaTeX Warning: Citation `mnih2013playing' on page 17 undefined on input line 53
-1.
+0.
 
 [17 <./images/deep_q.png>] [18]
 Chapter 3.
 
 LaTeX Warning: Citation `tokekar2014placement' on page 19 undefined on input li
-ne 538.
+ne 537.
 
-<images/perception_1.pdf, id=133, 923.45pt x 650.43pt>
+<images/perception_1.pdf, id=130, 923.45pt x 650.43pt>
 File: images/perception_1.pdf Graphic file (type pdf)
 
 <use images/perception_1.pdf>
-Package pdftex.def Info: images/perception_1.pdf used on input line 542.
+Package pdftex.def Info: images/perception_1.pdf used on input line 541.
 (pdftex.def)             Requested size: 227.62204pt x 160.3244pt.
  [19
 
 ]
-<images/perception_sim_1.png, id=137, 1000.73875pt x 731.73375pt>
+<images/perception_sim_1.png, id=134, 1000.73875pt x 731.73375pt>
 File: images/perception_sim_1.png Graphic file (type png)
 
 <use images/perception_sim_1.png>
-Package pdftex.def Info: images/perception_sim_1.png used on input line 555.
+Package pdftex.def Info: images/perception_sim_1.png used on input line 554.
 (pdftex.def)             Requested size: 227.62204pt x 166.4306pt.
-
-
-LaTeX Warning: Citation `koenig2004design' on page 20 undefined on input line 5
-60.
-
-[20 <./images/perception_1.pdf> <./images/perception_sim_1.png>]
-<images/perception_sim_2.png, id=146, 1003.75pt x 649.42625pt>
+ [20 <./images/perception_1.pdf> <./images/perception_sim_1.png>]
+<images/perception_sim_2.png, id=143, 1003.75pt x 649.42625pt>
 File: images/perception_sim_2.png Graphic file (type png)
 
 <use images/perception_sim_2.png>
-Package pdftex.def Info: images/perception_sim_2.png used on input line 564.
+Package pdftex.def Info: images/perception_sim_2.png used on input line 563.
 (pdftex.def)             Requested size: 227.62204pt x 147.26408pt.
- [21 <./images/perception_sim_2.png>]
-
-LaTeX Warning: Citation `chowdhary2014off' on page 22 undefined on input line 5
-80.
-
-[22] [23] <images/env1.pdf, id=159, 1281.58804pt x 850.37701pt>
+ [21 <./images/perception_sim_2.png>] [22]
+[23] <images/env1.pdf, id=156, 1281.58804pt x 850.37701pt>
 File: images/env1.pdf Graphic file (type pdf)
 
 <use images/env1.pdf>
-Package pdftex.def Info: images/env1.pdf used on input line 642.
+Package pdftex.def Info: images/env1.pdf used on input line 641.
 (pdftex.def)             Requested size: 170.71652pt x 113.2648pt.
- <images/env2.pdf, id=160, 1201.28806pt x 800.59097pt>
+ <images/env2.pdf, id=157, 1201.28806pt x 800.59097pt>
 File: images/env2.pdf Graphic file (type pdf)
 
 <use images/env2.pdf>
-Package pdftex.def Info: images/env2.pdf used on input line 643.
+Package pdftex.def Info: images/env2.pdf used on input line 642.
 (pdftex.def)             Requested size: 170.71652pt x 113.76778pt.
- <images/env3.pdf, id=161, 1198.87903pt x 803.0pt>
+ <images/env3.pdf, id=158, 1198.87903pt x 803.0pt>
 File: images/env3.pdf Graphic file (type pdf)
 
 <use images/env3.pdf>
-Package pdftex.def Info: images/env3.pdf used on input line 644.
+Package pdftex.def Info: images/env3.pdf used on input line 643.
 (pdftex.def)             Requested size: 170.71652pt x 114.34291pt.
- <images/env4.pdf, id=162, 1200.485pt x 801.39403pt>
+ <images/env4.pdf, id=159, 1200.485pt x 801.39403pt>
 File: images/env4.pdf Graphic file (type pdf)
 
 <use images/env4.pdf>
-Package pdftex.def Info: images/env4.pdf used on input line 645.
+Package pdftex.def Info: images/env4.pdf used on input line 644.
 (pdftex.def)             Requested size: 170.71652pt x 113.95526pt.
 Package epstopdf Info: Source file: <images/r_env1.eps>
 (epstopdf)                    date: 2017-06-17 13:55:10
@@ -2082,15 +2026,15 @@ Package epstopdf Info: Source file: <images/r_env1.eps>
 (epstopdf)                    size: 22413 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env1-eps-converte
 d-to.pdf images/r_env1.eps>
-(epstopdf)             \includegraphics on input line 656.
+(epstopdf)             \includegraphics on input line 655.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env1-eps-converted-to.pdf, id=163, 1411.2725pt x 728.7225pt>
+<images/r_env1-eps-converted-to.pdf, id=160, 1411.2725pt x 728.7225pt>
 File: images/r_env1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env1-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env1-eps-converted-to.pdf used on input line 
-656.
+655.
 (pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
 Package epstopdf Info: Source file: <images/r_env2.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
@@ -2100,15 +2044,15 @@ Package epstopdf Info: Source file: <images/r_env2.eps>
 (epstopdf)                    size: 29383 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env2-eps-converte
 d-to.pdf images/r_env2.eps>
-(epstopdf)             \includegraphics on input line 657.
+(epstopdf)             \includegraphics on input line 656.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env2-eps-converted-to.pdf, id=164, 1411.2725pt x 728.7225pt>
+<images/r_env2-eps-converted-to.pdf, id=161, 1411.2725pt x 728.7225pt>
 File: images/r_env2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env2-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env2-eps-converted-to.pdf used on input line 
-657.
+656.
 (pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
 Package epstopdf Info: Source file: <images/r_env3.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
@@ -2118,15 +2062,15 @@ Package epstopdf Info: Source file: <images/r_env3.eps>
 (epstopdf)                    size: 29852 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env3-eps-converte
 d-to.pdf images/r_env3.eps>
-(epstopdf)             \includegraphics on input line 658.
+(epstopdf)             \includegraphics on input line 657.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env3-eps-converted-to.pdf, id=165, 1411.2725pt x 728.7225pt>
+<images/r_env3-eps-converted-to.pdf, id=162, 1411.2725pt x 728.7225pt>
 File: images/r_env3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env3-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env3-eps-converted-to.pdf used on input line 
-658.
+657.
 (pdftex.def)             Requested size: 170.71652pt x 88.14345pt.
 Package epstopdf Info: Source file: <images/r_env4_main.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
@@ -2136,15 +2080,15 @@ Package epstopdf Info: Source file: <images/r_env4_main.eps>
 (epstopdf)                    size: 22368 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/r_env4_main-eps-con
 verted-to.pdf images/r_env4_main.eps>
-(epstopdf)             \includegraphics on input line 659.
+(epstopdf)             \includegraphics on input line 658.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/r_env4_main-eps-converted-to.pdf, id=166, 1396.21625pt x 721.69624pt>
+<images/r_env4_main-eps-converted-to.pdf, id=163, 1396.21625pt x 721.69624pt>
 File: images/r_env4_main-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/r_env4_main-eps-converted-to.pdf>
 Package pdftex.def Info: images/r_env4_main-eps-converted-to.pdf used on input 
-line 659.
+line 658.
 (pdftex.def)             Requested size: 170.71652pt x 88.24062pt.
  [24 <./images/env1.pdf> <./images/env2.pdf
 
@@ -2158,11 +2102,11 @@ pdfTeX warning: pdflatex (file ./images/env3.pdf): PDF inclusion: multiple pdfs
 
 pdfTeX warning: pdflatex (file ./images/env4.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
->] <images/corridor.pdf, id=184, 774.09201pt x 692.18597pt>
+>] <images/corridor.pdf, id=181, 774.09201pt x 692.18597pt>
 File: images/corridor.pdf Graphic file (type pdf)
 
 <use images/corridor.pdf>
-Package pdftex.def Info: images/corridor.pdf used on input line 668.
+Package pdftex.def Info: images/corridor.pdf used on input line 667.
 (pdftex.def)             Requested size: 170.71417pt x 113.8044pt.
 Package epstopdf Info: Source file: <images/gpq_q_epoch_20.eps>
 (epstopdf)                    date: 2017-06-17 13:55:08
@@ -2173,22 +2117,22 @@ Package epstopdf Info: Source file: <images/gpq_q_epoch_20.eps>
 (epstopdf)                    size: 12647 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gpq_q_epoch_20-eps-
 converted-to.pdf images/gpq_q_epoch_20.eps>
-(epstopdf)             \includegraphics on input line 669.
+(epstopdf)             \includegraphics on input line 668.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/gpq_q_epoch_20-eps-converted-to.pdf, id=185, 1396.21625pt x 721.69624pt
+<images/gpq_q_epoch_20-eps-converted-to.pdf, id=182, 1396.21625pt x 721.69624pt
 >
 File: images/gpq_q_epoch_20-eps-converted-to.pdf Graphic file (type pdf)
  <use images/gpq_q_epoch_20-eps-converted-to.pdf>
 Package pdftex.def Info: images/gpq_q_epoch_20-eps-converted-to.pdf used on inp
-ut line 669.
+ut line 668.
 (pdftex.def)             Requested size: 227.62204pt x 117.65416pt.
 
-<images/gazebo_env2.pdf, id=186, 872.86098pt x 522.75299pt>
+<images/gazebo_env2.pdf, id=183, 872.86098pt x 522.75299pt>
 File: images/gazebo_env2.pdf Graphic file (type pdf)
 
 <use images/gazebo_env2.pdf>
-Package pdftex.def Info: images/gazebo_env2.pdf used on input line 671.
+Package pdftex.def Info: images/gazebo_env2.pdf used on input line 670.
 (pdftex.def)             Requested size: 170.70665pt x 113.80952pt.
 Package epstopdf Info: Source file: <images/gpq_q_epoch_20_2.eps>
 (epstopdf)                    date: 2017-06-17 13:55:06
@@ -2199,15 +2143,15 @@ df>
 (epstopdf)                    size: 9870 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gpq_q_epoch_20_2-ep
 s-converted-to.pdf images/gpq_q_epoch_20_2.eps>
-(epstopdf)             \includegraphics on input line 672.
+(epstopdf)             \includegraphics on input line 671.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/gpq_q_epoch_20_2-eps-converted-to.pdf, id=187, 1396.21625pt x 721.69624
+<images/gpq_q_epoch_20_2-eps-converted-to.pdf, id=184, 1396.21625pt x 721.69624
 pt>
 File: images/gpq_q_epoch_20_2-eps-converted-to.pdf Graphic file (type pdf)
  <use images/gpq_q_epoch_20_2-eps-converted-to.pdf>
 Package pdftex.def Info: images/gpq_q_epoch_20_2-eps-converted-to.pdf used on i
-nput line 672.
+nput line 671.
 (pdftex.def)             Requested size: 227.62204pt x 117.65416pt.
  [25 <./images/r_env1-eps-converted-to.pdf> <./images/r_env2-eps-converted-to.p
 df> <./images/r_env3-eps-converted-to.pdf> <./images/r_env4_main-eps-converted-
@@ -2218,10 +2162,6 @@ pdfTeX warning: pdflatex (file ./images/gazebo_env2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 > <./images/gpq_q_epoch_20_2-eps-converted-to.pdf>]
 Chapter 4.
-
-LaTeX Warning: Citation `cutler2014reinforcement' on page 27 undefined on input
- line 685.
-
 Package epstopdf Info: Source file: <images/mf.eps>
 (epstopdf)                    date: 2017-06-17 13:55:12
 (epstopdf)                    size: 3559267 bytes
@@ -2230,65 +2170,18 @@ Package epstopdf Info: Source file: <images/mf.eps>
 (epstopdf)                    size: 236910 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/mf-eps-converted-to
 .pdf images/mf.eps>
-(epstopdf)             \includegraphics on input line 689.
+(epstopdf)             \includegraphics on input line 688.
 Package epstopdf Info: Output file is already uptodate.
-<images/mf-eps-converted-to.pdf, id=250, 572.1375pt x 143.53625pt>
+<images/mf-eps-converted-to.pdf, id=247, 572.1375pt x 143.53625pt>
 File: images/mf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/mf-eps-converted-to.pdf>
-Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 689.
+Package pdftex.def Info: images/mf-eps-converted-to.pdf used on input line 688.
 
 (pdftex.def)             Requested size: 469.75499pt x 117.8516pt.
+ [27
 
-
-LaTeX Warning: Citation `taylor2007transfer' on page 27 undefined on input line
- 694.
-
-
-LaTeX Warning: Citation `li2011knows' on page 27 undefined on input line 696.
-
-[27
-
-]
-
-LaTeX Warning: Citation `Dames2015' on page 28 undefined on input line 698.
-
-
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 28 undefined on input l
-ine 698.
-
-
-LaTeX Warning: Citation `deisenroth2010efficient' on page 28 undefined on input
- line 698.
-
-
-LaTeX Warning: Citation `engel2005reinforcement' on page 28 undefined on input 
-line 698.
-
-
-LaTeX Warning: Citation `puterman2014markov' on page 28 undefined on input line
- 702.
-
-
-LaTeX Warning: Citation `brafman2002r' on page 28 undefined on input line 706.
-
-
-LaTeX Warning: Citation `kearns2002near' on page 28 undefined on input line 706
-.
-
-
-LaTeX Warning: Citation `sutton1998reinforcement' on page 28 undefined on input
- line 706.
-
-
-LaTeX Warning: Citation `strehl2006pac' on page 28 undefined on input line 706.
-
-
-[28 <./images/mf-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `rasmussen2003gaussian' on page 29 undefined on input l
-ine 708.
-
+] [28 <./images/mf-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/gp-mfrl.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
 (epstopdf)                    size: 85212 bytes
@@ -2297,46 +2190,18 @@ Package epstopdf Info: Source file: <images/gp-mfrl.eps>
 (epstopdf)                    size: 24678 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/gp-mfrl-eps-convert
 ed-to.pdf images/gp-mfrl.eps>
-(epstopdf)             \includegraphics on input line 712.
+(epstopdf)             \includegraphics on input line 711.
 Package epstopdf Info: Output file is already uptodate.
-<images/gp-mfrl-eps-converted-to.pdf, id=267, 598.235pt x 478.78876pt>
+ <images/gp-mfrl-eps-converted-to.pdf, id=264, 598.235pt x 478.78876pt>
 File: images/gp-mfrl-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/gp-mfrl-eps-converted-to.pdf>
 Package pdftex.def Info: images/gp-mfrl-eps-converted-to.pdf used on input line
- 712.
+ 711.
 (pdftex.def)             Requested size: 227.62204pt x 182.1754pt.
- [29 <./images/gp-mfrl-eps-converted-to.pdf>]
+ [29 <./images/gp-mfrl-eps-converted-to.pdf>] [30] [31]
 
-LaTeX Warning: Citation `abbeel2006using' on page 30 undefined on input line 75
-0.
-
-
-LaTeX Warning: Citation `taylor2007transfer' on page 30 undefined on input line
- 750.
-
-
-LaTeX Warning: Citation `cutler2014reinforcement' on page 30 undefined on input
- line 750.
-
-
-LaTeX Warning: Citation `sutton1998reinforcement' on page 30 undefined on input
- line 753.
-
-[30] [31]
-
-LaTeX Warning: Float too large for page by 136.42699pt on input line 829.
-
-
-LaTeX Warning: Citation `koenig2004design' on page 32 undefined on input line 8
-34.
-
-
-LaTeX Warning: Citation `quigley2009ros' on page 32 undefined on input line 834
-.
-
-
-LaTeX Warning: Citation `scikit-learn' on page 32 undefined on input line 836.
+LaTeX Warning: Float too large for page by 136.42699pt on input line 828.
 
 Package epstopdf Info: Source file: <images/env.eps>
 (epstopdf)                    date: 2017-06-17 13:55:22
@@ -2346,13 +2211,13 @@ Package epstopdf Info: Source file: <images/env.eps>
 (epstopdf)                    size: 103375 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/env-eps-converted-t
 o.pdf images/env.eps>
-(epstopdf)             \includegraphics on input line 840.
+(epstopdf)             \includegraphics on input line 839.
 Package epstopdf Info: Output file is already uptodate.
-<images/env-eps-converted-to.pdf, id=301, 595.22375pt x 252.945pt>
+<images/env-eps-converted-to.pdf, id=298, 595.22375pt x 252.945pt>
 File: images/env-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/env-eps-converted-to.pdf>
-Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 840
+Package pdftex.def Info: images/env-eps-converted-to.pdf used on input line 839
 .
 (pdftex.def)             Requested size: 469.75499pt x 199.62366pt.
 Package epstopdf Info: Source file: <images/epoch.eps>
@@ -2363,15 +2228,15 @@ Package epstopdf Info: Source file: <images/epoch.eps>
 (epstopdf)                    size: 6137 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/epoch-eps-converted
 -to.pdf images/epoch.eps>
-(epstopdf)             \includegraphics on input line 848.
+(epstopdf)             \includegraphics on input line 847.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/epoch-eps-converted-to.pdf, id=302, 593.21625pt x 524.96124pt>
+<images/epoch-eps-converted-to.pdf, id=299, 593.21625pt x 524.96124pt>
 File: images/epoch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/epoch-eps-converted-to.pdf>
 Package pdftex.def Info: images/epoch-eps-converted-to.pdf used on input line 8
-48.
+47.
 (pdftex.def)             Requested size: 170.71652pt x 151.07336pt.
  [32 <./images/env-eps-converted-to.pdf>] [33]
 Package epstopdf Info: Source file: <images/heat_init_same.eps>
@@ -2383,15 +2248,15 @@ Package epstopdf Info: Source file: <images/heat_init_same.eps>
 (epstopdf)                    size: 23468 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_same-eps-
 converted-to.pdf images/heat_init_same.eps>
-(epstopdf)             \includegraphics on input line 862.
+(epstopdf)             \includegraphics on input line 861.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_init_same-eps-converted-to.pdf, id=318, 513.92pt x 423.5825pt>
+<images/heat_init_same-eps-converted-to.pdf, id=314, 513.92pt x 423.5825pt>
 File: images/heat_init_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_init_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_same-eps-converted-to.pdf used on inp
-ut line 862.
+ut line 861.
 (pdftex.def)             Requested size: 113.81102pt x 93.80244pt.
 Package epstopdf Info: Source file: <images/heat_same.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2401,15 +2266,15 @@ Package epstopdf Info: Source file: <images/heat_same.eps>
 (epstopdf)                    size: 25220 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_same-eps-conve
 rted-to.pdf images/heat_same.eps>
-(epstopdf)             \includegraphics on input line 863.
+(epstopdf)             \includegraphics on input line 862.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_same-eps-converted-to.pdf, id=319, 518.93875pt x 422.57875pt>
+<images/heat_same-eps-converted-to.pdf, id=315, 518.93875pt x 422.57875pt>
 File: images/heat_same-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_same-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_same-eps-converted-to.pdf used on input li
-ne 863.
+ne 862.
 (pdftex.def)             Requested size: 113.81102pt x 92.67744pt.
 Package epstopdf Info: Source file: <images/heat_init_opposite.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2420,15 +2285,15 @@ Package epstopdf Info: Source file: <images/heat_init_opposite.eps>
 (epstopdf)                    size: 23411 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_init_opposite-
 eps-converted-to.pdf images/heat_init_opposite.eps>
-(epstopdf)             \includegraphics on input line 870.
+(epstopdf)             \includegraphics on input line 869.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_init_opposite-eps-converted-to.pdf, id=320, 508.90125pt x 423.5825
+<images/heat_init_opposite-eps-converted-to.pdf, id=316, 508.90125pt x 423.5825
 pt>
 File: images/heat_init_opposite-eps-converted-to.pdf Graphic file (type pdf)
  <use images/heat_init_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_init_opposite-eps-converted-to.pdf used on
- input line 870.
+ input line 869.
 (pdftex.def)             Requested size: 113.81102pt x 94.7267pt.
 Package epstopdf Info: Source file: <images/heat_opposite.eps>
 (epstopdf)                    date: 2017-06-17 13:55:20
@@ -2439,15 +2304,15 @@ Package epstopdf Info: Source file: <images/heat_opposite.eps>
 (epstopdf)                    size: 75576 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heat_opposite-eps-c
 onverted-to.pdf images/heat_opposite.eps>
-(epstopdf)             \includegraphics on input line 871.
+(epstopdf)             \includegraphics on input line 870.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heat_opposite-eps-converted-to.pdf, id=321, 517.935pt x 426.59375pt>
+<images/heat_opposite-eps-converted-to.pdf, id=317, 517.935pt x 426.59375pt>
 File: images/heat_opposite-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heat_opposite-eps-converted-to.pdf>
 Package pdftex.def Info: images/heat_opposite-eps-converted-to.pdf used on inpu
-t line 871.
+t line 870.
 (pdftex.def)             Requested size: 113.81102pt x 93.74025pt.
 Package epstopdf Info: Source file: <images/heatmap_new.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
@@ -2457,15 +2322,15 @@ Package epstopdf Info: Source file: <images/heatmap_new.eps>
 (epstopdf)                    size: 22120 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/heatmap_new-eps-con
 verted-to.pdf images/heatmap_new.eps>
-(epstopdf)             \includegraphics on input line 879.
+(epstopdf)             \includegraphics on input line 878.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/heatmap_new-eps-converted-to.pdf, id=322, 476.78125pt x 426.59375pt>
+<images/heatmap_new-eps-converted-to.pdf, id=318, 476.78125pt x 426.59375pt>
 File: images/heatmap_new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/heatmap_new-eps-converted-to.pdf>
 Package pdftex.def Info: images/heatmap_new-eps-converted-to.pdf used on input 
-line 879.
+line 878.
 (pdftex.def)             Requested size: 170.71652pt x 152.74695pt.
  [34 <./images/epoch-eps-converted-to.pdf> <./images/heat_init_same-eps-convert
 ed-to.pdf> <./images/heat_same-eps-converted-to.pdf>] [35 <./images/heat_init_o
@@ -2479,14 +2344,14 @@ Package epstopdf Info: Source file: <images/ratio.eps>
 (epstopdf)                    size: 7077 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/ratio-eps-converted
 -to.pdf images/ratio.eps>
-(epstopdf)             \includegraphics on input line 894.
+(epstopdf)             \includegraphics on input line 893.
 Package epstopdf Info: Output file is already uptodate.
- <images/ratio-eps-converted-to.pdf, id=349, 896.34875pt x 554.07pt>
+ <images/ratio-eps-converted-to.pdf, id=346, 896.34875pt x 554.07pt>
 File: images/ratio-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/ratio-eps-converted-to.pdf>
 Package pdftex.def Info: images/ratio-eps-converted-to.pdf used on input line 8
-94.
+93.
 (pdftex.def)             Requested size: 227.62204pt x 140.6984pt.
 Package epstopdf Info: Source file: <images/samples_gathered_.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
@@ -2497,14 +2362,14 @@ pdf>
 (epstopdf)                    size: 8110 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/samples_gathered_-e
 ps-converted-to.pdf images/samples_gathered_.eps>
-(epstopdf)             \includegraphics on input line 901.
+(epstopdf)             \includegraphics on input line 900.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/samples_gathered_-eps-converted-to.pdf, id=350, 764.8575pt x 654.445pt>
+<images/samples_gathered_-eps-converted-to.pdf, id=347, 764.8575pt x 654.445pt>
 File: images/samples_gathered_-eps-converted-to.pdf Graphic file (type pdf)
 <use images/samples_gathered_-eps-converted-to.pdf>
 Package pdftex.def Info: images/samples_gathered_-eps-converted-to.pdf used on 
-input line 901.
+input line 900.
 (pdftex.def)             Requested size: 227.62204pt x 194.75722pt.
  [36 <./images/ratio-eps-converted-to.pdf> <./images/samples_gathered_-eps-conv
 erted-to.pdf>]
@@ -2516,25 +2381,16 @@ Package epstopdf Info: Source file: <images/thre.eps>
 (epstopdf)                    size: 10776 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/thre-eps-converted-
 to.pdf images/thre.eps>
-(epstopdf)             \includegraphics on input line 911.
+(epstopdf)             \includegraphics on input line 910.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/thre-eps-converted-to.pdf, id=365, 682.55pt x 572.1375pt>
+<images/thre-eps-converted-to.pdf, id=361, 682.55pt x 572.1375pt>
 File: images/thre-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/thre-eps-converted-to.pdf>
 Package pdftex.def Info: images/thre-eps-converted-to.pdf used on input line 91
-1.
+0.
 (pdftex.def)             Requested size: 227.62204pt x 190.79642pt.
-
-
-LaTeX Warning: Citation `cutler2014reinforcement' on page 37 undefined on input
- line 917.
-
-
-LaTeX Warning: Citation `cutler2014reinforcement' on page 37 undefined on input
- line 917.
-
 Package epstopdf Info: Source file: <images/reward.eps>
 (epstopdf)                    date: 2017-06-17 13:55:18
 (epstopdf)                    size: 20267 bytes
@@ -2543,91 +2399,85 @@ Package epstopdf Info: Source file: <images/reward.eps>
 (epstopdf)                    size: 8000 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/reward-eps-converte
 d-to.pdf images/reward.eps>
-(epstopdf)             \includegraphics on input line 920.
+(epstopdf)             \includegraphics on input line 919.
 Package epstopdf Info: Output file is already uptodate.
-<images/reward-eps-converted-to.pdf, id=366, 1396.21625pt x 705.63625pt>
+
+<images/reward-eps-converted-to.pdf, id=362, 1396.21625pt x 705.63625pt>
 File: images/reward-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/reward-eps-converted-to.pdf>
 Package pdftex.def Info: images/reward-eps-converted-to.pdf used on input line 
-920.
+919.
 (pdftex.def)             Requested size: 227.62204pt x 115.036pt.
  [37 <./images/thre-eps-converted-to.pdf>] [38 <./images/reward-eps-converted-t
 o.pdf>]
 Chapter 5.
-
-LaTeX Warning: Citation `morgenthal2014quality' on page 39 undefined on input l
-ine 932.
-
-
-LaTeX Warning: Reference `bridge_fail' on page 39 undefined on input line 935.
-
-<images/truck_crane.jpg, id=383, 1284.8pt x 722.7pt>
+<images/truck_crane.jpg, id=380, 1284.8pt x 722.7pt>
 File: images/truck_crane.jpg Graphic file (type jpg)
 
 <use images/truck_crane.jpg>
-Package pdftex.def Info: images/truck_crane.jpg used on input line 939.
+Package pdftex.def Info: images/truck_crane.jpg used on input line 938.
 (pdftex.def)             Requested size: 170.7155pt x 113.80379pt.
 
-<images/under_bridge.jpg, id=384, 1003.75pt x 752.8125pt>
+<images/under_bridge.jpg, id=381, 1003.75pt x 752.8125pt>
 File: images/under_bridge.jpg Graphic file (type jpg)
 
 <use images/under_bridge.jpg>
-Package pdftex.def Info: images/under_bridge.jpg used on input line 940.
+Package pdftex.def Info: images/under_bridge.jpg used on input line 939.
 (pdftex.def)             Requested size: 170.71182pt x 113.8015pt.
- <images/tip.jpg, id=385, 1204.5pt x 903.375pt>
+ <images/tip.jpg, id=382, 1204.5pt x 903.375pt>
 File: images/tip.jpg Graphic file (type jpg)
 
 <use images/tip.jpg>
-Package pdftex.def Info: images/tip.jpg used on input line 947.
+Package pdftex.def Info: images/tip.jpg used on input line 946.
 (pdftex.def)             Requested size: 227.62204pt x 170.70569pt.
  [39
 
 ] [40 <./images/truck_crane.jpg> <./images/under_bridge.jpg> <./images/tip.jpg>
 ]
 
-LaTeX Warning: Citation `dji_frame' on page 41 undefined on input line 975.
+LaTeX Warning: Citation `djiframe' on page 41 undefined on input line 974.
 
-<images/uav-1.JPG, id=393, 4288.02pt x 2858.68pt>
+<images/uav-1.JPG, id=390, 4288.02pt x 2858.68pt>
 File: images/uav-1.JPG Graphic file (type jpg)
  <use images/uav-1.JPG>
-Package pdftex.def Info: images/uav-1.JPG used on input line 979.
+Package pdftex.def Info: images/uav-1.JPG used on input line 978.
 (pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
 
-[41] <images/quad.png, id=397, 1510.64375pt x 2014.52625pt>
+[41] <images/quad.png, id=394, 1510.64375pt x 2014.52625pt>
 File: images/quad.png Graphic file (type png)
 
 <use images/quad.png>
-Package pdftex.def Info: images/quad.png used on input line 988.
+Package pdftex.def Info: images/quad.png used on input line 987.
 (pdftex.def)             Requested size: 227.62204pt x 303.54916pt.
 
 
-LaTeX Warning: Citation `flea_camera' on page 42 undefined on input line 994.
+LaTeX Warning: Citation `fleacamera' on page 42 undefined on input line 993.
 
-<images/cam.jpg, id=398, 1317.92375pt x 959.585pt>
+<images/cam.jpg, id=395, 1317.92375pt x 959.585pt>
 File: images/cam.jpg Graphic file (type jpg)
  <use images/cam.jpg>
-Package pdftex.def Info: images/cam.jpg used on input line 997.
+Package pdftex.def Info: images/cam.jpg used on input line 996.
 (pdftex.def)             Requested size: 170.71652pt x 124.29652pt.
 
 [42 <./images/uav-1.JPG> <./images/quad.png>]
-<images/nuc.jpg, id=403, 149.358pt x 93.2283pt>
+<images/nuc.jpg, id=400, 149.358pt x 93.2283pt>
 File: images/nuc.jpg Graphic file (type jpg)
  <use images/nuc.jpg>
-Package pdftex.def Info: images/nuc.jpg used on input line 1005.
+Package pdftex.def Info: images/nuc.jpg used on input line 1004.
 (pdftex.def)             Requested size: 170.71652pt x 106.56871pt.
 
-<images/pixhawk.jpg, id=404, 401.5pt x 401.5pt>
+<images/pixhawk.jpg, id=401, 401.5pt x 401.5pt>
 File: images/pixhawk.jpg Graphic file (type jpg)
  <use images/pixhawk.jpg>
-Package pdftex.def Info: images/pixhawk.jpg used on input line 1020.
+Package pdftex.def Info: images/pixhawk.jpg used on input line 1019.
 (pdftex.def)             Requested size: 170.71652pt x 170.71794pt.
 
 [43 <./images/cam.jpg> <./images/nuc.jpg>]
-<images/lidar.jpg, id=408, 144.54pt x 144.54pt>
+<images/lidar.jpg, id=405, 144.54pt x 144.54pt>
 File: images/lidar.jpg Graphic file (type jpg)
  <use images/lidar.jpg>
-Package pdftex.def Info: images/lidar.jpg used on input line 1037.
+Package pdftex.def Info: images/lidar.jpg used on input line 1036.
 (pdftex.def)             Requested size: 170.71652pt x 170.72551pt.
  [44 <./images/pixhawk.jpg> <./images/lidar.jpg>]
 Missing character: There is no â in font cmr12!
@@ -2637,59 +2487,59 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-<images/gps.jpg, id=412, 425.33907pt x 311.66437pt>
+<images/gps.jpg, id=409, 425.33907pt x 311.66437pt>
 File: images/gps.jpg Graphic file (type jpg)
  <use images/gps.jpg>
-Package pdftex.def Info: images/gps.jpg used on input line 1058.
+Package pdftex.def Info: images/gps.jpg used on input line 1057.
 (pdftex.def)             Requested size: 170.71652pt x 125.09154pt.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-<images/motors.jpg, id=413, 722.7pt x 481.8pt>
+<images/motors.jpg, id=410, 722.7pt x 481.8pt>
 File: images/motors.jpg Graphic file (type jpg)
  <use images/motors.jpg>
-Package pdftex.def Info: images/motors.jpg used on input line 1077.
+Package pdftex.def Info: images/motors.jpg used on input line 1076.
 (pdftex.def)             Requested size: 170.71652pt x 113.81114pt.
 
-<images/esc.jpg, id=414, 501.875pt x 320.19624pt>
+<images/esc.jpg, id=411, 501.875pt x 320.19624pt>
 File: images/esc.jpg Graphic file (type jpg)
  <use images/esc.jpg>
-Package pdftex.def Info: images/esc.jpg used on input line 1078.
+Package pdftex.def Info: images/esc.jpg used on input line 1077.
 (pdftex.def)             Requested size: 170.71652pt x 108.91902pt.
- [45 <./images/gps.jpg>] <images/cam_rqt.png, id=419, 968.61874pt x 432.61626pt
+ [45 <./images/gps.jpg>] <images/cam_rqt.png, id=415, 968.61874pt x 432.61626pt
 >
 File: images/cam_rqt.png Graphic file (type png)
 
 <use images/cam_rqt.png>
-Package pdftex.def Info: images/cam_rqt.png used on input line 1090.
+Package pdftex.def Info: images/cam_rqt.png used on input line 1089.
 (pdftex.def)             Requested size: 284.52756pt x 127.07939pt.
- <images/indoor_1.JPG, id=420, 4288.02pt x 2858.68pt>
+ <images/indoor_1.JPG, id=416, 4288.02pt x 2858.68pt>
 File: images/indoor_1.JPG Graphic file (type jpg)
 
 <use images/indoor_1.JPG>
-Package pdftex.def Info: images/indoor_1.JPG used on input line 1098.
+Package pdftex.def Info: images/indoor_1.JPG used on input line 1097.
 (pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
 
-<images/indoor_2.jpeg, id=421, 1204.5pt x 801.99625pt>
+<images/indoor_2.jpeg, id=417, 1204.5pt x 801.99625pt>
 File: images/indoor_2.jpeg Graphic file (type jpg)
 
 <use images/indoor_2.jpeg>
-Package pdftex.def Info: images/indoor_2.jpeg used on input line 1099.
+Package pdftex.def Info: images/indoor_2.jpeg used on input line 1098.
 (pdftex.def)             Requested size: 227.62204pt x 151.54872pt.
 
-<images/outdoor_1.JPG, id=422, 4288.02pt x 2858.68pt>
+<images/outdoor_1.JPG, id=418, 4288.02pt x 2858.68pt>
 File: images/outdoor_1.JPG Graphic file (type jpg)
 
 <use images/outdoor_1.JPG>
-Package pdftex.def Info: images/outdoor_1.JPG used on input line 1109.
+Package pdftex.def Info: images/outdoor_1.JPG used on input line 1108.
 (pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
 
-<images/outdoor_2.JPG, id=423, 4288.02pt x 2858.68pt>
+<images/outdoor_2.JPG, id=419, 4288.02pt x 2858.68pt>
 File: images/outdoor_2.JPG Graphic file (type jpg)
 
 <use images/outdoor_2.JPG>
-Package pdftex.def Info: images/outdoor_2.JPG used on input line 1110.
+Package pdftex.def Info: images/outdoor_2.JPG used on input line 1109.
 (pdftex.def)             Requested size: 227.62204pt x 151.70996pt.
  [46 <./images/motors.jpg> <./images/esc.jpg> <./images/cam_rqt.png>] [47 <./im
 ages/indoor_1.JPG> <./images/indoor_2.jpeg> <./images/outdoor_1.JPG> <./images/
@@ -2697,21 +2547,23 @@ outdoor_2.JPG>]
 Chapter 6.
 
 LaTeX Warning: Citation `osborne2010bayesian' on page 48 undefined on input lin
-e 1118.
-
-
-LaTeX Warning: Citation `engel2005reinforcement' on page 48 undefined on input 
-line 1118.
+e 1117.
 
 
 LaTeX Warning: Citation `csato2002sparse' on page 48 undefined on input line 11
-18.
+17.
 
-Excluding 'comment' comment.
-No file main.bbl.
-[48
+Excluding 'comment' comment. (./main.bbl [48
 
-] (./main.aux)
+]
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+[]\OT1/cmr/m/n/12 Flea3 2.0 MP Cam-era.  $\OT1/cmtt/m/n/12 https : / / www . pt
+grey . com /
+ []
+
+[49
+
+] [50] [51] [52]) [53] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2720,9 +2572,9 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 23675 strings out of 493029
- 453227 string characters out of 6136234
- 482691 words of memory out of 5000000
+ 23677 strings out of 493029
+ 453238 string characters out of 6136234
+ 483770 words of memory out of 5000000
  26790 multiletter control sequences out of 15000+600000
  15741 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2745,10 +2597,10 @@ fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1200.pfb>
-Output written on main.pdf (58 pages, 27707634 bytes).
+Output written on main.pdf (62 pages, 27723093 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
+ 507 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

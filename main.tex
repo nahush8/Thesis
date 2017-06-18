@@ -128,7 +128,7 @@ This work has been funded by the Center for Unmanned Aircraft Systems (C-UAS), a
 To Dad and Maa. 
 \chapter*{Acknowledgments}
 First and foremost, I would like to express my gratitude towards my advisor, Dr. Pratap Tokekar. Thank you very much for the constant support and motivation. This wouldn't be possible without your encouragement. My sincere acknowledgment for believing in me. I am looking forward to have a continued association and keep learning new things and hoping to collaborate in the future. I could not have asked for a better advisor. \par 
-A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support for the grants {\color{red}enlist the grant \#}. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
+A sincere thank you to my co-author Varun Suryan for his contribution to this thesis. I am thankful to the National Science Foundation for the financial support NSF Award No. IIP-1161036. A special thanks to Dr. Matt Hebdon and his team for the collaboration in the bridge inspection project which is the work presented in chapter \ref{bridge_chapter}.\par
 Robotics Algorithms and Autonomous Systems lab (\url{http://www.raas.ece.vt.edu/}) has been home for over 18 months; thanks to all the team members who made this time enjoyable. Thank you Ashish Budhiraja, Kevin Yu, Aravind, Lifeng Zhou, Yoonchang Sung, Varun Suryan and Zhongshun Zhang for all the help and fun times at the outdoor experiments. It has been a wonderful one and a half years and I am very proud to be a part of this research group. \par 
 I would be short of words to fully express my thanks towards one person who has been an essential part of my life at Virginia Tech. Thank you so much Harsh Patel who has been more of a brother than a friend and has been with me through all the ups and downs and is more than a family to me. Thanks to all the friends in Virginia Tech for the fun times.  Thank you Shefali Gundecha who has always been there to support me despite being in a different timezone. Thanks for being there when I needed it the most.\par 
 I'd like to express my sincere thanks to the Mccomas Gym and the War Memorial Gym at Virginia Tech which have been my meditation centers and have helped me through the stressful times.\par 
@@ -373,7 +373,6 @@ In Q-learning is that we maintain a table $Q[s,a]$. In each state $s$ we choose 
 Q(s,a) = r(s,a) + \gamma \max_{a'}(Q(s',a'))
 \end{equation}
 
-\subsection{Q-Learning Algorithm}
 \begin{algorithm}
 \SetKwInOut{Input}{Input}\SetKwInOut{Init}{Initialize}\SetKwInOut{local}{Local data}
 \Input{$S$ is a set of states\\$A$ is a set of action\\$\gamma$ is the discount factor\\ $\alpha$ is the learning rate or step size ($\alpha \in (0,1)$)}
@@ -932,7 +931,7 @@ The GP-MFRL algorithm provides a general RL technique that is particularly suite
 When it comes to inspecting bridges, UAVs are often considered as harbingers, a truly disruptive technology capable of giving engineers eyes in the hardest to reach places, without the need for expensive access vehicles or potentially dangerous rigging or ladders or harnesses. A recent paper  \cite{morgenthal2014quality} discusses the application of UAVs for visual inspection and damage detection of civil structures. The quality of such pictures and videos taken by the UAV strongly depends on various factors viz. lighting conditions, distance from the structure, vehicle motion influenced by environmental effects etc. It is very important for the UAVs to be equipped with sophisticated control algorithms and sensors to be able to provide reliable data which can be conclusively used for inspection and analysis of damage.
 
 \subsection{Conventional Inspection of Bridges}
-Figure \ref{fig:bridge_inspection} shows typical inspection units like under-bridge units or truck cranes. Inspection units are in most cases expensive custom products. Often, specially trained staff, like industrial climbers, can get access to special parts of the structure but they can rarely evaluate what influences detected damages have on these structures. Therefore, they can only take Photos or Videos of the concerned part of the structure, which must be analyzed by civil engineers off-line.\par It is often dangerous to use such large truck cranes. Figure \ref{bridge_fail} shows an unfortunate incidence where the inspection truck has tipped over causing a life threating situation for the people involved.\par
+Figure \ref{fig:bridge_inspection} shows typical inspection units like under-bridge units or truck cranes. Inspection units are in most cases expensive custom products. Often, specially trained staff, like industrial climbers, can get access to special parts of the structure but they can rarely evaluate what influences detected damages have on these structures. Therefore, they can only take Photos or Videos of the concerned part of the structure, which must be analyzed by civil engineers off-line.\par It is often dangerous to use such large truck cranes. Figure \ref{fig:bridge_fail} shows an unfortunate incidence where the inspection truck has tipped over causing a life threating situation for the people involved.\par
  
 \begin{figure}[htp]
 	\centering 
@@ -972,7 +971,7 @@ As they say \textit{Every good thing comes with a price}, UAVs are no different.
 We performed a few experiments in order to analyze the limitations and challenges of performing autonomous navigation of UAVs around bridges. We performed several manual flights of a UAV on the Smart Road Bridge (the tallest state-maintained bridge in Virginia). The goal of the experiment was to capture visuals of the inside as well as the outside of the bridge for analysis of the structure and to analyze challenges in order to improve the system for fully autonomous flights.
 
 \subsection{The System Setup}
-DJI model F450 \cite{dji_frame} was used as shown in the figure \ref{fig:dji_frame}. The UAV is equipped with sensors, controller and an on-board computer.
+DJI model F450 \cite{djiframe} was used as shown in the figure \ref{fig:dji_frame}. The UAV is equipped with sensors, controller and an on-board computer.
 
 \begin{figure}[htp]
 	\centering 
@@ -991,7 +990,7 @@ The specific components are listed below.
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Camera}: The camera used to capture the visuals is \cite{flea_camera} as shown in figure \ref{fig:cam}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
+\item \textbf{Camera}: The camera used to capture the visuals is \cite{fleacamera} as shown in figure \ref{fig:cam}. The resolution of the images is $1600 \times 1200$ and can capture images upto $59$ FPS.
 \begin{figure}[H]
 	\centering 
     \includegraphics[width=6cm]{cam.jpg}
